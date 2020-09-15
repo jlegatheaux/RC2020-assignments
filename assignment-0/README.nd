@@ -4,10 +4,10 @@ Given the computer networks context, an event in CNSS can be, for example, the d
 A more compreenhesive description of CNSS can be found here.
 CNSS Networking.
 
-## Programming Application Nodes (continued)
+# Programming Application Nodes (continued)
 
 
-
+```jav
 import java.util.Arrays;
 import cnss.simulator.*;
 import cnss.utils.*;
