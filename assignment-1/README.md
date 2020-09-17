@@ -1,1 +1,1 @@
-# Assignment 1 - naif stop & wait e sliding window (José ?)
+# Assignment 1 - naif stop & wait e sliding window
