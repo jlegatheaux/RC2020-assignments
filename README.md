@@ -1,1 +1,3 @@
-# This is a place holder for something more on the different assignments
+# Redes de Computadores - 2020/2021
+
+This repository has materials for ....
