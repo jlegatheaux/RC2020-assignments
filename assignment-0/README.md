@@ -92,8 +92,9 @@ simulation starts - first processing step with clock = 0
 
 simulation ended - last processing step with clock = 0
 ```
-Ok, great, if you see the above log, you concluded the setup of CNSS.
-You are ready to go to STEP 2, to know more about the CNSS simulations and programming with CNSS.
+
+@octocat :+1: Ok, great, if you see the above log, you concluded the setup of CNSS.
+You are ready to go to STEP 2, to know more about the CNSS simulations and programming with CNSS. :smile:
 
 
 ## STEP 2) More About CNSS (Computer Networks Simple Simulator)
