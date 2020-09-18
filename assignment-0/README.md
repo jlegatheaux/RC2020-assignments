@@ -504,7 +504,7 @@ Congratulations you are a "mini" expert on the CNSS simulator. You are ready to 
 and to program your future simulations and programming exercises.
 
 At the same time you are ready to answer to the Evaluation Form abojut your Findings and Results (See in the Webpage of the course
-about the dates to deliver you work and to submitt your evaluatuion form.
+(https://sites.google.com/campus.fct.unl.pt/rc-2020) about the dates to deliver you work and to submitt your evaluatuion form.
 
 
 
