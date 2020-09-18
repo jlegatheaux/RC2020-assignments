@@ -10,10 +10,10 @@ CNSS is written in Java 8. The source code is publicly available and hosted at G
       You can try using the following links:*
     
 ```
-Step 1 - CNSS Fetching and Setup, [here](https://colab.research.google.com/drive/1W4v1QbdbXsLJg0TRIe6gX__gQ5H3eoDH?authuser=1)
-Step 2 - More about CNSS and CNSS, [here](https://colab.research.google.com/drive/1UJL8ajF0E0tfi1v79598DIwfjkGmJTXV?authuser=1)
-Step 3 - More About CNSS Nodes, [here](https://colab.research.google.com/drive/1dUoIill4aUDSJGamXq4v0vcYu2gnynjp?authuser=1)
-
+Step 1: CNSS Fetching and Setup, from here(https://colab.research.google.com/drive/1W4v1QbdbXsLJg0TRIe6gX__gQ5H3eoDH?authuser=1)
+Step 2: More about CNSS and CNSS, from here(https://colab.research.google.com/drive/1UJL8ajF0E0tfi1v79598DIwfjkGmJTXV?authuser=1)
+Step 3: More About CNSS Nodes, from here(https://colab.research.google.com/drive/1dUoIill4aUDSJGamXq4v0vcYu2gnynjp?authuser=1)
+```
 ## STEP 1) Fetch and Setup the CNSS Simulator
 
 In this asignment you will learn how to use CNSS.
@@ -503,7 +503,3 @@ and to program your future simulations and programming exercises.
 
 At the same time you are ready to answer to the Evaluation Form abojut your Findings and Results (See in the Webpage of the course
 (https://sites.google.com/campus.fct.unl.pt/rc-2020) about the dates to deliver you work and to submitt your evaluatuion form.
-
-
-
-
