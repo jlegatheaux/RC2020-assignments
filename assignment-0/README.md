@@ -1,4 +1,5 @@
-# Assignment 0 - Setup and use of CNSS (Computer Networks Simple Simulator)
+# Assignment 0
+## Setup and use of CNSS (Computer Networks Simple Simulator)
 
 CNSS (Computer Networks Simple Simulator) RC2020 Labs will use the CNSS tool for part of the semester. CNSS makes it possible to code and simulate simple networking protocols. The simulation results are deterministic and repeatable, making it easier to reproduce and interpret them.
 As you will see, CNSS is a piece of software that you will use in some of your work-assignments. It is a simple Network Simulation tool, allowing the definition of a network topology (defined in configuration files), with nodes interconneted by links. With CNSS you can program the processing behavior of nodes in the defined network and implementing protocolos involving message flows between different nodes.
@@ -6,24 +7,24 @@ As you will see, CNSS is a piece of software that you will use in some of your w
 CNSS is written in Java 8. The source code is publicly available and hosted at GitHub.
 
 *Obs) You have this Assignment-0 (composed by 3 STEPS) also available as a Live-Version using a Jupyter Notebook / Google Collaboratory.
-     You can try using the following links:*
+      You can try using the following links:*
      
      [STEP 1]: [CNSS: Fetching and Setup](https://colab.research.google.com/drive/1W4v1QbdbXsLJg0TRIe6gX__gQ5H3eoDH?authuser=1/).
      [Step 2](https://colab.research.google.com/drive/1UJL8ajF0E0tfi1v79598DIwfjkGmJTXV?authuser=1)
      [Step 3](https://colab.research.google.com/drive/1dUoIill4aUDSJGamXq4v0vcYu2gnynjp?authuser=1)
 
 
-# STEP 1) Fetch and Setup the CNSS Simulator
+## STEP 1) Fetch and Setup the CNSS Simulator
 
 In this asignment you will learn how to use CNSS.
 
-## How can you obtain CNSS ?
+### How can you obtain CNSS ?
 
 Fetching CNSS For those still unfamiliar with GitHub repositories, there are several ways to access the source code.
 
 You can download a zip archive of the entire repository from here (https://github.com/jlegatheaux/cnss)
 
-## Fetching by using the git tool (shell)
+### Fetching by using the git tool (shell)
 
 You can use git (https://git-scm.com/) to clone the contents of the repository to a local directory, like so:
 
@@ -39,7 +40,7 @@ $ git -C cnss pull
 
 You must see .... Already up to date.
 
-## For Eclipse Users
+### For Eclipse Users
 
 CNSS can also be imported directly to Eclipse.
 
@@ -49,7 +50,7 @@ Copy the CNSS repository uri (https://github.com/jlegatheaux/cnss.git) into the 
 Navigate: File > Import > Git, choose Projects from Git, then Next Choose Clone URI, then Next twice. 
 If asked, only select the master branch and press Next until finished.
 
-## Compiling CNSS manually (Console)
+### Compiling CNSS manually (Console)
 
 CNSS has no external dependencies.
 
@@ -58,7 +59,7 @@ At the root of the repository, the source code can be compiled in the command li
 $ javac -d cnss-classes cnss/CNSS/src///*.java
 obs) pay attention: The switch -d cnss-classes will place the resulting classes in the cnss-classes directory.
 
-## How to run CNSS
+### How to run CNSS
 
 To run a CNSS simulation you must create/have a configuration file.
 As you will see, the configuration file will be passed as argument to CNSS.
@@ -86,17 +87,17 @@ simulation ended - last processing step with clock = 0
 Ok, great, if you see the above log, you concluded the setup and your are reday to go to STEP 2, to know more about the CNSS simulations.
 
 
-# STEP 2) More About CNSS (Computer Networks Simple Simulator)
+## STEP 2) More About CNSS (Computer Networks Simple Simulator)
 
 The CNSS simulator is piece of software that executes actions in response to events. To make the execution of a simulation deterministic and repeatable, the ordering of events is logical and fixed, and does not depend on the actual time taken to execute the actions, which are treated as instantaneous.
 Given the computer networks context, an event in CNSS can be, for example, the delivery of a message at some node (when the node send a message to a destination) or the indication that a timeout has expired...
 A more compreenhesive description of CNSS can be found [here](https://github.com/jlegatheaux/cnss).
 
-## CNSS Nodes
+### CNSS Nodes
 
 A simulation will comprise of a number of nodes (in the simulated network). Nodes can be used to simulate simple end-systems (application hosts) and other lower-level networking components, such as *routers* and *switches*.
 
-## Programming Application Nodes
+### Programming Application Nodes
 
 The processing behavior end-system application nodes is coded in a Java class that **implements** the [ApplicationAlgorithm](https://github.com/jlegatheaux/cnss/blob/master/src/cnss/simulator/ApplicationAlgorithm.java) interface.
 
@@ -128,7 +129,7 @@ public class MinimalNode extends AbstractApplicationAlgorithm {
 In the example, the public no-args constructor calls the super constructor with true, requesting logging to be enabled and providing the string minimal-node to be used as prefix identifying this node in log messages, in your simulation runtime.
 In the initialize method we pass the arguments to the superclass to be stored in superclass fields. The superclass provides a logging method we call to print that information.
 
-## More About Configurations
+### More About Configurations
 
 As mentioned in Step1, in the configuration file we add nodes to a simulation, using the following syntax; each in a separate line:
 
@@ -141,7 +142,7 @@ where:
 <application-class>is the class that implements the node high-level logic;
 <arg1> ... is a space separated list of string arguments
 
-## Example of a Configuration File
+### Example of a Configuration File
 
 The example below shows a configuration file for a simulation that will have 2 nodes. EndSystemControl is a sample control-class already provided by the CNSS simulator.
 
@@ -150,7 +151,7 @@ The example below shows a configuration file for a simulation that will have 2 n
 node 0 0 cnss.lib.EndSystemControl MinimalNode arg1 arg2 
 node 1 0 cnss.lib.EndSystemControl MinimalNode arg3 arg4
 
-## Simulation Execution
+### Simulation Execution
 
 The following Unix commands compile and execute the simulator
 (in this case we use the Terminal/Shell environment:
@@ -168,7 +169,7 @@ And then you can run the simulation with the node
 
 java -cp .:cnss-classes cnss.simulator.Simulator minimal-node.config.txt
 
-## Periodic Actions
+### Periodic Actions
 
 Nodes can request a periodic action to be executed, periodically, ie., at regular intervals. 
 This is done by:
@@ -213,7 +214,7 @@ parameter stop 10000
 
 Try to understand what is defined in the configuration file.
 
-## Compilation and execution 
+### Compilation and execution 
 
 The same as above, but now for the new configuration file and for the programmed Periodic Actions.
 
@@ -226,7 +227,7 @@ $javac -d cnss-classes cnss/src/*/*/*.java
 $javac -cp .:cnss-classes PeriodicActionNode.java
 $java -cp .:cnss-classes cnss.simulator.Simulator periodic-action.config.txt
 
-## Timeout Events
+### Timeout Events
 
 Application nodes can also schedule an operation to execute in the future, by setting a timeout. 
 This is achieved via the `set_timeout( int )` method in the [Node](https://github.com/jlegatheaux/cnss/blob/master/src/cnss/simulator/Node.java) class.
@@ -234,7 +235,7 @@ This is achieved via the `set_timeout( int )` method in the [Node](https://githu
 When the timeout deadline expires, the `on_timeout()` method, the node implements to satisfy the [ApplicationAlgorithm](https://github.com/jlegatheaux/cnss/blob/master/src/cnss/simulator/ApplicationAlgorithm.java) interface that is called by the simulator. 
 Timeout events are automatically cancelled in some cases that will be discussed later on...
 
-## Example using Timeout events
+### Example using Timeout events
 
 %%writefile TimeoutHandlingNode.java
 
@@ -335,7 +336,7 @@ $javac -d cnss-classes cnss/src/*/*/*.java
 $javac -cp .:cnss-classes SelfSenderNode.java
 $java -cp .:cnss-classes cnss.simulator.Simulator self-sender.config.txt
 
-## Network Links
+### Network Links
 
 To simulate a network we need network links. Links interconnect nodes by linking two interfaces.
 
@@ -352,7 +353,7 @@ where:
 
 Remember the latency, bandwidth, error_rate and jitter notions from your background/lectures/theretical classes.
 
-Example
+### Example with a Sender node and Receiver node
 
 The example below shows a configuration file for a simulation that will have 2 nodes, connected by a single link
 with certain defined characteristics:
@@ -430,7 +431,7 @@ $java -cp .:cnss-classes cnss.simulator.Simulator one-link.config.txt
 
 See the log and try to understand what is going on.
 
-## Switches
+### Switches
 
 CNSS can simulate networks where some nodes are defines to act as switches. 
 For this purpose base CNSS code already provides classes to instantiate a basic switch node. 
