@@ -10,11 +10,11 @@ CNSS is written in Java 8. The source code is publicly available and hosted at G
       You can try using the following links:*
     
      Step 1 - CNSS Fetching and Setup:
-        https://colab.research.google.com/drive/1W4v1QbdbXsLJg0TRIe6gX__gQ5H3eoDH?authuser=1
+        (https://colab.research.google.com/drive/1W4v1QbdbXsLJg0TRIe6gX__gQ5H3eoDH?authuser=1)
      Step 2 - More about CNSS and CNSS
-     	https://colab.research.google.com/drive/1UJL8ajF0E0tfi1v79598DIwfjkGmJTXV?authuser=1
+     	(https://colab.research.google.com/drive/1UJL8ajF0E0tfi1v79598DIwfjkGmJTXV?authuser=1)
      Step 3 - More About CNSS Nodes
-     	https://colab.research.google.com/drive/1dUoIill4aUDSJGamXq4v0vcYu2gnynjp?authuser=1
+     	(https://colab.research.google.com/drive/1dUoIill4aUDSJGamXq4v0vcYu2gnynjp?authuser=1)
 
 ## STEP 1) Fetch and Setup the CNSS Simulator
 
