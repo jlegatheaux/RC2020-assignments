@@ -8,41 +8,47 @@ See also the RC Course Main Page (https://sites.google.com/campus.fct.unl.pt/rc-
 also find the reference informayion on assignment (https://sites.google.com/campus.fct.unl.pt/rc-2020/assignments?authuser=0),
 the important dates for submissions/delivery forms, as well as, individual evaluation forms that each student must submitt.
 
-### Assignment 1: the CNSS Simulator
+### Assignment 0: the CNSS Simulator
   - Deadline: 27/Sep/20
   - Delivery Form
   - Individual Assessment Form: 
-  - [Materials/Guidelines: ](assignment1/readme-md) 
+  - [Materials/Guidelines: ](assignment-0/README.md) 
+
+### Assignment 1: 
+  - Deadline: 27/Sep/20
+  - Delivery Form
+  - Individual Assessment Form: 
+  - [Materials/Guidelines: ](assignment-1/README.md) 
   
 ### Assignment 2: 
   - Deadline: 27/Sep/20
   - Delivery Form
   - Individual Assessment Form: 
-  - [Materials/Guidelines: ](assignment2/readme-md) 
+  - [Materials/Guidelines: ](assignment-2/README.md) 
   
 ### Assignment 3
-  Deadline: 27/Sep/20
-  Delivery Form
-  Individual Assessment Form: 
-  Materials/Guidelines: 
+  - Deadline: 27/Sep/20
+  - Delivery Form
+  - Individual Assessment Form: 
+  - [Materials/Guidelines: ](assignment-3/README.md) 
   
 ### Assignment 4
-  Deadline: 27/Sep/20
-  Delivery Form
-  Individual Assessment Form: 
-  Materials/Guidelines: 
+  - Deadline: 27/Sep/20
+  - Delivery Form
+  - Individual Assessment Form: 
+  - [Materials/Guidelines: ](assignment-4/README.md) 
   
 ### Assignment 5
-  Deadline: 27/Sep/20
-  Delivery Form
-  Individual Assessment Form: 
-  Materials/Guidelines:
+  - Deadline: 27/Sep/20
+  - Delivery Form
+  - Individual Assessment Form: 
+  - [Materials/Guidelines: ](assignment-5/README.md) 
   
 ### Assignment 6
-  Deadline: 27/Sep/20
-  Delivery Form
-  Individual Assessment Form: 
-  Materials/Guidelines: 
+  - Deadline: 27/Sep/20
+  - Delivery Form
+  - Individual Assessment Form: 
+  - [Materials/Guidelines: ](assignment-6/README.md) 
 
 
 
