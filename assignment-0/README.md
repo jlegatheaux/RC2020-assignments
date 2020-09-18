@@ -1,16 +1,17 @@
 # Assignment 0 - Setup and use of CNSS (Computer Networks Simple Simulator)
 
-*Obs) *You have this Assignment-0 in three STEPS) also available as a Live-Version using a Jupyter Notebook / Google Collaboratory.
-     *You can try usinhg the following links:
-     
-     STEP 1: [CNSS: Fetching and Setup](https://colab.research.google.com/drive/1W4v1QbdbXsLJg0TRIe6gX__gQ5H3eoDH?authuser=1/).
-     [Step 2](https://colab.research.google.com/drive/1UJL8ajF0E0tfi1v79598DIwfjkGmJTXV?authuser=1)
-     [Step 3](https://colab.research.google.com/drive/1dUoIill4aUDSJGamXq4v0vcYu2gnynjp?authuser=1)
-
 CNSS (Computer Networks Simple Simulator) RC2020 Labs will use the CNSS tool for part of the semester. CNSS makes it possible to code and simulate simple networking protocols. The simulation results are deterministic and repeatable, making it easier to reproduce and interpret them.
 As you will see, CNSS is a piece of software that you will use in some of your work-assignments. It is a simple Network Simulation tool, allowing the definition of a network topology (defined in configuration files), with nodes interconneted by links. With CNSS you can program the processing behavior of nodes in the defined network and implementing protocolos involving message flows between different nodes.
 
 CNSS is written in Java 8. The source code is publicly available and hosted at GitHub.
+
+*Obs) You have this Assignment-0 (composed by 3 STEPS) also available as a Live-Version using a Jupyter Notebook / Google Collaboratory.
+     You can try using the following links:*
+     
+     [STEP 1]: [CNSS: Fetching and Setup](https://colab.research.google.com/drive/1W4v1QbdbXsLJg0TRIe6gX__gQ5H3eoDH?authuser=1/).
+     [Step 2](https://colab.research.google.com/drive/1UJL8ajF0E0tfi1v79598DIwfjkGmJTXV?authuser=1)
+     [Step 3](https://colab.research.google.com/drive/1dUoIill4aUDSJGamXq4v0vcYu2gnynjp?authuser=1)
+
 
 # STEP 1) Fetch and Setup the CNSS Simulator
 
