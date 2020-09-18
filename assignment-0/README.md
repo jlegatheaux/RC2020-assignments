@@ -79,16 +79,16 @@ Then you are ready to compile and run the simulator using the (emptu) configurat
 
 ```
 javac -d cnss-classes cnss/CNSS/src///*.java
-
 ```
 Then you will see as output the following log ...
 
+```
 Loading configuration : empty.config.txt Reading file empty.config.txt
 
 simulation starts - first processing step with clock = 0
 
 simulation ended - last processing step with clock = 0
-
+```
 Ok, great, if you see the above log, you concluded the setup of CNSS.
 You are ready to go to STEP 2, to know more about the CNSS simulations and programming with CNSS.
 
@@ -112,8 +112,7 @@ As a bare minimum, we only need to provide a public no-args constructor and impl
 
 As an example, consider the following class:
 
-``
-
+```
 %%writefile MinimalNode.java
 
 import java.util.Arrays;
@@ -142,6 +141,7 @@ In the initialize method we pass the arguments to the superclass to be stored in
 
 As mentioned in Step1, in the configuration file we add nodes to a simulation, using the following syntax; each in a separate line:
 
+```
 node <id> <interfaces> <control-class> <application-class> <arg1> ... <argn>
 
 where:
@@ -150,15 +150,18 @@ where:
 <control-class> is the class providing the default routing logic for the interfaces;
 <application-class>is the class that implements the node high-level logic;
 <arg1> ... is a space separated list of string arguments
+```
 
 ### Example of a Configuration File
 
 The example below shows a configuration file for a simulation that will have 2 nodes. EndSystemControl is a sample control-class already provided by the CNSS simulator.
 
+```
 %%writefile minimal-node.config.txt
 
 node 0 0 cnss.lib.EndSystemControl MinimalNode arg1 arg2 
 node 1 0 cnss.lib.EndSystemControl MinimalNode arg3 arg4
+```
 
 ### Simulation Execution
 
@@ -167,17 +170,18 @@ The following Unix commands compile and execute the simulator
 
 Remembering: to fetch and compile the simulator (do you have it already done in Step 1 ?)
 
+```
 $ git clone https://github.com/jlegatheaux/cnss.git 2> /dev/null || git -C cnss pull
 $ javac -d cnss-classes cnss/src/*/*/*.java
-
+```
 Now you can compile your Minimal Node (programmed above)
-
+```
 $ javac -cp .:cnss-classes MinimalNode.java
-
+```
 And then you can run the simulation with the node
-
+```
 java -cp .:cnss-classes cnss.simulator.Simulator minimal-node.config.txt
-
+```
 ### Periodic Actions
 
 Nodes can request a periodic action to be executed, periodically, ie., at regular intervals. 
@@ -186,7 +190,7 @@ This is done by:
 - Implementing the on_clock_tick method with the desired behavior to be executed periodically.
 
 Example:
-
+```
 %%writefile PeriodicActionNode.java
 
 import java.util.Arrays;
@@ -209,11 +213,11 @@ public class PeriodicActionNode extends AbstractApplicationAlgorithm {
   }
 
 }
-
+```
 In the updated example above, we request that on_clock_tick to be called every 1500 milliseconds, as measured in simulation virtual time (not realtime).
 
 The updated configuration below, adds a stop parameter line to terminate the simulation after 10 000 milliseconds of virtual time.
-
+```
 %%writefile periodic-action.config.txt
 
 node 0 0 cnss.lib.EndSystemControl PeriodicActionNode 
@@ -222,20 +226,20 @@ node 1 0 cnss.lib.EndSystemControl PeriodicActionNode
 parameter stop 10000
 
 Try to understand what is defined in the configuration file.
-
+```
 ### Compilation and execution 
 
 The same as above, but now for the new configuration file and for the programmed Periodic Actions.
 
 %%bash
-
+```
 CNSS Fetching and compilation (as already done)
 $git clone https://github.com/jlegatheaux/cnss.git 2> /dev/null || git -C cnss pull
 $javac -d cnss-classes cnss/src/*/*/*.java
 
 $javac -cp .:cnss-classes PeriodicActionNode.java
 $java -cp .:cnss-classes cnss.simulator.Simulator periodic-action.config.txt
-
+```
 ### Timeout Events
 
 Application nodes can also schedule an operation to execute in the future, by setting a timeout. 
@@ -245,7 +249,7 @@ When the timeout deadline expires, the `on_timeout()` method, the node implement
 Timeout events are automatically cancelled in some cases that will be discussed later on...
 
 ### Example using Timeout events
-
+```
 %%writefile TimeoutHandlingNode.java
 
 import java.util.Arrays;
@@ -269,19 +273,19 @@ public class TimeoutHandlingNode extends AbstractApplicationAlgorithm {
   }
 
 }
-
+```
 
 Now we define the configuration file:
-
+```
 %%writefile timeout-handling.config.txt
 
 node 0 0 cnss.lib.EndSystemControl TimeoutHandlingNode 
 node 1 0 cnss.lib.EndSystemControl TimeoutHandlingNode
 
 parameter stop 10000
-
+```
 And then we can execute the simulation to see the effect ...
-
+```
 %%bash
 
 Fetching and compiling the simulator (the same as above)
@@ -290,8 +294,9 @@ $javac -d cnss-classes cnss/src/*/*/*.java
 
 $javac -cp .:cnss-classes TimeoutHandlingNode.java
 $java -cp .:cnss-classes cnss.simulator.Simulator timeout-handling.config.txt
+```
 
-See the output log and you must interpret whet is there ...
+See the output log. You must interpret and analyze what is there ...
 
 Ok, now you concluded the STEP 2 for the Assignment 0. Is time to take a break amd then you go for the last STEP 3
 
@@ -301,6 +306,7 @@ Now we will learn a little bit more on Nodes and Links.
 
 Let's go for the following eaxmple of a SelfSenderNode.
 
+```
 %%writefile SelfSenderNode.java
 
 import java.util.Arrays;
@@ -327,30 +333,30 @@ public class SelfSenderNode extends AbstractApplicationAlgorithm {
     log( now, "got: " + p); 
   }
 } 
-
+```
 As "usually" you need a Configuration file (that now you know what is there):
-
+```
 %%writefile self-sender.config.txt
 
 node 0 0 cnss.lib.EndSystemControl SelfSenderNode 
 
 parameter stop 8000
-
+```
 
 You will compile and run following what you have learned in STEPS 1 and 2.
-
+```
 $git clone https://github.com/jlegatheaux/cnss.git 2> /dev/null || git -C cnss pull
 $javac -d cnss-classes cnss/src/*/*/*.java
 
 $javac -cp .:cnss-classes SelfSenderNode.java
 $java -cp .:cnss-classes cnss.simulator.Simulator self-sender.config.txt
-
+```
 ### Network Links
 
 To simulate a network we need network links. Links interconnect nodes by linking two interfaces.
 
 In the following configuration file we add links to a simulation, using the following syntax; each in a separate line:
-
+```
 link <id1>.<interface1> <id2>.<interface2> <latency> <bandwidth> <error_rate> <jitter>
 where:
 <id1> and <id2> identify the end nodes of the link;
@@ -359,14 +365,14 @@ where:
 <bandwidth> is the transmission rate of the link in bps;
 <error_rate> is the error rate in percent;
 <jitter> is the jitter rate in percentage 
-
+```
 Remember the latency, bandwidth, error_rate and jitter notions from your background/lectures/theretical classes.
 
 ### Example with a Sender node and Receiver node
 
 The example below shows a configuration file for a simulation that will have 2 nodes, connected by a single link
 with certain defined characteristics:
-
+```
 %%writefile one-link.config.txt
 
 node 0 1 cnss.lib.EndSystemControl SenderNode 
@@ -376,9 +382,10 @@ link 0.0 1.0 1000000 125 0 0
 
 parameter stop 10000
 	
-
+```
 Now we will have a Node (SenderNode) that will send messages in the network
 
+```
 %%writefile SenderNode.java
 
 import java.util.Arrays;
@@ -400,9 +407,10 @@ public class SenderNode extends AbstractApplicationAlgorithm {
       self.send(self.createDataPacket( 1, new byte[0]));
   }
 } 
-
+```
 And we have a Receiver node - the node that will receive the messages from the sender:
 
+```
 %%writefile ReceiverNode.java
 
 import java.util.Arrays;
@@ -424,9 +432,10 @@ public class ReceiverNode extends AbstractApplicationAlgorithm {
     log( now, "got: " + p); 
   }
 } 
-
+```
 Now we will compile, and run the somulation
 
+```
 %%bash
 Fetchig the CNSS repository and compile it (or already done, Steps 1,2)
 $git clone https://github.com/jlegatheaux/cnss.git 2> /dev/null || git -C cnss pull
@@ -437,7 +446,7 @@ Let us go to compile the Nodes:
 $javac -cp .:cnss-classes SenderNode.java
 $javac -cp .:cnss-classes ReceiverNode.java
 $java -cp .:cnss-classes cnss.simulator.Simulator one-link.config.txt
-
+```
 See the log and try to understand what is going on.
 
 ### Switches
@@ -450,6 +459,7 @@ Whereas, the [FloodingSwControl](https://github.com/jlegatheaux/cnss/blob/master
 
 The configuration file we will use in this example is:
 
+```
 %%writefile two-links.config.txt
 
 node 0 1 cnss.lib.EndSystemControl SenderNode 
@@ -460,7 +470,7 @@ link 0.0 2.0 1000000 125 0 0
 link 2.1 1.0 1000000 500 0 0
 
 parameter stop 10000
-
+```
 
 And its done. You will have one switchinterconneting the Sender and Receiver Nodes in your Network.
 There is a link interconnecting the Sender node to the Swith and another link interconnecting the
@@ -468,6 +478,7 @@ Switch and the Receiver node.
 
 Go ahead: Cpmpile and Run ... 
 
+```
 $git clone https://github.com/jlegatheaux/cnss.git 2> /dev/null || git -C cnss pull
 $javac -d cnss-classes cnss/src/*/*/*.java
 
@@ -475,13 +486,13 @@ and the new stuff:
 $javac -cp .:cnss-classes SenderNode.java
 $javac -cp .:cnss-classes ReceiverNode.java
 $java -cp .:cnss-classes cnss.simulator.Simulator two-links.config.txt
-
+```
 #  Complementary tool
 
 The Python code below allows for opening a text console in another browser tab to access the machine where this notebook is running. It is useful to check the filesystem or run Unix commands interactively...
 
 So if you have python you can run it ...
-
+```
 !pip install kora
 from kora import console
 console.start()
