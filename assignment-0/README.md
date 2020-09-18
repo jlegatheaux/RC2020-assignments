@@ -8,14 +8,13 @@ CNSS is written in Java 8. The source code is publicly available and hosted at G
 
 *Obs) You have this Assignment-0 (composed by 3 STEPS) also available as a Live-Version using a Jupyter Notebook / Google Collaboratory.
       You can try using the following links:*
-     
+    
      Step 1 - CNSS Fetching and Setup:
         https://colab.research.google.com/drive/1W4v1QbdbXsLJg0TRIe6gX__gQ5H3eoDH?authuser=1
      Step 2 - More about CNSS and CNSS
      	https://colab.research.google.com/drive/1UJL8ajF0E0tfi1v79598DIwfjkGmJTXV?authuser=1
      Step 3 - More About CNSS Nodes
      	https://colab.research.google.com/drive/1dUoIill4aUDSJGamXq4v0vcYu2gnynjp?authuser=1
-
 
 ## STEP 1) Fetch and Setup the CNSS Simulator
 
@@ -33,13 +32,13 @@ You can use git (https://git-scm.com/) to clone the contents of the repository t
 
 ```
 $ git clone https://github.com/smduarte/cnss.git
-
+```
 This will create a directory cnss in the current directory with a local repository with the latest version.
 You can refresh and update the local repository, by executing the following command in the repository folder:
 
+```
 $ git -C cnss pull
 ```
-
 You must see .... Already up to date.
 
 ### For Eclipse Users
@@ -72,15 +71,16 @@ Later you will learn how to use this file to describe a "network topology".
 
 Here is a sequence of (shell) commands you can use:
 
-```
 To create an empty file:
-
+```
 $ echo > empty.config.txt
+```
+Then you are ready to compile and run the simulator using the (emptu) configuration file as a given argument
 
-Then you are ready to run the simulator using the (emptu) configuration file as a given argument
+```
+javac -d cnss-classes cnss/CNSS/src///*.java
 
-$ java -cp .:cnss-classes cnss.simulator.Simulator empty.config.txt
-
+```
 Then you will see as output the following log ...
 
 Loading configuration : empty.config.txt Reading file empty.config.txt
@@ -89,7 +89,8 @@ simulation starts - first processing step with clock = 0
 
 simulation ended - last processing step with clock = 0
 
-Ok, great, if you see the above log, you concluded the setup and your are reday to go to STEP 2, to know more about the CNSS simulations.
+Ok, great, if you see the above log, you concluded the setup of CNSS.
+You are ready to go to STEP 2, to know more about the CNSS simulations and programming with CNSS.
 
 
 ## STEP 2) More About CNSS (Computer Networks Simple Simulator)
@@ -111,6 +112,8 @@ As a bare minimum, we only need to provide a public no-args constructor and impl
 
 As an example, consider the following class:
 
+``
+
 %%writefile MinimalNode.java
 
 import java.util.Arrays;
@@ -130,6 +133,7 @@ public class MinimalNode extends AbstractApplicationAlgorithm {
 		return 0;
 	}
 } 
+```
 
 In the example, the public no-args constructor calls the super constructor with true, requesting logging to be enabled and providing the string minimal-node to be used as prefix identifying this node in log messages, in your simulation runtime.
 In the initialize method we pass the arguments to the superclass to be stored in superclass fields. The superclass provides a logging method we call to print that information.
