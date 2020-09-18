@@ -14,7 +14,7 @@ the important dates for submissions/delivery forms, as well as, individual evalu
   - Individual Assessment Form: (to be included), Submission on 30/Sep/20, 14h30-14h45 (15 min)
   - [Materials/Guidelines: ](assignment-0/README.md) 
 
-### Assignment 1: File Transfer Protocols (Stop&Wait model and a Sliding Window Protocols)
+### Assignment 1: File Transfer Protocols (Stop&Wait and Sliding Window Protocols)
   - Deadline: 11/Oct/20, 23h59
   - Delivery Form (to be included)
   - Individual Assessment Form: (to be included), Submission on 14/Oct/20, 14h30-14h45 (15 min)
