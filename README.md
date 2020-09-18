@@ -26,7 +26,7 @@ the important dates for submissions/delivery forms, as well as, individual evalu
   - Individual Assessment Form: (to be included), Submission on 28/Oct/20, 14h30-14h45 (15 min)
   - [Materials/Guidelines: ](assignment-2/README.md) 
   
-### Assignment 3: File Transfers using TCP and HTTP - A solution for efficient HTTOP transfer using Parallel Web (HTTP) Servers
+### Assignment 3: File Transfers using TCP and HTTP - A solution for HTTP file transfer using Parallel Web (HTTP) Servers
   - Deadline: 18/Nov/20, 23h59
   - Delivery Form (to be included)
   - Individual Assessment Form: (to be included), on 23/Nov/20, 14h30-14h45 (15 min)
