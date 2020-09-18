@@ -45,7 +45,7 @@ the important dates for submissions/delivery forms, as well as, individual evalu
   - Individual Assessment Form: (to be included), on 09/Dec/20, 14h30-14h45 (15 min)
   - [Materials/Guidelines: ](assignment-5/README.md) 
  
-### Assignment 6: Network Security - Analysis with NetFlow Traces
+### Assignment 6: Network Security - Security Analysis with NetFlow Traffic Traces
   - Deadline: 20/Dec/20, 23h59
   - Delivery Form (to be included)
   - Individual Assessment Form: (to be included), on Jan/21, Day/Hour to be defined (15 min)
