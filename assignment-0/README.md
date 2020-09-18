@@ -93,7 +93,7 @@ simulation starts - first processing step with clock = 0
 simulation ended - last processing step with clock = 0
 ```
 
-@octocat :+1: Ok, great, if you see the above log, you concluded the setup of CNSS.
+:+1: Ok, great, if you see the above log, you concluded the setup of CNSS.
 You are ready to go to STEP 2, to know more about the CNSS simulations and programming with CNSS. :smile:
 
 
@@ -302,7 +302,7 @@ $java -cp .:cnss-classes cnss.simulator.Simulator timeout-handling.config.txt
 
 See the output log. You must interpret and analyze what is there ...
 
-Ok, now you concluded the STEP 2 for the Assignment 0. Is time to take a break amd then you go for the last STEP 3
+:+1: Ok, now you concluded the STEP 2 for the Assignment 0. Is time to take a break amd then you go for the last STEP 3 ! :smiley:
 
 ## STEP 3) More About Programming Nodes in CNSS
 
@@ -501,9 +501,9 @@ So if you have python you can run it ...
 from kora import console
 console.start()
 ```
-Is it nice ?
+Is it nice ? :anguished:
 
-If you concluded everything suucessfully in Steps 1, 2 and 3 you did a well done job. 
+If you concluded everything suucessfully in Steps 1, 2 and 3 :clap: you did a well done job. 
 Congratulations you are a "mini" expert on the CNSS simulator. You are ready to go for the next week activities
 and to program your future simulations and programming exercises.
 
