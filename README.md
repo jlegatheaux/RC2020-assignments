@@ -47,7 +47,7 @@ the important dates for submissions/delivery forms, as well as, individual evalu
 ### Assignment 6
   - Deadline: 20/Dec/20, 23h59
   - Delivery Form (to be included)
-  - Individual Assessment Form: (to be included), on Jan/21, Day/Hour to be defined
+  - Individual Assessment Form: (to be included), on Jan/21, Day/Hour to be defined (15 min)
   - [Materials/Guidelines: ](assignment-6/README.md) 
 
 
