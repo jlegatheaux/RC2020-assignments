@@ -8,37 +8,37 @@ See also the RC Course Main Page (https://sites.google.com/campus.fct.unl.pt/rc-
 also find the reference informayion on assignment (https://sites.google.com/campus.fct.unl.pt/rc-2020/assignments?authuser=0),
 the important dates for submissions/delivery forms, as well as, individual evaluation forms that each student must submitt.
 
-###Assignment 1 
+### Assignment 1 
   Deadline: 27/Sep/20
   Delivery Form
   Individual Assessment Form: 
   Materials/Guidelines: 
   
-###Assignment 2
+### Assignment 2
   Deadline: 27/Sep/20
   Delivery Form
   Individual Assessment Form: 
   Materials/Guidelines: 
   
-###Assignment 3
+### Assignment 3
   Deadline: 27/Sep/20
   Delivery Form
   Individual Assessment Form: 
   Materials/Guidelines: 
   
-###Assignment 4
+### Assignment 4
   Deadline: 27/Sep/20
   Delivery Form
   Individual Assessment Form: 
   Materials/Guidelines: 
   
-###Assignment 5
+### Assignment 5
   Deadline: 27/Sep/20
   Delivery Form
   Individual Assessment Form: 
   Materials/Guidelines:
   
-###Assignment 6
+### Assignment 6
   Deadline: 27/Sep/20
   Delivery Form
   Individual Assessment Form: 
