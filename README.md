@@ -8,7 +8,7 @@ See also the RC Course Main Page (https://sites.google.com/campus.fct.unl.pt/rc-
 also find the reference informayion on assignment (https://sites.google.com/campus.fct.unl.pt/rc-2020/assignments?authuser=0),
 the important dates for submissions/delivery forms, as well as, individual evaluation forms that each student must submitt.
 
-### Assignment 0: CNSS Simulator - Setup, Programming and Initial Simulartons
+### Assignment 0: CNSS Simulator - Setup, Programming and Initial Simulations
   - Deadline: 27/Sep/20, 23h59
   - Delivery Form: (to be included)
   - Individual Assessment Form: (to be included), Submission on 30/Sep/20, 14h30-14h45 (15 min)
