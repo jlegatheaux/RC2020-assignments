@@ -496,11 +496,11 @@ So if you have python you can run it ...
 !pip install kora
 from kora import console
 console.start()
-
+```
 Is it nice ?
 
-If youy concluded everything suucessfully in Steps 1, 2 and 3 you did a well done job. 
-Congratulations you are a "mini" expert on the CNSS simulator and you are ready to go for the next week activities
+If you concluded everything suucessfully in Steps 1, 2 and 3 you did a well done job. 
+Congratulations you are a "mini" expert on the CNSS simulator. You are ready to go for the next week activities
 and to program your future simulations and programming exercises.
 
 At the same time you are ready to answer to the Evaluation Form abojut your Findings and Results (See in the Webpage of the course
