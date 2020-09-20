@@ -2,7 +2,7 @@
 ## Setup and use of CNSS (Computer Networks Simple Simulator)
 
 RC2020 will use the CNSS tool for part of the semester and for some of your work-assignments and evaluation. CNSS makes it possible to code and simulate simple networking protocols. The simulation results are deterministic and repeatable, making it easier to reproduce and interpret them.
-As you will see, CNSS is a piece of software for a simple Network Simulation tool, allowing the definition of a network topology (defined in configuration files), with nodes interconneted by links. With CNSS you can program the processing behavior of nodes in the defined network and implementing protocolos involving message flows between different nodes.
+As you will see, CNSS is a piece of software for a simple Network Simulation tool, allowing the definition of a network topology (defined in configuration files), with nodes interconneted by links. With CNSS you can program the processing behavior of nodes in the defined network and implement protocols involving message flows between different nodes.
 
 CNSS is written in Java 8. The source code is publicly available and hosted at GitHub.
 For the Assignment 0 follow all the 3 steps below in this page.
@@ -23,34 +23,37 @@ In this asignment you will learn how to use CNSS.
 
 ### How can you obtain CNSS ?
 
-Fetching CNSS For those still unfamiliar with GitHub repositories, there are several ways to access the source code.
+For those still unfamiliar with GitHub repositories, there are several ways to access the source code.
 
-You can download a zip archive of the entire repository from here (https://github.com/jlegatheaux/cnss)
+You can [download a zip archive](https://github.com/jlegatheaux/cnss/archive/master.zip) of the entire repository;
 
-### Fetching by using the git tool (shell)
+#### Fetching by using the git tool (shell)
 
-You can use git (https://git-scm.com/) to clone the contents of the repository to a local directory, like so:
+You can use [git](https://git-scm.com/) to clone the contents of the repository to a local directory, like so:
 
+```sh
+$ git clone https://github.com/jlegatheaux/cnss.git
 ```
-$ git clone https://github.com/smduarte/cnss.git
-```
-This will create a directory cnss in the current directory with a local repository with the latest version.
+
+This will create a directory **cnss** in the current directory with a local repository with the latest version.
 You can refresh and update the local repository, by executing the following command in the repository folder:
 
-```
+```bash
 $ git -C cnss pull
 ```
-You must see .... Already up to date.
 
-### For Eclipse Users
+You must see `Already up to date.`
+
+#### For Eclipse Users
 
 CNSS can also be imported directly to Eclipse.
 
 For version 2020-06, the procedure is as follows:
 
-Copy the CNSS repository uri (https://github.com/jlegatheaux/cnss.git) into the clipboard; 
-Navigate: File > Import > Git, choose Projects from Git, then Next Choose Clone URI, then Next twice. 
-If asked, only select the master branch and press Next until finished.
+* Copy the CNSS repository uri (https://github.com/jlegatheaux/cnss.git) into the clipboard; 
+* Navigate: `File > Import > Git`, choose `Projects from Git`, then `Next`
+* Choose `Clone URI`, then `Next` twice. 
+* If asked, only select the `master` branch and press `Next` until finished.
 
 ### Compiling CNSS manually (Console)
 
@@ -59,7 +62,8 @@ CNSS has no external dependencies.
 At the root of the repository, the source code can be compiled in the command line (shell), like so:
 
 ```
-$ javac -d cnss-classes cnss/CNSS/src///*.java
+$ mkdir cnss-classes
+$ javac -d cnss-classes cnss/src/*/*/*.java
 obs) pay attention: The switch -d cnss-classes will place the resulting classes in the cnss-classes directory.
 ```
 
@@ -76,15 +80,16 @@ To create an empty file:
 ```
 $ echo > empty.config.txt
 ```
-Then you are ready to compile and run the simulator using the (emptu) configuration file as a given argument
+Then you are ready to compile and run the simulator using the (empty) configuration file as a given argument
 
 ```
-javac -d cnss-classes cnss/CNSS/src///*.java
+java -cp .:cnss-classes cnss.simulator.Simulator empty.config.txt
 ```
 Then you will see as output the following log ...
 
 ```
-Loading configuration : empty.config.txt Reading file empty.config.txt
+Loading configuration : empty.config.txt
+Reading file empty.config.txt
 
 simulation starts - first processing step with clock = 0
 
