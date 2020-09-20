@@ -476,11 +476,11 @@ link 2.1 1.0 1000000 500 0 0
 parameter stop 10000
 ```
 
-And its done. You will have one switchinterconneting the Sender and Receiver Nodes in your Network.
+And its done. You will have one switch interconneting the Sender and Receiver Nodes in your Network.
 There is a link interconnecting the Sender node to the Swith and another link interconnecting the
 Switch and the Receiver node.
 
-Go ahead: Cpmpile and Run ... 
+Go ahead: Compile and Run ... 
 
 ```
 $git clone https://github.com/jlegatheaux/cnss.git 2> /dev/null || git -C cnss pull
@@ -491,4 +491,8 @@ $javac -cp .:cnss-classes SenderNode.java
 $javac -cp .:cnss-classes ReceiverNode.java
 $java -cp .:cnss-classes cnss.simulator.Simulator two-links.config.txt
 ```
+
+You have completed the last step of this Assignment 0. 
+Thus, having completed all steps (1,2,3) you are ready to make and submit the individual evaluation of Assignment 0.
+Go ahead !
 
