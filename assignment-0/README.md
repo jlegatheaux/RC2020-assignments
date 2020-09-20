@@ -5,14 +5,17 @@ RC2020 will use the CNSS tool for part of the semester and for some of your work
 As you will see, CNSS is a piece of software for a simple Network Simulation tool, allowing the definition of a network topology (defined in configuration files), with nodes interconneted by links. With CNSS you can program the processing behavior of nodes in the defined network and implementing protocolos involving message flows between different nodes.
 
 CNSS is written in Java 8. The source code is publicly available and hosted at GitHub.
+For the Assignment 0 follow all the steps below in this page.
 
-Obs) You also have this Assignment-0 (composed by 3 STEPS) as a Live-Version
+----
+*Obs) You also have this Assignment-0 (composed by 3 STEPS) as a Live-Version
 using a Jupyter Notebook / Google Collaboratory.
-You can try using the following links:
+You can try using the following links:*
 
 - Step 1: [CNSS Fetching and Setup](https://colab.research.google.com/drive/1W4v1QbdbXsLJg0TRIe6gX__gQ5H3eoDH?authuser=1)
 - Step 2: [More about CNSS](https://colab.research.google.com/drive/1UJL8ajF0E0tfi1v79598DIwfjkGmJTXV?authuser=1)
 - Step 3: [More About CNSS and Programming Nodes and Links](https://colab.research.google.com/drive/1dUoIill4aUDSJGamXq4v0vcYu2gnynjp?authuser=1)
+------
 
 ## STEP 1) Fetch and Setup the CNSS Simulator
 
