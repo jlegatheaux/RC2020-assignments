@@ -7,8 +7,9 @@ As you will see, CNSS is a piece of software for a simple Network Simulation too
 CNSS is written in Java 8. The source code is publicly available and hosted at GitHub.
     
 ```
-*Obs) You have this Assignment-0 (composed by 3 STEPS) also available as a Live-Version using a Jupyter Notebook / Google Collaboratory.
-      You can try using the following links: *
+*Obs) You also have this Assignment-0 (composed by 3 STEPS) as a Live-Version
+using a Jupyter Notebook / Google Collaboratory.
+You can try using the following links:*
       
 Step 1: CNSS Fetching and Setup
 https://colab.research.google.com/drive/1W4v1QbdbXsLJg0TRIe6gX__gQ5H3eoDH?authuser=1
