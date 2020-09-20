@@ -5,10 +5,10 @@ RC2020 will use the CNSS tool for part of the semester and for some of your work
 As you will see, CNSS is a piece of software for a simple Network Simulation tool, allowing the definition of a network topology (defined in configuration files), with nodes interconneted by links. With CNSS you can program the processing behavior of nodes in the defined network and implementing protocolos involving message flows between different nodes.
 
 CNSS is written in Java 8. The source code is publicly available and hosted at GitHub.
-For the Assignment 0 follow all the steps below in this page.
+For the Assignment 0 follow all the 3 steps below in this page.
 
 ----
-*Obs) You also have this Assignment-0 (composed by 3 STEPS) as a Live-Version
+*Obs) You also have the Assignment-0 (3 STEPS) as a Live-Version
 using a Jupyter Notebook / Google Collaboratory.
 You can try using the following links:*
 
@@ -115,7 +115,6 @@ As a bare minimum, we only need to provide a public no-args constructor and impl
 As an example, consider the following class:
 
 ```
-%%writefile MinimalNode.java
 
 import java.util.Arrays;
 import cnss.simulator.*;
@@ -159,7 +158,6 @@ where:
 The example below shows a configuration file for a simulation that will have 2 nodes. EndSystemControl is a sample control-class already provided by the CNSS simulator.
 
 ```
-%%writefile minimal-node.config.txt
 
 node 0 0 cnss.lib.EndSystemControl MinimalNode arg1 arg2 
 node 1 0 cnss.lib.EndSystemControl MinimalNode arg3 arg4
@@ -193,7 +191,6 @@ This is done by:
 
 Example:
 ```
-%%writefile PeriodicActionNode.java
 
 import java.util.Arrays;
 import cnss.simulator.*;
@@ -220,7 +217,6 @@ In the updated example above, we request that on_clock_tick to be called every 1
 
 The updated configuration below, adds a stop parameter line to terminate the simulation after 10 000 milliseconds of virtual time.
 ```
-%%writefile periodic-action.config.txt
 
 node 0 0 cnss.lib.EndSystemControl PeriodicActionNode 
 node 1 0 cnss.lib.EndSystemControl PeriodicActionNode
@@ -233,7 +229,6 @@ Try to understand what is defined in the configuration file.
 
 The same as above, but now for the new configuration file and for the programmed Periodic Actions.
 
-%%bash
 ```
 CNSS Fetching and compilation (as already done)
 $git clone https://github.com/jlegatheaux/cnss.git 2> /dev/null || git -C cnss pull
@@ -252,7 +247,6 @@ Timeout events are automatically cancelled in some cases that will be discussed 
 
 ### Example using Timeout events
 ```
-%%writefile TimeoutHandlingNode.java
 
 import java.util.Arrays;
 import cnss.simulator.*;
@@ -279,7 +273,6 @@ public class TimeoutHandlingNode extends AbstractApplicationAlgorithm {
 
 Now we define the configuration file:
 ```
-%%writefile timeout-handling.config.txt
 
 node 0 0 cnss.lib.EndSystemControl TimeoutHandlingNode 
 node 1 0 cnss.lib.EndSystemControl TimeoutHandlingNode
@@ -288,7 +281,6 @@ parameter stop 10000
 ```
 And then we can execute the simulation to see the effect ...
 ```
-%%bash
 
 Fetching and compiling the simulator (the same as above)
 $git clone https://github.com/jlegatheaux/cnss.git 2> /dev/null || git -C cnss pull
@@ -309,7 +301,6 @@ Now we will learn a little bit more on Nodes and Links.
 Let's go for the following eaxmple of a SelfSenderNode.
 
 ```
-%%writefile SelfSenderNode.java
 
 import java.util.Arrays;
 import cnss.simulator.*;
@@ -338,7 +329,6 @@ public class SelfSenderNode extends AbstractApplicationAlgorithm {
 ```
 As "usually" you need a Configuration file (that now you know what is there):
 ```
-%%writefile self-sender.config.txt
 
 node 0 0 cnss.lib.EndSystemControl SelfSenderNode 
 
@@ -375,7 +365,6 @@ Remember the latency, bandwidth, error_rate and jitter notions from your backgro
 The example below shows a configuration file for a simulation that will have 2 nodes, connected by a single link
 with certain defined characteristics:
 ```
-%%writefile one-link.config.txt
 
 node 0 1 cnss.lib.EndSystemControl SenderNode 
 node 1 1 cnss.lib.EndSystemControl ReceiverNode
@@ -388,8 +377,6 @@ parameter stop 10000
 Now we will have a Node (SenderNode) that will send messages in the network
 
 ```
-%%writefile SenderNode.java
-
 import java.util.Arrays;
 import cnss.simulator.*;
 import cnss.lib.*;
@@ -413,7 +400,6 @@ public class SenderNode extends AbstractApplicationAlgorithm {
 And we have a Receiver node - the node that will receive the messages from the sender:
 
 ```
-%%writefile ReceiverNode.java
 
 import java.util.Arrays;
 import cnss.simulator.*;
@@ -438,7 +424,7 @@ public class ReceiverNode extends AbstractApplicationAlgorithm {
 Now we will compile, and run the somulation
 
 ```
-%%bash
+
 Fetchig the CNSS repository and compile it (or already done, Steps 1,2)
 $git clone https://github.com/jlegatheaux/cnss.git 2> /dev/null || git -C cnss pull
 4javac -d cnss-classes cnss/src/*/*/*.java
@@ -462,8 +448,6 @@ Whereas, the [FloodingSwControl](https://github.com/jlegatheaux/cnss/blob/master
 The configuration file we will use in this example is:
 
 ```
-%%writefile two-links.config.txt
-
 node 0 1 cnss.lib.EndSystemControl SenderNode 
 node 1 1 cnss.lib.EndSystemControl ReceiverNode
 node 2 2 cnss.lib.FloodingSwitch cnss.lib.EmptyApp
