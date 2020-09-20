@@ -1,8 +1,8 @@
 # Assignment 0
 ## Setup and use of CNSS (Computer Networks Simple Simulator)
 
-RC2020 Labs will use the CNSS tool for part of the semester and for some of your work-assignments and evaluation. CNSS makes it possible to code and simulate simple networking protocols. The simulation results are deterministic and repeatable, making it easier to reproduce and interpret them.
-As you will see, CNSS is a piece of software that you will use in some of your work-assignments. It is a simple Network Simulation tool, allowing the definition of a network topology (defined in configuration files), with nodes interconneted by links. With CNSS you can program the processing behavior of nodes in the defined network and implementing protocolos involving message flows between different nodes.
+RC2020 will use the CNSS tool for part of the semester and for some of your work-assignments and evaluation. CNSS makes it possible to code and simulate simple networking protocols. The simulation results are deterministic and repeatable, making it easier to reproduce and interpret them.
+As you will see, CNSS is a piece of software for a simple Network Simulation tool, allowing the definition of a network topology (defined in configuration files), with nodes interconneted by links. With CNSS you can program the processing behavior of nodes in the defined network and implementing protocolos involving message flows between different nodes.
 
 CNSS is written in Java 8. The source code is publicly available and hosted at GitHub.
 
