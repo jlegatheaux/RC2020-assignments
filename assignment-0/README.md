@@ -491,21 +491,4 @@ $javac -cp .:cnss-classes SenderNode.java
 $javac -cp .:cnss-classes ReceiverNode.java
 $java -cp .:cnss-classes cnss.simulator.Simulator two-links.config.txt
 ```
-#  Complementary tool
 
-The Python code below allows for opening a text console in another browser tab to access the machine where this notebook is running. It is useful to check the filesystem or run Unix commands interactively...
-
-So if you have python you can run it ...
-```
-!pip install kora
-from kora import console
-console.start()
-```
-Is it nice ? :anguished:
-
-If you concluded everything suucessfully in Steps 1, 2 and 3 :clap: you did a well done job. 
-Congratulations you are a "mini" expert on the CNSS simulator. You are ready to go for the next week activities
-and to program your future simulations and programming exercises.
-
-At the same time you are ready to answer to the Evaluation Form abojut your Findings and Results (See in the Webpage of the course
-(https://sites.google.com/campus.fct.unl.pt/rc-2020) about the dates to deliver you work and to submitt your evaluatuion form.
