@@ -8,7 +8,7 @@ CNSS is written in Java 8. The source code is publicly available and hosted at G
 For the Assignment 0 follow all the 3 steps below in this page.
 
 ----
-*Obs) You also have the Assignment-0 (3 STEPS) as a Live-Version
+*Obs) You also have the Assignment-0 (all the 3 STEPS) as a Live-Version
 using a Jupyter Notebook / Google Collaboratory.
 You can try using the following links:*
 
