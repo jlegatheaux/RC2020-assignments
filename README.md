@@ -1,6 +1,6 @@
 # Redes de Computadores - 2020/2021
 
-This repository has materials for the course assignments.
+This repository is the reference repository of the course prgramming assignments. Delivery dates are here indicated as below, as well as links for delivering your solutions. Course evaluation rules and offical dates are available in the CLIP page of the course. Support for solving them is provided in laboratory classes and using the [Piazza system page of the course](https://piazza.com/fct.unl.pt/fall2020/mieirc8149/home).
 
 ### Assignment 0: CNSS Simulator - Setup, Programming and Initial Simulations
   - Deadline: 27/Sep/20, 23h59
