@@ -7,4 +7,4 @@ RC2020 Labs will use CNSS for part of the semester (probably in 4 out of the 6 p
 
 In this assignment we will first cover the basics of CNSS. Firstly, how and where to fetch the source code, how to compile the code and execute the simulator. Then we will learn about the basic components: nodes and links that will be used to simulate simple computer networks and networking protocols.
 
-Open the notebook above (the file with extension .ipynb) and follow its instructions. You can also press the Open in Colab button in the file and execute it online using the Google Colab application.
+Open the notebook ** assignment-0.ipynb** above (the file with extension .ipynb) and follow its instructions. You can also press the Open in Colab button in the file and execute it online using the Google Colab application.
