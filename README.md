@@ -4,7 +4,7 @@ This repository is the reference repository of the course prgramming assignments
 
 ### Assignment 0: CNSS Simulator - Setup, Programming and Initial Simulations
   - Deadline: 27/Sep/20, 23h59
-  - Delivery Form: (to be included)
+  - Delivery Form: (https://forms.gle/t89L5hqNpyEbxe7XA)
   - Individual Assessment Form: (to be included), Submission on 30/Sep/20, 14h30-14h45 (15 min)
   - [Materials/Guidelines: ](assignment-0/README.md) 
 
