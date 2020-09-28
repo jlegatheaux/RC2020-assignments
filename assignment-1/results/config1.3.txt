@@ -1,0 +1,42 @@
+Loading configuration : src/assignment1/configs/config1.3.txt
+Reading file
+Created Node 0: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: assignment1.FilesSender
+Created Node 1: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: assignment1.FilesReceiver
+Created Node 2: 2 interf.s, ctr code: cnss.lib.FloodingSwitch app code: cnss.lib.EmptyApp
+Created Node 3: 2 interf.s, ctr code: cnss.lib.FloodingSwitch app code: cnss.lib.EmptyApp
+Added link to node 0 - Link (Node1:0 I1:0)<-->(Node2:2 I2:0) bwd: 2000000 bps lat: 20 ms error %: 0.0 jit %: 0.0 up
+Added link to node 2 - Link (Node1:0 I1:0)<-->(Node2:2 I2:0) bwd: 2000000 bps lat: 20 ms error %: 0.0 jit %: 0.0 up
+Added link to node 2 - Link (Node1:2 I1:1)<-->(Node2:3 I2:0) bwd: 2000000 bps lat: 20 ms error %: 0.0 jit %: 0.0 up
+Added link to node 3 - Link (Node1:2 I1:1)<-->(Node2:3 I2:0) bwd: 2000000 bps lat: 20 ms error %: 0.0 jit %: 0.0 up
+Added link to node 3 - Link (Node1:3 I1:1)<-->(Node2:1 I2:0) bwd: 2000000 bps lat: 20 ms error %: 0.0 jit %: 0.0 up
+Added link to node 1 - Link (Node1:3 I1:1)<-->(Node2:1 I2:0) bwd: 2000000 bps lat: 20 ms error %: 0.0 jit %: 0.0 up
+
+simulation starts - first processing step with clock = 0
+
+log: files-sender time 0 node 0 starting
+log: files-sender time 0 node 0 sent packet of size 10020 n. 1
+log: files-sender time 0 node 0 sent packet of size 10020 n. 2
+log: files-sender time 0 node 0 sent packet of size 10020 n. 3
+log: files-sender time 0 node 0 sent packet of size 10020 n. 4
+log: files-sender time 0 node 0 sent packet of size 10020 n. 5
+log: files-sender time 0 node 0 sent packet of size 10020 n. 6
+log: files-sender time 0 node 0 sent packet of size 10020 n. 7
+log: files-sender time 0 node 0 sent packet of size 10020 n. 8
+log: files-sender time 0 node 0 sent packet of size 10020 n. 9
+log: files-sender time 0 node 0 sent packet of size 10020 n. 10
+log: files-receiver time 0 node 1 starting
+log: files-receiver time 180 node 1 got: src 0 dst 1 type DATA ttl 30 seq 1 size 10020 n. 1
+log: files-receiver time 220 node 1 got: src 0 dst 1 type DATA ttl 30 seq 2 size 10020 n. 2
+log: files-receiver time 260 node 1 got: src 0 dst 1 type DATA ttl 30 seq 3 size 10020 n. 3
+log: files-receiver time 300 node 1 got: src 0 dst 1 type DATA ttl 30 seq 4 size 10020 n. 4
+log: files-receiver time 340 node 1 got: src 0 dst 1 type DATA ttl 30 seq 5 size 10020 n. 5
+log: files-receiver time 380 node 1 got: src 0 dst 1 type DATA ttl 30 seq 6 size 10020 n. 6
+log: files-receiver time 420 node 1 got: src 0 dst 1 type DATA ttl 30 seq 7 size 10020 n. 7
+log: files-receiver time 460 node 1 got: src 0 dst 1 type DATA ttl 30 seq 8 size 10020 n. 8
+log: files-receiver time 500 node 1 got: src 0 dst 1 type DATA ttl 30 seq 9 size 10020 n. 9
+log: files-receiver time 540 node 1 got: src 0 dst 1 type DATA ttl 30 seq 10 size 10020 n. 10
+log: files-sender time 60000 node 0 sent packet of size: 100200 n. 11
+log: files-receiver time 61260 node 1 got: src 0 dst 1 type DATA ttl 30 seq 11 size 100220 n. 11
+
+simulation ended - last processing step with clock = 61260
+

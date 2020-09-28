@@ -1,0 +1,326 @@
+Loading configuration : src/assignment1/configs/config1.9.txt
+Reading file
+Created Node 0: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: assignment1.NaifWindSender
+Created Node 1: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: assignment1.FilesReceiverAck
+Created Node 2: 2 interf.s, ctr code: cnss.lib.FloodingSwitch app code: cnss.lib.EmptyApp
+Created Node 3: 2 interf.s, ctr code: cnss.lib.FloodingSwitch app code: cnss.lib.EmptyApp
+Added link to node 0 - Link (Node1:0 I1:0)<-->(Node2:2 I2:0) bwd: 2000000 bps lat: 20 ms error %: 0.0 jit %: 0.0 up
+Added link to node 2 - Link (Node1:0 I1:0)<-->(Node2:2 I2:0) bwd: 2000000 bps lat: 20 ms error %: 0.0 jit %: 0.0 up
+Added link to node 2 - Link (Node1:2 I1:1)<-->(Node2:3 I2:0) bwd: 2000000 bps lat: 20 ms error %: 0.0 jit %: 0.0 up
+Added link to node 3 - Link (Node1:2 I1:1)<-->(Node2:3 I2:0) bwd: 2000000 bps lat: 20 ms error %: 0.0 jit %: 0.0 up
+Added link to node 3 - Link (Node1:3 I1:1)<-->(Node2:1 I2:0) bwd: 2000000 bps lat: 20 ms error %: 0.0 jit %: 0.0 up
+Added link to node 1 - Link (Node1:3 I1:1)<-->(Node2:1 I2:0) bwd: 2000000 bps lat: 20 ms error %: 0.0 jit %: 0.0 up
+
+simulation starts - first processing step with clock = 0
+
+log: naif-window-sender time 0 node 0 starting
+log: files-receiver time 0 node 1 starting
+log: naif-window-sender time 1 node 0 sent packet of size 10020 n. 1
+log: files-receiver time 181 node 1 got: src 0 dst 1 type DATA ttl 30 seq 1 size 10020 n: 1
+log: naif-window-sender time 241 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 1 size 25 pl: ack 1
+log: naif-window-sender time 241 node 0 sent packet of size 10020 n. 2
+log: files-receiver time 421 node 1 got: src 0 dst 1 type DATA ttl 30 seq 2 size 10020 n: 2
+log: naif-window-sender time 481 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 2 size 25 pl: ack 2
+log: naif-window-sender time 481 node 0 sent packet of size 10020 n. 3
+log: files-receiver time 661 node 1 got: src 0 dst 1 type DATA ttl 30 seq 3 size 10020 n: 3
+log: naif-window-sender time 721 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 3 size 25 pl: ack 3
+log: naif-window-sender time 721 node 0 sent packet of size 10020 n. 4
+log: files-receiver time 901 node 1 got: src 0 dst 1 type DATA ttl 30 seq 4 size 10020 n: 4
+log: naif-window-sender time 961 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 4 size 25 pl: ack 4
+log: naif-window-sender time 961 node 0 sent packet of size 10020 n. 5
+log: files-receiver time 1141 node 1 got: src 0 dst 1 type DATA ttl 30 seq 5 size 10020 n: 5
+log: naif-window-sender time 1201 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 5 size 25 pl: ack 5
+log: naif-window-sender time 1201 node 0 sent packet of size 10020 n. 6
+log: files-receiver time 1381 node 1 got: src 0 dst 1 type DATA ttl 30 seq 6 size 10020 n: 6
+log: naif-window-sender time 1441 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 6 size 25 pl: ack 6
+log: naif-window-sender time 1441 node 0 sent packet of size 10020 n. 7
+log: files-receiver time 1621 node 1 got: src 0 dst 1 type DATA ttl 30 seq 7 size 10020 n: 7
+log: naif-window-sender time 1681 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 7 size 25 pl: ack 7
+log: naif-window-sender time 1681 node 0 sent packet of size 10020 n. 8
+log: files-receiver time 1861 node 1 got: src 0 dst 1 type DATA ttl 30 seq 8 size 10020 n: 8
+log: naif-window-sender time 1921 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 8 size 25 pl: ack 8
+log: naif-window-sender time 1921 node 0 sent packet of size 10020 n. 9
+log: files-receiver time 2101 node 1 got: src 0 dst 1 type DATA ttl 30 seq 9 size 10020 n: 9
+log: naif-window-sender time 2161 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 9 size 25 pl: ack 9
+log: naif-window-sender time 2161 node 0 sent packet of size 10020 n. 10
+log: files-receiver time 2341 node 1 got: src 0 dst 1 type DATA ttl 30 seq 10 size 10020 n: 10
+log: naif-window-sender time 2401 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 10 size 26 pl: ack 10
+log: naif-window-sender time 2401 node 0 sent packet of size 10020 n. 11
+log: files-receiver time 2581 node 1 got: src 0 dst 1 type DATA ttl 30 seq 11 size 10020 n: 11
+log: naif-window-sender time 2641 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 11 size 26 pl: ack 11
+log: naif-window-sender time 2641 node 0 sent packet of size 10020 n. 12
+log: files-receiver time 2821 node 1 got: src 0 dst 1 type DATA ttl 30 seq 12 size 10020 n: 12
+log: naif-window-sender time 2881 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 12 size 26 pl: ack 12
+log: naif-window-sender time 2881 node 0 sent packet of size 10020 n. 13
+log: files-receiver time 3061 node 1 got: src 0 dst 1 type DATA ttl 30 seq 13 size 10020 n: 13
+log: naif-window-sender time 3121 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 13 size 26 pl: ack 13
+log: naif-window-sender time 3121 node 0 sent packet of size 10020 n. 14
+log: files-receiver time 3301 node 1 got: src 0 dst 1 type DATA ttl 30 seq 14 size 10020 n: 14
+log: naif-window-sender time 3361 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 14 size 26 pl: ack 14
+log: naif-window-sender time 3361 node 0 sent packet of size 10020 n. 15
+log: files-receiver time 3541 node 1 got: src 0 dst 1 type DATA ttl 30 seq 15 size 10020 n: 15
+log: naif-window-sender time 3601 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 15 size 26 pl: ack 15
+log: naif-window-sender time 3601 node 0 sent packet of size 10020 n. 16
+log: files-receiver time 3781 node 1 got: src 0 dst 1 type DATA ttl 30 seq 16 size 10020 n: 16
+log: naif-window-sender time 3841 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 16 size 26 pl: ack 16
+log: naif-window-sender time 3841 node 0 sent packet of size 10020 n. 17
+log: files-receiver time 4021 node 1 got: src 0 dst 1 type DATA ttl 30 seq 17 size 10020 n: 17
+log: naif-window-sender time 4081 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 17 size 26 pl: ack 17
+log: naif-window-sender time 4081 node 0 sent packet of size 10020 n. 18
+log: files-receiver time 4261 node 1 got: src 0 dst 1 type DATA ttl 30 seq 18 size 10020 n: 18
+log: naif-window-sender time 4321 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 18 size 26 pl: ack 18
+log: naif-window-sender time 4321 node 0 sent packet of size 10020 n. 19
+log: files-receiver time 4501 node 1 got: src 0 dst 1 type DATA ttl 30 seq 19 size 10020 n: 19
+log: naif-window-sender time 4561 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 19 size 26 pl: ack 19
+log: naif-window-sender time 4561 node 0 sent packet of size 10020 n. 20
+log: files-receiver time 4741 node 1 got: src 0 dst 1 type DATA ttl 30 seq 20 size 10020 n: 20
+log: naif-window-sender time 4801 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 20 size 26 pl: ack 20
+log: naif-window-sender time 4801 node 0 sent packet of size 10020 n. 21
+log: files-receiver time 4981 node 1 got: src 0 dst 1 type DATA ttl 30 seq 21 size 10020 n: 21
+log: naif-window-sender time 5041 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 21 size 26 pl: ack 21
+log: naif-window-sender time 5041 node 0 sent packet of size 10020 n. 22
+log: files-receiver time 5221 node 1 got: src 0 dst 1 type DATA ttl 30 seq 22 size 10020 n: 22
+log: naif-window-sender time 5281 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 22 size 26 pl: ack 22
+log: naif-window-sender time 5281 node 0 sent packet of size 10020 n. 23
+log: files-receiver time 5461 node 1 got: src 0 dst 1 type DATA ttl 30 seq 23 size 10020 n: 23
+log: naif-window-sender time 5521 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 23 size 26 pl: ack 23
+log: naif-window-sender time 5521 node 0 sent packet of size 10020 n. 24
+log: files-receiver time 5701 node 1 got: src 0 dst 1 type DATA ttl 30 seq 24 size 10020 n: 24
+log: naif-window-sender time 5761 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 24 size 26 pl: ack 24
+log: naif-window-sender time 5761 node 0 sent packet of size 10020 n. 25
+log: files-receiver time 5941 node 1 got: src 0 dst 1 type DATA ttl 30 seq 25 size 10020 n: 25
+log: naif-window-sender time 6001 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 25 size 26 pl: ack 25
+log: naif-window-sender time 6001 node 0 sent packet of size 10020 n. 26
+log: files-receiver time 6181 node 1 got: src 0 dst 1 type DATA ttl 30 seq 26 size 10020 n: 26
+log: naif-window-sender time 6241 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 26 size 26 pl: ack 26
+log: naif-window-sender time 6241 node 0 sent packet of size 10020 n. 27
+log: files-receiver time 6421 node 1 got: src 0 dst 1 type DATA ttl 30 seq 27 size 10020 n: 27
+log: naif-window-sender time 6481 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 27 size 26 pl: ack 27
+log: naif-window-sender time 6481 node 0 sent packet of size 10020 n. 28
+log: files-receiver time 6661 node 1 got: src 0 dst 1 type DATA ttl 30 seq 28 size 10020 n: 28
+log: naif-window-sender time 6721 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 28 size 26 pl: ack 28
+log: naif-window-sender time 6721 node 0 sent packet of size 10020 n. 29
+log: files-receiver time 6901 node 1 got: src 0 dst 1 type DATA ttl 30 seq 29 size 10020 n: 29
+log: naif-window-sender time 6961 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 29 size 26 pl: ack 29
+log: naif-window-sender time 6961 node 0 sent packet of size 10020 n. 30
+log: files-receiver time 7141 node 1 got: src 0 dst 1 type DATA ttl 30 seq 30 size 10020 n: 30
+log: naif-window-sender time 7201 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 30 size 26 pl: ack 30
+log: naif-window-sender time 7201 node 0 sent packet of size 10020 n. 31
+log: files-receiver time 7381 node 1 got: src 0 dst 1 type DATA ttl 30 seq 31 size 10020 n: 31
+log: naif-window-sender time 7441 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 31 size 26 pl: ack 31
+log: naif-window-sender time 7441 node 0 sent packet of size 10020 n. 32
+log: files-receiver time 7621 node 1 got: src 0 dst 1 type DATA ttl 30 seq 32 size 10020 n: 32
+log: naif-window-sender time 7681 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 32 size 26 pl: ack 32
+log: naif-window-sender time 7681 node 0 sent packet of size 10020 n. 33
+log: files-receiver time 7861 node 1 got: src 0 dst 1 type DATA ttl 30 seq 33 size 10020 n: 33
+log: naif-window-sender time 7921 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 33 size 26 pl: ack 33
+log: naif-window-sender time 7921 node 0 sent packet of size 10020 n. 34
+log: files-receiver time 8101 node 1 got: src 0 dst 1 type DATA ttl 30 seq 34 size 10020 n: 34
+log: naif-window-sender time 8161 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 34 size 26 pl: ack 34
+log: naif-window-sender time 8161 node 0 sent packet of size 10020 n. 35
+log: files-receiver time 8341 node 1 got: src 0 dst 1 type DATA ttl 30 seq 35 size 10020 n: 35
+log: naif-window-sender time 8401 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 35 size 26 pl: ack 35
+log: naif-window-sender time 8401 node 0 sent packet of size 10020 n. 36
+log: files-receiver time 8581 node 1 got: src 0 dst 1 type DATA ttl 30 seq 36 size 10020 n: 36
+log: naif-window-sender time 8641 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 36 size 26 pl: ack 36
+log: naif-window-sender time 8641 node 0 sent packet of size 10020 n. 37
+log: files-receiver time 8821 node 1 got: src 0 dst 1 type DATA ttl 30 seq 37 size 10020 n: 37
+log: naif-window-sender time 8881 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 37 size 26 pl: ack 37
+log: naif-window-sender time 8881 node 0 sent packet of size 10020 n. 38
+log: files-receiver time 9061 node 1 got: src 0 dst 1 type DATA ttl 30 seq 38 size 10020 n: 38
+log: naif-window-sender time 9121 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 38 size 26 pl: ack 38
+log: naif-window-sender time 9121 node 0 sent packet of size 10020 n. 39
+log: files-receiver time 9301 node 1 got: src 0 dst 1 type DATA ttl 30 seq 39 size 10020 n: 39
+log: naif-window-sender time 9361 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 39 size 26 pl: ack 39
+log: naif-window-sender time 9361 node 0 sent packet of size 10020 n. 40
+log: files-receiver time 9541 node 1 got: src 0 dst 1 type DATA ttl 30 seq 40 size 10020 n: 40
+log: naif-window-sender time 9601 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 40 size 26 pl: ack 40
+log: naif-window-sender time 9601 node 0 sent packet of size 10020 n. 41
+log: files-receiver time 9781 node 1 got: src 0 dst 1 type DATA ttl 30 seq 41 size 10020 n: 41
+log: naif-window-sender time 9841 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 41 size 26 pl: ack 41
+log: naif-window-sender time 9841 node 0 sent packet of size 10020 n. 42
+log: files-receiver time 10021 node 1 got: src 0 dst 1 type DATA ttl 30 seq 42 size 10020 n: 42
+log: naif-window-sender time 10081 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 42 size 26 pl: ack 42
+log: naif-window-sender time 10081 node 0 sent packet of size 10020 n. 43
+log: files-receiver time 10261 node 1 got: src 0 dst 1 type DATA ttl 30 seq 43 size 10020 n: 43
+log: naif-window-sender time 10321 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 43 size 26 pl: ack 43
+log: naif-window-sender time 10321 node 0 sent packet of size 10020 n. 44
+log: files-receiver time 10501 node 1 got: src 0 dst 1 type DATA ttl 30 seq 44 size 10020 n: 44
+log: naif-window-sender time 10561 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 44 size 26 pl: ack 44
+log: naif-window-sender time 10561 node 0 sent packet of size 10020 n. 45
+log: files-receiver time 10741 node 1 got: src 0 dst 1 type DATA ttl 30 seq 45 size 10020 n: 45
+log: naif-window-sender time 10801 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 45 size 26 pl: ack 45
+log: naif-window-sender time 10801 node 0 sent packet of size 10020 n. 46
+log: files-receiver time 10981 node 1 got: src 0 dst 1 type DATA ttl 30 seq 46 size 10020 n: 46
+log: naif-window-sender time 11041 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 46 size 26 pl: ack 46
+log: naif-window-sender time 11041 node 0 sent packet of size 10020 n. 47
+log: files-receiver time 11221 node 1 got: src 0 dst 1 type DATA ttl 30 seq 47 size 10020 n: 47
+log: naif-window-sender time 11281 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 47 size 26 pl: ack 47
+log: naif-window-sender time 11281 node 0 sent packet of size 10020 n. 48
+log: files-receiver time 11461 node 1 got: src 0 dst 1 type DATA ttl 30 seq 48 size 10020 n: 48
+log: naif-window-sender time 11521 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 48 size 26 pl: ack 48
+log: naif-window-sender time 11521 node 0 sent packet of size 10020 n. 49
+log: files-receiver time 11701 node 1 got: src 0 dst 1 type DATA ttl 30 seq 49 size 10020 n: 49
+log: naif-window-sender time 11761 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 49 size 26 pl: ack 49
+log: naif-window-sender time 11761 node 0 sent packet of size 10020 n. 50
+log: files-receiver time 11941 node 1 got: src 0 dst 1 type DATA ttl 30 seq 50 size 10020 n: 50
+log: naif-window-sender time 12001 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 50 size 26 pl: ack 50
+log: naif-window-sender time 12001 node 0 sent packet of size 10020 n. 51
+log: files-receiver time 12181 node 1 got: src 0 dst 1 type DATA ttl 30 seq 51 size 10020 n: 51
+log: naif-window-sender time 12241 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 51 size 26 pl: ack 51
+log: naif-window-sender time 12241 node 0 sent packet of size 10020 n. 52
+log: files-receiver time 12421 node 1 got: src 0 dst 1 type DATA ttl 30 seq 52 size 10020 n: 52
+log: naif-window-sender time 12481 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 52 size 26 pl: ack 52
+log: naif-window-sender time 12481 node 0 sent packet of size 10020 n. 53
+log: files-receiver time 12661 node 1 got: src 0 dst 1 type DATA ttl 30 seq 53 size 10020 n: 53
+log: naif-window-sender time 12721 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 53 size 26 pl: ack 53
+log: naif-window-sender time 12721 node 0 sent packet of size 10020 n. 54
+log: files-receiver time 12901 node 1 got: src 0 dst 1 type DATA ttl 30 seq 54 size 10020 n: 54
+log: naif-window-sender time 12961 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 54 size 26 pl: ack 54
+log: naif-window-sender time 12961 node 0 sent packet of size 10020 n. 55
+log: files-receiver time 13141 node 1 got: src 0 dst 1 type DATA ttl 30 seq 55 size 10020 n: 55
+log: naif-window-sender time 13201 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 55 size 26 pl: ack 55
+log: naif-window-sender time 13201 node 0 sent packet of size 10020 n. 56
+log: files-receiver time 13381 node 1 got: src 0 dst 1 type DATA ttl 30 seq 56 size 10020 n: 56
+log: naif-window-sender time 13441 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 56 size 26 pl: ack 56
+log: naif-window-sender time 13441 node 0 sent packet of size 10020 n. 57
+log: files-receiver time 13621 node 1 got: src 0 dst 1 type DATA ttl 30 seq 57 size 10020 n: 57
+log: naif-window-sender time 13681 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 57 size 26 pl: ack 57
+log: naif-window-sender time 13681 node 0 sent packet of size 10020 n. 58
+log: files-receiver time 13861 node 1 got: src 0 dst 1 type DATA ttl 30 seq 58 size 10020 n: 58
+log: naif-window-sender time 13921 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 58 size 26 pl: ack 58
+log: naif-window-sender time 13921 node 0 sent packet of size 10020 n. 59
+log: files-receiver time 14101 node 1 got: src 0 dst 1 type DATA ttl 30 seq 59 size 10020 n: 59
+log: naif-window-sender time 14161 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 59 size 26 pl: ack 59
+log: naif-window-sender time 14161 node 0 sent packet of size 10020 n. 60
+log: files-receiver time 14341 node 1 got: src 0 dst 1 type DATA ttl 30 seq 60 size 10020 n: 60
+log: naif-window-sender time 14401 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 60 size 26 pl: ack 60
+log: naif-window-sender time 14401 node 0 sent packet of size 10020 n. 61
+log: files-receiver time 14581 node 1 got: src 0 dst 1 type DATA ttl 30 seq 61 size 10020 n: 61
+log: naif-window-sender time 14641 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 61 size 26 pl: ack 61
+log: naif-window-sender time 14641 node 0 sent packet of size 10020 n. 62
+log: files-receiver time 14821 node 1 got: src 0 dst 1 type DATA ttl 30 seq 62 size 10020 n: 62
+log: naif-window-sender time 14881 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 62 size 26 pl: ack 62
+log: naif-window-sender time 14881 node 0 sent packet of size 10020 n. 63
+log: files-receiver time 15061 node 1 got: src 0 dst 1 type DATA ttl 30 seq 63 size 10020 n: 63
+log: naif-window-sender time 15121 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 63 size 26 pl: ack 63
+log: naif-window-sender time 15121 node 0 sent packet of size 10020 n. 64
+log: files-receiver time 15301 node 1 got: src 0 dst 1 type DATA ttl 30 seq 64 size 10020 n: 64
+log: naif-window-sender time 15361 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 64 size 26 pl: ack 64
+log: naif-window-sender time 15361 node 0 sent packet of size 10020 n. 65
+log: files-receiver time 15541 node 1 got: src 0 dst 1 type DATA ttl 30 seq 65 size 10020 n: 65
+log: naif-window-sender time 15601 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 65 size 26 pl: ack 65
+log: naif-window-sender time 15601 node 0 sent packet of size 10020 n. 66
+log: files-receiver time 15781 node 1 got: src 0 dst 1 type DATA ttl 30 seq 66 size 10020 n: 66
+log: naif-window-sender time 15841 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 66 size 26 pl: ack 66
+log: naif-window-sender time 15841 node 0 sent packet of size 10020 n. 67
+log: files-receiver time 16021 node 1 got: src 0 dst 1 type DATA ttl 30 seq 67 size 10020 n: 67
+log: naif-window-sender time 16081 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 67 size 26 pl: ack 67
+log: naif-window-sender time 16081 node 0 sent packet of size 10020 n. 68
+log: files-receiver time 16261 node 1 got: src 0 dst 1 type DATA ttl 30 seq 68 size 10020 n: 68
+log: naif-window-sender time 16321 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 68 size 26 pl: ack 68
+log: naif-window-sender time 16321 node 0 sent packet of size 10020 n. 69
+log: files-receiver time 16501 node 1 got: src 0 dst 1 type DATA ttl 30 seq 69 size 10020 n: 69
+log: naif-window-sender time 16561 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 69 size 26 pl: ack 69
+log: naif-window-sender time 16561 node 0 sent packet of size 10020 n. 70
+log: files-receiver time 16741 node 1 got: src 0 dst 1 type DATA ttl 30 seq 70 size 10020 n: 70
+log: naif-window-sender time 16801 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 70 size 26 pl: ack 70
+log: naif-window-sender time 16801 node 0 sent packet of size 10020 n. 71
+log: files-receiver time 16981 node 1 got: src 0 dst 1 type DATA ttl 30 seq 71 size 10020 n: 71
+log: naif-window-sender time 17041 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 71 size 26 pl: ack 71
+log: naif-window-sender time 17041 node 0 sent packet of size 10020 n. 72
+log: files-receiver time 17221 node 1 got: src 0 dst 1 type DATA ttl 30 seq 72 size 10020 n: 72
+log: naif-window-sender time 17281 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 72 size 26 pl: ack 72
+log: naif-window-sender time 17281 node 0 sent packet of size 10020 n. 73
+log: files-receiver time 17461 node 1 got: src 0 dst 1 type DATA ttl 30 seq 73 size 10020 n: 73
+log: naif-window-sender time 17521 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 73 size 26 pl: ack 73
+log: naif-window-sender time 17521 node 0 sent packet of size 10020 n. 74
+log: files-receiver time 17701 node 1 got: src 0 dst 1 type DATA ttl 30 seq 74 size 10020 n: 74
+log: naif-window-sender time 17761 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 74 size 26 pl: ack 74
+log: naif-window-sender time 17761 node 0 sent packet of size 10020 n. 75
+log: files-receiver time 17941 node 1 got: src 0 dst 1 type DATA ttl 30 seq 75 size 10020 n: 75
+log: naif-window-sender time 18001 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 75 size 26 pl: ack 75
+log: naif-window-sender time 18001 node 0 sent packet of size 10020 n. 76
+log: files-receiver time 18181 node 1 got: src 0 dst 1 type DATA ttl 30 seq 76 size 10020 n: 76
+log: naif-window-sender time 18241 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 76 size 26 pl: ack 76
+log: naif-window-sender time 18241 node 0 sent packet of size 10020 n. 77
+log: files-receiver time 18421 node 1 got: src 0 dst 1 type DATA ttl 30 seq 77 size 10020 n: 77
+log: naif-window-sender time 18481 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 77 size 26 pl: ack 77
+log: naif-window-sender time 18481 node 0 sent packet of size 10020 n. 78
+log: files-receiver time 18661 node 1 got: src 0 dst 1 type DATA ttl 30 seq 78 size 10020 n: 78
+log: naif-window-sender time 18721 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 78 size 26 pl: ack 78
+log: naif-window-sender time 18721 node 0 sent packet of size 10020 n. 79
+log: files-receiver time 18901 node 1 got: src 0 dst 1 type DATA ttl 30 seq 79 size 10020 n: 79
+log: naif-window-sender time 18961 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 79 size 26 pl: ack 79
+log: naif-window-sender time 18961 node 0 sent packet of size 10020 n. 80
+log: files-receiver time 19141 node 1 got: src 0 dst 1 type DATA ttl 30 seq 80 size 10020 n: 80
+log: naif-window-sender time 19201 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 80 size 26 pl: ack 80
+log: naif-window-sender time 19201 node 0 sent packet of size 10020 n. 81
+log: files-receiver time 19381 node 1 got: src 0 dst 1 type DATA ttl 30 seq 81 size 10020 n: 81
+log: naif-window-sender time 19441 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 81 size 26 pl: ack 81
+log: naif-window-sender time 19441 node 0 sent packet of size 10020 n. 82
+log: files-receiver time 19621 node 1 got: src 0 dst 1 type DATA ttl 30 seq 82 size 10020 n: 82
+log: naif-window-sender time 19681 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 82 size 26 pl: ack 82
+log: naif-window-sender time 19681 node 0 sent packet of size 10020 n. 83
+log: files-receiver time 19861 node 1 got: src 0 dst 1 type DATA ttl 30 seq 83 size 10020 n: 83
+log: naif-window-sender time 19921 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 83 size 26 pl: ack 83
+log: naif-window-sender time 19921 node 0 sent packet of size 10020 n. 84
+log: files-receiver time 20101 node 1 got: src 0 dst 1 type DATA ttl 30 seq 84 size 10020 n: 84
+log: naif-window-sender time 20161 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 84 size 26 pl: ack 84
+log: naif-window-sender time 20161 node 0 sent packet of size 10020 n. 85
+log: files-receiver time 20341 node 1 got: src 0 dst 1 type DATA ttl 30 seq 85 size 10020 n: 85
+log: naif-window-sender time 20401 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 85 size 26 pl: ack 85
+log: naif-window-sender time 20401 node 0 sent packet of size 10020 n. 86
+log: files-receiver time 20581 node 1 got: src 0 dst 1 type DATA ttl 30 seq 86 size 10020 n: 86
+log: naif-window-sender time 20641 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 86 size 26 pl: ack 86
+log: naif-window-sender time 20641 node 0 sent packet of size 10020 n. 87
+log: files-receiver time 20821 node 1 got: src 0 dst 1 type DATA ttl 30 seq 87 size 10020 n: 87
+log: naif-window-sender time 20881 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 87 size 26 pl: ack 87
+log: naif-window-sender time 20881 node 0 sent packet of size 10020 n. 88
+log: files-receiver time 21061 node 1 got: src 0 dst 1 type DATA ttl 30 seq 88 size 10020 n: 88
+log: naif-window-sender time 21121 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 88 size 26 pl: ack 88
+log: naif-window-sender time 21121 node 0 sent packet of size 10020 n. 89
+log: files-receiver time 21301 node 1 got: src 0 dst 1 type DATA ttl 30 seq 89 size 10020 n: 89
+log: naif-window-sender time 21361 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 89 size 26 pl: ack 89
+log: naif-window-sender time 21361 node 0 sent packet of size 10020 n. 90
+log: files-receiver time 21541 node 1 got: src 0 dst 1 type DATA ttl 30 seq 90 size 10020 n: 90
+log: naif-window-sender time 21601 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 90 size 26 pl: ack 90
+log: naif-window-sender time 21601 node 0 sent packet of size 10020 n. 91
+log: files-receiver time 21781 node 1 got: src 0 dst 1 type DATA ttl 30 seq 91 size 10020 n: 91
+log: naif-window-sender time 21841 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 91 size 26 pl: ack 91
+log: naif-window-sender time 21841 node 0 sent packet of size 10020 n. 92
+log: files-receiver time 22021 node 1 got: src 0 dst 1 type DATA ttl 30 seq 92 size 10020 n: 92
+log: naif-window-sender time 22081 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 92 size 26 pl: ack 92
+log: naif-window-sender time 22081 node 0 sent packet of size 10020 n. 93
+log: files-receiver time 22261 node 1 got: src 0 dst 1 type DATA ttl 30 seq 93 size 10020 n: 93
+log: naif-window-sender time 22321 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 93 size 26 pl: ack 93
+log: naif-window-sender time 22321 node 0 sent packet of size 10020 n. 94
+log: files-receiver time 22501 node 1 got: src 0 dst 1 type DATA ttl 30 seq 94 size 10020 n: 94
+log: naif-window-sender time 22561 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 94 size 26 pl: ack 94
+log: naif-window-sender time 22561 node 0 sent packet of size 10020 n. 95
+log: files-receiver time 22741 node 1 got: src 0 dst 1 type DATA ttl 30 seq 95 size 10020 n: 95
+log: naif-window-sender time 22801 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 95 size 26 pl: ack 95
+log: naif-window-sender time 22801 node 0 sent packet of size 10020 n. 96
+log: files-receiver time 22981 node 1 got: src 0 dst 1 type DATA ttl 30 seq 96 size 10020 n: 96
+log: naif-window-sender time 23041 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 96 size 26 pl: ack 96
+log: naif-window-sender time 23041 node 0 sent packet of size 10020 n. 97
+log: files-receiver time 23221 node 1 got: src 0 dst 1 type DATA ttl 30 seq 97 size 10020 n: 97
+log: naif-window-sender time 23281 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 97 size 26 pl: ack 97
+log: naif-window-sender time 23281 node 0 sent packet of size 10020 n. 98
+log: files-receiver time 23461 node 1 got: src 0 dst 1 type DATA ttl 30 seq 98 size 10020 n: 98
+log: naif-window-sender time 23521 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 98 size 26 pl: ack 98
+log: naif-window-sender time 23521 node 0 sent packet of size 10020 n. 99
+log: files-receiver time 23701 node 1 got: src 0 dst 1 type DATA ttl 30 seq 99 size 10020 n: 99
+log: naif-window-sender time 23761 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 99 size 26 pl: ack 99
+log: naif-window-sender time 23761 node 0 sent packet of size 10020 n. 100
+log: files-receiver time 23941 node 1 got: src 0 dst 1 type DATA ttl 30 seq 100 size 10020 n: 100
+log: naif-window-sender time 24001 node 0 ack packet: src 1 dst 0 type DATA ttl 30 seq 100 size 27 pl: ack 100
+log: naif-window-sender time 24001 node 0 1002000 bytes transferred in 24001 ms at 333986 bps e2e rate
+naif-window-sender sent 100 packets with blocks
+naif-window-sender 1002000 bytes transferred in 24001 ms at 333986 bps e2e rate
+files-receiver received 100 packets with blocks
+
+warning - 1 events not run; stoped too early?
+
+simulation ended - last processing step with clock = 30101
+
