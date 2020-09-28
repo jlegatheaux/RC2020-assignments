@@ -1,6 +1,6 @@
 
 # A network with a sender node and a receiver node interconnected
-# by two switches. All links have 1 Mbps bandwidth and 10 ms latency
+# by two switches. All links have 2 Mbps bandwidth and 20 ms latency.
 
 # uncomment if you want to see control algorithms traces
 # parameter trace   
