@@ -67,8 +67,8 @@ As an example, for downloading the IFB.mp4 movie trailer in your computer, from 
 ```
   $java GetFile http://localhost:8080/IFB.mp4 http://localhost:8081/IFB.mp4 http://localhost:8082/IFB.mp4 http://localhost:8083/IFB.mp4
 ```
-In your implementation you can implement whatever solution you prefer:
 
+In your implementation you can implement whatever solution you prefer:
 ```
   a) You can send a set of successive requests to the same server;
   
@@ -93,7 +93,7 @@ Optional: average size of the payload of each HTTP reply (in bytes)
 Optional: average time spent in each request/reply (in milliseconds)
 Use the following output format (where the values are only indicative):
 
-````
+```
   Total elapsed time (s):		    41.668
   
   Download size (bytes):		    14744835
@@ -101,7 +101,6 @@ Use the following output format (where the values are only indicative):
   End-to-end debit (Kbytes/s):	353.865
   
   Number of requests:		        4
-
 ```
 
 ### Delivery Rules:
