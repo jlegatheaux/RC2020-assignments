@@ -88,15 +88,10 @@ Note: each server only serve one client after the previous one (it’s not a con
 It is mandatory that your programs (delivery 1 and delivery 2 clients) ust collect and output the following statistics:
 
 - Time elapsed to complete the full transfer (in seconds)
-
 - Total number of bytes downloaded (in bytes)
-
 - End-to-end average bitrate of the full transfer (in bytes/sec)
-
 - Number of requests performed by the client during the file transfer
-
 - Optional: average size of the payload of each HTTP reply (in bytes)
-
 - Optional: average time spent in each request/reply (in milliseconds)
 
 Use the following output format (where the values are only indicative):
