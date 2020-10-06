@@ -7,14 +7,14 @@ For the assignment the final goal is to implement a Client/Server application fo
 clients can download files from several web-servers used in parallel, in order to maximize the file transfer rate. 
 For the assignmemt the implementation of the web-servers that will be provided as initial materal and the assignmemt consists in the developmet of the required client.
 
-***
 
->## Backgorund
->### Reference for programming with TCP Sockets in Java
->
->You can find a **tutorial on programming with Sockets in Java Language" in https://docs.oracle.com/javase/tutorial/networking/sockets/**
->Reember that for the work assignmemt you will be particularly focused on the develpment of clients using TCP sockets (supporting HTTP Requests/Responses) because the HTTP servers >to be used are provided in advance.
->You also have a convenient explanation in the text book of the course: **https://legatheaux.eu/book/cnfbook-pub.pdf, see chapter 5, section 5.3**.
+## Backgorund
+### Reference for programming with TCP Sockets in Java
+
+You can find a **tutorial on programming with Sockets in Java Language" in https://docs.oracle.com/javase/tutorial/networking/sockets/**
+Reember that for the work assignmemt you will be particularly focused on the develpment of clients using TCP sockets (supporting HTTP Requests/Responses) because the HTTP  
+servers >to be used are provided in advance.
+You also have a convenient explanation in the text book of the course: **https://legatheaux.eu/book/cnfbook-pub.pdf, see chapter 5, section 5.3**.
 >Complementarily you have these examples for your preliminary tests: **echo-client.java** and **echo-sever.java**:  a very simple client/server application implementing an ECHO >protocol. 
 >
 >### Reference for programming with HTTP using TCP Sockets
@@ -22,7 +22,7 @@ For the assignmemt the implementation of the web-servers that will be provided a
 >
 >For the operation of the HTTP protocol you must consider the explanation in the theoretical classes. You can also study the HTTP protocol in the course textbook: >**https://legatheaux.eu/book/cnfbook-pub.pdf, see chpter 12**. Pay a particular attention to HTTP requests/responses using RANGE REQUESTS. 
 >
-***
+
 
 ### Assignment Motivation
 
@@ -43,6 +43,7 @@ $java HttpTrickyServer
 
 As an example, for downloading the IFB.mp4 movie trailer in your computer, your client will be run in the following way:
   $java GetFile http://localhost:8080/IFB.mp4
+  
 
 ### SECOND Delivery 
 
@@ -51,14 +52,19 @@ For testing, you can start a pool of several servers in the same machine, runnin
 On Unix-like system you can use a command sequence like the following (all servers launched in background):
 
   $java HttpTrickyServer 8080 &
+  
   $java HttpTrickyServer 8081 &
+  
   $java HttpTrickyServer 8082 &
+  
   $java HttpTrickyServer 8083 &
+  
 
 Note: You can also use the available script to launch the four servers. See the script serverclusterstart.sh
 
 As an example, for downloading the IFB.mp4 movie trailer in your computer, from the above servers, also in your computer, your client will be run in the following way:
-java GetFile http://localhost:8080/IFB.mp4 http://localhost:8081/IFB.mp4 http://localhost:8082/IFB.mp4 http://localhost:8083/IFB.mp4
+
+  $java GetFile http://localhost:8080/IFB.mp4 http://localhost:8081/IFB.mp4 http://localhost:8082/IFB.mp4 http://localhost:8083/IFB.mp4
 
 In your implementation you can implement whatever solution you prefer:
   a) You can send a set of successive requests to the same server;
@@ -80,8 +86,11 @@ Optional: average time spent in each request/reply (in milliseconds)
 Use the following output format (where the values are only indicative):
 
   Total elapsed time (s):		    41.668
+  
   Download size (bytes):		    14744835
+  
   End-to-end debit (Kbytes/s):	353.865
+  
   Number of requests:		        4
 
 ### Delivery Rules:
