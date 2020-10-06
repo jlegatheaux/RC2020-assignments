@@ -23,7 +23,7 @@ As you know, HTTP is supported by the TCP transport protocol, and it operates in
 requests sent in the TCP connection previous estabished with the server. Clients must be able to receive HTTP responses, processing them according to the HTTP protocol (interpreting the HEADERS and CONTENTS in the RESPONSE).
 
 For the operation of the HTTP protocol you must consider the explanation in the theoretical classes. 
-- You can also study the HTTP protocol in the course textbook: - -**https://legatheaux.eu/book/cnfbook-pub.pdf, see chpter 12**. Pay a particular attention to HTTP requests/responses using RANGE REQUESTS. 
+- You can also study the HTTP protocol in the course textbook: **https://legatheaux.eu/book/cnfbook-pub.pdf, see chpter 12**, paying special attention to HTTP requests/responses using RANGE REQUESTS. 
 
 ### Assignment Motivation
 
