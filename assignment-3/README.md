@@ -67,12 +67,18 @@ As an example, for downloading the IFB.mp4 movie trailer in your computer, from 
   $java GetFile http://localhost:8080/IFB.mp4 http://localhost:8081/IFB.mp4 http://localhost:8082/IFB.mp4 http://localhost:8083/IFB.mp4
 
 In your implementation you can implement whatever solution you prefer:
+
   a) You can send a set of successive requests to the same server;
-  b) You can send requests to several different servers, for example in a round-robin way
-  c) You can send requests to several different servers, in parallel. 
-  d) Any other policy, according to the evolution of your experimental observations and decided optimizations
+  
+  b) You can send requests to several different servers, for example in a round-robin way;
+  
+  c) You can send requests to several different servers, in parallel;
+  
+  d) Any other policy, according to the evolution of your experimental observations and decided optimizations.
+  
 
 Note: each server only serve one client after the previous one (it’s not a concurrent server).
+
 
 ### Output statistics
 
