@@ -67,7 +67,7 @@ d) Any other policy, according to the evolution of your experimental observation
 
 Note: each server only serve one client after the previous one (it’s not a concurrent server).
 
-###Output statistics
+### Output statistics
 
 It is mandatory that your program collects the following informations:
 Time elapsed to complete the full transfer (in seconds)
@@ -83,12 +83,12 @@ Download size (bytes):		    14744835
 End-to-end debit (Kbytes/s):	353.865
 Number of requests:		        4
 
-###Delivery Rules:
+### Delivery Rules:
 
 The client can be completed and tested by students/groups (max t2o students). Groups will deliver the results and files using the submission form for thsi assignmemt 3.
 
 
-###Additional materials
+### Additional materials
 All the needed materials (testing files, programs, scripts, ...) for the assignmet are available in this GitHub repositpry.
 
 
