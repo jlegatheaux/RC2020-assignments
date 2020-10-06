@@ -1,5 +1,5 @@
 # Assignment 3: File Transfers in parallel using TCP and HTTP
-The assignment and guidelines above are not in its final version. Final version will be available soon.
+**Note**: The assignment and guidelines below are not in its final version. Final version will be available soon.
 
 ## A robust client to download content from multiple HTTP servers
 
@@ -85,19 +85,19 @@ Note: each server only serve one client after the previous one (it’s not a con
 
 ### Output statistics
 
-It is mandatory that your program collects the following informations:
+It is mandatory that your programs (delivery 1 and delivery 2 clients) ust collect and output the following statistics:
 
-Time elapsed to complete the full transfer (in seconds)
+- Time elapsed to complete the full transfer (in seconds)
 
-Total number of bytes downloaded (in bytes)
+- Total number of bytes downloaded (in bytes)
 
-End-to-end average bitrate of the full transfer (in bytes/sec)
+- End-to-end average bitrate of the full transfer (in bytes/sec)
 
-Number of requests performed by the client during the file transfer
+- Number of requests performed by the client during the file transfer
 
-Optional: average size of the payload of each HTTP reply (in bytes)
+- Optional: average size of the payload of each HTTP reply (in bytes)
 
-Optional: average time spent in each request/reply (in milliseconds)
+- Optional: average time spent in each request/reply (in milliseconds)
 
 Use the following output format (where the values are only indicative):
 
