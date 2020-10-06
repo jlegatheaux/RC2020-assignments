@@ -72,7 +72,6 @@ As an example, for downloading the IFB.mp4 movie trailer in your computer, from 
 In your implementation you can implement whatever solution you prefer:
 ```
   a) You can send a set of successive requests to the same server;
-  
   b) You can send requests to several different servers, for example in a round-robin way;
   
   c) You can send requests to several different servers, in parallel;
