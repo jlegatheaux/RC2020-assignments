@@ -14,7 +14,7 @@ For the assignmemt the implementation of the web-servers that will be provided a
 >
 >You can find a **tutorial on programming with Sockets in Java Language" in https://docs.oracle.com/javase/tutorial/networking/sockets/
 >Reember that for the work assignmemt you will be particularly focused on the develpment of clients using TCP sockets (supporting HTTP Requests/Responses) because the HTTP servers >to be used are provided in advance.
->You also have a convenient explanation in the text book of the course: https://legatheaux.eu/book/cnfbook-pub.pdf, see chapter 5, section 5.3.
+>You also have a convenient explanation in the text book of the course: *https://legatheaux.eu/book/cnfbook-pub.pdf, see chapter 5, section 5.3*.
 >Complementarily you have these examples for your preliminary tests: **echo-client.java** and **echo-sever.java**:  a very simple client/server application implementing an ECHO >protocol. 
 >
 >### Reference for programming with HTTP using TCP Sockets
