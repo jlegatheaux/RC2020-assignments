@@ -6,18 +6,24 @@ For the assignment the final goal is to implement a Client/Server application fo
 clients can download files from several web-servers used in parallel, in order to maximize the file transfer rate. 
 For the assignmemt the implementation of the web-servers that will be provided as initial materal and the assignmemt consists in the developmet of the required client.
 
+***
+
+## Initial backgorund
 ### Reference for programming with TCP Sockets in Java
 
-You can find an "official" tutorial on programming with Sockets in the Java Language in https://docs.oracle.com/javase/tutorial/networking/sockets/
-It is agood idea to follow the above tutorial for the first hands-on aproach in programing with sockets.
-Reember that for the work assignmemt you will be particularly focused on the develpment of clients using TCP sockets (supporting HTTP requests/responses) because the HTTP servers to be used are provided in advance. You also have a convenient explanation in the book: https://legatheaux.eu/book/cnfbook-pub.pdf, see chapter 5, section 5.3.
+You can find a **tutorial on programming with Sockets in Java Language" in https://docs.oracle.com/javase/tutorial/networking/sockets/
+Reember that for the work assignmemt you will be particularly focused on the develpment of clients using TCP sockets (supporting HTTP Requests/Responses) because the HTTP servers to be used are provided in advance.
+You also have a convenient explanation in the text book of the course: https://legatheaux.eu/book/cnfbook-pub.pdf, see chapter 5, section 5.3.
+Complementarily you have these examples for your preliminary tests: **echo-client.java** and **echo-sever.java**:  a very simple client/server application implementing an ECHO protocol. 
 
 ### Reference for programming with HTTP using TCP Sockets
-As you know, HTTP is supported by the TCP transport protocol. To implement clients that interact with HTTP servers, these clientes must send correctly HTTP requests (which are message formatted requests sent in the TCP connection previous estabished with the server. Clients must be able to receive HTTP responses, processing them according to the HTTP protocol.
+As you know, HTTP is supported by the TCP transport protocol, and it operates in two basic variants (HTTP/1.0 - implementaing HTTP Request/Response with non-persistet connections, and hTTP/1.1: using persistent connections). Clients that interact with HTTP servers must send correct HTTP requests (with the proper HEADERS), sent as formatted requests sent in the TCP connection previous estabished with the server. Clients must be able to receive HTTP responses, processing them according to the HTTP protocol (interpreting the HEADERS and CONTENTS in the RESPONSE).
 
-For the operation of the HTTP protocol you must consider the explanation in the theoretical classes and also the book: https://legatheaux.eu/book/cnfbook-pub.pdf, see chpter 12 
+For the operation of the HTTP protocol you must consider the explanation in the theoretical classes. You can also study the HTTP protocol in the course textbook: https://legatheaux.eu/book/cnfbook-pub.pdf, see chpter 12. Pay a particular attention to HTTP requests/responses using RANGE REQUESTS. 
 
-### Motivation
+***
+
+### Assignment Motivation
 
 In today's internet, most of the users consumed content is carried over the HTTP protocol. In the specific case of multimedia contents, the volume of the consumed information varies from a few Mbytes (in the case of photographs), up to several Gbytes (in the case of movies).
 It is not realistic to think of such bulky objects being transferred in a single HTTP request/reply interaction and using a single TCP connection. 
