@@ -1,4 +1,5 @@
-# Assignment 3
+# Assignment 3: File Transfers in parallel using TCP and HTTP
+
 ## A robust client to download content from multiple HTTP servers
 
 In this Assignment and its Guidelines we will learn how to use Sockets to program client/server applications using the Java Language. 
