@@ -54,11 +54,8 @@ On Unix-like system you can use a command sequence like the following (all serve
 
 ```
   $java HttpTrickyServer 8080 &
-  
   $java HttpTrickyServer 8081 &
-  
   $java HttpTrickyServer 8082 &
-  
   $java HttpTrickyServer 8083 &
 ```
 Note: You can also use the available script to launch the four servers. See the script serverclusterstart.sh
@@ -73,9 +70,7 @@ In your implementation you can implement whatever solution you prefer:
 ```
   a) You can send a set of successive requests to the same server;
   b) You can send requests to several different servers, for example in a round-robin way;
-  
   c) You can send requests to several different servers, in parallel;
-  
   d) Any other policy, according to the evolution of your experimental observations and decided optimizations.
 ``` 
 
@@ -97,11 +92,8 @@ Use the following output format (where the values are only indicative):
 
 ```
   Total elapsed time (s): 41.668
-  
   Download size (bytes):  14744835
-  
   End-to-end debit (Kbytes/s):  353.865
-  
   Number of requests: 4
 ```
 
