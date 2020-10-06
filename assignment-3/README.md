@@ -20,9 +20,10 @@ servers to be used are provided in advance.
 
 ### Reference for programming with HTTP using TCP Sockets
 As you know, HTTP is supported by the TCP transport protocol, and it operates in two basic variants (HTTP/1.0 - implementaing HTTP Request/Response with non-persistet connections, and hTTP/1.1: using persistent connections). Clients that interact with HTTP servers must send correct HTTP requests (with the proper HEADERS), sent as formatted 
-requests sent in the TCP connection previous estabished with the server. Clients must be able to receive HTTP responses, processing them according to the HTTP protocol >(interpreting the HEADERS and CONTENTS in the RESPONSE).
+requests sent in the TCP connection previous estabished with the server. Clients must be able to receive HTTP responses, processing them according to the HTTP protocol (interpreting the HEADERS and CONTENTS in the RESPONSE).
 
-For the operation of the HTTP protocol you must consider the explanation in the theoretical classes. You can also study the HTTP protocol in the course textbook: - -**https://legatheaux.eu/book/cnfbook-pub.pdf, see chpter 12**. Pay a particular attention to HTTP requests/responses using RANGE REQUESTS. 
+For the operation of the HTTP protocol you must consider the explanation in the theoretical classes. 
+- You can also study the HTTP protocol in the course textbook: - -**https://legatheaux.eu/book/cnfbook-pub.pdf, see chpter 12**. Pay a particular attention to HTTP requests/responses using RANGE REQUESTS. 
 
 ### Assignment Motivation
 
