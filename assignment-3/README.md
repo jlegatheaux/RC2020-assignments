@@ -42,7 +42,7 @@ Use the following command to start this server (it runs by default in port 8080 
 $java HttpTrickyServer
 
 As an example, for downloading the IFB.mp4 movie trailer in your computer, your client will be run in the following way:
-$java GetFile http://localhost:8080/IFB.mp4
+  $java GetFile http://localhost:8080/IFB.mp4
 
 ### SECOND Delivery 
 
@@ -50,10 +50,10 @@ For the second delivery, your program should be able to correctly download a (hu
 For testing, you can start a pool of several servers in the same machine, running in parallel. For this purpose you must use a different port for each one. 
 On Unix-like system you can use a command sequence like the following (all servers launched in background):
 
->java HttpTrickyServer 8080 &
->java HttpTrickyServer 8081 &
->java HttpTrickyServer 8082 &
->java HttpTrickyServer 8083 &
+  $java HttpTrickyServer 8080 &
+  $java HttpTrickyServer 8081 &
+  $java HttpTrickyServer 8082 &
+  $java HttpTrickyServer 8083 &
 
 Note: You can also use the available script to launch the four servers. See the script serverclusterstart.sh
 
@@ -61,10 +61,10 @@ As an example, for downloading the IFB.mp4 movie trailer in your computer, from 
 java GetFile http://localhost:8080/IFB.mp4 http://localhost:8081/IFB.mp4 http://localhost:8082/IFB.mp4 http://localhost:8083/IFB.mp4
 
 In your implementation you can implement whatever solution you prefer:
-a) You can send a set of successive requests to the same server;
-b) You can send requests to several different servers, for example in a round-robin way
-c) You can send requests to several different servers, in parallel. 
-d) Any other policy, according to the evolution of your experimental observations and decided optimizations
+  a) You can send a set of successive requests to the same server;
+  b) You can send requests to several different servers, for example in a round-robin way
+  c) You can send requests to several different servers, in parallel. 
+  d) Any other policy, according to the evolution of your experimental observations and decided optimizations
 
 Note: each server only serve one client after the previous one (it’s not a concurrent server).
 
@@ -79,10 +79,10 @@ Optional: average size of the payload of each HTTP reply (in bytes)
 Optional: average time spent in each request/reply (in milliseconds)
 Use the following output format (where the values are only indicative):
 
->Total elapsed time (s):		    41.668
->Download size (bytes):		    14744835
->End-to-end debit (Kbytes/s):	353.865
->Number of requests:		        4
+  Total elapsed time (s):		    41.668
+  Download size (bytes):		    14744835
+  End-to-end debit (Kbytes/s):	353.865
+  Number of requests:		        4
 
 ### Delivery Rules:
 
