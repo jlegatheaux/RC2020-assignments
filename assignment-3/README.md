@@ -94,13 +94,13 @@ Optional: average time spent in each request/reply (in milliseconds)
 Use the following output format (where the values are only indicative):
 
 ```
-  Total elapsed time (s):		    41.668
+  Total elapsed time (s): 41.668
   
-  Download size (bytes):		    14744835
+  Download size (bytes):  14744835
   
-  End-to-end debit (Kbytes/s):	353.865
+  End-to-end debit (Kbytes/s):  353.865
   
-  Number of requests:		        4
+  Number of requests: 4
 ```
 
 ### Delivery Rules:
