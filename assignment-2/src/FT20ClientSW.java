@@ -97,8 +97,4 @@ public class FT20ClientSW extends FT20AbstractApplication implements FT20_Packet
 			throw new Error("Fatal Error: " + x.getMessage());
 		}
 	}
-
-	public static void main(String[] args) {
-		Simulator.main(new String[] { "configs/config-2.1.txt" });
-	}
 }
