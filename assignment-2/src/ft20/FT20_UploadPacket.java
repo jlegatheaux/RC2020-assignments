@@ -1,7 +1,7 @@
 package ft20;
 
 public class FT20_UploadPacket extends FT20Packet {
-	public int timestamp;
+	public final int timestamp;
 	public final String filename;
 
 	FT20_UploadPacket(byte[] payload) {
