@@ -440,6 +440,6 @@ Refer to the provided reference Stop&Wait version [FT20ClientSW](https://github.
 
 You **must not change** the provided **FT20_* classes** in any way. Note that for evaluation purposes, your code will be tested against the **original** versions of the files.
 
-You are only allowed to send 1 packet on each upcall. That is, you can only send one `DATA` packet in each of the `on_timeout`, `on_clock_tick()`or `on_receive_ack` upcalls.
+You are only allowed to send 1 packet on each upcall. That is, you can only send one packet in each of the `on_timeout()`, `on_clock_tick()`or `on_receive_ack()` upcalls.
 
 
