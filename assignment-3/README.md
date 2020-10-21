@@ -12,7 +12,7 @@ In today's internet, most of the users consumed content is carried over the HTTP
 It is not realistic to think of such bulky objects being transferred in a single HTTP request/reply interaction and using a single TCP connection. 
 Inevitably, due to the high volumes of data, momentary anomalies in the network, or problems in the servers, it is necessary to resort to more than one interaction among the client and the server(s). In addition, in the case of movies, as they can take hours to play, it is not mandatory or interesting to transfer in only one chunk the full content, or from the same server. Also, a faster download may be achieved if transferring in parallel from several servers, using different HTTP ranges.
 
-## Backgorund and references
+## Background and references
 ### Programming with TCP Sockets in Java
 
 - You can find a **tutorial on programming with Sockets in Java Language** in **https://docs.oracle.com/javase/tutorial/networking/sockets/**
@@ -31,9 +31,9 @@ For the operation of the HTTP protocol you must consider the explanation in the 
 - In the part II (below) you find the initial guildelines for **"Using the HTTP Protocol to Download Digital Objects from a Server"**
 
 
-## PART I - Networking Programming using TCP Sockets in Java
+# PART I - Networking Programming using TCP Sockets in Java
 
-Summary
+### Summary
 - Client/Server Model with TCP
 - TCP Sockets
 - Java Example
@@ -352,9 +352,10 @@ class ServiceHandler extends Thread {
 ```
 
 
-## PART II - Using the HTTP Protocol to Download Digital Objects from a Server
+# PART II - Using the HTTP Protocol to Download Digital Objects from a Server
 
-Summary
+### Summary
+
 - HTTP Protocol
 - Examples and utilities
 - HTTP gets using ranges
@@ -373,7 +374,7 @@ There are many different request header-fields that the client can send to the s
 
 ### HTTP requests made "by hand"
 
-By using the following commands, you can access an HTTP server to see its replies. Try the following one:
+**By using the following command**, you can access an HTTP server to see its replies. Try the following one:
 
 ```
 telnet asc.di.fct.unl.pt 80
@@ -382,7 +383,7 @@ GET / HTTP/1.0 <return>
 .... analyze the result.
 ```
 
-Or the following one:
+**... or the following one:**
 
 ```
 telnet www.google.com 80
@@ -393,7 +394,7 @@ GET / HTTP/1.0 <return>
 
 ```
 
-If your system doesn't have the telnet command, you can use instead the nc command:
+**If your system doesn't have the telnet command, you can use instead the nc command**:
 
 ```
 nc -c asc.di.fct.unl.pt 80
@@ -403,7 +404,7 @@ GET / HTTP/1.0 <return>
 
 ```
 
-Or the following one:
+**Or the following one:**
 
 ```
 nc -c www.google.com 80
@@ -412,21 +413,22 @@ GET / HTTP/1.0 <return>
 .... analyze the result.
 ```
 
-### HTTP reply header-fields
+### HTTP Reply: header-fields
 
 The server sends information to the client by also using the header of the reply message, which is composed of different reply header-fields. These header-fields contains several informations, namely the reply object meta data, that are usefull to the client.
 
-### Java code examples
+### Java code utilities and examples
 
 The java.net package has many classes to speedup the development of programs using network protocols. In what concerns the protocol HTTP, there is one, among many, that can be used to parse and access URLs:
 
-- Class URL - allows parsing an url to,  for example, get its different components. See file URLparse.java in the source code repository
-
+**Class URL** 
+The URL class llows parsing an url to,  for example, get its different components. See file URLparse.java in the source code repository
 There are many other classes available in the same package to develop programs based in the HTTP protocol. However, due to pedagogical reasons, you can only use the class URL to parse an url. 
 Any other requierements of your programs should be implemented by yourself or using the class Http, available in the source code repository, which provides some extra methods to facilitate the development of Java programs build directly on top of the HTTP Protocol.
-Below you will find several Java source code examples
 
-Parsing an URL and opening a TCP connection to the server
+**Below you will find several Java source code examples:**
+
+**Parsing an URL and opening a TCP connection to the server**
 
 ```
 String url = args[0]; // for example "http://google.com"
@@ -439,7 +441,7 @@ OutputStream out = sock.getOutputStream();
 
 ```
 
-Composing and sending a request to the server
+**Composing and sending a request to the server**
 
 ```
 String request = String.format(
@@ -451,7 +453,7 @@ out.write(request.getBytes());
 
 ```
 
-Parsing the request message header in the server
+**Parsing the request message header in the server**
 
 ```
 line = Http.readLine(in);
@@ -468,7 +470,7 @@ if( request[0].equalsIgnoreCase("GET") && request[1] != "") {
 
 ```
 
-Example - sending a reply message to the client
+**Example: sending a reply message to the client**
 ```
 /**
 * Sends an error message "Not Implemented"
@@ -488,7 +490,7 @@ throws IOException {
 }
 ```
 
-Sending the reply header and payload
+**Example: Sending the reply header and payload**
 
 ```
 File f = new File(name);
@@ -509,37 +511,38 @@ for(;;) {
 ```
 ### Program demos - HTTP client and server
 
-In the source code repository you will find a naif HTTP client (HttpClientDemo.java) that is able to request an object denoted by the url passed as argument. The reply of the server is shown to the user (but it is not parsed, nor interpreted).
+In the source code repository you will find a naif HTTP client [**HttpClientDemo.java**] that is able to request an object denoted by the url passed as argument. The reply of the server is shown to the user (but it is not parsed, nor interpreted).
 
 Study its code and try to access some urls like for example:
-- http://google.com
-- http://www.google.com
-- http://asc.di.fct.unl.pt
-- http://asc.di.fct.unl.pt/rc
+- **http://google.com**
+- **http://www.google.com**
+- **http://asc.di.fct.unl.pt**
+- **http://asc.di.fct.unl.pt/rc**
 
 Explain the output and understand how it works.
 
-In the source code repository you will also find a naif HTTP server (HttpServerDemo.java) that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using: http://localhost:8080
-You can use the browser of your choice and try to access URL http://localhost:8080. The browser will also show the answer of the server.
-For example, if the server is executing in your localhost, and in its current directory there is a file called "Http.java", using the URL http://localhost:8080/Http.java, allows one to see the contents of that file.
+In the source code repository you will also find a naif HTTP server [**HttpServerDemo.java**] that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using: **http://localhost:8080**
+You can use the browser of your choice and try to access URL **http://localhost:8080**. The browser will also show the answer of the server.
+For example, if the server is executing in your localhost, and in its current directory there is a file called [**Http.java**], using the URL **http://localhost:8080/Http.java**, allows one to see the contents of that file.
 
-## Exercise A
-The provided client is able to use the HTTP request / reply protocol to obtain a file and show its content. Modify class HttpClientDemo in a way that it may be used to download files from a HTTP server. Call your class getFile for example.
-In the source code repository there is another class (URLget) which uses the class URL to download an object from an HTTP server. It is shown just for study purposes. Due to pedagogical reasons, you also cann't use it to complete any of your exercises.
+## An Hand-On Execise 1
+The provided client is able to use the HTTP request / reply protocol to obtain a file and show its content. Modify class [**HttpClientDemo**] in a way that it may be used to download files from a HTTP server. Call your class getFile for example.
+In the source code repository there is another class [**URLget**] which uses the class URL to download an object from an HTTP server. It is shown just for study purposes. Due to pedagogical reasons, you also cann't use it to complete any of your exercises.
 
-## Range Requests
+### Range Requests
 
 During the (already very long) life of the HTTP protocol, many extensions have been introduced. Most of those extensions introduced new request and reply headers-fields.
 To facilitate the access to very big or huge objects, HTTP supports partial requests. This feature is inspired from reading direct access files in slices.
 To make a partial request, one needs at least two resources:
+
 - An HTTP server that understands range requests and replies to them
 - A client using the range request header-field. Examples:
 - Range: bytes=100-199   // requesting the 100 bytes starting with byte 100
 - Range: bytes=100-      // requesting from byte 100 to the end of the object
 
-HTTP request made "by hand"
+### HTTP request made "by hand"
 
-By using the following commands, you can access an HTTP server to see its replies. Try the following one:
+**By using the following commands**, you can access an HTTP server to see its replies. Try the following one:
 
 ```
 telnet asc.di.fct.unl.pt 80
@@ -550,7 +553,7 @@ Range: bytes=10-20 <return>
 
 ```
 
-Source code example:
+**Source code example:**
 
 ```
 OutputStream out = sock.getOutputStream();
@@ -562,12 +565,17 @@ out.write(request.getBytes());
 
 ```
 
-You can learn about this feature of the HTTP protocol by starting here or looking at  RFC 7233.
-Range requests and replies are specially useful to deal with multimedia information as you will see in the next week's work.
-In the source code repository you will also find a lazy HTTP server (HttpLazyServer.java) that is able to serve the requested files and partially supports ranges. In fact, the full support of RFC 7233 ranges is quite complex and extensive. The provided server only supports ranges of the forms shown above. This server is lazy since it only sends at most MAX_BYTES bytes in each reply. You can find this constant in its source file. Therefore, if you want to know it, you should use the RTFC method (Read The F. Code), which is the only accessible method when no manual is available.
-To test the actions of the lazy server, launch it in a directory where you also put the file Earth.jpg (which size is around 13 Mbytes). You can access it by using the url  http://localhost:8080/Earth.jpg  with the browser of your choice.
+You can learn about this feature of the HTTP protocol by starting here or looking at RFC 7233, as well as, in the Course Book.
 
-Exercise - downloading a file using successive range downloads
+Range requests and replies are specially useful to deal with multimedia information.
+
+In the source code repository you will also find a lazy HTTP server [**HttpLazyServer.java**] that is able to serve the requested files and partially supports ranges. In fact, the full support of RFC 7233 ranges is quite complex and extensive. The provided server only supports ranges of the forms shown above. This server is lazy since it only sends at most MAX_BYTES bytes in each reply. You can find this constant in its source file. Therefore, if you want to know it, you should use the RTFC method (Read The F. Code), which is the only accessible method when no manual is available.
+To test the actions of the lazy server, launch it in a directory where you also put the file Earth.jpg (which size is around 13 Mbytes). You can access it by using the url **http://localhost:8080/Earth.jpg**  with the browser of your choice.
+
+# Assignment 3: Deliverables:
+
+## Assignment 3.1: Deleopment and testing a Client Downloading by HTTP a file using successive range downloads
+
 Now, assuming that you already have extended the demo HTTP client to transfer a file to the local file system, modify your getFile class in order to be able to fully transfer a file of any size from the HttpLazyServer.java.
 Since in your future work, you will be directed to use docker hosted web servers, you can also test your client with a different HTTP server. This one is available in a docker container and can be loaded using the command:
 docker run -it --rm -p 8080:8080 -v $(PWD):/public danjellz/http-server
@@ -607,26 +615,93 @@ file.skipBytes(n); // Attempts to skip over n bytes of input discarding the skip
 file.seek(k); // Sets the file-pointer offset, measured from the beginning of this file, at which the next read or write occurs.
 n = file.read( buffer, 0, len ); // Reads up to len (or buffer.length) bytes of data from this file into an array of bytes
 
+```
+
+## Assignment 3.2: A client to download content from one or more HTTP servers by the way of HTTP range requests
 
 
-## Assignment 3
+To complete the assignment 3 that you must submitt in the submission date, you must program an HTTP client that must be able to transfer a voluminous file (e.g. above 100 Mbytes) from **a set of HTTP "tricky" servers**, in the shortest time. These "tricky" servers, whenever they receive a request of an object, may only send part of the requested object or break the connection in the middle of the transfer. Also, each server can exhibit variable transfer performances. These servers, accept range HTTP requests, and whenever they receive a request o an object with more than 1 Myte, they only send a slice of the requested object of random size, from 1 Mbyte, up to at most 10 Mbytes. Thus, if the requested object (or range) has less than 1 Mbyte, it is fully sent. However, if the requested object (or range) has size grater than 1 Mbyte, these servers send a range of random size, between 1 and 10 Mbytes, in a random way.
 
-To complete this assignment you must program an HTTP client that must be able to transfer a voluminous file (e.g. above 100 Mbytes) from a set of HTTP "tricky" servers, in the shortest time. These "tricky" servers, whenever they receive a request of an object, may only send part of the requested object or break the connection in the middle of the transfer. Also, each server can exhibit variable transfer performances. Servers accept ranges requests from clients.
-
-The assignmet is composed by two developments for delivering: delivery 1 and delivery 2.
+In addition, they also may change randomly the performance of the transfer.
 
 
-##Devlivery 1
+### Minimal and Optional Goals
 
-Reqeuirements will be included...
+Program the **GetFile HTTP client** able to fully download a (huge) file from a set of HTTP "tricky" servers, which reply with a range of the requested file, of random size, if the requested range (or the full file) is grater than 1 Mbyte. These "tricky" servers send at most 10 Mbytes in each reply. The performance of the connection used in each reply is also random.
 
-##Delivery 2
+**Your client should be run in the following way:**
 
-Requirements will be included...
+```
+java GetFile http://server[:port]/file_name
+```
+
+**For downloading the IFB.mp4 movie trailler your client will run in the following way:**
+
+```
+java GetFile http://localhost[:8080]/IFB.mp4
+```
+
+For your implementation and testing purposes, you can use one only server or a set of four servers (using the HttpTrickyServer.java available.
+
+**To start one only server (it runs by default in port 8080):**
+
+```
+java HttpTrickyServer
+```
+
+**To start a pool of four servers, you must use a different port for each one:**
+
+```
+java HttpTrickyServer 8080 &
+java HttpTrickyServer 8081 &
+java HttpTrickyServer 8082 &
+java HttpTrickyServer 8083 &
+
+```
+
+**Note) ** You can also use the available script to launch the four servers (all in balckground) - See the script serverclusterstart.sh
 
 
-### Additional materials
-All the needed materials (testing files, programs, scripts, ...) for
-the assignmet are available in this GitHub repositpry.
+Then, using the four servers you can serve your client requests in the local host, listening for connections in a different port: 8080, 8081, 8082, 8083. 
+In your implementation and tests you can implement whatever solution you prefer:
 
+- a) Sending a set of successive requests to the same server;
+- b) Sending requests to several different servers, for example in a round-robin way
+- c) Sending requests to several different servers, in parallel. 
+- d) Any other policy, according to the evolution of your observations
 
+**Note) ** your client only receives one URL as the parameter. Therefore, if your client contacts more than one server, it must assume that the other servers are in the same host, at a contiguous increasing range of ports, as described before.
+**Note) ** the servers only serve one client after the previous one (they are not concurrent servers, not serving several clients in parallel).
+
+**Output statistics**
+It is mandatory that your program collects the following informations:
+- Time elapsed to complete the full transfer (in seconds)
+- Total number of bytes downloaded (in bytes)
+- End-to-end average bitrate of the full transfer (in bytes/sec)
+- Number of requests performed by the client during the file transfer
+- Optional: average size of the payload of each HTTP reply (in bytes)
+- Optional: average time spent in each request/reply (in milliseconds)
+
+Use the following output format:
+```
+Total time elapsed:                .... seconds 
+Total number of bytes downloaded:  .... bytes
+End-to-end average bitrate:        .... bytes per second
+Number of requests performed:      .... requests
+
+```
+### Grading (in 0-20 scale)
+
+**For Delivery 3.1 Submission**
+
+- A program that does not transfer the file or transfers it incorrectly, will be graded at most 7 points.
+- A program that transfers the file correctly to a client local file, only contacting one server at a time, will be graded at most 13 points
+
+**For Delivery 3.1 Submission** (scoring added to Delivery 3.1)
+- A program that transfers the file correctly, using the four servers, will be graded at most 3.
+- Programs that use more then one server in parallel and a proposed optimized setrategy have no a priori grading limitations for the remaing 4 points
+
+**Penalizations**
+- Code clarity and structure, as well as performance indications (following the required output format) according to your used policy when using the four servers will be accounted with no penalties. Otherwise, penalities will be considered: 
+- Until 2 points for bad clarity and code structure
+- Until 2 points if statistics in the output format are not implemented or incorrectly implemented.
