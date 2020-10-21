@@ -70,28 +70,35 @@ In this simple example the client creates a TCP Socket by connectiong it to the 
 ### Java Server Code
 The code of the server (**EchoServer.java**) is very simple. It just creates a Socket to accept incoming connections in the previously agreed port. Then it accepts client request to establish a connection.
 ```
-import java.io.*;
-import java.net.*;
+import java.io.* ;
+import java.net.* ;
 
 public class EchoServer {
 
-    public static final int PORT = 8000 ;
+   public static final int DEFAULT_PORT = 8000 ;
+	
+   public static void main(String args[] ) throws Exception {
 
-    public static void main(String args[] ) throws Exception {
-    
-	// creates a server socket to wait for connections
-	try(ServerSocket serverSocket = new ServerSocket( PORT )) {
-	    for(;;) { 
-		// waits for a new connection from a client
-		try(Socket clientSocket = serverSocket.accept()) {
-		    // handle the connection...
-		    new ConnectionHandler().handle( clientSocket );        
-		} catch( IOException x ) {
-		    x.printStackTrace();
-		}
-	    }            
-	}
-    }
+       int port=DEFAULT_PORT;
+       if (args.length == 1) {
+	   port=Integer.parseInt(args[0]);
+       }
+       
+       System.out.println("Server waiting in port " + port);
+       // creates a server socket to wayt for connections
+       try (ServerSocket serverSocket = new ServerSocket( port )) {
+	   for(;;) { 
+	             Socket clientSocket = serverSocket.accept() ;
+		     System.out.println("Got a client connection from "
+			+ clientSocket.getInetAddress().getHostName());
+
+		     // handling the client connection
+		     new ConnectionHandler().handle( clientSocket );
+		   }
+       } catch (IOException x) {
+	   x.printStackTrace();
+       }
+   }
 }
 ```
 
@@ -101,23 +108,24 @@ import java.io.*;
 import java.net.*;
 
 public class ConnectionHandler {
-    private static final int TMP_BUF_SIZE = 16;
+    private static final int TMP_BUF_SIZE = 1024;
 
     public void handle(Socket cs) throws IOException {
-    
-    InputStream is = cs.getInputStream();
-    OutputStream os = cs.getOutputStream();
-    
-    for(;;) { 
+
+	InputStream is = cs.getInputStream();
+	OutputStream os = cs.getOutputStream();
+
+	for(;;) { 
         // implements the data ECHO, by reading and writing 
         // while the connection is not closed
-        int n ;
-        byte[] buf = new byte[ TMP_BUF_SIZE] ;
-        while( (n = is.read(buf)) > 0 )
-            os.write( buf, 0, n );
-        }
+	    int n ;
+	    byte[] buf = new byte[TMP_BUF_SIZE] ;
+	    while( (n = is.read(buf)) > 0 )
+		os.write( buf, 0, n );
+	}
     }
 }
+
 ```
     
 
@@ -135,25 +143,46 @@ import java.net.*;
 import java.util.*;
 
 public class EchoClient {
-    private static final int PORT = 8000;
+
     public static void main(String[] args ) throws Exception {
-        if( args.length != 1 ) {
-            System.out.println("usage: java EchoClient server") ;
-            System.exit(0);
-        }
-        String server = args[0] ;
-        // Creating a connection to the server
-        try(Socket socket = new Socket( server, PORT )) {
-            OutputStream os = socket.getOutputStream();
-            InputStream is = socket.getInputStream();
-            
-            //...
-        }
+		
+    if( args.length != 2 ) {
+      System.out.println("usage: java EchoClient <serverhost> <serverport>");
+      System.exit(0) ;
+    }
+    
+    String server = args[0] ;
+    int port = Integer.parseInt(args[1]) ;
+		
+    Socket socket = new Socket( server, port ) ;
+    OutputStream os = socket.getOutputStream();
+    InputStream is = socket.getInputStream() ;
+
+    Scanner in = new Scanner( System.in ) ;
+    byte[] buf;
+    int n;
+    String echoRequest;
+    
+	do {
+	    echoRequest = in.nextLine();
+	    echoRequest = echoRequest + "\n";
+
+    	    System.out.println("I will send: " +echoRequest);
+            os.write( echoRequest.getBytes() );
+
+	    String echoReply = new Scanner(is).nextLine();
+            System.out.println("Reply form Server: " +echoReply);
+
+      	   } while( !echoRequest.equals("!quit\n") ) ;
+
+           socket.close() ;
     }
 }
+
+
 ```
 
-### Recipes
+### Some Recipes
 
 ### Class ServerSocket
 ```
@@ -198,38 +227,25 @@ while( is.available() ) {
 };
 ```
 
-## Exercise
+### About Threads 
 
-### TCP File Transfer
+Threads can be programmed with different options: Lambda Expressions or use of Helper Classes.
 
-For this exercise, you will use a TCP server, ready to receive files from clients. You must program your own client to send a file to the provided server. 
-After the connection is established, a byte array terminated with byte \0, containing the name of the file, is sent to the server, followed by the file contents.
-Next, transform your iterative server, into a concurrent one. Use threads to make it capable of receiving several files in parallel.
-A docker image with the server ready to be used can be launched using:
+## Threads + Lambda Expression
 
-A docker image with the server ready to be used can be launched using:
-
-docker run -t -p 8000:8002 smduarte/rc18-tcpfileserver
-The server listens at port 8000...
-
-### Java Tips
-
-To work with threads you can use this tutorial
-https://docs.oracle.com/javase/tutorial/essential/concurrency/threads.html
-
-Find below some quick examples:
-
-### Threads + Lambda Expression
-
+```
 new Thread( () -> {
     
     // place here code to execute in new thread...
     
 }).start();
 
+```
+
 
 ### Threads + Helper class
 
+```
 Helper class implements interface Runnable
 
 Main thread calls:
@@ -247,6 +263,7 @@ Child thread executes in run(), receives args in constructor...
     }
 }
 
+```
 Helper class extends Thread
 Cannot be used if helper class already extends another class...
 
@@ -256,6 +273,7 @@ new HelperClass( args ).start();
 
 Child thread executes in run(), receives args in constructor...
 
+```
 class HelperClass extends Thread {
     HelperClass( ... ) {
         // Constructor receives any args the helper class needs to run...
@@ -264,7 +282,74 @@ class HelperClass extends Thread {
        // place here code to execute in new thread...
     }
 }
+```
 
+### The Multithreaded EchoServer 
+This server uses threads to implement concurrency. As you can check the server can handle different clients in parrallel.
+
+```
+import java.io.*;
+import java.net.*;
+
+public class ConcurrentEchoServer {
+    
+    public static final int DEFAULT_PORT = 8000 ;
+    public static void main( String[] args )throws Exception {
+
+	int port=DEFAULT_PORT;
+	if (args.length == 1) {
+	    port=Integer.parseInt(args[0]);
+	}
+        System.out.println("Server waiting in port " + port);
+
+	try (ServerSocket serverSocket = new ServerSocket( port )) {
+
+	    Socket clientSocket;
+	    ServiceHandler servthread;
+
+	    while(true) {
+		clientSocket = serverSocket.accept();
+		servthread = new ServiceHandler(clientSocket);
+		servthread.start();
+	    }
+	}
+	catch (IOException x) {
+	    x.printStackTrace();
+	}
+    }
+}
+
+```
+
+As you can see in the COncurret EchoServer, the connections from clients are served through the thread **servthread**.
+The ServiceHandler class as an Helper class is below. As you can see it uses again the initial **ConnectonHandler** above,
+but now the client connections are handled in parrallel.
+
+```
+import java.io.*;
+import java.net.*;
+
+class ServiceHandler extends Thread {
+    Socket connection;
+	
+    public ServiceHandler(Socket c) {
+	super("EchoServer service thread");
+	connection = c;
+    }
+    
+    public void run()  {
+         // handling the client connection                          
+	try {
+	    new ConnectionHandler().handle(connection);
+	}
+	catch (IOException x)
+	    {
+		x.printStackTrace();
+	    }
+    }
+}
+
+```
 
 
 ## PART II - Using the HTTP Protocol to Download Digital Objects from a Server
