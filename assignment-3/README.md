@@ -6,6 +6,11 @@
 In this Assignment and its Guidelines you will learn how to program with Sockets to program client/server applications supported by TCP and how to program clients that can transfer contents from HTTTP servers. After the initial guidance, diivded into two parts, the final goal is to implement a Client/Server application for File Transfer based on HTTP, where clients can download files from several web-servers used in parallel, in order to maximize the file transfer rate. 
 For the assignmemt the implementation of the web-servers are provided as initial material. the assignmemt consists in the developmet of the required client implementation.
 
+### Assignment Motivation
+
+In today's internet, most of the users consumed content is carried over the HTTP protocol. In the specific case of multimedia contents, the volume of the consumed information varies from a few Mbytes (in the case of photographs), up to several Gbytes (in the case of movies).
+It is not realistic to think of such bulky objects being transferred in a single HTTP request/reply interaction and using a single TCP connection. 
+Inevitably, due to the high volumes of data, momentary anomalies in the network, or problems in the servers, it is necessary to resort to more than one interaction among the client and the server(s). In addition, in the case of movies, as they can take hours to play, it is not mandatory or interesting to transfer in only one chunk the full content, or from the same server. Also, a faster download may be achieved if transferring in parallel from several servers, using different HTTP ranges.
 
 ## Backgorund and references
 ### Programming with TCP Sockets in Java
@@ -25,11 +30,6 @@ For the operation of the HTTP protocol you must consider the explanation in the 
 - You can also study the HTTP protocol in the course textbook: **https://legatheaux.eu/book/cnfbook-pub.pdf, see chapter 12**, paying special attention to HTTP requests/responses using RANGE REQUESTS. 
 - In the part II (below) you find the initial guildelines for **"Using the HTTP Protocol to Download Digital Objects from a Server"**
 
-### Assignment Motivation
-
-In today's internet, most of the users consumed content is carried over the HTTP protocol. In the specific case of multimedia contents, the volume of the consumed information varies from a few Mbytes (in the case of photographs), up to several Gbytes (in the case of movies).
-It is not realistic to think of such bulky objects being transferred in a single HTTP request/reply interaction and using a single TCP connection. 
-Inevitably, due to the high volumes of data, momentary anomalies in the network, or problems in the servers, it is necessary to resort to more than one interaction among the client and the server(s). In addition, in the case of movies, as they can take hours to play, it is not mandatory or interesting to transfer in only one chunk the full content, or from the same server. Also, a faster download may be achieved if transferring in parallel from several servers, using different HTTP ranges.
 
 ## PART I - Networking Programming using TCP Sockets in Java
 
@@ -68,49 +68,45 @@ XXXXXXXXXXX PICTURE XXXXXXXXXXX
 In this simple example the client creates a TCP Socket by connectiong it to the server TCP Socket; the server Socket is identified by the server address and the socket port. Then, the client reads lines from its console and sends them to the server. The server reads the bytes sent by the client and echoes them back to the client. 
 
 ###Java Server Code
-The code of the server (EchoServer) is very simple. It just creates a Socket to accept incoming connections in the previously agreed port. Then it accepts client request to establish a connection.
+The code of the server (**EchoServer.java**) is very simple. It just creates a Socket to accept incoming connections in the previously agreed port. Then it accepts client request to establish a connection.
 
+    import java.io.*;
+    import java.net.*;
 
-import java.io.*;
-import java.net.*;
+    public class EchoServer {
 
-public class EchoServer {
+        public static final int PORT = 8000 ;
+
+        public static void main(String args[] ) throws Exception {
     
-    public static final int PORT = 8000 ;
-   
-    public static void main(String args[] ) throws Exception {
-        
-        // creates a server socket to wait for connections
-        try(ServerSocket serverSocket = new ServerSocket( PORT )) {
-            for(;;) { 
-                // waits for a new connection from a client
-                try(Socket clientSocket = serverSocket.accept()) {
-                    // handle the connection...
-                    new ConnectionHandler().handle( clientSocket );        
-                } catch( IOException x ) {
-                    x.printStackTrace();
-                }
-            }            
-        }
+	    // creates a server socket to wait for connections
+	    try(ServerSocket serverSocket = new ServerSocket( PORT )) {
+	        for(;;) { 
+		    // waits for a new connection from a client
+		    try(Socket clientSocket = serverSocket.accept()) {
+		        // handle the connection...
+		        new ConnectionHandler().handle( clientSocket );        
+		    } catch( IOException x ) {
+		        x.printStackTrace();
+		    }
+	      }            
+	    }
     }
- }
+}
 
 
-When the connection is established, the handler (ConnectionHandler) simply continously reads bytes and writes them back to the other side while the connection is not closed.
+When the connection is established, the handler (**ConnectionHandler.java**) simply continously reads bytes and writes them back to the other side while the connection is not closed.
 Note that after the connection is established, it can be seen as a read / write stream/pipe.
 
 
-import java.io.*;
-import java.net.*;
+    public class ConnectionHandler {
+        private static final int TMP_BUF_SIZE = 16;
 
-public class ConnectionHandler {
-    private static final int TMP_BUF_SIZE = 16;
+        public void handle(Socket cs) throws IOException {
     
-    public void handle( Socket cs ) throws IOException {
-        
         InputStream is = cs.getInputStream();
-        OutputStream is = cs.getOutputStream();
-        
+        OutputStream os = cs.getOutputStream();
+    
         for(;;) { 
             // implements the data ECHO, by reading and writing 
             // while the connection is not closed
@@ -118,9 +114,9 @@ public class ConnectionHandler {
             byte[] buf = new byte[ TMP_BUF_SIZE] ;
             while( (n = is.read(buf)) > 0 )
                 os.write( buf, 0, n );
+            }
         }
     }
-}
 
 
 ### Java Client
