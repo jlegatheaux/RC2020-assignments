@@ -15,7 +15,7 @@ Inevitably, due to the high volumes of data, momentary anomalies in the network,
 ## Backgorund and references
 ### Programming with TCP Sockets in Java
 
-- You can find a **tutorial on programming with Sockets in Java Language** in https://docs.oracle.com/javase/tutorial/networking/sockets/**
+- You can find a **tutorial on programming with Sockets in Java Language** in **https://docs.oracle.com/javase/tutorial/networking/sockets/**
 - Remember that for the work assignmemt you will be particularly focused on the develpment of clients using TCP sockets (supporting HTTP Requests/Responses) because the HTTP  
 servers to be used are provided in advance.
 - You also have a convenient explanation in the text book of the course: **https://legatheaux.eu/book/cnfbook-pub.pdf, see chapter 5, section 5.3**.
@@ -68,7 +68,7 @@ XXXXXXXXXXX PICTURE XXXXXXXXXXX
 In this simple example the client creates a TCP Socket by connectiong it to the server TCP Socket; the server Socket is identified by the server address and the socket port. Then, the client reads lines from its console and sends them to the server. The server reads the bytes sent by the client and echoes them back to the client. 
 
 ### Java Server Code
-The code of the server (**EchoServer.java**) is very simple. It just creates a Socket to accept incoming connections in the previously agreed port. Then it accepts client request to establish a connection.
+The code of the server **EchoServer.java**(exemplo1/EchoServer.java) is very simple. It just creates a Socket to accept incoming connections in the previously agreed port. Then it accepts client request to establish a connection.
 ```
 import java.io.* ;
 import java.net.* ;
