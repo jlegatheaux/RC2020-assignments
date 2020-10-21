@@ -530,16 +530,17 @@ for(;;) {
 In the source code repository you will find a naif HTTP client [**HttpClientDemo.java**] that is able to request an object denoted by the url passed as argument. The reply of the server is shown to the user (but it is not parsed, nor interpreted).
 
 Study its code and try to access some urls like for example:
-- **http://google.com**
-- **http://www.google.com**
-- **http://asc.di.fct.unl.pt**
-- **http://asc.di.fct.unl.pt/rc**
 
+- ``http://google.com**``
+- ``http://www.google.com``
+- ``http://asc.di.fct.unl.pt``
+- ``http://asc.di.fct.unl.pt/rc``
+``
 Explain the output and understand how it works.
 
-In the source code repository you will also find a naif HTTP server [**HttpServerDemo.java**] that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using: **http://localhost:8080**
-You can use the browser of your choice and try to access URL **http://localhost:8080**. The browser will also show the answer of the server.
-For example, if the server is executing in your localhost, and in its current directory there is a file called [**Http.java**], using the URL **http://localhost:8080/Http.java**, allows one to see the contents of that file.
+In the source code repository you will also find a naif HTTP server [**HttpServerDemo.java**] that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
+You can use the browser of your choice and try to access URL ``**http://localhost:8080**``. The browser will also show the answer of the server.
+For example, if the server is executing in your localhost, and in its current directory there is a file called [**Http.java**], using the URL ``**http://localhost:8080/Http.java**``, allows one to see the contents of that file.
 
 ## An Hand-On Execise 1
 The provided client is able to use the HTTP request / reply protocol to obtain a file and show its content. Modify class [**HttpClientDemo**] in a way that it may be used to download files from a HTTP server. Call your class getFile for example.
@@ -566,7 +567,6 @@ GET / HTTP/1.0 <return>
 Range: bytes=10-20 <return>
 <return>
 .... analyze the result.
-
 ```
 
 **Source code example:**
@@ -578,7 +578,6 @@ String request = String.format("GET %s HTTP/1.0\r\n"+
 "Range: bytes=100-199\r\n"+
 "User-Agent: X-RC2018\r\n\r\n", path, u.getHost());
 out.write(request.getBytes());
-
 ```
 
 You can learn about this feature of the HTTP protocol by starting here or looking at RFC 7233, as well as, in the Course Book.
@@ -586,7 +585,8 @@ You can learn about this feature of the HTTP protocol by starting here or lookin
 Range requests and replies are specially useful to deal with multimedia information.
 
 In the source code repository you will also find a lazy HTTP server [**HttpLazyServer.java**] that is able to serve the requested files and partially supports ranges. In fact, the full support of RFC 7233 ranges is quite complex and extensive. The provided server only supports ranges of the forms shown above. This server is lazy since it only sends at most MAX_BYTES bytes in each reply. You can find this constant in its source file. Therefore, if you want to know it, you should use the RTFC method (Read The F. Code), which is the only accessible method when no manual is available.
-To test the actions of the lazy server, launch it in a directory where you also put the file Earth.jpg (which size is around 13 Mbytes). You can access it by using the url **http://localhost:8080/Earth.jpg**  with the browser of your choice.
+To test the actions of the lazy server, launch it in a directory where you also put the file Earth.jpg (which size is around 13 Mbytes). You can access it by using the url: 
+``**http://localhost:8080/Earth.jpg**`` using the browser of your choice.
 
 # Parte III
 # Assignment 3: Deliverables:
@@ -595,7 +595,7 @@ To test the actions of the lazy server, launch it in a directory where you also 
 
 Now, assuming that you already have extended the demo HTTP client to transfer a file to the local file system, modify your getFile class in order to be able to fully transfer a file of any size from the HttpLazyServer.java.
 Since in your future work, you will be directed to use docker hosted web servers, you can also test your client with a different HTTP server. This one is available in a docker container and can be loaded using the command:
-docker run -it --rm -p 8080:8080 -v $(PWD):/public danjellz/http-server
+**docker run -it --rm -p 8080:8080 -v $(PWD):/public danjellz/http-server**
 This server fully supports HTTP ranges with no limitation related to the size of the requested object. 
 You must run this docker in the current directory of the content you want to serve.
 
@@ -635,7 +635,6 @@ n = file.read( buffer, 0, len ); // Reads up to len (or buffer.length) bytes of 
 ```
 
 ## Assignment 3.2: A client to download content from one or more HTTP servers by the way of HTTP range requests
-
 
 To complete the assignment 3 that you must submitt in the submission date, you must program an HTTP client that must be able to transfer a voluminous file (e.g. above 100 Mbytes) from **a set of HTTP "tricky" servers**, in the shortest time. These "tricky" servers, whenever they receive a request of an object, may only send part of the requested object or break the connection in the middle of the transfer. Also, each server can exhibit variable transfer performances. These servers, accept range HTTP requests, and whenever they receive a request o an object with more than 1 Myte, they only send a slice of the requested object of random size, from 1 Mbyte, up to at most 10 Mbytes. Thus, if the requested object (or range) has less than 1 Mbyte, it is fully sent. However, if the requested object (or range) has size grater than 1 Mbyte, these servers send a range of random size, between 1 and 10 Mbytes, in a random way.
 
