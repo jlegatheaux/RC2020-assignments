@@ -120,81 +120,6 @@ public class ConnectionHandler {
 }
 ```
     
-    
-
-    
-(base) Henriques-MacBook-Pro:sources hj$ cat EchoServer.java
-import java.io.*;
-import java.net.*;
-
-public class EchoServer {
-
-    public static final int PORT = 8000 ;
-
-    public static void main(String args[] ) throws Exception {
-    
-	// creates a server socket to wait for connections
-	try(ServerSocket serverSocket = new ServerSocket( PORT )) {
-	    for(;;) { 
-		// waits for a new connection from a client
-		try(Socket clientSocket = serverSocket.accept()) {
-		    // handle the connection...
-		    new ConnectionHandler().handle( clientSocket );        
-		} catch( IOException x ) {
-		    x.printStackTrace();
-		}
-	    }            
-	}
-    }
-}
-(base) Henriques-MacBook-Pro:sources hj$ emacs EchoServer.java
-(base) Henriques-MacBook-Pro:sources hj$ cat EchoServer.java
-import java.io.*;
-import java.net.*;
-
-public class EchoServer {
-
-    public static final int PORT = 8000 ;
-
-    public static void main(String args[] ) throws Exception {
-    
-	// creates a server socket to wait for connections
-	try(ServerSocket serverSocket = new ServerSocket( PORT )) {
-	    for(;;) { 
-		// waits for a new connection from a client
-		try(Socket clientSocket = serverSocket.accept()) {
-		    // handle the connection...
-		    new ConnectionHandler().handle( clientSocket );        
-		} catch( IOException x ) {
-		    x.printStackTrace();
-		}
-	    }
-	}
-    }
-}
-
-import java.io.*;
-import java.net.*;
-
-public class ConnectionHandler {
-    private static final int TMP_BUF_SIZE = 16;
-
-    public void handle(Socket cs) throws IOException {
-
-    InputStream is = cs.getInputStream();
-    OutputStream os = cs.getOutputStream();
-
-    for(;;) {
-        // implements the data ECHO, by reading and writing                     
-        // while the connection is not closed                                   
-        int n ;
-        byte[] buf = new byte[ TMP_BUF_SIZE] ;
-        while( (n = is.read(buf)) > 0 )
-            os.write( buf, 0, n );
-        }
-    }
-}
-
 
 
 ### Java Client
@@ -204,7 +129,7 @@ When the connection is open, it starts using it as a read / write stream/pipe.
 As you can see (EchoClient) Once the connection is established, the client prepares a Scanner to read bytes from the console (System.in).
 Enters a loop where it reads a line, sends it to the server, gets the echo and prints it to the console, until it receives the string "!end". 
 
-
+```
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -226,47 +151,52 @@ public class EchoClient {
         }
     }
 }
-
+```
 
 ### Recipes
 
 ### Class ServerSocket
-
+```
 try( ServerSocket ss = new ServerSocket( PORT ) ) {
     ...
         cs = ss.accept();
     ...
 }
+```
 
-Class Socket
+### Class Socket
+```
 try( Socket ss = new Socket( server, PORT ) ) {
     ...
     InputStream is = ss.getInputStream();
     OutpoutStream os = ss.getOutputStream();
     ...
 }
+```
 
 ### Sending and receiving (multiple) bytes
-
+```
 int n;
 byte buf = new byte[TMP_BUF_SIZE];
 while( (n = is.read( buf )) > 0 )
     os.write( buf, 0, n)
+```    
     
-    
-Reading a single byte at each time (slow)
+### Reading a single byte at each time (slow)
+```
 InputStream is = cs.getInputStream();
 int b = is.read();
+```
 
 ### WARNING: Anti-Pattern
-
+```
 InputStream.available() works with FileInputStream, but does not work with streams that are backed by Sockets.
 
 Socket cs = new Socket( server, port );
 InputStream is = cs.getInputStream();
 while( is.available() ) {  
 };
-
+```
 
 ## Exercise
 
