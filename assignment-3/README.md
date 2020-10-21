@@ -379,7 +379,7 @@ class ServiceHandler extends Thread {
 
 <img src="./figures/Rede.png">
 
-### Example of HTTP REquest/Reply Messages
+### Example of HTTP Request/Reply Messages
 
 **HTTP Request Message**
 
