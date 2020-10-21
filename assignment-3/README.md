@@ -735,7 +735,6 @@ Total time elapsed:                .... seconds
 Total number of bytes downloaded:  .... bytes
 End-to-end average bitrate:        .... bytes per second
 Number of requests performed:      .... requests
-
 ```
 ## Grading (in 0-20 scale)
 
