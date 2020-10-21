@@ -1,4 +1,4 @@
-# Assignment 3: A robust client to download content from one and from multiple HTTP servers
+# Assignment 3: A robust client to download content from one or multiple HTTP servers
 
 ## Objectives
 
