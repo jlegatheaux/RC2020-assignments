@@ -385,7 +385,7 @@ class ServiceHandler extends Thread {
 
 ```
 GET /index.html HTTP/1.0 <CRLF>
-Host: www.google.com <CRLF>
+Host: di115.di.fct.unl.pt <CRLF>
 User-Agent: Mozzilla/40.01 <CRLF>
 <CRLF>
 ```
@@ -393,12 +393,16 @@ User-Agent: Mozzilla/40.01 <CRLF>
 **HTTP Reply Message** (only included some lines)
 
 ```
-HTTP/1.0 200 OK <CRLF>
-Date: Wed, 21 Oct 2020 21:41:57 GMT <CRLF>
-...
-Content-Type: text/html; charset=ISO-8859-1 <CRLF>
-Server: gws <CRLF>
-Accept-Ranges: none <CRLF>
+HTTP/1.1 200 OK
+Date: Wed, 21 Oct 2020 21:50:14 GMT
+Server: Apache/2.4.29 (Ubuntu)
+Last-Modified: Sat, 04 Apr 2020 18:41:38 GMT
+ETag: "12a0-5a27b62627f20"
+Accept-Ranges: bytes
+Content-Length: 4768
+Vary: Accept-Encoding
+Connection: close
+Content-Type: text/html
 ....
 <CRLF>
 ....            //  Downloaded Data corresponding to the request
