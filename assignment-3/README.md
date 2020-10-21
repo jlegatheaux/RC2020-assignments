@@ -231,7 +231,7 @@ while( is.available() ) {
 
 Threads can be programmed with different options: Lambda Expressions or use of Helper Classes.
 
-## Threads + Lambda Expression
+### Threads + Lambda Expression
 
 ```
 new Thread( () -> {
@@ -354,7 +354,13 @@ class ServiceHandler extends Thread {
 
 ## PART II - Using the HTTP Protocol to Download Digital Objects from a Server
 
-### Goals
+
+### To be Inluded ASAP
+
+
+
+
+### Assignment 3
 
 To complete this assignment you must program an HTTP client that must be able to transfer a voluminous file (e.g. above 100 Mbytes) from a set of HTTP "tricky" servers, in the shortest time. These "tricky" servers, whenever they receive a request of an object, may only send part of the requested object or break the connection in the middle of the transfer. Also, each server can exhibit variable transfer performances. Servers accept ranges requests from clients.
 
