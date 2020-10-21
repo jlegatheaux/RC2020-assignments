@@ -737,18 +737,18 @@ End-to-end average bitrate:        .... bytes per second
 Number of requests performed:      .... requests
 
 ```
-### Grading (in 0-20 scale)
+## Grading (in 0-20 scale)
 
-**For Delivery 3.1 Submission**
+### For Delivery 3.1 Submission
 
 - A program that does not transfer the file or transfers it incorrectly, will be graded at most 7 points.
 - A program that transfers the file correctly to a client local file, only contacting one server at a time, will be graded at most 13 points
 
-**For Delivery 3.1 Submission** (scoring added to Delivery 3.1)
+### For Delivery 3.1 Submission (scoring added to Delivery 3.1)
 - A program that transfers the file correctly, using the four servers, will be graded at most 3.
 - Programs that use more then one server in parallel and a proposed optimized setrategy have no a priori grading limitations for the remaing 4 points
 
-**Penalizations**
+### Penalizations
 - Code clarity and structure, as well as performance indications (following the required output format) according to your used policy when using the four servers will be accounted with no penalties. Otherwise, penalities will be considered: 
 - Until 2 points for bad clarity and code structure
 - Until 2 points if statistics in the output format are not implemented or incorrectly implemented.
