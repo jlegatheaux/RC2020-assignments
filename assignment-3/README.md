@@ -68,7 +68,7 @@ XXXXXXXXXXX PICTURE XXXXXXXXXXX
 In this simple example the client creates a TCP Socket by connectiong it to the server TCP Socket; the server Socket is identified by the server address and the socket port. Then, the client reads lines from its console and sends them to the server. The server reads the bytes sent by the client and echoes them back to the client. 
 
 ### Java Server Code
-The code of the server **EchoServer.java**(exemplo1/EchoServer.java) is very simple. It just creates a Socket to accept incoming connections in the previously agreed port. Then it accepts client request to establish a connection.
+The code of the server [**EchoServer.java**](./exemplo1/EchoServer.java) is very simple. It just creates a Socket to accept incoming connections in the previously agreed port. Then it accepts client request to establish a connection.
 ```
 import java.io.* ;
 import java.net.* ;
@@ -132,7 +132,7 @@ public class ConnectionHandler {
 
 ### Java Client
 
-The client starts by processing the parameters and opening a connection to the server.
+The client [EchoClient.java](./exemplo1/EchoClient.java) starts by processing the parameters and opening a connection to the server.
 When the connection is open, it starts using it as a read / write stream/pipe.
 As you can see (EchoClient) Once the connection is established, the client prepares a Scanner to read bytes from the console (System.in).
 Enters a loop where it reads a line, sends it to the server, gets the echo and prints it to the console, until it receives the string "!end". 
