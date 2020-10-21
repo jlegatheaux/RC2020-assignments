@@ -17,7 +17,7 @@ servers to be used are provided in advance.
 - Complementarily you have these examples for your preliminary tests: **echo-client.java** and **echo-sever.java**:  a very simple client/server application implementing an ECHO protocol. 
 - In the part I (below) you find the initial guidelines for "Networking Programming using TCP Sockets in Java"
 
-### Programming with HTTP using TCP Sockets
+### HTTP Protocol and How to Download Digital Objects from HTTP Servers
 As you know, HTTP is supported by the TCP transport protocol, and it operates in two basic variants (HTTP/1.0 - implementaing HTTP Request/Response with non-persistet connections, and hTTP/1.1: using persistent connections). Clients that interact with HTTP servers must send correct HTTP requests (with the proper HEADERS), sent as formatted 
 requests sent in the TCP connection previous estabished with the server. Clients must be able to receive HTTP responses, processing them according to the HTTP protocol (interpreting the HEADERS and CONTENTS in the RESPONSE).
 
@@ -39,8 +39,231 @@ Summary
 - Java Example
 - Exercise: File Transfer over TCP
 
+###Client/Server Model
+A Client/Server Application has two base autonomous components that can run as processes in the same Host or distributed in two different internetworked Hosts:
+- Server: the first to run - usually always running and ready to process requests from the client
+- Client: usually started by the user, to request a service from the server
 
-## PART II -Using the HTTP Protocol to Download Digital Objects from a Server
+###Client/Server Model with TCP Channels
+
+The following figure represents the typical interaction between a client and server.
+
+XXXXXXXXXXX PICTURE XXXXXXXXXXX
+
+###TCP Logical Channels or Connections (or Streams)
+- A TCP connection is a logical two-way reliable channel among two processess
+- The connection is open by the client, directed towards the server IP address and port,
+- The server IP address and port identifies the other extreme of the connection
+- It supports two independent, reliable and ordered flow of bytes — one in each direction
+- It can be closed at any moment by any of the two communicating processess
+- Before any communication can take place, both sides must agree that they want to establish the communicating TCP channel among them
+
+###TCP Sockets
+- A TCP connection is established among two TCP Sockets, one in each extreme of the channel
+- A client TCP Socket "opens" a connection to the server side TCP Socket - the first opens the connection, the second one accepts it
+- A server creates a TCP Socket to accept incoming connections; this socket has a server port and the server IP address
+- A client opens or creates the connection by requesting the creation of a local TCP Socket connected to the server TCP Socket
+
+###Example (ECHO Server and Client)
+In this simple example the client creates a TCP Socket by connectiong it to the server TCP Socket; the server Socket is identified by the server address and the socket port. Then, the client reads lines from its console and sends them to the server. The server reads the bytes sent by the client and echoes them back to the client. 
+
+###Java Server Code
+The code of the server (EchoServer) is very simple. It just creates a Socket to accept incoming connections in the previously agreed port. Then it accepts client request to establish a connection.
+
+
+import java.io.*;
+import java.net.*;
+
+public class EchoServer {
+    
+    public static final int PORT = 8000 ;
+   
+    public static void main(String args[] ) throws Exception {
+        
+        // creates a server socket to wait for connections
+        try(ServerSocket serverSocket = new ServerSocket( PORT )) {
+            for(;;) { 
+                // waits for a new connection from a client
+                try(Socket clientSocket = serverSocket.accept()) {
+                    // handle the connection...
+                    new ConnectionHandler().handle( clientSocket );        
+                } catch( IOException x ) {
+                    x.printStackTrace();
+                }
+            }            
+        }
+    }
+}
+
+
+When the connection is established, the handler (ConnectionHandler) simply continously reads bytes and writes them back to the other side while the connection is not closed.
+Note that after the connection is established, it can be seen as a read / write stream/pipe.
+
+
+import java.io.*;
+import java.net.*;
+
+public class ConnectionHandler {
+    private static final int TMP_BUF_SIZE = 16;
+    
+    public void handle( Socket cs ) throws IOException {
+        
+        InputStream is = cs.getInputStream();
+        OutputStream is = cs.getOutputStream();
+        
+        for(;;) { 
+            // implements the data ECHO, by reading and writing 
+            // while the connection is not closed
+            int n ;
+            byte[] buf = new byte[ TMP_BUF_SIZE] ;
+            while( (n = is.read(buf)) > 0 )
+                os.write( buf, 0, n );
+        }
+    }
+}
+
+
+### Java Client
+
+The client starts by processing the parameters and opening a connection to the server.
+When the connection is open, it starts using it as a read / write stream/pipe.
+As you can see (EchoClient) Once the connection is established, the client prepares a Scanner to read bytes from the console (System.in).
+Enters a loop where it reads a line, sends it to the server, gets the echo and prints it to the console, until it receives the string "!end". 
+
+
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class EchoClient {
+    private static final int PORT = 8000;
+    public static void main(String[] args ) throws Exception {
+        if( args.length != 1 ) {
+            System.out.println("usage: java EchoClient server") ;
+            System.exit(0);
+        }
+        String server = args[0] ;
+        // Creating a connection to the server
+        try(Socket socket = new Socket( server, PORT )) {
+            OutputStream os = socket.getOutputStream();
+            InputStream is = socket.getInputStream();
+            
+            //...
+        }
+    }
+}
+
+
+### Recipes
+
+### Class ServerSocket
+
+try( ServerSocket ss = new ServerSocket( PORT ) ) {
+    ...
+        cs = ss.accept();
+    ...
+}
+
+Class Socket
+try( Socket ss = new Socket( server, PORT ) ) {
+    ...
+    InputStream is = ss.getInputStream();
+    OutpoutStream os = ss.getOutputStream();
+    ...
+}
+
+### Sending and receiving (multiple) bytes
+
+int n;
+byte buf = new byte[TMP_BUF_SIZE];
+while( (n = is.read( buf )) > 0 )
+    os.write( buf, 0, n)
+    
+    
+Reading a single byte at each time (slow)
+InputStream is = cs.getInputStream();
+int b = is.read();
+
+### WARNING: Anti-Pattern
+
+InputStream.available() works with FileInputStream, but does not work with streams that are backed by Sockets.
+
+Socket cs = new Socket( server, port );
+InputStream is = cs.getInputStream();
+while( is.available() ) {  
+};
+
+
+## Exercise
+
+### TCP File Transfer
+
+For this exercise, you will use a TCP server, ready to receive files from clients. You must program your own client to send a file to the provided server. 
+After the connection is established, a byte array terminated with byte \0, containing the name of the file, is sent to the server, followed by the file contents.
+Next, transform your iterative server, into a concurrent one. Use threads to make it capable of receiving several files in parallel.
+A docker image with the server ready to be used can be launched using:
+
+A docker image with the server ready to be used can be launched using:
+
+docker run -t -p 8000:8002 smduarte/rc18-tcpfileserver
+The server listens at port 8000...
+
+### Java Tips
+
+To work with threads you can use this tutorial
+https://docs.oracle.com/javase/tutorial/essential/concurrency/threads.html
+
+Find below some quick examples:
+
+### Threads + Lambda Expression
+
+new Thread( () -> {
+    
+    // place here code to execute in new thread...
+    
+}).start();
+
+
+### Threads + Helper class
+
+Helper class implements interface Runnable
+
+Main thread calls:
+
+new Thread( new HelperClass( args )).start();
+
+Child thread executes in run(), receives args in constructor...
+
+  class HelperClass implements Runnable {
+    HelperClass( ... ) {
+        // Constructor receives any args the helper class needs to run...
+    }
+    public void run() {
+       // place here code to execute in new thread...
+    }
+}
+
+Helper class extends Thread
+Cannot be used if helper class already extends another class...
+
+Main thread calls:
+new HelperClass( args ).start();
+
+
+Child thread executes in run(), receives args in constructor...
+
+class HelperClass extends Thread {
+    HelperClass( ... ) {
+        // Constructor receives any args the helper class needs to run...
+    }
+    public void run() {
+       // place here code to execute in new thread...
+    }
+}
+
+
+
+## PART II - Using the HTTP Protocol to Download Digital Objects from a Server
 
 ### Goals
 
