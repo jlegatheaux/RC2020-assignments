@@ -102,7 +102,7 @@ public class EchoServer {
 }
 ```
 
-When the connection is established, the handler [**ConcccentionHandler**](./exemplo1/ConnectionHandler.java) simply continously reads bytes and writes them back to the other side while the connection is not closed.
+When the connection is established, the handler [**ConnectionHandler.java**](./exemplo1/ConnectionHandler.java) simply continously reads bytes and writes them back to the other side while the connection is not closed.
 ```
 import java.io.*;
 import java.net.*;
@@ -132,7 +132,7 @@ public class ConnectionHandler {
 
 ### Java Client
 
-The client [EchoClient.java](./exemplo1/EchoClient.java) starts by processing the parameters and opening a connection to the server.
+The client [**EchoClient.java**](./exemplo1/EchoClient.java) starts by processing the parameters and opening a connection to the server.
 When the connection is open, it starts using it as a read / write stream/pipe.
 As you can see (EchoClient) Once the connection is established, the client prepares a Scanner to read bytes from the console (System.in).
 Enters a loop where it reads a line, sends it to the server, gets the echo and prints it to the console, until it receives the string "!end". 
@@ -322,7 +322,7 @@ public class ConcurrentEchoServer {
 ```
 
 As you can see in the Concurret EchoServer, the connections from clients are served through the thread **servthread** as defined in [**ServiceHandler.java**](./exemplo1/ServiceHandler.java).
-The ServiceHandler class, as an Helper class then uses again the initial [**ConnectonHandler**](./exemplo1/ConnectionHandler.java) used by the non concurrent EchoServer,
+The ServiceHandler class, as an Helper class then uses again the initial [**ConnectionHandler**](./exemplo1/ConnectionHandler.java) used by the non concurrent EchoServer,
 but now the client connections are handled in parrallel.
 
 ```
