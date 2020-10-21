@@ -14,16 +14,16 @@ For the assignmemt the implementation of the web-servers are provided as initial
 - Remember that for the work assignmemt you will be particularly focused on the develpment of clients using TCP sockets (supporting HTTP Requests/Responses) because the HTTP  
 servers to be used are provided in advance.
 - You also have a convenient explanation in the text book of the course: **https://legatheaux.eu/book/cnfbook-pub.pdf, see chapter 5, section 5.3**.
-- Complementarily you have these examples for your preliminary tests: **echo-client.java** and **echo-sever.java**:  a very simple client/server application implementing an ECHO protocol. 
-- In the part I (below) you find the initial guidelines for "Networking Programming using TCP Sockets in Java"
+- Complementarily you have these examples for your preliminary tests: **echo-client.java** and **echo-sever.java** (explained below in Part I):  a very simple client/server application implementing an ECHO protocol. 
+- In the part I (below) you find the initial guidelines for **"Networking Programming using TCP Sockets in Java"**
 
 ### HTTP Protocol and How to Download Digital Objects from HTTP Servers
 As you know, HTTP is supported by the TCP transport protocol, and it operates in two basic variants (HTTP/1.0 - implementaing HTTP Request/Response with non-persistet connections, and hTTP/1.1: using persistent connections). Clients that interact with HTTP servers must send correct HTTP requests (with the proper HEADERS), sent as formatted 
 requests sent in the TCP connection previous estabished with the server. Clients must be able to receive HTTP responses, processing them according to the HTTP protocol (interpreting the HEADERS and CONTENTS in the RESPONSE).
 
 For the operation of the HTTP protocol you must consider the explanation in the theoretical classes. 
-- You can also study the HTTP protocol in the course textbook: **https://legatheaux.eu/book/cnfbook-pub.pdf, see chpter 12**, paying special attention to HTTP requests/responses using RANGE REQUESTS. 
-- In the part II (below) you find the initial guildelines for "Using the HTTP Protocol to Download Digital Objects from a Server""
+- You can also study the HTTP protocol in the course textbook: **https://legatheaux.eu/book/cnfbook-pub.pdf, see chapter 12**, paying special attention to HTTP requests/responses using RANGE REQUESTS. 
+- In the part II (below) you find the initial guildelines for **"Using the HTTP Protocol to Download Digital Objects from a Server"**
 
 ### Assignment Motivation
 
@@ -93,7 +93,7 @@ public class EchoServer {
             }            
         }
     }
-}
+ }
 
 
 When the connection is established, the handler (ConnectionHandler) simply continously reads bytes and writes them back to the other side while the connection is not closed.
