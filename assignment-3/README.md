@@ -64,7 +64,7 @@ A Client/Server Application has two base autonomous components that can run as p
 
 The following figure represents the typical interaction between a client and server.
 
-**XXXXXXXXXXX PICTURE TO BE INSERTED XXXXXXXXXXX**
+!(./figures/TCPSockets.bmp)
 
 ### TCP Logical Channels or Connections (or Streams)
 - A TCP connection is a logical two-way reliable channel among two processess
@@ -377,7 +377,7 @@ class ServiceHandler extends Thread {
 - In version 1.0 of the protocol, each request / reply HTTP transaction uses a different TCP connection
 - In version 1.1 several HTTP transactions can share the same TCP connection
 
-**XXXXXXXXXXX PICTURE TO BE INSERTED XXXXXXXXXXX**
+!(./figures/Rede.bmp)
 
 ### Example of HTTP REquest/Reply Messages
 
