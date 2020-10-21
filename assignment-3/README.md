@@ -519,7 +519,7 @@ Study its code and try to access some urls like for example:
 - ``http://www.google.com``
 - ``http://asc.di.fct.unl.pt``
 - ``http://asc.di.fct.unl.pt/rc``
-``
+
 Explain the output and understand how it works.
 
 In the source code repository you will also find a naif HTTP server [**HttpServerDemo.java**] that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
