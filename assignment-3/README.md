@@ -1,7 +1,7 @@
 # Assignment 3: File Transfers in parallel using TCP and HTTP
 **Note**: The assignment and guidelines below are not in its final version. Final version will be available soon.
 
-## A robust client to download content from multiple HTTP servers
+## A robust client to download content from one and from multiple HTTP servers
 
 In this Assignment and its Guidelines you will learn how to program with Sockets to program client/server applications supported by TCP and how to program clients that can transfer contents from HTTTP servers. After the initial guidance, diivded into two parts, the final goal is to implement a Client/Server application for File Transfer based on HTTP, where clients can download files from several web-servers used in parallel, in order to maximize the file transfer rate. 
 For the assignmemt the implementation of the web-servers are provided as initial material. the assignmemt consists in the developmet of the required client implementation.
@@ -9,10 +9,24 @@ For the assignmemt the implementation of the web-servers are provided as initial
 ### Assignment Motivation
 
 In today's internet, most of the users consumed content is carried over the HTTP protocol. In the specific case of multimedia contents, the volume of the consumed information varies from a few Mbytes (in the case of photographs), up to several Gbytes (in the case of movies).
-It is not realistic to think of such bulky objects being transferred in a single HTTP request/reply interaction and using a single TCP connection. 
-Inevitably, due to the high volumes of data, momentary anomalies in the network, or problems in the servers, it is necessary to resort to more than one interaction among the client and the server(s). In addition, in the case of movies, as they can take hours to play, it is not mandatory or interesting to transfer in only one chunk the full content, or from the same server. Also, a faster download may be achieved if transferring in parallel from several servers, using different HTTP ranges.
 
-## Background and references
+It is not realistic to think of such bulky objects being transferred in a single HTTP request/reply interaction and using a single TCP connection. 
+
+Inevitably, due to the high volumes of data, momentary anomalies in the network, or problems in the servers, it is necessary to resort to more than one interaction among the client and the server(s). In addition, in the case of movies, as they can take hours to play, it is not mandatory or interesting to transfer in only one chunk the full content, or from the same server. 
+
+Also, a faster download may be achieved **if transferring in parallel from several servers, using different HTTP ranges**.
+
+To address the Work-Assigmnment 3 and its deliverables you must follow the following guidelines:
+
+- Backgound and references
+--Progamming with TCP SOckets in Java
+--HTTP Protocol and How to DOwnload Digital Objects from HTTP Servers
+- PART I: Networking Programming using TCP Sockets in Java
+- PART II: Using the HTTP Protocol to Download Digital Objects from a Server
+- PART III: Assignment 3 Deliverables: Delivery 3.1 and Delivery 3.2
+
+# Background and initial references
+
 ### Programming with TCP Sockets in Java
 
 - You can find a **tutorial on programming with Sockets in Java Language** in **https://docs.oracle.com/javase/tutorial/networking/sockets/**
@@ -31,7 +45,8 @@ For the operation of the HTTP protocol you must consider the explanation in the 
 - In the part II (below) you find the initial guildelines for **"Using the HTTP Protocol to Download Digital Objects from a Server"**
 
 
-# PART I - Networking Programming using TCP Sockets in Java
+# PART I
+# Networking Programming using TCP Sockets in Java
 
 ### Summary
 - Client/Server Model with TCP
@@ -351,8 +366,8 @@ class ServiceHandler extends Thread {
 
 ```
 
-
-# PART II - Using the HTTP Protocol to Download Digital Objects from a Server
+# PART II
+# Using the HTTP Protocol to Download Digital Objects from a Server
 
 ### Summary
 
@@ -572,6 +587,7 @@ Range requests and replies are specially useful to deal with multimedia informat
 In the source code repository you will also find a lazy HTTP server [**HttpLazyServer.java**] that is able to serve the requested files and partially supports ranges. In fact, the full support of RFC 7233 ranges is quite complex and extensive. The provided server only supports ranges of the forms shown above. This server is lazy since it only sends at most MAX_BYTES bytes in each reply. You can find this constant in its source file. Therefore, if you want to know it, you should use the RTFC method (Read The F. Code), which is the only accessible method when no manual is available.
 To test the actions of the lazy server, launch it in a directory where you also put the file Earth.jpg (which size is around 13 Mbytes). You can access it by using the url **http://localhost:8080/Earth.jpg**  with the browser of your choice.
 
+# Parte III
 # Assignment 3: Deliverables:
 
 ## Assignment 3.1: Deleopment and testing a Client Downloading by HTTP a file using successive range downloads
