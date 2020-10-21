@@ -624,9 +624,9 @@ To test the actions of the lazy server, launch it in a directory where you also 
 ``**http://localhost:8080/Earth.jpg**`` using the browser of your choice.
 
 # Parte III
-# Assignment 3: Deliverables:
+# Assignment 3 Deliverables:
 
-## Assignment 3.1: Deleopment and testing a Client Downloading by HTTP a file using successive range downloads
+## Delivery 1: Deleopment and testing a Client Downloading by HTTP a file using successive range downloads
 
 Now, assuming that you already have extended the demo HTTP client to transfer a file to the local file system, modify your getFile class in order to be able to fully transfer a file of any size from the HttpLazyServer.java.
 Since in your future work, you will be directed to use docker hosted web servers, you can also test your client with a different HTTP server. This one is available in a docker container and can be loaded using the command:
@@ -666,7 +666,7 @@ file.seek(k); // Sets the file-pointer offset, measured from the beginning of th
 n = file.read( buffer, 0, len ); // Reads up to len (or buffer.length) bytes of data from this file into an array of bytes
 ```
 
-## Assignment 3.2: A client to download content from one or more HTTP servers by the way of HTTP range requests
+## Delivery 2: A client to download content from one or more HTTP servers by the way of HTTP range requests
 
 To complete the assignment 3 that you must submitt in the submission date, you must program an HTTP client that must be able to transfer a voluminous file (e.g. above 100 Mbytes) from **a set of HTTP "tricky" servers**, in the shortest time. These "tricky" servers, whenever they receive a request of an object, may only send part of the requested object or break the connection in the middle of the transfer. Also, each server can exhibit variable transfer performances. These servers, accept range HTTP requests, and whenever they receive a request o an object with more than 1 Myte, they only send a slice of the requested object of random size, from 1 Mbyte, up to at most 10 Mbytes. Thus, if the requested object (or range) has less than 1 Mbyte, it is fully sent. However, if the requested object (or range) has size grater than 1 Mbyte, these servers send a range of random size, between 1 and 10 Mbytes, in a random way.
 
@@ -738,16 +738,16 @@ Number of requests performed:      .... requests
 ```
 ## Grading (in 0-20 scale)
 
-### For Delivery 3.1 Submission
+### For Delivery 1:
 
 - A program that does not transfer the file or transfers it incorrectly, will be graded at most 7 points.
 - A program that transfers the file correctly to a client local file, only contacting one server at a time, will be graded at most 13 points
 
-### For Delivery 3.1 Submission (scoring added to Delivery 3.1)
+### For Delivery 2:
 - A program that transfers the file correctly, using the four servers, will be graded at most 3.
 - Programs that use more then one server in parallel and a proposed optimized setrategy have no a priori grading limitations for the remaing 4 points
 
-### Penalizations
+### Possible penalizations
 - Code clarity and structure, as well as performance indications (following the required output format) according to your used policy when using the four servers will be accounted with no penalties. Otherwise, penalities will be considered: 
 - Until 2 points for bad clarity and code structure
 - Until 2 points if statistics in the output format are not implemented or incorrectly implemented.
