@@ -17,12 +17,12 @@ Also, a faster download may be achieved **if transferring in parallel from sever
 
 To address the Work-Assigmnment 3 and its deliverables you must follow the following guidelines:
 
-| * **Backgound and references**
-|    * **Progamming with TCP Sockets in Java**
-|    * **HTTP Protocol and How to DOwnload Digital Objects from HTTP Servers**
-| * **PART I: Networking Programming using TCP Sockets in Java**
-| * **PART II: Using the HTTP Protocol to Download Digital Objects from a Server**
-| * **PART III: Assignment 3 Deliverables: Delivery 3.1 and Delivery 3.2**
+* **Backgound and references**
+    * **Progamming with TCP Sockets in Java**
+    * **HTTP Protocol and How to DOwnload Digital Objects from HTTP Servers**
+* **PART I: Networking Programming using TCP Sockets in Java**
+* **PART II: Using the HTTP Protocol to Download Digital Objects from a Server**
+* **PART III: Assignment 3 Deliverables: Delivery 3.1 and Delivery 3.2**
 
 # Background and initial references
 
