@@ -1,7 +1,7 @@
 # Assignment 3: File Transfers in parallel using TCP and HTTP
 **Note**: The assignment and guidelines below are not in its final version. Final version will be available soon.
 
-## A robust client to download content from one and from multiple HTTP servers
+## Objective: A robust client to download content from one and from multiple HTTP servers
 
 In this Assignment and its Guidelines you will learn how to program with Sockets to program client/server applications supported by TCP and how to program clients that can transfer contents from HTTTP servers. After the initial guidance, diivded into two parts, the final goal is to implement a Client/Server application for File Transfer based on HTTP, where clients can download files from several web-servers used in parallel, in order to maximize the file transfer rate. 
 For the assignmemt the implementation of the web-servers are provided as initial material. the assignmemt consists in the developmet of the required client implementation.
@@ -18,12 +18,12 @@ Also, a faster download may be achieved **if transferring in parallel from sever
 
 To address the Work-Assigmnment 3 and its deliverables you must follow the following guidelines:
 
-- Backgound and references
---Progamming with TCP SOckets in Java
---HTTP Protocol and How to DOwnload Digital Objects from HTTP Servers
-- PART I: Networking Programming using TCP Sockets in Java
-- PART II: Using the HTTP Protocol to Download Digital Objects from a Server
-- PART III: Assignment 3 Deliverables: Delivery 3.1 and Delivery 3.2
+* **Backgound and references**
+* **Progamming with TCP SOckets in Java**
+* **HTTP Protocol and How to DOwnload Digital Objects from HTTP Servers**
+* **PART I: Networking Programming using TCP Sockets in Java**
+* **PART II: Using the HTTP Protocol to Download Digital Objects from a Server**
+* **PART III: Assignment 3 Deliverables: Delivery 3.1 and Delivery 3.2**
 
 # Background and initial references
 
