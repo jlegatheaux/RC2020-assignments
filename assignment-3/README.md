@@ -64,7 +64,7 @@ A Client/Server Application has two base autonomous components that can run as p
 
 The following figure represents the typical interaction between a client and server.
 
-XXXXXXXXXXX PICTURE XXXXXXXXXXX
+**XXXXXXXXXXX PICTURE TO BE INSERTED XXXXXXXXXXX**
 
 ### TCP Logical Channels or Connections (or Streams)
 - A TCP connection is a logical two-way reliable channel among two processess
@@ -377,9 +377,46 @@ class ServiceHandler extends Thread {
 - In version 1.0 of the protocol, each request / reply HTTP transaction uses a different TCP connection
 - In version 1.1 several HTTP transactions can share the same TCP connection
 
+**XXXXXXXXXXX PICTURE TO BE INSERTED XXXXXXXXXXX**
+
+### Example of HTTP REquest/Reply Messages
+
+**HTTP Request Message**
+
+```
+GET /index.html HTTP/1.0 <CRLF>
+Host: www.google.com <CRLF>
+User-Agent: Mozzilla/40.01 <CRLF>
+<CRLF>
+```
+
+**HTTP Reply Message** (only included some lines)
+
+```
+HTTP/1.0 200 OK <CRLF>
+Date: Wed, 21 Oct 2020 21:41:57 GMT <CRLF>
+...
+Content-Type: text/html; charset=ISO-8859-1 <CRLF>
+Server: gws <CRLF>
+Accept-Ranges: none <CRLF>
+....
+<CRLF>
+....            //  Downloaded Data corresponding to the request
+```
+
 ### HTTP Request header-fields
 
-There are many different request header-fields that the client can send to the sever into the request message header. Below you will find some of a very long list.
+There are many different request header-fields that the client can send to the sever into the request message header. Below you will find some of a very long list that you can find in the bibliography:
+
+```
+User-Agent:		ex., User-AGent_ Mozilla/4.0.0
+Accept-Chatset:		ex., Accept-Charset: utf-8
+Accept-Encoding:	ex., Accept-Encoding: gzip
+Accept-Language:	ex-. Accep-Language: en-UK
+If-Modified-Since:	ex., If-Modified-Since: Tue, 02 Oct 2020 14:35:41 GMT
+If-Match:		ex: If-Match: "735667ds8siAB76E78FE.....9537C2D"
+Range:			exx. Range: bytes=500-999
+```
 
 ### HTTP requests made "by hand"
 
@@ -422,6 +459,16 @@ GET / HTTP/1.0 <return>
 ### HTTP Reply: header-fields
 
 The server sends information to the client by also using the header of the reply message, which is composed of different reply header-fields. These header-fields contains several informations, namely the reply object meta data, that are usefull to the client.
+
+```
+Server:			ex., Server: Apache
+Last-Modified:		ex., Last-Modified: Wed 21 Oct 2020 22:31:24 GMT
+Content-Type:		ex., Content-Type: text/html; charset=utf-8
+Content-Legnth:		ex., Content-Length: 438
+Content-Encoding:	ex., Content-Encoding: gzip
+ETag:			ex., ETag: "3d2-52aca46b79fd9"
+Accept-Ranges:		ex., Accept-Ranges: bytes
+```
 
 ### Java code utilities and examples
 
