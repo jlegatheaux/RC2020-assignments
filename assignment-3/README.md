@@ -69,193 +69,7 @@ In this simple example the client creates a TCP Socket by connectiong it to the 
 
 ### Java Server Code
 The code of the server (**EchoServer.java**) is very simple. It just creates a Socket to accept incoming connections in the previously agreed port. Then it accepts client request to establish a connection.
-
-import java.io.*;
-import java.net.*;
-
-public class EchoServer {
-
-    public static final int PORT = 8000 ;
-
-    public static void main(String args[] ) throws Exception {
-
-        // creates a server socket to wait for connections                      
-        try(ServerSocket serverSocket = new ServerSocket( PORT )) {
-            for(;;) {
-                // waits for a new connection from a client                     
-                try(Socket clientSocket = serverSocket.accept()) {
-                    // handle the connection...                                 
-                    new ConnectionHandler().handle( clientSocket );
-                } catch( IOException x ) {
-                    x.printStackTrace();
-                }
-            }
-        }
-	    }
-}
-
-When the connection is established, the handler (**ConnectionHandler.java**) simply continously reads bytes and writes them back to the other side while the connection is not closed.
-Note that after the connection is established, it can be seen as a read / write stream/pipe.
-
-Last login: Mon Oct 19 23:32:18 on ttys002
-
-The default interactive shell is now zsh.
-To update your account to use zsh, please run `chsh -s /bin/zsh`.
-For more details, please visit https://support.apple.com/kb/HT208050.
-(base) Henriques-MacBook-Pro:~ hj$ cd work/
-(base) Henriques-MacBook-Pro:work hj$ cd RC-20-21/
-(base) Henriques-MacBook-Pro:RC-20-21 hj$ ls
-Assignment-1	CNSS		Lab-1		Lab-2.tgz	RC-Assignmemts
-Assignment-2	Lab-0		Lab-1.tgz	Lab-3-hj
-Assignment-3	Lab-0.tgz	Lab-2		Lab2.tar
-(base) Henriques-MacBook-Pro:RC-20-21 hj$ cd Lab-3-hj/
-(base) Henriques-MacBook-Pro:Lab-3-hj hj$ ls
-readme-ass1.md	readme-ass3.md
-(base) Henriques-MacBook-Pro:Lab-3-hj hj$ mkdir sources
-(base) Henriques-MacBook-Pro:Lab-3-hj hj$ ls
-readme-ass1.md	readme-ass3.md	sources
-(base) Henriques-MacBook-Pro:Lab-3-hj hj$ cd sources/
-(base) Henriques-MacBook-Pro:sources hj$ ls
-(base) Henriques-MacBook-Pro:sources hj$ jed EchoServer.java
-(base) Henriques-MacBook-Pro:sources hj$ emacs  EchoServer.java
-(base) Henriques-MacBook-Pro:sources hj$ javac EchoServer.java 
-EchoServer.java:1: error: class, interface, or enum expected
-public static final int PORT = 8000 ;
-                    ^
-EchoServer.java:3: error: class, interface, or enum expected
-public static void main(String args[] ) throws Exception {
-              ^
-EchoServer.java:7: error: class, interface, or enum expected
-        for(;;) { 
-              ^
-EchoServer.java:12: error: class, interface, or enum expected
-            } catch( IOException x ) {
-            ^
-EchoServer.java:14: error: class, interface, or enum expected
-            }
-            ^
-5 errors
-(base) Henriques-MacBook-Pro:sources hj$ emacs  EchoServer.java
-(base) Henriques-MacBook-Pro:sources hj$ javac EchoServer.java 
-EchoServer.java:8: error: cannot find symbol
-	try(ServerSocket serverSocket = new ServerSocket( PORT )) {
-	    ^
-  symbol:   class ServerSocket
-  location: class EchoServer
-EchoServer.java:8: error: cannot find symbol
-	try(ServerSocket serverSocket = new ServerSocket( PORT )) {
-	                                    ^
-  symbol:   class ServerSocket
-  location: class EchoServer
-EchoServer.java:11: error: cannot find symbol
-		try(Socket clientSocket = serverSocket.accept()) {
-		    ^
-  symbol:   class Socket
-  location: class EchoServer
-EchoServer.java:13: error: cannot find symbol
-		    new ConnectionHandler().handle( clientSocket );        
-		        ^
-  symbol:   class ConnectionHandler
-  location: class EchoServer
-EchoServer.java:14: error: cannot find symbol
-		} catch( IOException x ) {
-		         ^
-  symbol:   class IOException
-  location: class EchoServer
-5 errors
-(base) Henriques-MacBook-Pro:sources hj$ emacs  EchoServer.java
-(base) Henriques-MacBook-Pro:sources hj$ javac EchoServer.java 
-EchoServer.java:8: error: cannot find symbol
-	try(ServerSocket serverSocket = new ServerSocket( PORT )) {
-	    ^
-  symbol:   class ServerSocket
-  location: class EchoServer
-EchoServer.java:8: error: cannot find symbol
-	try(ServerSocket serverSocket = new ServerSocket( PORT )) {
-	                                    ^
-  symbol:   class ServerSocket
-  location: class EchoServer
-EchoServer.java:11: error: cannot find symbol
-		try(Socket clientSocket = serverSocket.accept()) {
-		    ^
-  symbol:   class Socket
-  location: class EchoServer
-EchoServer.java:13: error: cannot find symbol
-		    new ConnectionHandler().handle( clientSocket );        
-		        ^
-  symbol:   class ConnectionHandler
-  location: class EchoServer
-EchoServer.java:14: error: cannot find symbol
-		} catch( IOException x ) {
-		         ^
-  symbol:   class IOException
-  location: class EchoServer
-5 errors
-(base) Henriques-MacBook-Pro:sources hj$ javac EchoServer.java 
-EchoServer.java:8: error: cannot find symbol
-	try(ServerSocket serverSocket = new ServerSocket( PORT )) {
-	    ^
-  symbol:   class ServerSocket
-  location: class EchoServer
-EchoServer.java:8: error: cannot find symbol
-	try(ServerSocket serverSocket = new ServerSocket( PORT )) {
-	                                    ^
-  symbol:   class ServerSocket
-  location: class EchoServer
-EchoServer.java:11: error: cannot find symbol
-		try(Socket clientSocket = serverSocket.accept()) {
-		    ^
-  symbol:   class Socket
-  location: class EchoServer
-EchoServer.java:13: error: cannot find symbol
-		    new ConnectionHandler().handle( clientSocket );        
-		        ^
-  symbol:   class ConnectionHandler
-  location: class EchoServer
-EchoServer.java:14: error: cannot find symbol
-		} catch( IOException x ) {
-		         ^
-  symbol:   class IOException
-  location: class EchoServer
-5 errors
-(base) Henriques-MacBook-Pro:sources hj$ emacs  EchoServer.java
-(base) Henriques-MacBook-Pro:sources hj$ javac EchoServer.java 
-EchoServer.java:16: error: cannot find symbol
-		    new ConnectionHandler().handle( clientSocket );        
-		        ^
-  symbol:   class ConnectionHandler
-  location: class EchoServer
-1 error
-(base) Henriques-MacBook-Pro:sources hj$ emacs ConnectionHandler.java
-(base) Henriques-MacBook-Pro:sources hj$ javac EchoServer.java 
-./ConnectionHandler.java:10: error: variable is is already defined in method handle(Socket)
-    OutputStream is = cs.getOutputStream();
-                 ^
-./ConnectionHandler.java:18: error: cannot find symbol
-            os.write( buf, 0, n );
-            ^
-  symbol:   variable os
-  location: class ConnectionHandler
-2 errors
-(base) Henriques-MacBook-Pro:sources hj$ emacs ConnectionHandler.java
-(base) Henriques-MacBook-Pro:sources hj$ javac EchoServer.java 
-(base) Henriques-MacBook-Pro:sources hj$ 
-(base) Henriques-MacBook-Pro:sources hj$ 
-(base) Henriques-MacBook-Pro:sources hj$ 
-(base) Henriques-MacBook-Pro:sources hj$ 
-(base) Henriques-MacBook-Pro:sources hj$ 
-(base) Henriques-MacBook-Pro:sources hj$ 
-(base) Henriques-MacBook-Pro:sources hj$ ls
-ConnectionHandler.class	ConnectionHandler.java~	EchoServer.java
-ConnectionHandler.java	EchoServer.class	EchoServer.java~
-(base) Henriques-MacBook-Pro:sources hj$ 
-(base) Henriques-MacBook-Pro:sources hj$ 
-(base) Henriques-MacBook-Pro:sources hj$ emacs EchoServer.java
-(base) Henriques-MacBook-Pro:sources hj$ car EchoServer.
--bash: car: command not found
-(base) Henriques-MacBook-Pro:sources hj$ car EchoServer.java
--bash: car: command not found
-(base) Henriques-MacBook-Pro:sources hj$ cat EchoServer.java
+```
 import java.io.*;
 import java.net.*;
 
@@ -279,7 +93,10 @@ public class EchoServer {
 	}
     }
 }
-(base) Henriques-MacBook-Pro:sources hj$ cat ConnectionHandler.java
+```
+
+When the connection is established, the handler simply continously reads bytes and writes them back to the other side while the connection is not closed.
+```
 import java.io.*;
 import java.net.*;
 
@@ -301,7 +118,7 @@ public class ConnectionHandler {
         }
     }
 }
-
+```
     
     
 
