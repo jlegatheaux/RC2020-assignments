@@ -39,18 +39,18 @@ Summary
 - Java Example
 - Exercise: File Transfer over TCP
 
-###Client/Server Model
+### Client/Server Model
 A Client/Server Application has two base autonomous components that can run as processes in the same Host or distributed in two different internetworked Hosts:
 - Server: the first to run - usually always running and ready to process requests from the client
 - Client: usually started by the user, to request a service from the server
 
-###Client/Server Model with TCP Channels
+### Client/Server Model with TCP Channels
 
 The following figure represents the typical interaction between a client and server.
 
 XXXXXXXXXXX PICTURE XXXXXXXXXXX
 
-###TCP Logical Channels or Connections (or Streams)
+### TCP Logical Channels or Connections (or Streams)
 - A TCP connection is a logical two-way reliable channel among two processess
 - The connection is open by the client, directed towards the server IP address and port,
 - The server IP address and port identifies the other extreme of the connection
@@ -58,16 +58,16 @@ XXXXXXXXXXX PICTURE XXXXXXXXXXX
 - It can be closed at any moment by any of the two communicating processess
 - Before any communication can take place, both sides must agree that they want to establish the communicating TCP channel among them
 
-###TCP Sockets
+### TCP Sockets
 - A TCP connection is established among two TCP Sockets, one in each extreme of the channel
 - A client TCP Socket "opens" a connection to the server side TCP Socket - the first opens the connection, the second one accepts it
 - A server creates a TCP Socket to accept incoming connections; this socket has a server port and the server IP address
 - A client opens or creates the connection by requesting the creation of a local TCP Socket connected to the server TCP Socket
 
-###Example (ECHO Server and Client)
+### Example (ECHO Server and Client)
 In this simple example the client creates a TCP Socket by connectiong it to the server TCP Socket; the server Socket is identified by the server address and the socket port. Then, the client reads lines from its console and sends them to the server. The server reads the bytes sent by the client and echoes them back to the client. 
 
-###Java Server Code
+### Java Server Code
 The code of the server (**EchoServer.java**) is very simple. It just creates a Socket to accept incoming connections in the previously agreed port. Then it accepts client request to establish a connection.
 
     import java.io.*;
@@ -83,17 +83,16 @@ The code of the server (**EchoServer.java**) is very simple. It just creates a S
 	    try(ServerSocket serverSocket = new ServerSocket( PORT )) {
 	        for(;;) { 
 		    // waits for a new connection from a client
-		    try(Socket clientSocket = serverSocket.accept()) {
+		    	try(Socket clientSocket = serverSocket.accept()) {
 		        // handle the connection...
-		        new ConnectionHandler().handle( clientSocket );        
-		    } catch( IOException x ) {
-		        x.printStackTrace();
-		    }
-	      }            
+		        	new ConnectionHandler().handle( clientSocket );        
+		    	} catch( IOException x ) {
+		        	x.printStackTrace();
+		    	}
+	      	}            
 	    }
-    }
-}
-
+    	}
+   }
 
 When the connection is established, the handler (**ConnectionHandler.java**) simply continously reads bytes and writes them back to the other side while the connection is not closed.
 Note that after the connection is established, it can be seen as a read / write stream/pipe.
