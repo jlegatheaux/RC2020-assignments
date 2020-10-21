@@ -744,8 +744,8 @@ Number of requests performed:      .... requests
 - A program that transfers the file correctly to a client local file, only contacting one server at a time, will be graded at most 13 points
 
 ### For Delivery 2:
-- A program that transfers the file correctly, using the four servers, will be graded at most 3.
-- Programs that use more then one server in parallel and a proposed optimized setrategy have no a priori grading limitations for the remaing 4 points
+- A program that transfers the file correctly, using the four servers, will be graded at most 16.
+- Programs that use more then one server in parallel and a proposed optimized setrategy will be graded between 16 and 20.
 
 ### Possible penalizations
 - Code clarity and structure, as well as performance indications (following the required output format) according to your used policy when using the four servers will be accounted with no penalties. Otherwise, penalities will be considered: 
