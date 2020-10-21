@@ -141,7 +141,6 @@ public class ConnectionHandler {
 	}
     }
 }
-
 ```
     
 
@@ -194,8 +193,6 @@ public class EchoClient {
            socket.close() ;
     }
 }
-
-
 ```
 
 ### Some Recipes
@@ -255,7 +252,6 @@ new Thread( () -> {
     // place here code to execute in new thread...
     
 }).start();
-
 ```
 
 
@@ -278,7 +274,6 @@ Child thread executes in run(), receives args in constructor...
        // place here code to execute in new thread...
     }
 }
-
 ```
 Helper class extends Thread
 Cannot be used if helper class already extends another class...
@@ -334,7 +329,6 @@ public class ConcurrentEchoServer {
 	}
     }
 }
-
 ```
 
 As you can see in the Concurret EchoServer, the connections from clients are served through the thread **servthread** as defined in [**ServiceHandler.java**](./exemplo1/ServiceHandler.java).
@@ -364,7 +358,6 @@ class ServiceHandler extends Thread {
 	    }
     }
 }
-
 ```
 
 # PART II
@@ -406,8 +399,6 @@ telnet www.google.com 80
 GET / HTTP/1.0 <return>
 <return>
 .... analyze the result.
-
-
 ```
 
 **If your system doesn't have the telnet command, you can use instead the nc command**:
@@ -417,7 +408,6 @@ nc -c asc.di.fct.unl.pt 80
 GET / HTTP/1.0 <return>
 <return>
 .... analyze the result.
-
 ```
 
 **Or the following one:**
@@ -454,7 +444,6 @@ int port = u.getPort() == -1 ? 80 : u.getPort();
 String path = u.getPath() == "" ? "/" : u.getPath();
 Socket sock = new Socket( u.getHost(), port );
 OutputStream out = sock.getOutputStream();
-
 ```
 
 **Composing and sending a request to the server**
@@ -465,8 +454,6 @@ String request = String.format(
 "Host: %s\r\n"+
 "User-Agent: X-RC2018\r\n\r\n", path, u.getHost());
 out.write(request.getBytes());
-
-
 ```
 
 **Parsing the request message header in the server**
@@ -482,8 +469,6 @@ if( request[0].equalsIgnoreCase("GET") && request[1] != "") {
      sendFile(request[1], out);
 } else {
      sendsNotSupportedPage(out);
-
-
 ```
 
 **Example: sending a reply message to the client**
@@ -523,7 +508,6 @@ for(;;) {
    if( n == -1) break;
    out.write(buffer, 0, n);
 }
-
 ```
 ### Program demos - HTTP client and server
 
@@ -607,7 +591,6 @@ Class: FileOutputStream
 ```
 File f = new File (fileName);
 FileOutputStream fos = new FileOutputStream(f,true); // append mode
-
 ```
 
 Class: File
@@ -617,7 +600,6 @@ the method length() can be used to know the length of a file.
 ```
 File f = new File (fileName);
 long size = f.length();
-
 ```
 
 
@@ -631,7 +613,6 @@ RandomAccessFile file = new RandomAccessFile ( f, "rw" );
 file.skipBytes(n); // Attempts to skip over n bytes of input discarding the skipped bytes.
 file.seek(k); // Sets the file-pointer offset, measured from the beginning of this file, at which the next read or write occurs.
 n = file.read( buffer, 0, len ); // Reads up to len (or buffer.length) bytes of data from this file into an array of bytes
-
 ```
 
 ## Assignment 3.2: A client to download content from one or more HTTP servers by the way of HTTP range requests
@@ -672,7 +653,6 @@ java HttpTrickyServer 8080 &
 java HttpTrickyServer 8081 &
 java HttpTrickyServer 8082 &
 java HttpTrickyServer 8083 &
-
 ```
 
 **Note) ** You can also use the available script to launch the four servers (all in balckground) - See the script serverclusterstart.sh
