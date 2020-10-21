@@ -102,7 +102,7 @@ public class EchoServer {
 }
 ```
 
-When the connection is established, the handler simply continously reads bytes and writes them back to the other side while the connection is not closed.
+When the connection is established, the handler [**ConcccentionHandler**](./exemplo1/ConnectionHandler.java) simply continously reads bytes and writes them back to the other side while the connection is not closed.
 ```
 import java.io.*;
 import java.net.*;
@@ -285,7 +285,7 @@ class HelperClass extends Thread {
 ```
 
 ### The Multithreaded EchoServer 
-This server uses threads to implement concurrency. As you can check the server can handle different clients in parrallel.
+This server [**ConcurrentEchoServer.java**](./exemplo1/ConcurrentEchoSerer.java) uses threads to implement concurrency. As you can check the server can handle different clients in parrallel.
 
 ```
 import java.io.*;
@@ -321,8 +321,8 @@ public class ConcurrentEchoServer {
 
 ```
 
-As you can see in the COncurret EchoServer, the connections from clients are served through the thread **servthread**.
-The ServiceHandler class as an Helper class is below. As you can see it uses again the initial **ConnectonHandler** above,
+As you can see in the Concurret EchoServer, the connections from clients are served through the thread **servthread** as defined in [**ServiceHandler.java**](./exemplo1/ServiceHandler.java).
+The ServiceHandler class, as an Helper class then uses again the initial [**ConnectonHandler**](./exemplo1/ConnectionHandler.java) used by the non concurrent EchoServer,
 but now the client connections are handled in parrallel.
 
 ```
