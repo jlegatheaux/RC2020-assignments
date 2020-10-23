@@ -379,8 +379,8 @@ multiple clients in parallel.
 
 The client [**FTTPTCPClient.java**](./exemplo2/client/FTTCPClient.java) can send files to the FTTPTCPServer. 
 
-You can use verify the operation trying to transfer files from the client to the server. For example, try to
-use a MPEG4 File - ex: [**OSIRIS-REx.mp4**](./exemplo2/OSIRIS-REx.mp4) or [**earth.jpeg**](./exemplo2.earth.jpeg) in using the client and the server.
+You can use verify the operation trying to transfer files from the client to the server. For example, try to download
+the MPEG4 File [**OSIRIS-REx.mp4**](./exemplo2/OSIRIS-REx.mp4) or the JPEG file [**earth.jpg**](./exemplo2.earth.jpg) to test the **FTTCPclient** and **FTTCPServer**.
 
 You can compare the obtained resulsts in your Assignment2 (with your GoBackN and Selective Repeat protocols), 
 with the performance you observe here for transfer rates using TCP. 
