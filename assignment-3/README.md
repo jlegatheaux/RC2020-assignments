@@ -380,7 +380,7 @@ multiple clients in parallel.
 The client [**FTTPTCPClient.java**](./exemplo2/client/FTTCPClient.java) can send files to the FTTPTCPServer. 
 
 You can use verify the operation trying to transfer files from the client to the server. For example, try to
-use a MPEG4 File - ex: [**OSIRIS-REx.mp4**](./exemplo2/OSIRIS-REx.mp4) in using the client and the server.
+use a MPEG4 File - ex: [**OSIRIS-REx.mp4**](./exemplo2/OSIRIS-REx.mp4) or [**earth.jpeg**](./exemplo2.earth.jpg) in using the client and the server.
 
 You can compare the obtained resulsts in your Assignment2 (with your GoBackN and Selective Repeat protocols), 
 with the performance you observe here for transfer rates using TCP. 
@@ -504,7 +504,7 @@ Accept-Ranges:		ex., Accept-Ranges: bytes
 The java.net package has many classes to speedup the development of programs using network protocols. In what concerns the protocol HTTP, there is one, among many, that can be used to parse and access URLs:
 
 **Class URL** 
-The URL class llows parsing an url to,  for example, get its different components. See file URLparse.java in the source code repository
+The URL class allows parsing an url to get its different components. See file URLparse.java in the source code repository
 There are many other classes available in the same package to develop programs based in the HTTP protocol. However, due to pedagogical reasons, you can only use the class URL to parse an url. 
 Any other requierements of your programs should be implemented by yourself or using the class Http, available in the source code repository, which provides some extra methods to facilitate the development of Java programs build directly on top of the HTTP Protocol.
 
@@ -591,25 +591,32 @@ In the source code repository you will find a very simple HTTP client [**SimpleH
 
 Study its code and try to access some other urls like for example:
 
-- ``http://google.com**``
+- ``http://google.com``
 - ``http://www.google.com``
 - ``http://asc.di.fct.unl.pt``
 - ``http://asc.di.fct.unl.pt/rc``
 
 Explain the output and understand how it works.
 
-In the source code repository you will also find a HTTP server [**HttpTrickyServer**] that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
+In the source code repository you will also find a HTTP server [**HttpTrickyServer**](-/exemplo/HttpTrickyServer.java) that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
 
-You can use the browser of your choice and try to access URL ``**http://localhost:8080**``. The browser will also show the answer of the server.
+Later on, you will understand better why the server has the word **Tricky** in its name. 
 
-For example, if the server is executing in your localhost, and in its current directory there is a file called [**index.html**], using the URL ``**http://localhost:8080/index.html*``, allows one to see the contents of that file. It will be similar for any other object you want to
-download from the server. 
+By now, if you run the **HttpTrickyServer** you can use the browser of your choice and try to access URL ``**http://localhost:8080**``. The browser will also show the answer of the server. You can also try to access the URL: ``**http://localhost**``
+Later on, you will understand better why the server has the word **Tricky** in its name. By now, you can use the browser of your choice and try to access URL ``**http://localhost:8080**``. The browser will also show the answer of the server. You can also try to access the URL: 
 
-## An Hand-On Execise 1
+For example, if the server is executing in your localhost, and if in its current directory you have the two files called [**index.html**](./exemplo2/index.html) and [**earth.jpg**]/./exemplo2/earth.jpg), using the **HttpTrickyServer** and the URLs ``**http://localhost:8080/index.html*`` or ``**http://localhost:8080/index.html*`` you can obtain the contents of these files. It will be similar for any other object you want to download from the server.
+
+## Hand-On Execise 1
 The provided **SimpleHttpClient**  is able to use the HTTP request / reply protocol to obtain a file and show its content. 
 From this class find a way that it may be used to download files from the HTTP server to be stored in a local file (in the clinet side). 
-Call your class **GetFile.java** for example. You can follow a code structure as initially proposed in **GetFile-java**
-In the source code repository there is another class [**URLget**] which uses the class URL to download an object from an HTTP server. It is shown just for study purposes. Due to pedagogical reasons, you also cann't use it to complete any of your exercises.
+Call your class **GetFile.java** for example. You can follow a code structure as initially proposed in **GetFile.java**.
+
+In the source code repository there is another class [**GetURL.java**](./exemplo3/GetURL.java) which uses the class URL to download an object from an HTTP server. It is shown just for study purposes and you can use it to download contents from web servers or also from the **HttpTrickyServer**. However, due to pedagogical reasons, you also cann't use it to complete any of your exercises.
+
+Try to check if your implementation for GetFile is correct, testing with the files also used above (ex., earth.jpg or 
+
+## HTTP using Range Requests
 
 ### Range Requests
 
@@ -656,7 +663,7 @@ To test the actions of the lazy server, launch it in a directory where you also 
 # Parte III
 # Assignment 3 Deliverables:
 
-## Delivery 1: Deleopment and testing a Client Downloading by HTTP a file using successive range downloads
+## Delivery 1: A Client to get a file from a Http Server using successive range downloads
 
 Now, assuming that you already have extended the demo HTTP client to transfer a file to the local file system, modify your getFile class in order to be able to fully transfer a file of any size from the HttpLazyServer.java.
 Since in your future work, you will be directed to use docker hosted web servers, you can also test your client with a different HTTP server. This one is available in a docker container and can be loaded using the command:
@@ -698,9 +705,13 @@ n = file.read( buffer, 0, len ); // Reads up to len (or buffer.length) bytes of 
 
 ## Delivery 2: A client to download content from one or more HTTP servers by the way of HTTP range requests
 
-To complete the assignment 3 that you must submitt in the submission date, you must program an HTTP client that must be able to transfer a voluminous file (e.g. above 100 Mbytes) from **a set of HTTP "tricky" servers**, in the shortest time. These "tricky" servers, whenever they receive a request of an object, may only send part of the requested object or break the connection in the middle of the transfer. Also, each server can exhibit variable transfer performances. These servers, accept range HTTP requests, and whenever they receive a request o an object with more than 1 Myte, they only send a slice of the requested object of random size, from 1 Mbyte, up to at most 10 Mbytes. Thus, if the requested object (or range) has less than 1 Mbyte, it is fully sent. However, if the requested object (or range) has size grater than 1 Mbyte, these servers send a range of random size, between 1 and 10 Mbytes, in a random way.
+To complete the assignment 3 that you must submitt in the submission date, you must program an HTTP client that must be able to transfer a voluminous file (e.g. above 100 Mbytes) in gthe shorted time, from **a set of HTTP "tricky" servers** (using the [**HttpTrickyServer**] implementation. 
+
+The set of the "tricky" servers (or cluster), whenever they receive a request of an object, may only send part of the requested object or break the connection in the middle of the transfer. Also, each server can exhibit variable transfer performances. These servers, accept range HTTP requests, and whenever they receive a request o an object with more than 1 Myte, they only send a slice of the requested object of random size, from 1 Mbyte, up to at most 10 Mbytes. Thus, if the requested object (or range) has less than 1 Mbyte, it is fully sent. However, if the requested object (or range) has size grater than 1 Mbyte, these servers send a range of random size, between 1 and 10 Mbytes, in a random way.
 
 In addition, they also may change randomly the performance of the transfer.
+
+See here [**how to launch in your shell environment a cluster of four HttpTrickyServers**](serverclusterstart.sh).
 
 
 ### Minimal and Optional Goals
