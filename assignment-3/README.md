@@ -607,7 +607,7 @@ Later on, you will understand better why the server has the word **Tricky** in i
 
 For example, if the server is executing in your localhost, and if in its current directory you have the two files called [**index.html**](./exemplo3/index.html) and [**earth.jpg**](./exemplo3/earth.jpg), using the **HttpTrickyServer** and the URLs ``**http://localhost:8080/index.html*`` or ``**http://localhost:8080/index.html*`` you can obtain the contents of these files. It will be similar for any other object you want to download from the server.
 
-## Hand-On Execise 1
+## Hand-On: Programming Execise
 The provided **SimpleHttpClient**  is able to use the HTTP request / reply protocol to obtain a file and show its content. 
 From this class find a way that it may be used to download files from the HTTP server to be stored in a local file (in the clinet side). 
 Call your class **GetFile.java** for example. You can follow a code structure as initially proposed in **GetFile.java**.
