@@ -361,7 +361,7 @@ class ServiceHandler extends Thread {
 }
 ```
 # PART II
-# A CLient and Server for File Transfers using TCP
+# A Client and Server for File Transfers using TCP
 
 ## Summary
 
