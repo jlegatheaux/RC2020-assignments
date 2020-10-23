@@ -16,7 +16,7 @@ This repository is the reference repository of the course prgramming assignments
   
 ### Assignment 2: Sliding Window Protocols with Packet Losses
   - Deadline: 25/Oct/20, 23h59
-  - Delivery Form: (to be included)
+  - Delivery Form: https://forms.gle/TgL8xbzgH9mFRTzm7
   - Individual Assessment Form: (to be included), Submission on 28/Oct/20, 19h30-19h45 (15 min)
   - [Materials/Guidelines: ](assignment-2/README.md) 
   
