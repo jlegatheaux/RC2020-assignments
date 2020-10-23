@@ -585,7 +585,7 @@ for(;;) {
    out.write(buffer, 0, n);
 }
 ```
-### Program demos - HTTP client and server
+### Demos: HTTP client and server
 
 In the source code repository you will find a very simple HTTP client [**SimpleHttpClient.java**](./exemplo3/SimpleHttpClient.java) that is able to request an object denoted by the url passed as argument. The reply of the server is shown to the user (but it is not parsed, nor interpreted).
 
@@ -598,14 +598,14 @@ Study its code and try to access some other urls like for example:
 
 Explain the output and understand how it works.
 
-In the source code repository you will also find a HTTP server [**HttpTrickyServer**](-/exemplo3/HttpTrickyServer.java) that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
+In the source code repository you will also find a HTTP server [**HttpTrickyServer**](./exemplo3/HttpTrickyServer.java) that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
 
 Later on, you will understand better why the server has the word **Tricky** in its name. 
 
 By now, if you run the **HttpTrickyServer** you can use the browser of your choice and try to access URL ``**http://localhost:8080**``. The browser will also show the answer of the server. You can also try to access the URL: ``**http://localhost**``
 Later on, you will understand better why the server has the word **Tricky** in its name. By now, you can use the browser of your choice and try to access URL ``**http://localhost:8080**``. The browser will also show the answer of the server. You can also try to access the URL: 
 
-For example, if the server is executing in your localhost, and if in its current directory you have the two files called [**index.html**](./exemplo3/index.html) and [**earth.jpg**]/./exemplo3/earth.jpg), using the **HttpTrickyServer** and the URLs ``**http://localhost:8080/index.html*`` or ``**http://localhost:8080/index.html*`` you can obtain the contents of these files. It will be similar for any other object you want to download from the server.
+For example, if the server is executing in your localhost, and if in its current directory you have the two files called [**index.html**](./exemplo3/index.html) and [**earth.jpg**](./exemplo3/earth.jpg), using the **HttpTrickyServer** and the URLs ``**http://localhost:8080/index.html*`` or ``**http://localhost:8080/index.html*`` you can obtain the contents of these files. It will be similar for any other object you want to download from the server.
 
 ## Hand-On Execise 1
 The provided **SimpleHttpClient**  is able to use the HTTP request / reply protocol to obtain a file and show its content. 
