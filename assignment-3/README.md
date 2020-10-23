@@ -23,8 +23,9 @@ To address the Work-Assigmnment 3 and its deliverables you must follow the follo
     * **Progamming with TCP Sockets in Java**
     * **HTTP Protocol and How to DOwnload Digital Objects from HTTP Servers**
 * **PART I: Networking Programming using TCP Sockets in Java**
-* **PART II: Using the HTTP Protocol to Download Digital Objects from a Server**
-* **PART III: Assignment 3 Deliverables: Delivery 3.1 and Delivery 3.2**
+* **PART II: A client and server for TCP File transfers
+* **Parte III Using the HTTP Protocol to Download Digital Objects from a Server**
+* **PART IV: Assignment 3 Deliverables: Delivery 1 and Delivery 2**
 
 # Background and initial references
 
@@ -359,8 +360,32 @@ class ServiceHandler extends Thread {
     }
 }
 ```
-
 # PART II
+# A CLient and Server for File Transfers using TCP
+
+## Summary
+
+- The FTTCPServer (File Transfer TCP Server)
+- The FTTCPClient (File Transfer TCP Client)
+
+After the last PART I you must be able to understand the code for the **FTTCPServer** and **FTTCPClient**. 
+
+The server [**FTTPTCPServer.java**](./example2/server/FTTPServer.java) 
+accepts TCP connections from clients that will send files. The server saves each file sent in a file named "a.out".
+The server computes statistics for end-to-end transfer time, number of transferred bytes and transfer rate.
+Notice that the FTTCPServer is not concurrent. It only serves one client for one transfer at a time. If you want, you
+can modify the server to work concurrently (following the rationale of the ConsurrentEchoServer in Part I, to serve
+multiple clients in parallel.
+
+The client [**FTTPTCPClient.java**](./example2/client/FTTPServer.java) can send files to the FTTPTCPServer. 
+
+You can use verify the operation trying to transfer files from the client to the server. For example, try to
+transfer the MPEG4 File [**OSIRIS-REx.mp4**](./example2/OSIRIS-REx.mp4) or any other file.
+
+You can compara the resulsts you obtained in your Assignment-2 (with your GoBackN and Selective Repeat protocols), comparring
+with the performance you observe here when using TCP. 
+
+# PART III
 # Using the HTTP Protocol to Download Digital Objects from a Server
 
 ## Summary
@@ -562,9 +587,9 @@ for(;;) {
 ```
 ### Program demos - HTTP client and server
 
-In the source code repository you will find a naif HTTP client [**HttpClientDemo.java**] that is able to request an object denoted by the url passed as argument. The reply of the server is shown to the user (but it is not parsed, nor interpreted).
+In the source code repository you will find a very simple HTTP client [**SimpleHttpClient.java**](./exemplo3/SimpleHttpClient.java) that is able to request an object denoted by the url passed as argument. The reply of the server is shown to the user (but it is not parsed, nor interpreted).
 
-Study its code and try to access some urls like for example:
+Study its code and try to access some other urls like for example:
 
 - ``http://google.com**``
 - ``http://www.google.com``
@@ -573,12 +598,17 @@ Study its code and try to access some urls like for example:
 
 Explain the output and understand how it works.
 
-In the source code repository you will also find a naif HTTP server [**HttpServerDemo.java**] that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
+In the source code repository you will also find a HTTP server [**HttpTrickyServer**] that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
+
 You can use the browser of your choice and try to access URL ``**http://localhost:8080**``. The browser will also show the answer of the server.
-For example, if the server is executing in your localhost, and in its current directory there is a file called [**Http.java**], using the URL ``**http://localhost:8080/Http.java**``, allows one to see the contents of that file.
+
+For example, if the server is executing in your localhost, and in its current directory there is a file called [**index.html**], using the URL ``**http://localhost:8080/index.html*``, allows one to see the contents of that file. It will be similar for any other object you want to
+download from the server. 
 
 ## An Hand-On Execise 1
-The provided client is able to use the HTTP request / reply protocol to obtain a file and show its content. Modify class [**HttpClientDemo**] in a way that it may be used to download files from a HTTP server. Call your class getFile for example.
+The provided **SimpleHttpClient**  is able to use the HTTP request / reply protocol to obtain a file and show its content. 
+From this class find a way that it may be used to download files from the HTTP server to be stored in a local file (in the clinet side). 
+Call your class **GetFile.java** for example. You can follow a code structure as initially proposed in **GetFile-java**
 In the source code repository there is another class [**URLget**] which uses the class URL to download an object from an HTTP server. It is shown just for study purposes. Due to pedagogical reasons, you also cann't use it to complete any of your exercises.
 
 ### Range Requests
