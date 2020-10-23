@@ -370,14 +370,14 @@ class ServiceHandler extends Thread {
 
 After the last PART I you must be able to understand the code for the **FTTCPServer** and **FTTCPClient**. 
 
-The server [**FTTPTCPServer.java**](./exemplo2/server/FTTPServer.java) 
+The server [**FTTPTCPServer.java**](./exemplo2/server/FTTCPServer.java) 
 accepts TCP connections from clients that will send files. The server saves each file sent in a file named "a.out".
 The server computes statistics for end-to-end transfer time, number of transferred bytes and transfer rate.
 Notice that the FTTCPServer is not concurrent. It only serves one client for one transfer at a time. If you want, you
 can modify the server to work concurrently (following the rationale of the ConsurrentEchoServer in Part I, to serve
 multiple clients in parallel.
 
-The client [**FTTPTCPClient.java**](./exemplo2/client/FTTPServer.java) can send files to the FTTPTCPServer. 
+The client [**FTTPTCPClient.java**](./exemplo2/client/FTTCPServer.java) can send files to the FTTPTCPServer. 
 
 You can use verify the operation trying to transfer files from the client to the server. For example, try to
 transfer the MPEG4 File [**OSIRIS-REx.mp4**](./exemplo2/OSIRIS-REx.mp4) or any other file.
