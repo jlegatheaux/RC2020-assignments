@@ -377,10 +377,10 @@ Notice that the FTTCPServer is not concurrent. It only serves one client for one
 can modify the server to work concurrently (following the rationale of the ConsurrentEchoServer in Part I, to serve
 multiple clients in parallel.
 
-The client [**FTTPTCPClient.java**](./exemplo2/client/FTTCPServer.java) can send files to the FTTPTCPServer. 
+The client [**FTTPTCPClient.java**](./exemplo2/client/FTTCPClient.java) can send files to the FTTPTCPServer. 
 
 You can use verify the operation trying to transfer files from the client to the server. For example, try to
-transfer the MPEG4 File [**OSIRIS-REx.mp4**](./exemplo2/OSIRIS-REx.mp4) or any other file.
+use a MPEG4 File - ex: [**OSIRIS-REx.mp4**](./exemplo2/OSIRIS-REx.mp4) in using the client and the server.
 
 You can compare the obtained resulsts in your Assignment2 (with your GoBackN and Selective Repeat protocols), 
 with the performance you observe here for transfer rates using TCP. 
