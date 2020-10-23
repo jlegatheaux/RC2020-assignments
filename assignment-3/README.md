@@ -361,7 +361,7 @@ class ServiceHandler extends Thread {
 }
 ```
 # PART II
-# A Client and Server for File Transfers using TCP
+# A Client and Server for file transfers using TCP
 
 ## Summary
 
@@ -386,7 +386,7 @@ You can compare the obtained resulsts in your Assignment2 (with your GoBackN and
 with the performance you observe here for transfer rates using TCP. 
 
 # PART III
-# Using the HTTP Protocol to Download Digital Objects from a Server
+# Using the HTTP protocol to download digital objects from a Server
 
 ## Summary
 
@@ -656,7 +656,7 @@ You can learn about this feature of the HTTP protocol by starting here or lookin
 
 Range requests and replies are specially useful to deal with multimedia information.
 
-In the source code repository you will also find a lazy HTTP server [**HttpLazyServer.java**] that is able to serve the requested files and partially supports ranges. In fact, the full support of RFC 7233 ranges is quite complex and extensive. The provided server only supports ranges of the forms shown above. This server is lazy since it only sends at most MAX_BYTES bytes in each reply. You can find this constant in its source file. Therefore, if you want to know it, you should use the RTFC method (Read The F. Code), which is the only accessible method when no manual is available.
+In the source code repository you will also find a lazy HTTP server [**HttpLazyServer.java**](./exemplo3/HttpLazyServer.java) that is able to serve the requested files and partially supports ranges. In fact, the full support of RFC 7233 ranges is quite complex and extensive. The provided server only supports ranges of the forms shown above. This server is lazy since it only sends at most MAX_BYTES bytes in each reply. You can find this constant in its source file. Therefore, if you want to know it, you should use the RTFC method (Read The F. Code), which is the only accessible method when no manual is available.
 To test the actions of the lazy server, launch it in a directory where you also put the file Earth.jpg (which size is around 13 Mbytes). You can access it by using the url: 
 ``**http://localhost:8080/Earth.jpg**`` using the browser of your choice.
 
@@ -711,9 +711,6 @@ The set of the "tricky" servers (or cluster), whenever they receive a request of
 
 In addition, they also may change randomly the performance of the transfer.
 
-See here [**how to launch in your shell environment a cluster of four HttpTrickyServers**](serverclusterstart.sh).
-
-
 ### Minimal and Optional Goals
 
 Program the **GetFile HTTP client** able to fully download a (huge) file from a set of HTTP "tricky" servers, which reply with a range of the requested file, of random size, if the requested range (or the full file) is grater than 1 Mbyte. These "tricky" servers send at most 10 Mbytes in each reply. The performance of the connection used in each reply is also random.
@@ -746,11 +743,9 @@ java HttpTrickyServer 8081 &
 java HttpTrickyServer 8082 &
 java HttpTrickyServer 8083 &
 ```
+See here [**how to launch in your shell environment a cluster of four HttpTrickyServers**](serverclusterstart.sh).
 
-**Note) ** You can also use the available script to launch the four servers (all in balckground) - See the script serverclusterstart.sh
-
-
-Then, using the four servers you can serve your client requests in the local host, listening for connections in a different port: 8080, 8081, 8082, 8083. 
+Using the four servers you can serve your client requests in the local host, listening for connections in a different port: 8080, 8081, 8082, 8083. 
 In your implementation and tests you can implement whatever solution you prefer:
 
 - a) Sending a set of successive requests to the same server;
