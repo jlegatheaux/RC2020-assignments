@@ -24,7 +24,7 @@ To address the Work-Assigmnment 3 and its deliverables you must follow the follo
     * **Progamming with TCP Sockets in Java**
     * **HTTP Protocol and How to DOwnload Digital Objects from HTTP Servers**
 
-## [PART-III and PART-IV](./Part-3-4-md
+## [PART-III and PART-IV](./Part-3-4-md)
 * **PART I: Networking Programming using TCP Sockets in Java**
 * **PART II: A client and server for TCP File transfers**
 
