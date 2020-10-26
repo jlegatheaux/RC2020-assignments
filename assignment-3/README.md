@@ -2,8 +2,8 @@
 
 ## Objectives
 
-In this Assignment and its Guidelines you will learn how to program with Sockets to program client/server applications supported by TCP and how to program clients that can transfer contents from HTTTP servers. After the initial guidance, diivded into two parts, the final goal is to implement a Client/Server application for File Transfer based on HTTP, where clients can download files from several web-servers used in parallel, in order to maximize the file transfer rate. 
-For the assignmemt the implementation of the web-servers are provided as initial material. the assignmemt consists in the developmet of the required client implementation.
+In this Assignment and its Guidelines you will learn how to program with Sockets to develop client/server applications supported by TCP and how to program clients that can transfer contents from HTTTP servers. After the initial technical introductions, divided in two parts, the final goal is to implement a Client/Server application for File Transfer based on HTTP, where clients can download files from several web-servers used in parallel, in order to maximize the file transfer rate. 
+The implementation of the web-servers is provided as initial material. The assignmemt consists in the developmet of the required client implementation.
 
 ## Motivation
 
