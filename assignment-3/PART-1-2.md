@@ -1,33 +1,6 @@
-# Assignment 3: A robust client to download content from one or multiple HTTP servers
+# Assignment 3: A smart client to download content from one or multiple HTTP servers
 
-* **Backgound and references**
-    * **Progamming with TCP Sockets in Java**
-    * **HTTP Protocol and How to DOwnload Digital Objects from HTTP Servers**
-* **PART I: Networking Programming using TCP Sockets in Java**
-* **PART II: A client and server for TCP File transfers**
-
-# Background and initial references
-
-### Programming with TCP Sockets in Java
-
-- You can find a **tutorial on programming with Sockets in Java Language** in **https://docs.oracle.com/javase/tutorial/networking/sockets/**
-- Remember that for the work assignmemt you will be particularly focused on the develpment of clients using TCP sockets (supporting HTTP Requests/Responses) because the HTTP  
-servers to be used are provided in advance.
-- You also have a convenient explanation in the text book of the course: **https://legatheaux.eu/book/cnfbook-pub.pdf, see chapter 5, section 5.3**.
-- Complementarily you have these examples for your preliminary tests: **echo-client.java** and **echo-sever.java** (explained below in Part I):  a very simple client/server application implementing an ECHO protocol. 
-- In the part I (below) you find the initial guidelines for **"Networking Programming using TCP Sockets in Java"**
-
-### HTTP Protocol and How to Download Digital Objects from HTTP Servers
-As you know, HTTP is supported by the TCP transport protocol, and it operates in two basic variants (HTTP/1.0 - implementaing HTTP Request/Response with non-persistet connections, and hTTP/1.1: using persistent connections). Clients that interact with HTTP servers must send correct HTTP requests (with the proper HEADERS), sent as formatted 
-requests sent in the TCP connection previous estabished with the server. Clients must be able to receive HTTP responses, processing them according to the HTTP protocol (interpreting the HEADERS and CONTENTS in the RESPONSE).
-
-For the operation of the HTTP protocol you must consider the explanation in the theoretical classes. 
-- You can also study the HTTP protocol in the course textbook: **https://legatheaux.eu/book/cnfbook-pub.pdf, see chapter 12**, paying special attention to HTTP requests/responses using RANGE REQUESTS. 
-- In the part II (below) you find the initial guildelines for **"Using the HTTP Protocol to Download Digital Objects from a Server"**
-
-
-# PART I
-# Networking Programming using TCP Sockets in Java
+# PART I - Inytroduction to TCP
 
 ## Summary
 - Client/Server Model with TCP
@@ -339,13 +312,13 @@ class ServiceHandler extends Thread {
     }
 }
 ```
-# PART II
+
 # A Client and Server for file transfers using TCP
 
 ## Summary
 
 - The FTTCPServer (File Transfer TCP Server)
-- The FTTCPClient (File Transfer TCP Client)
+- Exercise: program TheTCPClient (File Transfer TCP Client)
 
 After the last PART I you must be able to understand the code for the **FTTCPServer** and **FTTCPClient**. 
 
@@ -356,7 +329,8 @@ Notice that the FTTCPServer is not concurrent. It only serves one client for one
 can modify the server to work concurrently (following the rationale of the ConsurrentEchoServer in Part I, to serve
 multiple clients in parallel.
 
-The client [**FTTPTCPClient.java**](./exemplo2/client/FTTCPClient.java) can send files to the FTTPTCPServer. 
+**Exercise:**
+You must program a class: FTTCPCLient.java that can send files to the FTTPTCPServer. 
 
 You can use verify the operation trying to transfer files from the client to the server. For example, try to download
 the MPEG4 File [**OSIRIS-REx.mp4**](./exemplo2/OSIRIS-REx.mp4) or the JPEG file [**earth.jpg**](./exemplo2.earth.jpg) to test the **FTTCPclient** and **FTTCPServer**.
