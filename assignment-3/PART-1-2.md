@@ -320,7 +320,7 @@ class ServiceHandler extends Thread {
 - The FTTCPServer (File Transfer TCP Server)
 - Exercise: program TheTCPClient (File Transfer TCP Client)
 
-After the last PART I you must be able to understand the code for the **FTTCPServer** and **FTTCPClient**. 
+After the last PART I you must be able to understand the code for the **FTTCPServer**.
 
 The server [**FTTPTCPServer.java**](./exemplo2/server/FTTCPServer.java) 
 accepts TCP connections from clients that will send files. The server saves each file sent in a file named "a.out".
