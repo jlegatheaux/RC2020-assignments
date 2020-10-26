@@ -213,7 +213,7 @@ Study its code and try to access some other urls like for example:
 
 Explain the output and understand how it works.
 
-In the source code repository you will also find a HTTP server [**HttpTrickyServer**](./exemplo3/HttpTrickyServer.java) that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
+In the [**source code repository±±](./exemplo3) you will also find a HTTP server (only the calss is provided) that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
 
 Later on, you will understand better why the server has the word **Tricky** in its name. 
 
