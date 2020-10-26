@@ -277,6 +277,6 @@ To test the actions of the lazy server, launch it in a directory where you also 
 
 # Parte IV - Assignment 3 Delivery
 
-## Delivery: A Client to get a file from a Http Server or a cluster of HTTP Servers, using successive range downloads
+## Delivery: A Client to get a file from a Http Server or from a cluster of HTTP Servers, using successive range downloads
 
 The description of the delivery will appear later.
