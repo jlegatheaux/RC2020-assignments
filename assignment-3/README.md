@@ -1,4 +1,4 @@
-# Assignment 3: A robust client to download content from one or multiple HTTP servers
+# Assignment 3: A smart client to download content from one or multiple HTTP servers
 
 ## Objectives
 
@@ -17,16 +17,11 @@ Also, a faster download may be achieved **if transferring in parallel from sever
 
 ## Guidelines
 
-To address the Work-Assigmnment 3 and its deliverables you must follow the following guidelines:
+To address the Work-Assigmnment 3 and its deliverables you must follow the following guidelines in two weeks
 
 ## [Backgound, PART-I and PART-II](./PART-1-2.md)
-* **Backgound and references**
-    * **Progamming with TCP Sockets in Java**
-    * **HTTP Protocol and How to DOwnload Digital Objects from HTTP Servers**
-* **PART I: Networking Programming using TCP Sockets in Java**
-* **PART II: A client and server for TCP File transfers**
+* **PART I: Introduction to TCP**
 
 ## [PART-III and PART-IV](./PART-3-4.md)
-* **Parte III: Using the HTTP Protocol to Download Digital Objects from a Server**
-* **PART IV: Assignment 3 Deliverables: Delivery 1 and Delivery 2**
+* **Parte II: Introduction to HTTP and Delivery**
 
