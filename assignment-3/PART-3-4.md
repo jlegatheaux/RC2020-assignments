@@ -1,11 +1,6 @@
 # Assignment 3: A robust client to download content from one or multiple HTTP servers
 
-* **Parte III: Using the HTTP Protocol to Download Digital Objects from a Server**
-* **PART IV: Assignment 3 Deliverables: Delivery 1 and Delivery 2**
-
-
-# PART III
-# Using the HTTP protocol to download digital objects from a Server
+# PART II - Introduction to HTTP and Delivery
 
 ## Summary
 
@@ -13,6 +8,7 @@
 - Examples and utilities
 - HTTP gets using ranges
 - File transfer over HTTP with and without ranges
+- Delivery
 
 ### HTTP Protocol
 
