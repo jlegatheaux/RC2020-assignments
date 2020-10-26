@@ -330,7 +330,7 @@ can modify the server to work concurrently (following the rationale of the Consu
 multiple clients in parallel.
 
 **Exercise:**
-You must program a class: [**FTTPTCPClient.java**](FTTCPCLient.java) that can send files to the FTTPTCPServer. 
+You must program a class: [**FTTPTCPClient.java**](./exemplo2/FTTCPCLient.java) that can send files to the FTTPTCPServer. 
 
 You can use verify the operation trying to transfer files from the client to the server. For example, try to download
 the MPEG4 File [**OSIRIS-REx.mp4**](./exemplo2/OSIRIS-REx.mp4) or the JPEG file [**earth.jpg**](./exemplo2.earth.jpg) to test the **FTTCPclient** and **FTTCPServer**.
