@@ -19,7 +19,7 @@ Also, a faster download may be achieved **if transferring in parallel from sever
 
 To address the Work-Assigmnment 3 and its deliverables you must follow the following guidelines in two weeks
 
-## [PART I - Introducton to TCP](./PART-1-2.md)
+## [PART I - Introducton to TCP](./PART-1.md)
 
-## [PART-II - Introduction to HTTP and Delivery](./PART-3-4.md)
+## [PART-II - Introduction to HTTP and Delivery](./PART-2.md)
 
