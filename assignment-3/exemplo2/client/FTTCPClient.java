@@ -19,28 +19,7 @@ public class FTTCPClient {
 			System.out.println("usage: java FTTCPClient <host> <port> <filename>") ;
 			System.exit(0) ;
 		}
-		String server = args[0] ;
-		int port = Integer.parseInt(args[1]);
-		String filename = args[2];
-
-		System.out.println("Sending: "+filename);
-		// open file
-		FileInputStream f = new FileInputStream(filename);
-		
-		// Creates socket to connect to the server
-		Socket socket = new Socket( server, port ) ;
-		OutputStream os = socket.getOutputStream();
-
-		os.write( filename.getBytes()); // to send the file name
-		os.write( new byte[]{0} ); // a separator
-
-		int n ;
-		byte[] buf = new byte[BLOCKSIZE] ;
-		while( (n = f.read( buf )) > 0 )   // send the file content to the server
-			os.write( buf, 0, n ) ;
-
-		socket.close();
-		f.close();
-		System.out.println( "Done" );
+		// Implement the code for the client ...
+			
 	}
 }
