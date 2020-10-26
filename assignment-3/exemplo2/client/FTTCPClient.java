@@ -19,7 +19,7 @@ public class FTTCPClient {
 			System.out.println("usage: java FTTCPClient <host> <port> <filename>") ;
 			System.exit(0) ;
 		}
-		// Implement the code for the client ...
+		// Implement here the required code for the client ...
 			
 	}
 }
