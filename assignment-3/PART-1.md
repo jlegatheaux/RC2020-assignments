@@ -17,7 +17,7 @@ A Client/Server Application has two base autonomous components that can run as p
 
 The following figure represents the typical interaction between a client and server.
 
-<img src="./figures/TCPSockets.png">
+<img src="./figures/modelo-tcp.png" width="90%">
 
 ### TCP Logical Channels or Connections (or Streams)
 - A TCP connection is a logical two-way reliable channel among two processess
