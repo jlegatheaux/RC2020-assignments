@@ -28,17 +28,17 @@ The following figure represents the typical interaction between a client and ser
 - Before any communication can take place, both sides must agree that they want to establish the communicating TCP channel among them
 
 ### TCP Sockets
-- A TCP connection is established among two TCP Sockets, one in each extreme of the channel
-- A client TCP Socket "opens" a connection to the server side TCP Socket - the first opens the connection, the second one accepts it
-- A server creates a TCP Socket to accept incoming connections; this socket has a server port and the server IP address
-- A client opens or creates the connection by requesting the creation of a local TCP Socket connected to the server TCP Socket
+- A TCP connection is established among two "TCP Sockets", one in each extreme of the channel
+- A client TCP Socket "opens" a connection to the server side TCP socket - the first opens the connection, the second one accepts it
+- A server creates a TCP socket to accept incoming connections; this socket has a server port and the server IP address
+- A client opens or creates the connection by requesting the creation of a local TCP socket connected to the server TCP Socket
 
 ### Example (ECHO Server and Client)
-In this simple example the client creates a TCP Socket by connectiong it to the server TCP Socket; the server Socket is identified by the server address and the socket port. Then, the client reads lines from its console and sends them to the server. The server reads the bytes sent by the client and echoes them back to the client. 
+In this simple example the client creates a TCP socket by connectiong it to the server TCP socket; the server socket is identified by the server address and the socket port. Then, the client reads lines from its console and sends them to the server. The server reads the bytes sent by the client and echoes them back to the client. 
 
 ### Java Server Code
-The code of the server [**EchoServer.java**](./exemplo1/EchoServer.java) is very simple. It just creates a Socket to accept incoming connections in the previously agreed port. Then it accepts client request to establish a connection.
-```
+The code of the server [**EchoServer.java**](./exemplo1/EchoServer.java) is very simple. It just creates a socket, an object of class `ServerSocket` to accept incoming connections in the previously agreed port. Then it accepts client request to establish a connection.
+```java
 import java.io.* ;
 import java.net.* ;
 
@@ -72,7 +72,7 @@ public class EchoServer {
 ```
 
 When the connection is established, the handler [**ConnectionHandler.java**](./exemplo1/ConnectionHandler.java) simply continously reads bytes and writes them back to the other side while the connection is not closed.
-```
+```java
 import java.io.*;
 import java.net.*;
 
@@ -100,12 +100,12 @@ public class ConnectionHandler {
 
 ### Java Client
 
-The client [**EchoClient.java**](./exemplo1/EchoClient.java) starts by processing the parameters and opening a connection to the server.
+The client [**EchoClient.java**](./exemplo1/EchoClient.java) starts by processing the parameters and opening a connection to the server. This is implemented by creating an object of class `Socket`.
 When the connection is open, it starts using it as a read / write stream/pipe.
-As you can see (EchoClient) Once the connection is established, the client prepares a Scanner to read bytes from the console (System.in).
+As you can see (EchoClient) once the connection is established, the client prepares a scanner to read bytes from the console (System.in).
 Enters a loop where it reads a line, sends it to the server, gets the echo and prints it to the console, until it receives the string "!end". 
 
-```
+```java
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -151,7 +151,7 @@ public class EchoClient {
 ### Some Recipes
 
 ### Class ServerSocket
-```
+```java
 try( ServerSocket ss = new ServerSocket( PORT ) ) {
     ...
         cs = ss.accept();
@@ -160,7 +160,7 @@ try( ServerSocket ss = new ServerSocket( PORT ) ) {
 ```
 
 ### Class Socket
-```
+```java
 try( Socket ss = new Socket( server, PORT ) ) {
     ...
     InputStream is = ss.getInputStream();
@@ -170,21 +170,21 @@ try( Socket ss = new Socket( server, PORT ) ) {
 ```
 
 ### Sending and receiving (multiple) bytes
-```
+```java
 int n;
 byte buf = new byte[TMP_BUF_SIZE];
 while( (n = is.read( buf )) > 0 )
     os.write( buf, 0, n)
 ```    
     
-### Reading a single byte at each time (slow)
-```
+### Reading a single byte at each time (may be slow)
+```java
 InputStream is = cs.getInputStream();
 int b = is.read();
 ```
 
 ### WARNING: Anti-Pattern
-```
+```java
 InputStream.available() works with FileInputStream, but does not work with streams that are backed by Sockets.
 
 Socket cs = new Socket( server, port );
@@ -199,7 +199,7 @@ Threads can be programmed with different options: Lambda Expressions or use of H
 
 ### Threads + Lambda Expression
 
-```
+```java
 new Thread( () -> {
     
     // place here code to execute in new thread...
@@ -210,11 +210,12 @@ new Thread( () -> {
 
 ### Threads + Helper class
 
-```
+
 Helper class implements interface Runnable
 
 Main thread calls:
 
+```java
 new Thread( new HelperClass( args )).start();
 
 Child thread executes in run(), receives args in constructor...
@@ -232,12 +233,14 @@ Helper class extends Thread
 Cannot be used if helper class already extends another class...
 
 Main thread calls:
+```java
 new HelperClass( args ).start();
+```
 
 
 Child thread executes in run(), receives args in constructor...
 
-```
+```java
 class HelperClass extends Thread {
     HelperClass( ... ) {
         // Constructor receives any args the helper class needs to run...
@@ -251,7 +254,7 @@ class HelperClass extends Thread {
 ### The Multithreaded EchoServer 
 This server [**ConcurrentEchoServer.java**](./exemplo1/ConcurrentEchoSerer.java) uses threads to implement concurrency. As you can check the server can handle different clients in parrallel.
 
-```
+```java
 import java.io.*;
 import java.net.*;
 
@@ -288,7 +291,7 @@ As you can see in the Concurret EchoServer, the connections from clients are ser
 The ServiceHandler class, as an Helper class then uses again the initial [**ConnectionHandler**](./exemplo1/ConnectionHandler.java) used by the non concurrent EchoServer,
 but now the client connections are handled in parrallel.
 
-```
+```java
 import java.io.*;
 import java.net.*;
 
