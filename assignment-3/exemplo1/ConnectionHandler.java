@@ -9,13 +9,11 @@ public class ConnectionHandler {
 	InputStream is = cs.getInputStream();
 	OutputStream os = cs.getOutputStream();
 
-	for(;;) { 
         // implements the data ECHO, by reading and writing 
         // while the connection is not closed
-	    int n ;
-	    byte[] buf = new byte[TMP_BUF_SIZE] ;
-	    while( (n = is.read(buf)) > 0 )
+	int n ;
+	byte[] buf = new byte[TMP_BUF_SIZE] ;
+	while( (n = is.read(buf)) > 0 )
 		os.write( buf, 0, n );
-	}
     }
 }
