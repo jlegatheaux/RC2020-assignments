@@ -1,6 +1,6 @@
 # Assignment 3: A smart client to download content from one or multiple HTTP servers
 
-# PART I - Inytroduction to TCP
+# PART I - Introduction to TCP
 
 ## Summary
 - Client/Server Model with TCP
