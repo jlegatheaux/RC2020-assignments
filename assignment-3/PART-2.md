@@ -220,9 +220,9 @@ In the [**source code repository**](./exemplo3) you will also find an HTTP serve
 
 Later on, you will understand better why the server has the word **Tricky** in its name. By now, you can use the browser of your choice and try to access URL ``**http://localhost:8080**``. The browser will show the answer received from the server.
 
-You can also try to access the URL: ``**http://localhost:8080/some_filename.java**``. For example, if the server is executing in your localhost, and if in its current directory you files called [**index.html**](./exemplo3/index.html,  [**earth.jpg**](./exemplo3/earth.jpg) and [**HttpLazyServer.java**](./exemplo3/HttpLazyServer.java), using the **HttpTrickyServer** and the URLs ``**http://localhost:8080/index.html**``,  ``**http://localhost:8080/earth.jpg**`` or ``**http://localhost:8080/HttpLazyServer.java**``, you can obtain the contents of these files. It will be similar for any other object you want to download from the server.
+You can also try to access the URL: ``http://localhost:8080/some_filename.java``. For example, if the server is executing in your localhost, and if in its current directory you find files called [**index.html**](./exemplo3/index.html),  [**earth.jpg**](./exemplo3/earth.jpg) and [**HttpLazyServer.java**](./exemplo3/HttpLazyServer.java), using the **HttpTrickyServer** and the URLs ``http://localhost:8080/index.html``,  ``http://localhost:8080/earth.jpg`` or ``http://localhost:8080/HttpLazyServer.java``, you can obtain the contents of these files. It will be similar for any other object you want to download from the server.
 
-If you have python installed in your system, you can understand better how the Tricky and Lazy servers behave, you can try the same browser access to [**earth.jpg**] using a normal HTTP server that you can run using the command  `python -m SimpleHTTPServer 8080`.
+If you have python installed in your system, you can understand better how the Tricky and Lazy servers behave, you can try the same browser access to [**earth.jpg**](./exemplo3/earth.jpg) using a normal HTTP server that you can run using the command  `python -m SimpleHTTPServer 8080`.
 
 
 ## Hands-On: Programming Execise
