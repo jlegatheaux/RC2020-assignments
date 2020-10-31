@@ -216,11 +216,9 @@ Study its code and try to access some other urls like for example:
 
 Explain the output and understand how it works.
 
-In the [**source code repository**](./exemplo3) you will also find an HTTP server (only the class is provided) that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
+In the [**source code repository**](./exemplo3) you will also find an HTTP server named  HttpTrickyServer (only the class is provided) that is able to serve the requested files from its local file system. In order ro test the server, you shoud also provide the file `Http.class` since it needs it. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
 
-Later on, you will understand better why the server has the word **Tricky** in its name. 
-
-By now, if you run the **HttpTrickyServer** you can use the browser of your choice and try to access URL ``**http://localhost:8080**``. The browser will also show the answer of the server. You can also try to access the URL: ``**http://localhost**``
+By now, if you run the **HttpTrickyServer** you can use the browser of your choice and try to access URL ``**http://localhost:8080**``. The browser will also show the answer of the server. You can also try to access the URL: ``**http://localhost**``.
 Later on, you will understand better why the server has the word **Tricky** in its name. By now, you can use the browser of your choice and try to access URL ``**http://localhost:8080**``. The browser will also show the answer of the server. You can also try to access the URL: 
 
 For example, if the server is executing in your localhost, and if in its current directory you have the two files called [**index.html**](./exemplo3/index.html) and [**earth.jpg**](./exemplo3/earth.jpg), using the **HttpTrickyServer** and the URLs ``**http://localhost:8080/index.html*`` or ``**http://localhost:8080/index.html*`` you can obtain the contents of these files. It will be similar for any other object you want to download from the server.
