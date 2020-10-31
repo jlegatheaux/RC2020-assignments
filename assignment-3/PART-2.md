@@ -1,4 +1,4 @@
-# Assignment 3: A robust client to download content from one or multiple HTTP servers
+# Assignment 3: A smart client to download content from one or multiple HTTP servers
 
 # PART II - Introduction to HTTP and Delivery
 
@@ -16,6 +16,7 @@
 - The server expects the client to open a TCP connection to its port (by default the port 80)
 - In version 1.0 of the protocol, each request / reply HTTP transaction uses a different TCP connection
 - In version 1.1 several HTTP transactions can share the same TCP connection
+- Versions 2 and 3 of HTTP support parallel transaction over the same TCP connection (version 2) or over UDP (version 3) and we will not discuss them here
 
 <img src="./figures/Rede.png">
 
@@ -54,7 +55,7 @@ There are many different request header-fields that the client can send to the s
 
 ```
 User-Agent:		ex., User-AGent_ Mozilla/4.0.0
-Accept-Chatset:		ex., Accept-Charset: utf-8
+Accept-Charset:		ex., Accept-Charset: utf-8
 Accept-Encoding:	ex., Accept-Encoding: gzip
 Accept-Language:	ex-. Accep-Language: en-UK
 If-Modified-Since:	ex., If-Modified-Since: Tue, 02 Oct 2020 14:35:41 GMT
@@ -116,18 +117,18 @@ Accept-Ranges:		ex., Accept-Ranges: bytes
 
 ### Java code utilities and examples
 
-The java.net package has many classes to speedup the development of programs using network protocols. In what concerns the protocol HTTP, there is one, among many, that can be used to parse and access URLs:
+The `java.net` package has many classes to speedup the development of programs using network protocols. In what concerns the protocol HTTP, there is one, among many, that can be used to parse and access URLs:
 
 **Class URL** 
-The URL class allows parsing an url to get its different components. See file URLparse.java in the source code repository
-There are many other classes available in the same package to develop programs based in the HTTP protocol. However, due to pedagogical reasons, you can only use the class URL to parse an url. 
-Any other requierements of your programs should be implemented by yourself or using the class Http, available in the source code repository, which provides some extra methods to facilitate the development of Java programs build directly on top of the HTTP Protocol.
+The URL class allows parsing an url to get its different components. See file `URLparse.java` in the source code repository
+There are many other classes available in the same package to develop programs based on the HTTP protocol. However, due to pedagogical reasons, you can only use the class URL to parse an url. 
+Any other requierements of your programs should be implemented by yourself or using the class `Http`, available in the source code repository, which provides some extra methods to facilitate the development of Java programs build directly on top of the HTTP Protocol.
 
 **Below you will find several Java source code examples:**
 
-**Parsing an URL and opening a TCP connection to the server**
+**Parsing an URL and opening a TCP connection to the server contained in the URL**
 
-```
+```java
 String url = args[0]; // for example "http://google.com"
 URL u = new URL(url);
 // Assuming URL of the form http://server-name/path ....
@@ -137,22 +138,23 @@ Socket sock = new Socket( u.getHost(), port );
 OutputStream out = sock.getOutputStream();
 ```
 
-**Composing and sending a request to the server**
+**Composing and sending a request contained in `URL u` to a server**
 
-```
+```java
 String request = String.format(
 "GET %s HTTP/1.0\r\n"+
 "Host: %s\r\n"+
-"User-Agent: X-RC2018\r\n\r\n", path, u.getHost());
+"User-Agent: X-RC2020\r\n\r\n", path, u.getHost());
 out.write(request.getBytes());
 ```
 
-**Parsing the request message header in the server**
+**Parsing a request message header in a server**
 
-```
+```java
 line = Http.readLine(in);
 String[] request = Http.parseHttpRequest(line);
 line = Http.readLine(in);
+// reading the rest of the request message header
 while ( ! line.equals("") ) {
      line = Http.readLine(in);
 }
@@ -162,8 +164,8 @@ if( request[0].equalsIgnoreCase("GET") && request[1] != "") {
      sendsNotSupportedPage(out);
 ```
 
-**Example: sending a reply message to the client**
-```
+**Example: sending a reply error message to the client**
+```java
 /**
 * Sends an error message "Not Implemented"
 */
@@ -182,9 +184,9 @@ throws IOException {
 }
 ```
 
-**Example: Sending the reply header and payload**
+**Example: Sending a file in an HTTP reply message - the reply header and payload**
 
-```
+```java
 File f = new File(name);
 long size = f.length();
 FileInputStream file = new FileInputStream(f);
@@ -202,7 +204,7 @@ for(;;) {
 ```
 ### Demos: HTTP client and server
 
-In the source code repository you will find a very simple HTTP client [**SimpleHttpClient.java**](./exemplo3/SimpleHttpClient.java) that is able to request an object denoted by the url passed as argument. The reply of the server is shown to the user (but it is not parsed, nor interpreted).
+In the source code repository you will find a very simple HTTP client [**SimpleHttpClient.java**](./exemplo3/SimpleHttpClient.java) that is able to request an object denoted by the url given as argument. The reply of the server is shown to the user (but it is not parsed, nor interpreted).
 
 Study its code and try to access some other urls like for example:
 
@@ -213,7 +215,7 @@ Study its code and try to access some other urls like for example:
 
 Explain the output and understand how it works.
 
-In the [**source code repository**](./exemplo3) you will also find a HTTP server (only the calss is provided) that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
+In the [**source code repository**](./exemplo3) you will also find an HTTP server (only the class is provided) that is able to serve the requested files from its local file system. For example, if the server is running in the same machine as your browser, you can interact with it using ``**http://localhost:8080**``
 
 Later on, you will understand better why the server has the word **Tricky** in its name. 
 
@@ -224,7 +226,7 @@ For example, if the server is executing in your localhost, and if in its current
 
 ## Hands-On: Programming Execise
 The provided **SimpleHttpClient**  is able to use the HTTP request / reply protocol to obtain a file and show its content. 
-From this class find a way that it may be used to download files from the HTTP server to be stored in a local file (in the clinet side). 
+Departing from this class find a way that it may be used to download files from the HTTP server to be stored in a local file (in the clinet side). 
 Call your class **GetFile.java** for example. You can follow a code structure as initially proposed in **GetFile.java**.
 
 In the source code repository there is another class [**GetURL.java**](./exemplo3/GetURL.java) which uses the class URL to download an object from an HTTP server. 
@@ -257,7 +259,7 @@ Range: bytes=10-20 <return>
 
 **Source code example:**
 
-```
+```java
 OutputStream out = sock.getOutputStream();
 String request = String.format("GET %s HTTP/1.0\r\n"+
 "Host: %s\r\n"+
