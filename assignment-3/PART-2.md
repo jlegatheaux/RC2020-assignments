@@ -16,7 +16,8 @@
 - The server expects the client to open a TCP connection to its port (by default the port 80)
 - In version 1.0 of the protocol, each request / reply HTTP transaction uses a different TCP connection
 - In version 1.1 several HTTP transactions can share the same TCP connection
-- Versions 2 and 3 of HTTP support parallel transaction over the same TCP connection (version 2) or over UDP (version 3) and we will not discuss them here
+- Versions 2 and 3 of HTTP support parallel transaction over the same TCP connection (version 2) or over UDP (version 3) but we will not discuss them here
+- Chapters 12 and 13 of the course support book have a discussion on HTTP and how it is used for content distribution nowadays
 
 <img src="./figures/Rede.png">
 
@@ -34,16 +35,16 @@ User-Agent: Mozzilla/40.01 <CRLF>
 **HTTP Reply Message** (only included some lines)
 
 ```
-HTTP/1.1 200 OK
-Date: Wed, 21 Oct 2020 21:50:14 GMT
-Server: Apache/2.4.29 (Ubuntu)
-Last-Modified: Sat, 04 Apr 2020 18:41:38 GMT
-ETag: "12a0-5a27b62627f20"
-Accept-Ranges: bytes
-Content-Length: 4768
-Vary: Accept-Encoding
-Connection: close
-Content-Type: text/html
+HTTP/1.1 200 OK<CRLF>
+Date: Wed, 21 Oct 2020 21:50:14 GMT<CRLF>
+Server: Apache/2.4.29 (Ubuntu)<CRLF>
+Last-Modified: Sat, 04 Apr 2020 18:41:38 GMT<CRLF>
+ETag: "12a0-5a27b62627f20"<CRLF>
+Accept-Ranges: bytes<CRLF>
+Content-Length: 4768<CRLF>
+Vary: Accept-Encoding<CRLF>
+Connection: close<CRLF>
+Content-Type: text/html<CRLF>
 ....
 <CRLF>
 ....            //  Downloaded Data corresponding to the request
