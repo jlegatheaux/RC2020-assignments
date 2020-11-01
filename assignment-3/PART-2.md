@@ -279,5 +279,5 @@ To test the actions of the lazy server, launch it in a directory where you also 
 
 # Parte III - Assignment 3 Delivery
 
-## Delivery: A ``smart``client to get a file from a Http Server or from a cluster of HTTP Servers, using successive range downloads
+## Delivery: [A ``smart``client to get a file from a Http Server or from a cluster of HTTP Servers, using successive range downloads](./DELIVERY.md)
 
