@@ -76,12 +76,12 @@ Aver. time per request (s): 10
 
 ## Grading (in 0-20 scale)
 
-A program that transfers files incorrectly, will be graded at most 6. A correct program that does not print correct statistics, will be also graded at most 6.
+* A program that transfers files incorrectly, will be graded at most 6. A correct program that does not print correct statistics, will be also graded at most 6.
 
-A program that transfers files correctly but only contacting one server (minimal goal), will be graded at most 10.
+* A program that transfers files correctly but only contacting one server (minimal goal), will be graded at most 10.
 
-A program that transfers files correctly, from more than one server (but not in parallel) will be graded at most 15.
+* A program that transfers files correctly, from more than one server (but not in parallel) will be graded at most 15.
 
-Programs that try to achieve the best performance using all servers in parallel, have no a priori grading limitations.
+* Programs that try to achieve the best performance using all servers in parallel, have no a priori grading limitations.
 
-Code clarity and structure, as well as performance indications according to your used policy will be accounted.
+* Code clarity and structure, as well as performance indications according to your used policy will be accounted.
