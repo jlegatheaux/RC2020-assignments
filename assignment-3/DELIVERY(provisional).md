@@ -33,7 +33,7 @@ For testing, you can start a pool of several servers in the same machine, but yo
 `java -jar HttpTrickyServer.jar 8082 &`
 `java -jar HttpTrickyServer.jar 8083 &`
 
-Note: You can also use the available script to launch the four servers. See the script `serverclusterstart.sh`
+Note: You can also use the available script [available here](./exemplo3/serverclusterstart.sh) to launch the four servers.
 
 As an example, for downloading the IFB.mp4 movie trailer in your computer, from the 4 above servers, also in your computer, your client will be run in the following way:
 
