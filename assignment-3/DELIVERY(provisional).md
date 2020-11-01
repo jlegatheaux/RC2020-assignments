@@ -9,7 +9,7 @@ It is not realistic to think of such bulky objects being transferred in a single
 To complete this exercise you must program an HTTP client able to transfer a voluminous file (e.g. above 100 Mbytes) from a set of HTTP "tricky" servers, in the shortest time. These servers, whenever they receive a request of an object, may only send part of the requested object or break the connection in the middle of the transfer. Also, each server have different and variable transfer performances. These servers accept ranges requests.
 
 ### Minimal goal of your work
-Your program should be an HTTP client called GetFile that is able to correctly download a (huge) file from a HTTP server. The server may send just part of the file at each request or the connection with this server can be broken. For your implementation and testing purposes, you can use the provided server **HttpTrickyServer.jar**, [downloadble here](./exemplo3/HttpTrickyServer.jar) 
+Your program should be an HTTP client called **GetFile** that must be able to correctly download a (huge) file from a HTTP server. The server may send just part of the file at each request or the connection with this server can be broken. For your implementation and testing purposes, you can use the provided server **HttpTrickyServer.jar**, [downloadble here](./exemplo3/HttpTrickyServer.jar) 
 
 [Files for testing purposes are available here.](https://drive.google.com/drive/folders/146LsGoiD2SOUYMjkBeSDbmndzPxUxY-m?usp=sharing)
 
