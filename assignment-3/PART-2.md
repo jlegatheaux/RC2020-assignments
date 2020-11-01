@@ -277,8 +277,7 @@ In the source code repository you will also find a lazy HTTP server [**HttpLazyS
 To test the actions of the lazy server, launch it in a directory where you also put the file Earth.jpg (which size is around 13 Mbytes). You can access it by using the url: 
 ``**http://localhost:8080/Earth.jpg**`` using the browser of your choice.
 
-# Parte IV - Assignment 3 Delivery
+# Parte III - Assignment 3 Delivery
 
 ## Delivery: A ``smart``client to get a file from a Http Server or from a cluster of HTTP Servers, using successive range downloads
 
-The description of the delivery will appear later.
