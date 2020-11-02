@@ -1,34 +1,30 @@
-
-/**
- * Auxiliary methods to deal with HTTP requests and replies
- * RC MIEI - FCT/UNL
- */
-
+import java.net.*;
 import java.util.*;
-import java.util.function.Consumer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.io.*;
 
 
-
+/**
+ * Auxiliary methods to deal with HTTP requests and replies
+ */
 public class Http {
 
-	private static final int BUF_SIZE = 1024;
 
 	/**
-	 * Copies all data from an input stream to an output stream
+	 * Copies data from an input stream to an output stream
 	 */
 	public static void dumpStream( InputStream in, OutputStream out)
 			throws IOException {
-		byte[] buf = new byte[BUF_SIZE];
-		int n;
-		while ((n = in.read(buf)) >= 0)
-			out.write(buf, 0, n);
+		byte[] arr = new byte[1024];
+		for( ;;) {
+			int n = in.read( arr);
+			if( n == -1)
+				break;
+			out.write( arr, 0, n);
+		}
 	}
 
 	/**
-	 * Reads one HTTP header line from an input stream
+	 * Reads one line from a HTTP header
 	 */
 	public static String readLine( InputStream is ) throws IOException {
 		StringBuffer sb = new StringBuffer() ;
@@ -36,7 +32,7 @@ public class Http {
 		while( (c = is.read() ) >= 0 ) {
 			if( c == '\r' ) continue ;
 			if( c == '\n' ) break ;
-			sb.append((char)c);
+			sb.append((char)c ) ;
 		}
 		return sb.toString() ;
 	} 
@@ -48,204 +44,153 @@ public class Http {
 	 * Example: input "GET index.html HTTP/1.0"
 	 * output reply[0] = "GET", reply[1] = "index.html" and reply[2] = "HTTP/1.0"
 	 * 
-	 * If the input is malformed, it returns null
+	 * If the input is malformed, it returns something unpredictable
 	 */
+
+
 	public static String[] parseHttpRequest( String request) {
-		Matcher m = HTTP_REQUEST_REGEX.matcher(request);
-		if (m.matches())
-			return new String[] { m.group(1), m.group(2), m.group(3) };
-		else
-			return null;
+		String[] error = { "ERROR", "", "" };
+		String[] result = { "", "", "" };
+		int pos0 = request.indexOf( ' ');
+		if( pos0 == -1) return error;
+		result[0] = request.substring( 0, pos0).trim();
+		pos0++;
+		int pos1 = request.indexOf( ' ', pos0);
+		if( pos1 == -1) return error;
+		result[1] = request.substring( pos0, pos1).trim();
+		result[2] = request.substring( pos1 + 1).trim();
+		if(! result[1].startsWith("/")) return error;
+		if(! result[2].startsWith("HTTP")) return error;
+		return result;
 	}
-	static final Pattern HTTP_REQUEST_REGEX = 
-			Pattern.compile("^(GET|POST|PUT|HEAD|OPTIONS|DELETE)\\s(\\S*)\\s(HTTP\\/\\d\\.\\d)");
 
-
+	
 	/**
 	 * Parses the first line of the HTTP reply and returns an array
 	 * of three strings: reply[0] = version, reply[1] = number and reply[2] = result message
 	 * Example: input "HTTP/1.0 501 Not Implemented"
 	 * output reply[0] = "HTTP/1.0", reply[1] = "501" and reply[2] = "Not Implemented"
 	 * 
-	 * If the input is malformed, it returns null
+	 * If the input is malformed, it returns something unpredictable
 	 */
-	public static String[] parseHttpReply (String reply) {
-		Matcher m = HTTP_REPLY_REGEX.matcher(reply);
-		if (m.matches())
-			return new String[] { m.group(1), m.group(2), m.group(3) };
-		else
-			return null;
-	}
-	static final Pattern HTTP_REPLY_REGEX = 
-			Pattern.compile("^(HTTP\\/\\d\\.\\d)\\s(\\d{3})(.*)");
 
-		
+	public static String[] parseHttpReply (String reply) {
+		String[] result = { "", "", "" };
+		int pos0 = reply.indexOf(' ');
+		if( pos0 == -1) return result;
+		result[0] = reply.substring( 0, pos0).trim();
+		pos0++;
+		int pos1 = reply.indexOf(' ', pos0);
+		if( pos1 == -1) return result;
+		result[1] = reply.substring( pos0, pos1).trim();
+		result[2] = reply.substring( pos1 + 1).trim();
+		return result;
+	}
+
+
+
+	
+
+	
+	
 	
 	/**
 	 * Parses an HTTP header returning an array with the name of the attribute header
 	 * in position 0 and its value in position 1
-	 * Example, for "Connection: Keep-alive", 
-	 * returns: [0]->"Connection"; [1]->"Keep-alive" 
+	 * Example, for "Connection: Keep-alive", returns:
+	 * [0]->"Connection"; [1]->"Keep-alive" 
 	 * 
-	 * If the input is malformed, it returns null
+	 * If the input is malformed, it returns something unpredictable
 	 *
 	 */
 	public static String[] parseHttpHeader( String header) {
-		Matcher m = HTTP_HEADER_REGEX.matcher(header);
-		if (m.matches())
-			return new String[] { m.group(1), m.group(2).trim() };
-		else
-			return null;
+		String[] result = { "ERROR", "" };
+		int pos0 = header.indexOf( ':');
+		if( pos0 == -1)
+			return result;
+		result[0] = header.substring( 0, pos0).trim();
+		result[1] = header.substring( pos0 + 1).trim();
+		return result;
 	}
-	static final Pattern HTTP_HEADER_REGEX = Pattern.compile("^(\\S+):\\s(.+)");
-
-	
 	
 	/**
-	 * Parses an HTTP request range value, returning an array the range values
-	 * Examples: 
-	 * "bytes=1000-2000" returns: { 1000, 2000 }
-	 * "bytes=1000-" returns: { 1000, -1 }
-	 * 
-	 * If the input is malformed, it returns null
+	 * Parses an HTTP range header value sent by a client, 
+	 * returning an array the range values
+	 * Examples: "range=1000-2000" returns { 1000, 2000 }
+	 * "range=1000-" returns { 1000, -1 }
+	 * If the input is malformed, it returns {-1,-1} or something unpredictable
 	 */
-	public static long[] parseRangeValues(String value) {
-		Matcher m = HTTP_HEADER_RANGE_REGEX.matcher(value);
-		if (m.matches()) {
-			String first = m.group(1), second = m.group(2);
-			if (second == null)
-				return new long[] { Long.valueOf(first), -1L };
-			else
-				return new long[] { Long.valueOf(first), Long.valueOf(second) };
-		} else
-			return null;
+	public static int[] parseRangeValues(String value) {
+		int[] result = { -1,-1 }; // special cases
+		int pos0 = value.indexOf('=');
+		int pos1 = value.indexOf('-');
+		if ( pos0 == -1 || pos1 == -1 ) return result;
+//		System.out.println("Range value = \""+value+"\" positions: "+pos0+" "+pos1+ " string "
+//				+value.substring(pos0+1, pos1)+"\n");
+		result[0] = Integer.valueOf(value.substring(pos0+1, pos1));
+		String upperSide = value.substring(pos1+1).trim(); 
+		if (upperSide.isEmpty() ) result[1]=-1; // useless since it already is
+		else result[1]=Integer.valueOf(upperSide);
+//		System.out.println("range from: "+result[0]+" to "+result[1]);
+		return result;
 	}
-	static final Pattern HTTP_HEADER_RANGE_REGEX = Pattern.compile("bytes=(\\d+)-(\\d+)?");
-
+	
+	
+	
+	public static int[] parseRangeValuesSentByClient(String value) {
+		return parseRangeValues(value);
+	}
 	
 	/**
-	 * Parses an HTTP reply range value, returned by a server 
+	 * Parses an HTTP range header value returned by a server 
 	 * it returns an array with the range values as well as the size of the file
 	 * Examples: "bytes 0-20/3000" returns { 0, 20, 3000 }
-	 * 		     "bytes 10-30" returns { 10, 30, -1 }
-	 * If the input is malformed, it returns null
+	 * If the input is malformed, it returns {-1,-1, -1} or something unpredictable
 	 */
-	public static long[] parseRangeValuesSentByServer(String value) {
-		Matcher m = HTTP_SERVER_HEADER_RANGE_REGEX.matcher(value);
-		if (m.matches()) {
-			String first = m.group(1), second = m.group(2), third = m.group(3);
-			if (third == null || third.equals("*"))
-				return new long[] { Long.valueOf(first), Long.valueOf(second), -1L };
-			else
-				return new long[] { Long.valueOf(first), Long.valueOf(second), Long.valueOf(third) };
-		} else
-			return null;
+	
+	public static int[] parseRangeValuesSentByServer(String value) {
+		int[] result = { -1, -1, -1 }; // special cases
+		int pos0 = value.indexOf(' ');
+		int pos1 = value.indexOf('-');
+		int pos2 = value.indexOf('/');
+		if (pos0 == -1 || pos1 == -1 || pos2 == -1)
+			return result;
+		result[0] = Integer.valueOf(value.substring(pos0 + 1, pos1));
+		String upperSide = value.substring(pos1 + 1, pos2).trim();
+		String fileLength = value.substring(pos2 + 1).trim();
+		if (upperSide.isEmpty())
+			result[1] = -1; // useless since it already is
+		else
+			result[1] = Integer.valueOf(upperSide);
+		if (fileLength.isEmpty())
+			result[2] = -1; // useless since it already is
+		else
+			result[2] = Integer.valueOf(fileLength);
+		return result;
 	}
-	static final Pattern HTTP_SERVER_HEADER_RANGE_REGEX 
-		= Pattern.compile("bytes\\s(\\d+)-(\\d+)/?(\\d+|\\*)?");
-
-	
-
-
 	
 	
-	
-	
-	/**
-	 * Sends an error message "501: Request Not Implemented"
-	 */
-	public static void sendsNotImplementedPage(OutputStream out) 
-			throws IOException {
-		String page = 
-				"<HTML><BODY>501: Request Not Implemented</BODY></HTML>\r\n" ;
-		int length = page.length();
-		String output = "HTTP/1.0 501 Not Implemented\r\n";
-		output += "Date: "+new Date().toString()+"\r\n";
-		output += "Content-type: text/html\r\n";
-		output += "Server: X-RC2018\r\n";
-		output += "Content-Length: "+String.valueOf(length)+"\r\n\r\n";
-		out.write(output.getBytes());
-	}
 
 	/**
-	 * Sends a simple valid page with the text of the parameter simplePage
+	 * From the contents of a form with format application/x-www-form-urlencoded
+	 * it returns an object of type Properties associating each element with its value
 	 */
-	public static void sendsSimplePage(String simplePage, OutputStream out) 
+	public static Properties parseHttpPostContents( String contents)
 			throws IOException {
-		String page = "<HTML><BODY>" + simplePage + "</BODY></HTML>\r\n";
-		int length = page.length();
-		String output = "HTTP/1.0 200 OK\r\n";
-		output += "Date: "+new Date().toString()+"\r\n";
-		output += "Content-type: text/html\r\n";
-		output += "Server: X-RC2018\r\n";
-		output += "Content-Length: "+String.valueOf(length)+"\r\n\r\n";
-		out.write(output.getBytes());
-	}
-
-
-	
-/*********************************************/	
-/**  some simple tests
- * 	
- */
-	static void unitTestsAdHoc() {
-
-		String request1 = "%s /resource HTTP/1.0";
-		String request2 = "%s /resource?key1=val1&key2=val2 HTTP/1.1";
-
-		for (String i : new String[] { "GET", "PUT", "POST", "HEAD", "DELETE", "OPTIONS" }) {
-			Assert( Result(Http::PrintArray, Http.parseHttpRequest(String.format(request1, i))) != null );
-			Assert( Result(Http::PrintArray, Http.parseHttpRequest(String.format(request2, i))) != null );
+		Properties props = new Properties();
+		Scanner scanner = new Scanner(contents).useDelimiter( "&");
+		while( scanner.hasNext()) {
+			Scanner inScanner = new Scanner( scanner.next()).useDelimiter( "=");
+			String propName = URLDecoder.decode( inScanner.next(), "UTF-8");
+			String propValue = "";
+			try {
+				propValue = URLDecoder.decode( inScanner.next(), "UTF-8");
+			} catch( Exception e) {
+				// do nothing
+			}
+			props.setProperty( propName, propValue);
 		}
-
-		String reply1 = "HTTP/1.0 200 OK";
-		String reply2 = "HTTP/1.1 501 Not Implemented";
-
-		Assert( Result(Http::PrintArray, Http.parseHttpReply(reply1)) != null);
-		Assert( Result(Http::PrintArray, Http.parseHttpReply(reply2)) != null);
-
-		String header = "Content-Length: 12345";
-		String range1 = "Range: bytes=1-";
-		String range2 = "Range: bytes=1-2";
-
-		Assert( Result(Http::PrintArray, Http.parseHttpHeader(header)) != null);
-		Assert( Result(Http::PrintArray, Http.parseHttpHeader(range1)) != null);
-		Assert( Result(Http::PrintArray, Http.parseHttpHeader(range2)) != null);
-		
-		Assert( Result(Http::PrintArray, Http.parseRangeValues(Http.parseHttpHeader(range1)[1])) != null);
-		Assert( Result(Http::PrintArray, Http.parseRangeValues(Http.parseHttpHeader(range2)[1])) != null);
-		
-		String range3 = "bytes 1-10/100";
-		String range4 = "bytes 1-2";
-		String range5 = "bytes 0-1000/*";
-		String range6 = "bytes *";
-
-		Assert( Result(Http::PrintArray, Http.parseRangeValuesSentByServer(range3)) != null);
-		Assert( Result(Http::PrintArray, Http.parseRangeValuesSentByServer(range4)) != null);
-		Assert( Result(Http::PrintArray, Http.parseRangeValuesSentByServer(range5)) != null);
-		Assert( Result(Http::PrintArray, Http.parseRangeValuesSentByServer(range6)) == null);
-
+		return props;
 	}
 
-	static void Assert(boolean value) {
-		if (value != true)
-			throw new AssertionError();
-	}
-
-	static <T> T Result(Consumer<T> c, T value) {
-		c.accept(value);
-		return value;
-	}
-	
-	static <T> void PrintArray( T[] arr ) {
-		System.out.println( Arrays.asList( arr ));
-	}
-	
-	static void PrintArray( long[] arr ) {
-		System.out.println(Arrays.toString(arr));
-	}
-	
-	public static void main(String[] args) {
-		unitTestsAdHoc();
-	}
 }
