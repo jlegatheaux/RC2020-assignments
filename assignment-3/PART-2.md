@@ -227,7 +227,7 @@ If you have python installed in your system, you can understand better how the T
 
 ## Hands-On: Programming Execise
 The provided **SimpleHttpClient**  is able to use the HTTP request / reply protocol to obtain a file and show its content. 
-Departing from this class find a way that it may be used to download files from an HTTP server to be stored in a local file (in the clinet side). 
+Departing from this class, find a way that may be used to download files from an HTTP server to be stored in a local file (in the client side). 
 Call your class **GetFile.java** for example. You can follow a code structure as initially proposed in **GetFile.java**.
 
 In the source code repository there is another class [**GetURL.java**](./exemplo3/GetURL.java) which uses the class URL to download an object from an HTTP server. 
@@ -275,7 +275,7 @@ Range requests and replies are specially useful to deal with multimedia informat
 
 In the source code repository you will also find a lazy HTTP server [**HttpLazyServer.java**](./exemplo3/HttpLazyServer.java) that is able to serve the requested files and partially supports ranges. In fact, the full support of RFC 7233 ranges is quite complex and extensive. The provided server only supports ranges of the forms shown above. This server is lazy since it only sends at most MAX_BYTES bytes in each reply. You can find this constant in its source file. Therefore, if you want to know it, you should use the RTFC method (Read The F. Code), which is the only accessible method when no manual is available.
 To test the actions of the lazy server, launch it in a directory where you also put the file Earth.jpg (which size is around 13 Mbytes). You can access it by using the url: 
-``**http://localhost:8080/Earth.jpg**`` using the browser of your choice.
+`http://localhost:8080/Earth.jpg` using the browser of your choice.
 
 # Parte III - Assignment 3 Delivery
 
