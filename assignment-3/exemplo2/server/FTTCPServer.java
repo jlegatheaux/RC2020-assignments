@@ -57,10 +57,15 @@ public class FTTCPServer {
        
 	    long ttime= endtime-starttime;
 	    
+            // Let's compute the transfer statistc ...
+            System.out.println("\nServer observed stats:");
+            System.out.println("Nr of Bytes received (inbound): " + count + " bytes" );
+            System.out.println("Nr of Bits received (inbound) : " + 8*count + " bits" );
             System.out.println("Transfer time: " + ttime + " ms" );
-	    System.out.println("Nr of bytes (inbound): " + count + "bytes" );
-            System.out.println("Transfer Rate: " + (8*count)/ttime + " bits/s" );
-	    System.out.println("           or: " +  (count)/(1000*ttime) + " Kbits/s
+            System.out.println("Transfer Rate: " + 1000*(count/ttime) + " bytes/s" );
+            System.out.println("           or: " + 8000*(count/ttime) + " bits/s" );
+            System.out.println("           or: " +  ((8*count)/(1000*ttime)) + " Kbits/s\n\n" );
+
 
 	}
     }
