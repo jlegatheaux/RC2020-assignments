@@ -1,19 +1,19 @@
 # A smart client to download content from HTTP servers 
 
 ## Motivation
-In today's internet, most of the users consumed content is carried over the HTTP protocol. In the specific case of multimedia content, the volume of the consumed information varies from a few Mbytes, in the case of photographs, up to several G bytes, in the case of movies.
+In today's internet, most of the content consumed by users is transferred over the HTTP protocol. In the specific case of multimedia content, the volume of the consumed information varies from a few Mbytes, in the case of photographs, up to several Gbytes, in the case of movies.
 
-It is not realistic to think of such bulky objects being transferred in a single HTTP request/reply interaction, using a single TCP connection. Inevitably, due to the high volume of data of such content, momentary anomalies in the network, or problems in the servers, it is necessary to resort to more than one interaction among the client and the server(s). In addition, in the case of films, as they can take several hours to play, it is not mandatory or interesting to transfer in only one chunk the full content, or from the same server. Also, a faster download may be achieved if transferring in parallel from several servers, using different HTTP ranges.
+It is not realistic to think of such bulky objects being transferred in a single HTTP request/reply interaction, using a single TCP connection. Inevitably, due to the high volume of data of such content, momentary anomalies in the network, or problems in the servers, it is necessary to resort to more than one interaction among the client and the server(s). In addition, in the case of movies, as they can take several hours to play, it is not mandatory or interesting to transfer in only one chunk the full content, or from the same server. Also, a faster download may be achieved if transferring in parallel from several servers, using different HTTP ranges.
 
 ## Goals
-To complete this exercise you must program an HTTP client able to transfer a voluminous file (e.g. above 100 Mbytes) from a set of HTTP "tricky" servers, in the shortest time. These servers, whenever they receive a request of an object, may only send part of the requested object or break the connection in the middle of the transfer. Also, each server have different and variable transfer performances. These servers accept ranges requests.
+To complete this assignment you must program an HTTP client capable of transfering a large file (e.g., above 100 Mbytes) from a set of HTTP "tricky" servers, in the shortest time. These servers, whenever they receive a request of an object, may only send part of the requested object or break the connection in the middle of the transfer. Also, each server has different and variable transfer performances. These servers accept HTTP range requests.
 
 ### Minimal goal of your work
 Your program should be an HTTP client called **GetFile** that must be able to correctly download a (huge) file from a HTTP server. The server may send just part of the file at each request or the connection with this server can be broken. For your implementation and testing purposes, you can use the provided server **HttpTrickyServer.jar**, [downloadble here](./exemplo3/HttpTrickyServer.jar) 
 
 [Files for testing purposes are available here.](https://drive.google.com/drive/folders/146LsGoiD2SOUYMjkBeSDbmndzPxUxY-m?usp=sharing)
 
-Use the following command to start this server (it runs by default in port 8080):
+Use the following command to start this server (it runs by default on port 8080):
 
 `java -jar HttpTrickyServer.jar`
 
