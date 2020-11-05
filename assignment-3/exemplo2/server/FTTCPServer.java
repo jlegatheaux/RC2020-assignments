@@ -54,11 +54,14 @@ public class FTTCPServer {
 	    clientSocket.close();
 	    f.close();
 	    // Let's compute the transfer statistc ...
-            count=8*count/1000;
+       
 	    long ttime= endtime-starttime;
+	    
             System.out.println("Transfer time: " + ttime + " ms" );
-            System.out.println("Inbound data: " + 8*count + " Bytes" );	    	
-            System.out.println("Throughput: " + count/ttime + " Kbits/s" );
+	    System.out.println("Nr of bytes (inbound): " + count + "bytes" );
+            System.out.println("Transfer Rate: " + (8*count)/ttime + " bits/s" );
+	    System.out.println("           or: " +  (count)/(1000*ttime) + " Kbits/s
+
 	}
     }
 }
