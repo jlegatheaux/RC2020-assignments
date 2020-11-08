@@ -56,7 +56,7 @@ public class HttpLazyServer {
 		try {
 			InputStream in = s.getInputStream();
 			OutputStream out = s.getOutputStream();
-			long[] ranges = { -1,-1 }; // useless but anyway
+			int[] ranges = { -1,-1 }; // useless but anyway
 			String line = Http.readLine(in);
 			System.out.println("\nGot: \n\n"+line);
 			String[] request = Http.parseHttpRequest(line);
