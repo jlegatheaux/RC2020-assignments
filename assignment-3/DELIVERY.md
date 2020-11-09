@@ -60,19 +60,22 @@ Total number of bytes downloaded (in bytes)
 End-to-end average bitrate of the full transfer (in bytes/sec)
 Number of requests performed by the client during the file transfer
 Average size of the payload of each HTTP reply (in bytes)
-Average time spent in each request/reply (in milliseconds)
+Average request/reply duration (in milliseconds)
 ```
 
-Use the following output format (from Stats.java):
+Use the following output format (from Stats.java) - numbers shown are hypothetical:
 
 ```
-Total time elapsed (s): 41.668
-Download size (bytes): 14744835
-End-to-end debit (Kbytes/s): 353.865
-Number of requests: 4
-Aver. reply length (bytes): 3686208
-Aver. time per request (s): 10
+Transfer stats:
+Total time elapsed (s):		   4
+Download size (bytes):		   15000000
+End-to-end debit (Kbytes/s): 8000
+Number of requests:		       1500
+Avg. reply length (bytes):	 10000
+Avg. request duration (ms):	 1
 ```
+
+
 
 ## Grading (in 0-20 scale)
 
