@@ -120,8 +120,8 @@ public class Http {
 	 * "range=1000-" returns { 1000, -1 }
 	 * If the input is malformed, it returns {-1,-1} or something unpredictable
 	 */
-	public static int[] parseRangeValues(String value) {
-		int[] result = { -1,-1 }; // special cases
+	public static long[] parseRangeValues(String value) {
+		long[] result = { -1,-1 }; // special cases
 		int pos0 = value.indexOf('=');
 		int pos1 = value.indexOf('-');
 		if ( pos0 == -1 || pos1 == -1 ) return result;
@@ -137,7 +137,7 @@ public class Http {
 	
 	
 	
-	public static int[] parseRangeValuesSentByClient(String value) {
+	public static long[] parseRangeValuesSentByClient(String value) {
 		return parseRangeValues(value);
 	}
 	
@@ -148,8 +148,8 @@ public class Http {
 	 * If the input is malformed, it returns {-1,-1, -1} or something unpredictable
 	 */
 	
-	public static int[] parseRangeValuesSentByServer(String value) {
-		int[] result = { -1, -1, -1 }; // special cases
+	public static long[] parseRangeValuesSentByServer(String value) {
+		long[] result = { -1, -1, -1 }; // special cases
 		int pos0 = value.indexOf(' ');
 		int pos1 = value.indexOf('-');
 		int pos2 = value.indexOf('/');

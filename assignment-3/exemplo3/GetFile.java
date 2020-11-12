@@ -42,7 +42,6 @@ public class GetFile {
 	private static void downloadFile(String host, int port, String path) 
 			throws UnknownHostException, IOException {
 
-	    ....
 	}
 
         // can add other private stuff as needed
