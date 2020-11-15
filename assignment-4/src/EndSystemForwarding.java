@@ -35,8 +35,6 @@ public class EndSystemForwarding extends AbstractControlAlgorithm {
 		this.parameters=parameters;
 		this.links=links;
 		numInterfaces=nint;
-		
-		tracingOn = parameters.containsKey("trace");
 		return 0;
 	}
 	
