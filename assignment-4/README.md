@@ -87,9 +87,9 @@ it is possible to analyse statistics on how the flood routing process is execute
 * **d - dropped** (a packet was dropped because its TTL was going to reach 0 or there was no available interface to forward it)
 * **f - forwarded** (a packet not directed to the local node has been forwarded using one of its interfaces)
 
-If you want to have a detailed look at how the `configs/config4.1` simulation progresses, you can uncomment the line `parameter trace` which will trigger the printing of tracing messages by the different control algorithms. That allows one to a have a much clear idea on how the routing of packets is performed.
+If you want to have a detailed look at how the [configs/config4.1](configs/config4.1) simulation progresses, you can uncomment the line `parameter trace` which will trigger the printing of tracing messages by the different control algorithms. That allows one to a have a much clear idea on how the routing of packets is performed.
 
-After that, you can proceed to simulations with different network configurations, namely, one that at processing step 18000 puts the link from node 0 to node 3 up as shown in the figure below.
+After that, you can proceed to simulations with different network configurations, namely, one that at processing step 18000 puts the link from node 0 to node 3 up, see file [configs/config4.2](configs/config4.2), as shown in the figure below.
 
 ![The network used for test configuration config4.2](Figures/assign4.2.png)
 
@@ -109,9 +109,9 @@ and aborting it as soon as you got the comparison done. You can try to justify t
 
 The `Flood`class provided also implements a flooding optimisation known as **learning by the reverse path** which leverages the fact that if in an acyclic network, if a node `N` receives by interface `I` a packet originally sent by source `S`, then `I` is the beginning of a (unique and therefore shortest) path from `N` to `S`. To switch this optimization on, the only required action is to uncomment the line  `parameter filter` in the configuration file.
 
-By using `config4.1` with filtering on and off, it is easy to see that the number of duplicate packets drops with filtering on. This is easier to grasp with tracing on. This optimisation seems to have a radical implication since when performing  simulation `config4.2` with filtering on and off, it seems that  **learning by the reverse path** is capable of avoiding duplicates per se. 
+By using file [configs/config4.1](configs/config4.1), with filtering on and off, it is easy to see that the number of duplicate packets drops with filtering on. This is easier to grasp with tracing on. This optimisation seems to have a radical implication since when performing  simulation [configs/config4.2](configs/config4.2), with filtering on and off, it seems that  **learning by the reverse path** is capable of avoiding duplicates per se. 
 
-Performing the same simulations with `config4.3`, shown below, a network with all links up after time = 18000, and therefore more cycles than the previous ones, one realises that with filtering off, floods seem never end, while doing the same simulation with filtering on, the number of duplicates drops radically and, once again, floods stop quite soon.
+Performing the same simulations with see file [configs/config4.3](configs/config4.3), with the network shown below, a network with all links up after time = 18000, and therefore more cycles than the previous ones, one realises that with filtering off, floods seem never end, while doing the same simulation with filtering on, the number of duplicates drops radically and, once again, floods stop quite soon.
 
 ![The network used for test configuration config4.3](Figures/assign4.3.png)
 
@@ -156,7 +156,7 @@ public void forward_packet(int now, Packet p, int iface) {
 ```
 To achieve this goal, you have to devise a technique of detecting duplicates by keeping the least state possible on the packets previously forwarded.
 
-Your solution must forward the least possible number of packets using `config4.4` a network with all links up from the beginning, as shown in the figure below.
+Your solution must forward the least possible number of packets using configuration [configs/config4.4](configs/config4.4), a network with all links up from the beginning, as shown in the figure below.
 
 ![The network used for test configuration config4.4](Figures/assign4.4.png)
 
@@ -203,7 +203,7 @@ Pkt stats for node 9 time 39000 -  s 3 r 3 d 1 f 4
   (node:5 ifc:2) r 3 s 4 <--> (node:9 ifc:0) r 4 s 3
 ```
 
-Your solution may be confronted with other network and application configurations. **If it is correct and with good code quality, its mark will be at most 17.**
+Your solution may be confronted with other network and application configurations. **If it is correct and with good code quality, its mark will be at most 17. This remains open by the moment and is only valid if the Exrra Assignment applies.**
 
 
 # Extra Assignment Delivery 
@@ -212,7 +212,7 @@ An useful feature in some scenarios is the abality to broadcast a packet to all 
 
 Broadcasting requires a special algorithm to implement it. Fortunately enough, that algorithm is based on flooding with duplicate detection. Your switching node forwarding algorithm, if it already supports the two above features, namely flooding and duplicate detection, is very close to implement broadcasting.
 
-A broadcasted packet, if not a duplicate, must be flooded and also locally delivered. To locally deliver a packet, its destination address **must** be changed to the **local node address** and delivered using the call
+A broadcasted packet, if it is not a duplicate, must be flooded and also locally delivered. To locally deliver a packet, its destination address **must** be changed to the **local node address** and delivered using the call
 
 ```java
 nodeObj.send(p.getCopy(), LOCAL);
@@ -221,4 +221,4 @@ Your new version of the `Flood` control algorithm should be named `FloodB`.
 
 To complete your extra delivery, you also need to see and test if the `ControlAlgorithm` class used by application nodes requires any change. That class is also avaliable under the name `EndSystemForwarding` in the sources folder. An end system has one only interface and its number is 0.
 
-Finally, you can use a new configuration file to test your solution, see file `configs.config4.5`.
+Finally, you can use a new configuration file to test your solution, see file [configs/config4.5](configs/config4.5).
