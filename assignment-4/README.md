@@ -1,5 +1,5 @@
 
-# Routing Protocol Using The Flooding Algorithm
+# Routing Protocols Using The Flooding Algorithm
 
 In this Assignment, we will use CNSS to develop a routing protocol based on the Flooding Algorithm. Students must enhance a provided naive flooding solution by intruducing filtering and optimization capabilities in the switching nodes forwarding process.
 
