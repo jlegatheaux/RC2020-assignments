@@ -11,7 +11,7 @@ If the network is a **tree, i.e., it has no cycles**, the packet will reach the 
 
 In this assignment we will use the network depicted in the below figure to test and develop the different versions of the algorithm. In the departing status of that network, the link connecting nodes 4 and 5, as well as the link connectiong nodes 3 and 0 are both  shutdow and, therefore, in that situation, the network has no cycles.
 
-![](The network used for testing the different versions of the algorithm)
+![Figures/config4.1](The network used for testing the different versions of the algorithm)
 
 Sender nodes periodically send a *ping like packet* to the receiver node in variable `dest`, which was initializaed after the analysis of its application algorithm *args*, see their `on_clock_tick()` upcall below.
 
