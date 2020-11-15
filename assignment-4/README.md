@@ -158,7 +158,7 @@ To achieve this goal, you have to devise a technique of detecting duplicates by 
 
 Your solution must forward the least possible number of packets using `config4.4` a network with all links up from the beginning, as shown in the figure below.
 
-![The network used for test configuration config4.3](Figures/assign4.3.png)
+![The network used for test configuration config4.4](Figures/assign4.4.png)
 
 After executing that simulation, all application nodes (sender and receiver nodes) only send 3 packets and receive 3. They also drop exactly one packet received by their only link. Can you explain both facts? 
 
