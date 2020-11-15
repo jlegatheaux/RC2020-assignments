@@ -70,7 +70,7 @@ private void flood_packet (int now, Packet p, int iface) {
 ```
 In the above method, parameter *iface* is the interface from which packet *p*, not directed to the local node, has been received. The variable *links* of classes extending `ControlAlgorithm` is an array representing the interfaces (and the attached links) of the node. The control algorithm of sender and receiver nodes, which only have a single interface, discard packets received by that link which are not directed to the local node.
 
-Configuration file `configs/config4.1` allows you to make a first simulation test of the basic naive flooding algorithm. Note that you should not uncomment the line containing 
+Configuration file [configs/config4.1](configs/config4.1) allows you to make a first simulation test of the basic naive flooding algorithm. Note that you should not uncomment the line containing 
 
 ```
 # parameter filter
