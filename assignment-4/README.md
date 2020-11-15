@@ -91,7 +91,7 @@ If you want to have a detailed look at how the `configs/config4.1` simulation pr
 
 After that, you can proceed to simulations with different network configurations, namely, one that at processing step 18000 puts the link from node 0 to node 3 up as shown in the figure below.
 
-![](The network used for test configuration config4.2)
+![The network used for test configuration config4.2](Figures/assign4.2.png)
 
 From that moment on, the network has cycles and becomes similar to a ring network. You can test it by running the next simulation. Again, in the first test, do not uncomment the line `# parameter filter` and you may also start with tracing off (`# parameter filter`).
 
@@ -113,7 +113,7 @@ By using `config4.1` with filtering on and off, it is easy to see that the numbe
 
 Performing the same simulations with `config4.3`, shown below, a network with all links up after time = 18000, and therefore more cycles than the previous ones, one realises that with filtering off, floods seem never end, while doing the same simulation with filtering on, the number of duplicates drops radically and, once again, floods stop quite soon.
 
-![](The network used for test configuration config4.3)
+![The network used for test configuration config4.3](Figures/assign4.3.png)
 
 However, is it possible to prove that this kind of filtering is capable of avoiding most floods and the receiving of all duplicate packets? It is not possible to prove it because this is a false assertion. To prove that it is not true, it is enough to find a counterexample. For this, you can try the same simulations with a new version of sender nodes. One where each sender also sends a packet to a switch node using, like for example, the upcall `on_clock_tick` below
 
@@ -158,8 +158,7 @@ To achieve this goal, you have to devise a technique of detecting duplicates by 
 
 Your solution must forward the least possible number of packets using `config4.4` a network with all links up from the beginning, as shown in the figure below.
 
-
-![](The network used for test configuration config4.3)
+![The network used for test configuration config4.3](Figures/assign4.3.png)
 
 After executing that simulation, all application nodes (sender and receiver nodes) only send 3 packets and receive 3. They also drop exactly one packet received by their only link. Can you explain both facts? 
 
@@ -223,36 +222,3 @@ Your new version of the `Flood` control algorithm should be named `FloodB`.
 To complete your extra delivery, you also need to see and test if the `ControlAlgorithm` class used by application nodes requires any change. That class is also avaliable under the name `EndSystemForwarding` in the sources folder. An end system has one only interface and its number is 0.
 
 Finally, you can use a new configuration file to test your solution, see file `configs.config4.5`.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
