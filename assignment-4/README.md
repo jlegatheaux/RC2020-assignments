@@ -104,15 +104,17 @@ You can abort the simulation as soon as you got the comparison done. You can try
 
 # Your First Delivery (that can be marked at most 14 marks)
 
-The goal of your first delivery is to enhance the `Flood`class provided to also implement a flooding optimisation known as **learning by the reverse path** which leverages the fact that if in an acyclic network, if a node `N` receives by interface `I` a packet originally sent by source `S`, then `I` is the beginning of a (unique and therefore shortest) path from `N` to `S`. After implementing it, to switch this optimization on, the only required action should be to uncomment the line  `parameter filter` in the configuration file.
+The goal of your first delivery is to enhance the provided `Flood`class to also implement a flooding optimisation, known as **learning by the reverse path**, which leverages the fact that in an acyclic network, if a node `N` receives by interface `I` a packet originally sent by source `S`, then `I` is the beginning of a (unique and therefore shortest) path from `N` to `S`. After implementing it, to switch this optimization on, the only required action should be to uncomment the line  `parameter filter` in the configuration file.
 
-By using file [configs/config4.1](configs/config4.1), with filtering on and off, it is easy to see that the number of duplicate packets drops with filtering on. This is easier to grasp with tracing on. This optimisation seems to have a radical implication since when performing simulation [configs/config4.2](configs/config4.2), with filtering on and off, it seems that  **learning by the reverse path** is capable of avoiding duplicates per se. 
+By using file [configs/config4.1](configs/config4.1), with filtering on and off, it is easy to see that the number of duplicate packets drops with filtering on. This is easier to grasp with tracing on if you introduce a tracing action in your enhanced implementation that traces when a packet was forrwarded to one only interface, instead of being flooded. 
 
-Performing the same simulations with file [configs/config4.3](configs/config4.3), wich uses the network shown below, a network with all links up after time = 18000, and therefore more cycles than the previous ones, one realises that with filtering off, floods seem never end, while doing the same simulation with filtering on, the number of duplicates drops radically and, once again, floods stop quite soon.
+This optimisation seems to have a radical implication since when performing simulation [configs/config4.2](configs/config4.2), with filtering on and off, it seems that  **learning by the reverse path** is capable of avoiding all duplicates per se. 
+
+Performing the same simulations with file [configs/config4.3](configs/config4.3), wich uses the network, shown below, with all links up after time = 18000, and therefore more cycles than the previous one, it can be observed that with filtering off, floods seem never end, while doing the same simulation with filtering on, the number of duplicates drops radically and, once again, floods stop quite soon.
 
 ![The network used for test configuration config4.3](Figures/assign4.3.png)
 
-However, is it possible to prove that this kind of filtering is capable of avoiding most floods and the receiving of all duplicate packets? It is not possible to prove it because this is a false assertion. To prove that it is not true, it is enough to find a counterexample. For this, you can try the same simulations with a new version of sender nodes. One where each sender also sends a packet to a switch node using, like for example, the upcall `on_clock_tick` below
+However, is it possible to prove that this kind of filtering is capable of avoiding most floods and the receiving of all duplicate packets? It is not possible to prove it because it is a false assertion. To prove that it is not true, it is enough to find a counterexample. For this, you can try the same simulations with a new version of sender nodes. One where each sender also sends a packet to a switch node using, like for example, the upcall `on_clock_tick` below
 
 ```java
 public void on_clock_tick(int now) {
@@ -128,36 +130,51 @@ public void on_clock_tick(int now) {
 ```
 by wich sender nodes also send a packet to the switching node number 5 at each clock tick. Running again the same simulation, even with filtering on, one realises that node 5 instead of receiving 6 packets from these nodes, receives 114 packets, while all other nodes received 0. Switching nodes use an empty `ApplicationAlgorithm` class and therefore ignore the received application packets.
 
-The method capable of avoiding all duplicate packets during floods is simple, it requires switching nodes to detect and drop them. Implementing it is your job in this assignment.
+# Optional Assignment Delivery (that can be marked at most more 6 marks)
 
-# Assignment Delivery 
+The method capable of avoiding all duplicate packets during floods requires switching nodes to detect and drop them. Implementing it is your next job challenge.
 
 The provided class `Flood`, when the parameter `drop_duplicates` is set, should execute all the required actions to implement duplicate packets dropping.
 
 ```java
 public void forward_packet(int now, Packet p, int iface) {
+		
+		if ( drop_duplicates ) {
+			// your code here
+		} 
+		
+		if ( p.getDestination() == nodeObj.getId()) {
+			Packet localPacket = p.getCopy();
+			nodeObj.send(localPacket, LOCAL);
+			trace(now, "forwarded a packet locally sent to this node");
+			return; // all done
+		}
 
-	if ( drop_duplicates ) {
-		// do the required actions to recognise packet duplicates
-		// if the packet is a duplicate, ignore it and return, else continue the processing
-	} 
-	
-	if ( filter ) {
-		// do the required actions to learn by the reverse path and
-		// if possible, perform an optimised forward, else flood the packet
-		return;
+		if ( p.getDestination() == Packet.BROADCAST ) {
+			Packet localPacket = p.getCopy();
+			localPacket.setDestination(nodeObj.getId());
+			nodeObj.send(localPacket, LOCAL);
+			trace(now, "forwarded a copy of a broadcasted packet to this node");
+		}
+		
+		if ( filter ) {
+			// your code here
+		}
+		
+		flood_packet (now, p, iface);
 	}
-	
-	flood_packet (now, p, iface);
-}
 ```
-To achieve this goal, you have to devise a technique of detecting duplicates by keeping the least state possible on the packets previously forwarded.
-
-Your solution must forward the least possible number of packets using configuration [configs/config4.4](configs/config4.4), a network with all links up from the beginning, as shown in the figure below.
+To achieve this goal, you have to devise a technique of detecting duplicates by keeping the least state possible on the packets previously forwarded. Your solution must forward the least possible number of packets using configuration [configs/config4.4](configs/config4.4), a network with all links up from the beginning, as shown in the figure below.
 
 ![The network used for test configuration config4.4](Figures/assign4.4.png)
 
-After executing that simulation, all application nodes (sender and receiver nodes) only send 3 packets and receive 3. They also drop exactly one packet received by their only link. Can you explain both facts? 
+To devise a way of detecting if a packet is a duplicate, you need to compute some sort of key that can be used to discriminate or identify a packet, something like a packet unique identifier. For a start, it seems that two packets with exactly the same header and the same payload could be considered as being the same packet. Therefore, the key could be computed using some hash of both. 
+
+In reality, things can be more complicated. In fact, in a certain network, nothing prevents a node of sending two different packets, packets P1 and P2, to the same destination, and with the same payload. Therefore, both will have the same payload and only the headers may be used to decide if P1 and P2 are the same packet or different packets. In fact, is that they are different packets, sent at different moments, and only the network header may teel that, the payload is useless for that purpose.
+
+One can then look at the headers used in a network to see if there is some header information that can be used to decide if P1 and P2 are different or equal. In CNSS (as well as IPv4, as we will study later) there is a field in the header that changes from P1 to P2. In CNSS that field is called the **sequence number**, and can be accessed using method `getSequenceNumber()` like in `p1.getSequenceNumber()`, which returns an `int`.  Therefore, looking at the full list of packets header fields (look at CNSS documentation or at the source code of class `Packet` to see what is a CNSS packet) one can devise a method easily to compute a workable version of that key. 
+
+After executing that simulation with your last enhancement, all application nodes (sender and receiver nodes) only send 3 packets and receive 3. They also drop exactly one packet received by their only link. Can you explain both facts? 
 
 Switching nodes forward the minimal number of packets while using flooding, and drop the received duplicate packets. Recall that switching nodes 3 and 5 only receive the first useless floods and then, as the network learned where destinations nodes are, do not receive any more useless packets. Switching nodes 1, 2, 4 and 5 receive and forward the packets sent and received from the attached application nodes (6 packets), as well as some extra packets also flooded in the first round.
 
@@ -200,24 +217,11 @@ Pkt stats for node 9 time 39000 -  s 3 r 3 d 1 f 4
   (node:5 ifc:2) r 3 s 4 <--> (node:9 ifc:0) r 4 s 3
 ```
 
-Your solution may be confronted with other network and application configurations. **If it is correct and with good code quality, its mark will be at most 17. This remains open by the moment and is only valid if the Exrra Assignment applies.**
+Your solution may be confronted with other network and application configurations.
 
+# A final note on devising unique identifiers to packets
 
-# Extra Assignment Delivery 
+In IPv4 the header field that plays a similar role is called packet `Identifier` and is represented in 16 bits. In IPv6 there is no such field and two different packets sent at different times by the same node to the same destination node and with the same payload would be, under the point of view of the network, identical packets.
 
-An useful feature in some scenarios is the abality to broadcast a packet to all nodes in a network. In networks that support it, a packet is broadcasted by sending it to the boadcast address. In CNSS a DataPacket can be broadcast using destination address `Packet.BROADCAST`, that special destination has the value `11111`.
+It is also interesting to realize that in IPv4, as in the CNSS, the field that may be used to disciminate two different packets is incremented whenever a new packets is sent. As so, after sending around 65000 idetical packets, the values of the field will be reused, and one cannot distingush any two packets if a node sends identical packets at full speed. Knowing the size of these packets and the bandwith of the used tramnsmition link, you can even try to compute hao long can the node send different packets without reusing 
 
-Broadcasting requires a special algorithm to implement it. Fortunately enough, that algorithm is based on flooding with duplicate detection. Your switching node forwarding algorithm, if it already supports the two above features, namely flooding and duplicate detection, is very close to implement broadcasting.
-
-A broadcasted packet, if it is not a duplicate, must be flooded and also locally delivered. To locally deliver a packet, its destination address **must** be changed to the **local node address** and delivered using the call
-
-```java
-nodeObj.send(p.getCopy(), LOCAL);
-```
-Your new version of the `Flood` control algorithm should be named `FloodB`.
-
-To complete your extra delivery, you also need to see and test if the `ControlAlgorithm` class used by application nodes requires any change. That class is also avaliable under the name `EndSystemForwarding` in the sources folder. An end system has only one interface and its number is 0.
-
-Finally, you can use a new configuration file to test your solution, see file [configs/config4.5](configs/config4.5). This configuration uses the same network configuration as the one in file [configs/config4.4](configs/config4.4). That network is depicted in the last figure shown above.
-
-**If you complete this modification with success, your work may be graded with 3 extra marks.**
