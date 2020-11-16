@@ -104,7 +104,7 @@ You can abort the simulation as soon as you got the comparison done. You can try
 
 # Your First Delivery (that can be marked at most 14 marks)
 
-The `Flood`class provided also implements a flooding optimisation known as **learning by the reverse path** which leverages the fact that if in an acyclic network, if a node `N` receives by interface `I` a packet originally sent by source `S`, then `I` is the beginning of a (unique and therefore shortest) path from `N` to `S`. To switch this optimization on, the only required action is to uncomment the line  `parameter filter` in the configuration file.
+The goal of your first delivery is to enhance the `Flood`class provided to also implement a flooding optimisation known as **learning by the reverse path** which leverages the fact that if in an acyclic network, if a node `N` receives by interface `I` a packet originally sent by source `S`, then `I` is the beginning of a (unique and therefore shortest) path from `N` to `S`. After implementing it, to switch this optimization on, the only required action should be to uncomment the line  `parameter filter` in the configuration file.
 
 By using file [configs/config4.1](configs/config4.1), with filtering on and off, it is easy to see that the number of duplicate packets drops with filtering on. This is easier to grasp with tracing on. This optimisation seems to have a radical implication since when performing simulation [configs/config4.2](configs/config4.2), with filtering on and off, it seems that  **learning by the reverse path** is capable of avoiding duplicates per se. 
 
