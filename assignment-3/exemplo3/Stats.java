@@ -35,6 +35,7 @@ public class Stats {
 		System.out.println("Download size (bytes):\t\t" + totalBytes);
 		System.out.printf("End-to-end debit (Kbytes/s):\t%.1f\n", speed);
 		System.out.println("Number of requests:\t\t" + totalRequests);
+		System.out.printf("Avg. reply length (bytes):\t%.0f\n", totalBytes/(double)totalRequests);
 		System.out.printf("Avg. request duration (ms):\t%.1f", milliSeconds/(double)totalRequests);
 		System.out.println("\n==========================================================\n");
 
