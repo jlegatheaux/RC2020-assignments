@@ -27,9 +27,9 @@ This repository is the reference repository of the course prgramming assignments
   - [Materials/Guidelines: ](assignment-3/README.md) 
   
 ### Assignment 4: Routing by Flooding and Flooding with Filtering
-  - Deadline: 29/Nov/20, 23h59
+  - Deadline: 25/Nov/20, 23h59
   - Delivery Form (to be included)
-  - Individual Assessment Form: (to be included), on 02/Dec/20, 19h30-19h45 (15 min)
+  - Individual Assessment Form: (to be included), on 27/Nov/20, 19h30-19h45 (15 min)
   - [Materials/Guidelines: ](assignment-4/README.md) 
   
 ### Assignment 5: Shortest Path Routing Protocols (Distance Vector or Link-State)
