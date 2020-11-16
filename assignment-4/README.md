@@ -1,11 +1,11 @@
 
 # Routing Protocols Using The Flooding Algorithm
 
-In this Assignment, we will use CNSS to develop a routing protocol based on the Flooding Algorithm. Students must enhance a provided naive flooding solution by intruducing filtering and optimization capabilities in the switching nodes forwarding process.
+In this Assignment, we will use CNSS to develop a routing protocol based on the Flooding Algorithm. Students must enhance a provided naive flooding solution by intruducing filtering and optimization capabilities in the forwarding process implemented by *switching nodes*.
 
 A deeper discussion of the subject is available in **chapter 15** of the course support book.
 
-The basic flooding algorithm is very simple. It requires switching nodes to maintain **no state** besides the set of their active interfaces. Whenever there is a packet to forward not directed to the receiving node, the algorithm simply sends a copy of that packet to all the node's interfaces, except the one from which the packet arrived.
+The basic flooding algorithm is very simple. It requires switching nodes to maintain **no state** besides the set of their active interfaces. In short, whenever there is a packet to forward not directed to the receiving node, the algorithm simply sends a copy of that packet to all the node's interfaces, except the one from which the packet arrived.
 
 If the network is a **tree, i.e., it has no cycles**, the packet will reach the destination, provided there is a path from the origin node to destination one. The only drawback is that several useless copies of the same packet will arrive to nodes of the network but the original sender. These useless copies are discarded by all non destination nodes, i.e., nodes whose adddress is different from the destination address of the packet.
 
@@ -13,7 +13,7 @@ In this assignment, we will use the network depicted in the figure below to test
 
 ![The network used for testing the different versions of the algorithm](Figures/assign4.1.png)
 
-Sender nodes periodically send a *ping like packet* to the receiver node in variable `dest`, which was initializaed after the analysis of its application algorithm *args*, see their `on_clock_tick()` upcall below.
+Sender nodes periodically send a *ping like packet* to the receiver node in variable `dest`, as shown in the `on_clock_tick()` upcall below.
 
 ```java
 public void on_clock_tick(int now) {
@@ -40,7 +40,7 @@ Similar to the well known *echo service*, receiver nodes send an answer to the o
 public void on_receive(int now, DataPacket p) {
 	countReceived++;
 	countSent++;
-    self.send( self.createDataPacket( p.getSource(), p.getPayload() )  );
+        self.send( self.createDataPacket( p.getSource(), p.getPayload() )  );
 	log(now, " received / replyed "+p+" payload: " + new String(p.getPayload(), StandardCharsets.UTF_8)); 
 }
 
@@ -49,7 +49,7 @@ public void showState(int now) {
 	System.out.println(" sent "+countSent+" packet(s)"+" / received "+countReceived+" packet(s)");
 }
 ```
-The code below shows method `flood_packet` which is used by the ´ControlAlgorithm´ of switching nodes to forward packets not directed addressed to them.
+The code below shows method `flood_packet` which is used by the ´ControlAlgorithm´ of switching nodes to forward packets not directly addressed to them.
 
 ```java
 private void flood_packet (int now, Packet p, int iface) {
