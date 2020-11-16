@@ -219,7 +219,7 @@ nodeObj.send(p.getCopy(), LOCAL);
 ```
 Your new version of the `Flood` control algorithm should be named `FloodB`.
 
-To complete your extra delivery, you also need to see and test if the `ControlAlgorithm` class used by application nodes requires any change. That class is also avaliable under the name `EndSystemForwarding` in the sources folder. An end system has one only interface and its number is 0.
+To complete your extra delivery, you also need to see and test if the `ControlAlgorithm` class used by application nodes requires any change. That class is also avaliable under the name `EndSystemForwarding` in the sources folder. An end system has only one interface and its number is 0.
 
 Finally, you can use a new configuration file to test your solution, see file [configs/config4.5](configs/config4.5). This configuration uses the same network configuration as the one in file [configs/config4.4](configs/config4.4). That network is depicted in the last figure shown above.
 
