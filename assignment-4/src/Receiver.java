@@ -29,7 +29,7 @@ public class Receiver extends AbstractApplicationAlgorithm {
 	public void on_receive(int now, DataPacket p) {
 		countReceived++;
 		countSent++;
-	        self.send( self.createDataPacket( p.getSource(), p.getPayload() )  );
+	    self.send( self.createDataPacket( p.getSource(), p.getPayload() )  );
 		log(now, " received / replyed "+p+" payload: " + new String(p.getPayload(), StandardCharsets.UTF_8)); 
 	}
 
