@@ -70,7 +70,7 @@ private void flood_packet (int now, Packet p, int iface) {
 ```
 In the above method, parameter *iface* is the interface from which packet *p* has been received. The variable *links* of classes extending `ControlAlgorithm` is an array representing the interfaces (and the attached links) of the node. The control algorithm of sender and receiver nodes, as they only have one single interface, use a simpler `ControlAlgorithm` provided with the basic library of CNSS.
 
-Configuration file [configs/config4.1](configs/config4.1) allows you to make a first simulation test of the basic naive flooding algorithm, provided in class [Flood.java](Flood.java), by issuing the following command (or a equivalent action compatible with your development environment):
+Configuration file [configs/config4.1](configs/config4.1) allows you to make a first simulation test of the basic naive flooding algorithm, provided in class [src/Flood.java](src/Flood.java), by issuing the following command (or a equivalent action compatible with your development environment):
 
 ```
 java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.1
