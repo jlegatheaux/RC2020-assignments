@@ -1,15 +1,15 @@
 
 # Routing Protocols Using The Flooding Algorithm
 
-In this Assignment, we will use CNSS to develop a routing protocol based on the Flooding Algorithm. Students must enhance a provided naive flooding solution by intruducing filtering and optimization capabilities in the forwarding process implemented by *switching nodes*.
+In this Assignment, we will use CNSS to develop a routing protocol based on the Flooding Algorithm. Students must enhance a provided naive flooding solution by introducing filtering and optimization capabilities in the forwarding process implemented by *switching nodes*.
 
 A deeper discussion of the subject is available in **chapter 15** of the course support book.
 
 The basic flooding algorithm is very simple. It requires switching nodes to maintain **no state** besides the set of their active interfaces. In short, whenever there is a packet to forward not directed to the receiving node, the algorithm simply sends a copy of that packet to all the node's interfaces, except the one from which the packet arrived.
 
-If the network is a **tree, i.e., it has no cycles**, the packet will reach the destination, provided there is a path from the origin node to destination one. The only drawback is that several useless copies of the same packet will arrive to nodes of the network but the original sender. These useless copies are discarded by all non destination nodes, i.e., nodes whose adddress is different from the destination address of the packet.
+If the network is a **tree, i.e., it has no cycles**, the packet will reach the destination, provided there is a path from the origin node to destination one. The only drawback is that several useless copies of the same packet will arrive to other nodes of the network but the original sender. These useless copies are discarded by all non destination nodes, i.e., nodes whose adddress is different from the destination address of the packet.
 
-In this assignment, we will use the network depicted in the figure below to test and develop the different versions of the algorithm. Initially, we will consider a state of that network where the link connecting nodes 4 and 5, as well as the link connectiong nodes 3 and 0 are both shutdow. As such, the network will have no cycles.
+In this assignment, we will use the network depicted in the figure below to test and develop the different versions of the algorithm. Initially, we will consider a state of that network where the link connecting nodes 4 and 5, as well as the link connectiong nodes 3 and 0, are both shutdow. As such, the network will have no cycles.
 
 ![The network used for testing the different versions of the algorithm](Figures/assign4.1.png)
 
