@@ -104,11 +104,9 @@ You can abort the simulation as soon as you got the comparison done. You can try
 
 # Your First Delivery (that can be marked at most 14 marks)
 
-The goal of your first delivery is to enhance the provided `Flood`class to also implement a flooding optimisation, known as **learning by the reverse path**, which leverages the fact that in an acyclic network, if a node `N` receives by interface `I` a packet originally sent by source `S`, then `I` is the beginning of a (unique and therefore shortest) path from `N` to `S`. After implementing it, to switch this optimization on, the only required action should be to uncomment the line  `parameter filter` in the configuration file.
+The goal of your first delivery is to enhance the provided [src/FloodForStudents](src/FloodForStudents) class to also implement a flooding optimisation, known as **learning by the reverse path**, which leverages the fact that in an acyclic network, if a node `N` receives by interface `I` a packet originally sent by source `S`, then `I` is the beginning of a (unique and therefore shortest) path from `N` to `S`. After implementing it, to switch this optimization on, the only required action should be to uncomment the line  `parameter filter` in the configuration file.
 
-By using file [configs/config4.1](configs/config4.1), with filtering on and off, it is easy to see that the number of duplicate packets drops with filtering on. This is easier to realize with tracing on, if you introduce a tracing action in your enhanced implementation, that traces when a packet was forwarded to one only interface, instead of being flooded. 
-
-This optimisation seems to have a radical implication since when performing simulation [configs/config4.2](configs/config4.2), with filtering on and off, it seems that  **learning by the reverse path** is capable of avoiding all duplicates per se. 
+By using file [configs/config4.1](configs/config4.1), with filtering on and off, it is easy to see that the number of duplicate packets drops with filtering on. This is easier to realize with tracing on if you introduce a tracing action in your enhanced implementation that traces when a packet was forwarded to one only interface, instead of being flooded. This optimisation seems to have a radical implication since when performing simulation [configs/config4.2](configs/config4.2), with filtering on and off, it seems that  **learning by the reverse path** is capable of avoiding all duplicates per se. 
 
 Performing the same simulations with file [configs/config4.3](configs/config4.3), wich uses the network shown below, with all links up after time = 18000 and therefore more cycles than the previous one, it can be observed that with filtering off, floods seem never end, while doing the same simulation with filtering on, the number of duplicates drops radically and, once again, floods stop quite soon.
 
@@ -128,7 +126,7 @@ public void on_clock_tick(int now) {
 	log(now, " sent "+p+" payload "+countSent);
 }
 ```
-by wich sender nodes also send a packet to the switching node number 5 at each clock tick. Running again the same simulation, even with filtering on, one realises that node 5 instead of receiving 6 packets from these nodes, receives 114 packets, while all other nodes received 0. Switching nodes use an empty `ApplicationAlgorithm` class and therefore ignore the received application packets.
+by wich sender nodes also send a packet to the switching node number 5 at each clock tick. Running again the same simulation, even with filtering on, one realises that node 5 instead of receiving 6 packets from other nodes, receives 114 packets, while all other nodes received 0. Switching nodes use an empty `ApplicationAlgorithm` class and therefore ignore the received application packets.
 
 # Optional Assignment Delivery (that can be marked at most more 6 marks)
 
