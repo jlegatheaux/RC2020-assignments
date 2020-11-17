@@ -84,11 +84,11 @@ It is possible to analyse statistics on how the flood routing process is execute
 
 If you want to have a detailed look on how the [configs/config4.1](configs/config4.1) simulation progresses, you can uncomment the line `parameter trace` what will trigger the printing of tracing messages by the different control algorithms. That allows one to a have a much clear idea on how the routing of packets is progressing.
 
-After that you can proceed to simulations with different network configurations, namely, one that at time stamp 18000 puts the link from node 0 to node 3 up, see file [configs/config4.2](configs/config4.2), as shown in the figure below.
+After that you can proceed to simulations with different network configurations, namely, one that at time stamp 18000 puts the link from node 0 to node 3 *up*, see file [configs/config4.2](configs/config4.2), as shown in the figure below.
 
 ![The network used for test configuration config4.2](Figures/assign4.2.png)
 
-From that moment on, the network has cycles and becomes similar to a ring network. You can test it by running the next simulation:
+From that moment on, the network has cycles and becomes similar to a ring network (with some "legs"). You can test it by running the next simulation:
 
 ```
 java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.2
