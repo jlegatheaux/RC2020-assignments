@@ -1,19 +1,19 @@
 
 # Routing Protocols Using The Flooding Algorithm
 
-In this Assignment, we will use CNSS to develop a routing protocol based on the Flooding Algorithm. Students must enhance a provided naive flooding solution by introducing filtering and optimization capabilities in the forwarding process implemented by *switching nodes*.
+In this Assignment we will use CNSS to develop a routing protocol based on the Flooding Algorithm. Students must enhance a provided naive flooding solution, and introduce filtering and optimization capabilities in the forwarding process implemented by *switching nodes*.
 
 A deeper discussion of the subject is available in **chapter 15** of the course support book.
 
-The basic flooding algorithm is very simple. It requires switching nodes to maintain **no state** besides the set of their active interfaces. In short, whenever there is a packet not addressed to the receiving node to forward, the algorithm simply sends a copy of that packet to all the node's interfaces, except the one from which the packet arrived.
+The basic flooding algorithm is very simple. It requires switching nodes to maintain **no state** besides the set of their active interfaces. In short, whenever there is a packet to forward, not addressed to the receiving node, the algorithm simply sends a copy of that packet to all the node's interfaces, except the one from which the packet arrived.
 
-If the network is a **tree, i.e., it has no cycles**, the packet will reach the destination, provided there is a path from the origin node to destination one. The only drawback is that several useless copies of the same packet will arrive to other nodes of the network but the original sender. These useless copies are discarded by all non destination nodes, i.e., nodes whose adddress is different from the destination address of the packet.
+If the network is a **tree, i.e., it has no cycles**, the packet will reach the destination, provided there is a path from the origin node to destination one. The only drawback is that several useless copies of the same packet will get to other nodes of the network but the original sender. These useless copies are discarded by all non destination nodes, i.e., nodes whose adddress is different from the destination address of the packet.
 
 In this assignment we will use the network depicted in the figure below to test and develop the different versions of the algorithm. Initially, we will consider a state of that network where the link connecting nodes 4 and 5, as well as the link connectiong nodes 3 and 0, are both shutdow. As such, the network will have no cycles.
 
 ![The network used for testing the different versions of the algorithm](Figures/assign4.1.png)
 
-In this network some nodes act as Sender nodes and periodically send a *ping like packet* to the receiver node in variable `dest` of their code, as shown in their `on_clock_tick()` upcall below. In the same code fragment are also shown upcalls `on_receive()` and `showState()`.
+In this network some nodes act as Sender nodes and periodically send a *ping like packet* to the receiver node in a variable of their code named `dest`, as shown in their `on_clock_tick()` upcall available below. In the same code fragment are also shown upcalls `on_receive()` and `showState()`.
 
 ```java
 public void on_clock_tick(int now) {
@@ -49,7 +49,7 @@ public void showState(int now) {
 	System.out.println(" sent "+countSent+" packet(s)"+" / received "+countReceived+" packet(s)");
 }
 ```
-The code below shows the method `flood_packet` which is used by the ´ControlAlgorithm´ of all switching nodes to forward packets not directly addressed to them.
+The code below shows the method `flood_packet()` which is used by the ´ControlAlgorithm´ of all switching nodes to forward packets not directly addressed to them.
 
 ```java
 private void flood_packet (int now, Packet p, int iface) {
@@ -68,9 +68,9 @@ private void flood_packet (int now, Packet p, int iface) {
 	trace(now, "forwarded " + copiesSent + " packet copy(ies)");
 }
 ```
-In the above method, parameter *iface* is the interface from which packet *p* has been received. The variable *links* of classes extending `ControlAlgorithm` is an array representing the interfaces (and the attached links) of the node. The control algorithm of sender and receiver nodes, as they only have one single interface, use a simpler `ControlAlgorithm` provided with the basic library of CNSS.
+In the above method, parameter *iface* is the interface from which packet *p* has been received. The variable *links* of classes extending `ControlAlgorithm` is an array representing the interfaces (and the attached links) of the node. The control algorithm of sender and receiver nodes, as they only have one single interface, use a simpler `ControlAlgorithm` provided with the basic library of CNSS - any non locally directed packet is always sent using the only available interface. If such packet was received from the network arriving by the single node interface, the flood algorithm dictates that it should be dropped.
 
-Configuration file [configs/config4.1](configs/config4.1) allows you to make a first simulation test of the basic naive flooding algorithm, provided in class [src/Flood.java](src/Flood.java), by issuing the following command (or a equivalent action compatible with your development environment):
+Configuration file [configs/config4.1](configs/config4.1) allows you to make a first simulation test of the basic naive flooding algorithm, provided in class [src/Flood.java](src/Flood.java), by issuing the following command (or an equivalent action compatible with your development environment):
 
 ```
 java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.1
@@ -82,9 +82,9 @@ It is possible to analyse statistics on how the flood routing process is execute
 * **d - dropped** (a packet was dropped because its TTL was going to reach 0 or there was no available interface to forward it)
 * **f - forwarded** (the forwarded algorithm of the node has been called)
 
-If you want to have a detailed look on how the [configs/config4.1](configs/config4.1) simulation progresses, you can uncomment the line `parameter trace` which will trigger the printing of tracing messages by the different control algorithms. That allows one to a have a much clear idea on how the routing of packets is progressing.
+If you want to have a detailed look on how the [configs/config4.1](configs/config4.1) simulation progresses, you can uncomment the line `parameter trace` what will trigger the printing of tracing messages by the different control algorithms. That allows one to a have a much clear idea on how the routing of packets is progressing.
 
-After that, you can proceed to simulations with different network configurations, namely, one that at processing step 18000 puts the link from node 0 to node 3 up, see file [configs/config4.2](configs/config4.2), as shown in the figure below.
+After that you can proceed to simulations with different network configurations, namely, one that at time stamp 18000 puts the link from node 0 to node 3 up, see file [configs/config4.2](configs/config4.2), as shown in the figure below.
 
 ![The network used for test configuration config4.2](Figures/assign4.2.png)
 
@@ -93,14 +93,14 @@ From that moment on, the network has cycles and becomes similar to a ring networ
 ```
 java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.2
 ```
-As you can see, things now perform very differently. Not only because nodes receive many duplicate packets, but also because the only way a flood stops is because something special arises to the forwarded packets. Guess what and explain why it happens. If you want to look at the deluge of events, you must run the simulation with tracing on. 
+As you can see, things now perform very differently. Not only because nodes receive many duplicate packets, but also because the only way a flood stops is because something special arises to the forwarded packets. Guess what and explain why it happens. If you want to have a more detailed look at the deluge of events you must run the simulation with tracing on. 
 
-Another interesting observation is to compare the time a flood takes to end when the network has no cycles (afer the first packet is sent at time = 10000), to the time it takes when the network is not acyclic. You can look at it by using command `less` to stop the progress of the printing of the simulation results (touch space to continue).
+Another interesting observation is to compare the time a flood takes to end when the network has no cycles (afer the first packet is sent at time = 10000), to the time it takes when the network is not acyclic. You can look at it by using command `less` to stop the progress of the printing of the simulation results (continuation requires you to touch key space).
 
 ```
 java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.2 | less
 ```
-You can abort the simulation as soon as you got the comparison done. You can try to justify the values by looking at the initial value of the TTL parameter of packets and the paths they use in the network. You can also try to devise a simple method to make the flood stop earlier. Can your methdod be generalised to any network?
+You can abort the simulation as soon as you got the comparison done. You can try to justify the values by looking at the initial value of the TTL parameter of packets and the paths they use in the network. This value is set at Packet creation by class `cnss.simulator.Packet`. You can also try to devise a simple method to make the flood stop earlier. Can your methdod be generalised to any network?
 
 # Your First Delivery (that can be marked at most 14 marks)
 
