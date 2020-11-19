@@ -23,7 +23,7 @@ This repository is the reference repository of the course prgramming assignments
 ### Assignment 3: File Transfers in parallel using TCP and HTTP 
   - Deadline: 18/Nov/20, 23h59
   - Delivery Form: https://forms.gle/x4KvCpYxgntpRgbd7  (open after 17/Nov, 14h00)
-  - Individual Assessment Form: (to be included), on 20/Nov/20, 19h30-19h51 (21 min) - special rules apply to answers delivered after 19h46.
+  - Individual Assessment Form: https://forms.gle/LFER1mWyT2fZxVrD8, on 20/Nov/20, 19h30-19h51 (21 min) - special rules apply to answers delivered after 19h46.
   - [Materials/Guidelines: ](assignment-3/README.md) 
   
 ### Assignment 4: Routing Using Flooding Protocols
