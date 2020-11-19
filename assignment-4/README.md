@@ -7,7 +7,7 @@ A deeper discussion of the subject is available in **chapter 15** of the course 
 
 The basic flooding algorithm is very simple. It requires switching nodes to maintain **no state** besides the set of their active interfaces. In short, whenever there is a packet to forward, not addressed to the receiving node, the algorithm simply sends a copy of that packet to all the node's interfaces, except the one from which the packet arrived.
 
-If the network is a **tree, i.e., it has no cycles**, the packet will reach the destination, provided there is a path from the origin node to destination one. The only drawback is that several useless copies of the same packet will get to other nodes of the network but the original sender. These useless copies are discarded by all non destination nodes, i.e., nodes whose adddress is different from the destination address of the packet.
+If the network is a **tree, i.e., it has no cycles**, the packet will reach the destination, provided there is a path from the origin node to the destination one. The only drawback is that several useless copies of the same packet will get to other nodes of the network but the original sender. These useless copies are discarded by all non destination nodes, i.e., nodes whose adddress is different from the destination address of the packet.
 
 In this assignment we will use the network depicted in the figure below to test and develop the different versions of the algorithm. Initially, we will consider a state of that network where the link connecting nodes 4 and 5, as well as the link connectiong nodes 3 and 0, are both shutdow. As such, the network will have no cycles.
 
