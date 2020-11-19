@@ -108,7 +108,7 @@ The goal of your first delivery is to enhance the provided [src/FloodForStudents
 
 By using file [configs/config4.1](configs/config4.1), with filtering on and off, it is easy to see that the number of duplicate packets drops with filtering on. This is easier to realize with tracing on if you introduce a tracing action in your enhanced implementation that traces when a packet was forwarded to one only interface, instead of being flooded. This optimisation seems to have a radical implication since when performing simulation [configs/config4.2](configs/config4.2), with filtering on and off, it seems that  **learning by the reverse path** is capable of avoiding all duplicates per se. 
 
-Performing the same simulations with file [configs/config4.3](configs/config4.3), wich uses the network shown below, with all links up after time = 18000 and therefore more cycles than the previous one, it can be observed that with filtering off, floods seem never end, while doing the same simulation with filtering on, the number of duplicates drops radically and, once again, floods stop quite soon.
+Performing the same simulations with file [configs/config4.3](configs/config4.3), which uses the network shown below, with all links up after time = 18000 and therefore more cycles than the previous one, it can be observed that with filtering off, floods seem never end, while doing the same simulation with filtering on, the number of duplicates drops radically and, once again, floods stop quite soon.
 
 ![The network used for test configuration config4.3](Figures/assign4.3.png)
 
