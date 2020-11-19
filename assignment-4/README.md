@@ -100,7 +100,7 @@ Another interesting observation is to compare the time a flood takes to end when
 ```
 java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.2 | less
 ```
-You can abort the simulation as soon as you got the comparison done. You can try to justify the values by looking at the initial value of the TTL parameter of packets and the paths they use in the network. This value is set at Packet creation time by yje constructor of class `cnss.simulator.Packet`. You can also try to devise a simple method to make the flood stop earlier. Can your methdod be generalised to any network?
+You can abort the simulation as soon as you got the comparison done. You can try to justify the values by looking at the initial value of the TTL parameter of packets and the paths they use in the network. This value is set at Packet creation time by the constructor of class `cnss.simulator.Packet`. You can also try to devise a simple method to make the flood stop earlier. Can your methdod be generalised to any network?
 
 # Your First Delivery (that can be marked at most 14 marks)
 
