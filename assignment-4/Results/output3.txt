@@ -1,0 +1,82 @@
+Loading configuration : results/teste3.txt
+Reading file
+Created Node 0: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 1: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 2: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 3: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 4: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 5: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 6: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: Sender
+Created Node 7: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: Receiver
+Created Node 8: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: Sender
+Created Node 9: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: Receiver
+Added link to node 0 - Link (Node1:0 I1:0)<-->(Node2:1 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:0 I1:0)<-->(Node2:1 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:1 I1:1)<-->(Node2:2 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:1 I1:1)<-->(Node2:2 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:2 I1:1)<-->(Node2:3 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:2 I1:1)<-->(Node2:3 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:3 I1:1)<-->(Node2:0 I2:1) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 down
+Added link to node 0 - Link (Node1:3 I1:1)<-->(Node2:0 I2:1) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 down
+Added link to node 3 - Link (Node1:3 I1:2)<-->(Node2:4 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:3 I1:2)<-->(Node2:4 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:4 I1:1)<-->(Node2:5 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 down
+Added link to node 5 - Link (Node1:4 I1:1)<-->(Node2:5 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 down
+Added link to node 5 - Link (Node1:5 I1:1)<-->(Node2:0 I2:2) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 0 - Link (Node1:5 I1:1)<-->(Node2:0 I2:2) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:1 I1:2)<-->(Node2:6 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 6 - Link (Node1:1 I1:2)<-->(Node2:6 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:2 I1:2)<-->(Node2:7 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 7 - Link (Node1:2 I1:2)<-->(Node2:7 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:4 I1:2)<-->(Node2:8 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 8 - Link (Node1:4 I1:2)<-->(Node2:8 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 5 - Link (Node1:5 I1:2)<-->(Node2:9 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 9 - Link (Node1:5 I1:2)<-->(Node2:9 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+
+simulation starts - first processing step with clock = 0
+
+node 0 at 18000 interface 1 going up
+node 3 at 18000 interface 1 going up
+node 4 at 18000 interface 1 going up
+node 5 at 18000 interface 0 going up
+Node status for node 6 (sender) time 39000 - sent 3 packet(s) / received 3 packet(s)
+Node status for node 7 (receiver) time 39000 - sent 3 packet(s) / received 3 packet(s)
+Node status for node 8 (sender) time 39000 - sent 3 packet(s) / received 3 packet(s)
+Node status for node 9 (receiver) time 39000 - sent 3 packet(s) / received 3 packet(s)
+Pkt stats for node 0 time 39000 -  s 7 r 0 d 0 f 7
+  (node:0 ifc:0) r 4 s 3 <--> (node:1 ifc:0) r 3 s 4
+  (node:3 ifc:1) r 0 s 0 <--> (node:0 ifc:1) r 0 s 0
+  (node:5 ifc:1) r 4 s 3 <--> (node:0 ifc:2) r 3 s 4
+Pkt stats for node 1 time 39000 -  s 14 r 0 d 0 f 12
+  (node:0 ifc:0) r 4 s 3 <--> (node:1 ifc:0) r 3 s 4
+  (node:1 ifc:1) r 6 s 6 <--> (node:2 ifc:0) r 6 s 6
+  (node:1 ifc:2) r 3 s 4 <--> (node:6 ifc:0) r 4 s 3
+Pkt stats for node 2 time 39000 -  s 14 r 0 d 0 f 12
+  (node:1 ifc:1) r 6 s 6 <--> (node:2 ifc:0) r 6 s 6
+  (node:2 ifc:1) r 3 s 4 <--> (node:3 ifc:0) r 4 s 3
+  (node:2 ifc:2) r 3 s 4 <--> (node:7 ifc:0) r 4 s 3
+Pkt stats for node 3 time 39000 -  s 7 r 0 d 0 f 7
+  (node:2 ifc:1) r 3 s 4 <--> (node:3 ifc:0) r 4 s 3
+  (node:3 ifc:1) r 0 s 0 <--> (node:0 ifc:1) r 0 s 0
+  (node:3 ifc:2) r 3 s 4 <--> (node:4 ifc:0) r 4 s 3
+Pkt stats for node 4 time 39000 -  s 7 r 0 d 0 f 7
+  (node:3 ifc:2) r 3 s 4 <--> (node:4 ifc:0) r 4 s 3
+  (node:4 ifc:1) r 0 s 0 <--> (node:5 ifc:0) r 0 s 0
+  (node:4 ifc:2) r 3 s 4 <--> (node:8 ifc:0) r 4 s 3
+Pkt stats for node 5 time 39000 -  s 7 r 0 d 0 f 7
+  (node:4 ifc:1) r 0 s 0 <--> (node:5 ifc:0) r 0 s 0
+  (node:5 ifc:1) r 4 s 3 <--> (node:0 ifc:2) r 3 s 4
+  (node:5 ifc:2) r 3 s 4 <--> (node:9 ifc:0) r 4 s 3
+Pkt stats for node 6 time 39000 -  s 3 r 3 d 1 f 4
+  (node:1 ifc:2) r 3 s 4 <--> (node:6 ifc:0) r 4 s 3
+Pkt stats for node 7 time 39000 -  s 3 r 3 d 1 f 4
+  (node:2 ifc:2) r 3 s 4 <--> (node:7 ifc:0) r 4 s 3
+Pkt stats for node 8 time 39000 -  s 3 r 3 d 1 f 4
+  (node:4 ifc:2) r 3 s 4 <--> (node:8 ifc:0) r 4 s 3
+Pkt stats for node 9 time 39000 -  s 3 r 3 d 1 f 4
+  (node:5 ifc:2) r 3 s 4 <--> (node:9 ifc:0) r 4 s 3
+
+warning - 2 events not run; stoped too early?
+
+simulation ended - last processing step with clock = 40000
+

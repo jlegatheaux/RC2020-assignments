@@ -1,0 +1,420 @@
+Loading configuration : results/teste0.txt
+Reading file
+Created Node 0: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 1: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 2: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 3: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 4: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 5: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 6: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: Sender
+Created Node 7: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: Receiver
+Created Node 8: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: Sender
+Created Node 9: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: Receiver
+Added link to node 0 - Link (Node1:0 I1:0)<-->(Node2:1 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:0 I1:0)<-->(Node2:1 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:1 I1:1)<-->(Node2:2 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:1 I1:1)<-->(Node2:2 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:2 I1:1)<-->(Node2:3 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:2 I1:1)<-->(Node2:3 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:3 I1:1)<-->(Node2:0 I2:1) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 down
+Added link to node 0 - Link (Node1:3 I1:1)<-->(Node2:0 I2:1) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 down
+Added link to node 3 - Link (Node1:3 I1:2)<-->(Node2:4 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:3 I1:2)<-->(Node2:4 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:4 I1:1)<-->(Node2:5 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 down
+Added link to node 5 - Link (Node1:4 I1:1)<-->(Node2:5 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 down
+Added link to node 5 - Link (Node1:5 I1:1)<-->(Node2:0 I2:2) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 0 - Link (Node1:5 I1:1)<-->(Node2:0 I2:2) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:1 I1:2)<-->(Node2:6 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 6 - Link (Node1:1 I1:2)<-->(Node2:6 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:2 I1:2)<-->(Node2:7 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 7 - Link (Node1:2 I1:2)<-->(Node2:7 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:4 I1:2)<-->(Node2:8 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 8 - Link (Node1:4 I1:2)<-->(Node2:8 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 5 - Link (Node1:5 I1:2)<-->(Node2:9 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 9 - Link (Node1:5 I1:2)<-->(Node2:9 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+
+simulation starts - first processing step with clock = 0
+
+node 0 at 18000 interface 1 going up
+node 3 at 18000 interface 1 going up
+--> node 0 at 20320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 2 size 21
+--> node 1 at 20320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 2 size 21
+--> node 1 at 20320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 2 size 21
+--> node 2 at 20320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 2 size 21
+--> node 4 at 20320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 2 size 21
+--> node 4 at 20320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 2 size 21
+--> node 5 at 20320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 2 size 21
+--> node 7 at 20320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 2 size 21
+--> node 8 at 20320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 2 size 21
+--> node 8 at 20320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 2 size 21
+--> node 9 at 20320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 2 size 21
+--> node 1 at 20350 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 2 size 21
+--> node 3 at 20350 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 2 size 21
+--> node 5 at 20350 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 2 size 21
+--> node 5 at 20350 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 2 size 21
+--> node 8 at 20350 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 2 size 21
+--> node 1 at 20370 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 3 size 21
+--> node 2 at 20370 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 2 size 21
+--> node 2 at 20370 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 2 size 21
+--> node 3 at 20370 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 3 size 21
+--> node 4 at 20370 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 2 size 21
+--> node 5 at 20370 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 3 size 21
+--> node 5 at 20370 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 3 size 21
+--> node 6 at 20370 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 2 size 21
+--> node 8 at 20370 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 3 size 21
+--> node 9 at 20370 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 2 size 21
+--> node 9 at 20370 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 2 size 21
+--> node 1 at 20390 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 4 size 21
+--> node 2 at 20390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 3 size 21
+--> node 2 at 20390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 3 size 21
+--> node 3 at 20390 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 4 size 21
+--> node 4 at 20390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 3 size 21
+--> node 5 at 20390 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 4 size 21
+--> node 5 at 20390 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 4 size 21
+--> node 6 at 20390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 3 size 21
+--> node 8 at 20390 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 4 size 21
+--> node 9 at 20390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 3 size 21
+--> node 9 at 20390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 3 size 21
+--> node 1 at 20410 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 5 size 21
+--> node 2 at 20410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 4 size 21
+--> node 2 at 20410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 4 size 21
+--> node 3 at 20410 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 5 size 21
+--> node 4 at 20410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 4 size 21
+--> node 5 at 20410 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 5 size 21
+--> node 5 at 20410 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 5 size 21
+--> node 6 at 20410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 4 size 21
+--> node 8 at 20410 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 5 size 21
+--> node 9 at 20410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 4 size 21
+--> node 9 at 20410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 4 size 21
+--> node 1 at 20430 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 6 size 21
+--> node 2 at 20430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 5 size 21
+--> node 2 at 20430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 5 size 21
+--> node 3 at 20430 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 6 size 21
+--> node 4 at 20430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 5 size 21
+--> node 5 at 20430 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 6 size 21
+--> node 5 at 20430 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 6 size 21
+--> node 6 at 20430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 5 size 21
+--> node 8 at 20430 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 6 size 21
+--> node 9 at 20430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 5 size 21
+--> node 9 at 20430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 5 size 21
+--> node 1 at 20450 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 7 size 21
+--> node 2 at 20450 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 6 size 21
+--> node 2 at 20450 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 6 size 21
+--> node 3 at 20450 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 7 size 21
+--> node 4 at 20450 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 6 size 21
+--> node 5 at 20450 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 7 size 21
+--> node 5 at 20450 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 7 size 21
+--> node 6 at 20450 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 6 size 21
+--> node 8 at 20450 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 7 size 21
+--> node 9 at 20450 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 6 size 21
+--> node 9 at 20450 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 6 size 21
+--> node 1 at 20470 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 8 size 21
+--> node 2 at 20470 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 7 size 21
+--> node 2 at 20470 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 7 size 21
+--> node 3 at 20470 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 8 size 21
+--> node 4 at 20470 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 7 size 21
+--> node 5 at 20470 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 8 size 21
+--> node 5 at 20470 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 8 size 21
+--> node 6 at 20470 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 7 size 21
+--> node 8 at 20470 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 8 size 21
+--> node 9 at 20470 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 7 size 21
+--> node 9 at 20470 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 7 size 21
+--> node 1 at 20490 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 9 size 21
+--> node 2 at 20490 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 8 size 21
+--> node 2 at 20490 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 8 size 21
+--> node 3 at 20490 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 9 size 21
+--> node 4 at 20490 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 8 size 21
+--> node 5 at 20490 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 9 size 21
+--> node 5 at 20490 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 9 size 21
+--> node 6 at 20490 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 8 size 21
+--> node 8 at 20490 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 9 size 21
+--> node 9 at 20490 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 8 size 21
+--> node 9 at 20490 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 8 size 21
+--> node 1 at 20510 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 10 size 21
+--> node 2 at 20510 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 9 size 21
+--> node 2 at 20510 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 9 size 21
+--> node 3 at 20510 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 10 size 21
+--> node 4 at 20510 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 9 size 21
+--> node 5 at 20510 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 10 size 21
+--> node 5 at 20510 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 10 size 21
+--> node 6 at 20510 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 9 size 21
+--> node 8 at 20510 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 10 size 21
+--> node 9 at 20510 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 9 size 21
+--> node 9 at 20510 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 9 size 21
+--> node 1 at 20530 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 11 size 21
+--> node 2 at 20530 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 10 size 21
+--> node 2 at 20530 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 10 size 21
+--> node 3 at 20530 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 11 size 21
+--> node 4 at 20530 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 10 size 21
+--> node 5 at 20530 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 11 size 21
+--> node 5 at 20530 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 11 size 21
+--> node 6 at 20530 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 10 size 21
+--> node 8 at 20530 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 11 size 21
+--> node 9 at 20530 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 10 size 21
+--> node 9 at 20530 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 10 size 21
+--> node 1 at 20550 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 12 size 21
+--> node 2 at 20550 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 11 size 21
+--> node 2 at 20550 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 11 size 21
+--> node 3 at 20550 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 12 size 21
+--> node 4 at 20550 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 11 size 21
+--> node 5 at 20550 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 12 size 21
+--> node 5 at 20550 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 12 size 21
+--> node 6 at 20550 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 11 size 21
+--> node 8 at 20550 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 12 size 21
+--> node 9 at 20550 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 11 size 21
+--> node 9 at 20550 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 11 size 21
+--> node 1 at 20570 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 13 size 21
+--> node 2 at 20570 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 12 size 21
+--> node 2 at 20570 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 12 size 21
+--> node 3 at 20570 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 13 size 21
+--> node 4 at 20570 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 12 size 21
+--> node 5 at 20570 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 13 size 21
+--> node 5 at 20570 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 13 size 21
+--> node 6 at 20570 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 12 size 21
+--> node 8 at 20570 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 13 size 21
+--> node 9 at 20570 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 12 size 21
+--> node 9 at 20570 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 12 size 21
+--> node 1 at 20590 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 14 size 21
+--> node 2 at 20590 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 13 size 21
+--> node 2 at 20590 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 13 size 21
+--> node 3 at 20590 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 14 size 21
+--> node 4 at 20590 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 13 size 21
+--> node 5 at 20590 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 14 size 21
+--> node 5 at 20590 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 14 size 21
+--> node 6 at 20590 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 13 size 21
+--> node 8 at 20590 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 14 size 21
+--> node 9 at 20590 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 13 size 21
+--> node 9 at 20590 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 13 size 21
+--> node 1 at 20610 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 15 size 21
+--> node 2 at 20610 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 14 size 21
+--> node 2 at 20610 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 14 size 21
+--> node 3 at 20610 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 15 size 21
+--> node 4 at 20610 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 14 size 21
+--> node 5 at 20610 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 15 size 21
+--> node 5 at 20610 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 15 size 21
+--> node 6 at 20610 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 14 size 21
+--> node 8 at 20610 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 15 size 21
+--> node 9 at 20610 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 14 size 21
+--> node 9 at 20610 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 14 size 21
+--> node 1 at 20630 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 16 size 21
+--> node 2 at 20630 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 15 size 21
+--> node 2 at 20630 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 15 size 21
+--> node 3 at 20630 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 16 size 21
+--> node 4 at 20630 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 15 size 21
+--> node 5 at 20630 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 16 size 21
+--> node 5 at 20630 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 16 size 21
+--> node 6 at 20630 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 15 size 21
+--> node 8 at 20630 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 16 size 21
+--> node 9 at 20630 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 15 size 21
+--> node 9 at 20630 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 15 size 21
+--> node 0 at 30320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 3 size 21
+--> node 1 at 30320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 3 size 21
+--> node 1 at 30320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 3 size 21
+--> node 2 at 30320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 3 size 21
+--> node 4 at 30320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 3 size 21
+--> node 4 at 30320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 3 size 21
+--> node 5 at 30320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 3 size 21
+--> node 7 at 30320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 3 size 21
+--> node 8 at 30320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 3 size 21
+--> node 8 at 30320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 3 size 21
+--> node 9 at 30320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 3 size 21
+--> node 1 at 30350 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 17 size 21
+--> node 3 at 30350 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 17 size 21
+--> node 5 at 30350 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 17 size 21
+--> node 5 at 30350 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 17 size 21
+--> node 8 at 30350 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 17 size 21
+--> node 1 at 30370 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 18 size 21
+--> node 2 at 30370 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 16 size 21
+--> node 2 at 30370 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 16 size 21
+--> node 3 at 30370 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 18 size 21
+--> node 4 at 30370 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 16 size 21
+--> node 5 at 30370 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 18 size 21
+--> node 5 at 30370 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 18 size 21
+--> node 6 at 30370 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 16 size 21
+--> node 8 at 30370 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 18 size 21
+--> node 9 at 30370 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 16 size 21
+--> node 9 at 30370 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 16 size 21
+--> node 1 at 30390 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 19 size 21
+--> node 2 at 30390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 17 size 21
+--> node 2 at 30390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 17 size 21
+--> node 3 at 30390 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 19 size 21
+--> node 4 at 30390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 17 size 21
+--> node 5 at 30390 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 19 size 21
+--> node 5 at 30390 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 19 size 21
+--> node 6 at 30390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 17 size 21
+--> node 8 at 30390 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 19 size 21
+--> node 9 at 30390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 17 size 21
+--> node 9 at 30390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 17 size 21
+--> node 1 at 30410 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 20 size 21
+--> node 2 at 30410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 18 size 21
+--> node 2 at 30410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 18 size 21
+--> node 3 at 30410 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 20 size 21
+--> node 4 at 30410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 18 size 21
+--> node 5 at 30410 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 20 size 21
+--> node 5 at 30410 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 20 size 21
+--> node 6 at 30410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 18 size 21
+--> node 8 at 30410 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 20 size 21
+--> node 9 at 30410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 18 size 21
+--> node 9 at 30410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 18 size 21
+--> node 1 at 30430 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 21 size 21
+--> node 2 at 30430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 19 size 21
+--> node 2 at 30430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 19 size 21
+--> node 3 at 30430 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 21 size 21
+--> node 4 at 30430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 19 size 21
+--> node 5 at 30430 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 21 size 21
+--> node 5 at 30430 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 21 size 21
+--> node 6 at 30430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 19 size 21
+--> node 8 at 30430 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 21 size 21
+--> node 9 at 30430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 19 size 21
+--> node 9 at 30430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 19 size 21
+--> node 1 at 30450 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 22 size 21
+--> node 2 at 30450 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 20 size 21
+--> node 2 at 30450 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 20 size 21
+--> node 3 at 30450 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 22 size 21
+--> node 4 at 30450 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 20 size 21
+--> node 5 at 30450 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 22 size 21
+--> node 5 at 30450 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 22 size 21
+--> node 6 at 30450 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 20 size 21
+--> node 8 at 30450 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 22 size 21
+--> node 9 at 30450 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 20 size 21
+--> node 9 at 30450 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 20 size 21
+--> node 1 at 30470 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 23 size 21
+--> node 2 at 30470 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 21 size 21
+--> node 2 at 30470 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 21 size 21
+--> node 3 at 30470 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 23 size 21
+--> node 4 at 30470 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 21 size 21
+--> node 5 at 30470 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 23 size 21
+--> node 5 at 30470 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 23 size 21
+--> node 6 at 30470 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 21 size 21
+--> node 8 at 30470 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 23 size 21
+--> node 9 at 30470 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 21 size 21
+--> node 9 at 30470 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 21 size 21
+--> node 1 at 30490 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 24 size 21
+--> node 2 at 30490 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 22 size 21
+--> node 2 at 30490 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 22 size 21
+--> node 3 at 30490 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 24 size 21
+--> node 4 at 30490 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 22 size 21
+--> node 5 at 30490 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 24 size 21
+--> node 5 at 30490 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 24 size 21
+--> node 6 at 30490 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 22 size 21
+--> node 8 at 30490 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 24 size 21
+--> node 9 at 30490 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 22 size 21
+--> node 9 at 30490 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 22 size 21
+--> node 1 at 30510 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 25 size 21
+--> node 2 at 30510 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 23 size 21
+--> node 2 at 30510 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 23 size 21
+--> node 3 at 30510 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 25 size 21
+--> node 4 at 30510 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 23 size 21
+--> node 5 at 30510 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 25 size 21
+--> node 5 at 30510 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 25 size 21
+--> node 6 at 30510 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 23 size 21
+--> node 8 at 30510 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 25 size 21
+--> node 9 at 30510 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 23 size 21
+--> node 9 at 30510 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 23 size 21
+--> node 1 at 30530 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 26 size 21
+--> node 2 at 30530 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 24 size 21
+--> node 2 at 30530 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 24 size 21
+--> node 3 at 30530 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 26 size 21
+--> node 4 at 30530 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 24 size 21
+--> node 5 at 30530 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 26 size 21
+--> node 5 at 30530 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 26 size 21
+--> node 6 at 30530 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 24 size 21
+--> node 8 at 30530 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 26 size 21
+--> node 9 at 30530 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 24 size 21
+--> node 9 at 30530 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 24 size 21
+--> node 1 at 30550 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 27 size 21
+--> node 2 at 30550 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 25 size 21
+--> node 2 at 30550 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 25 size 21
+--> node 3 at 30550 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 27 size 21
+--> node 4 at 30550 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 25 size 21
+--> node 5 at 30550 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 27 size 21
+--> node 5 at 30550 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 27 size 21
+--> node 6 at 30550 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 25 size 21
+--> node 8 at 30550 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 27 size 21
+--> node 9 at 30550 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 25 size 21
+--> node 9 at 30550 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 25 size 21
+--> node 1 at 30570 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 28 size 21
+--> node 2 at 30570 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 26 size 21
+--> node 2 at 30570 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 26 size 21
+--> node 3 at 30570 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 28 size 21
+--> node 4 at 30570 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 26 size 21
+--> node 5 at 30570 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 28 size 21
+--> node 5 at 30570 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 28 size 21
+--> node 6 at 30570 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 26 size 21
+--> node 8 at 30570 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 28 size 21
+--> node 9 at 30570 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 26 size 21
+--> node 9 at 30570 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 26 size 21
+--> node 1 at 30590 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 29 size 21
+--> node 2 at 30590 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 27 size 21
+--> node 2 at 30590 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 27 size 21
+--> node 3 at 30590 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 29 size 21
+--> node 4 at 30590 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 27 size 21
+--> node 5 at 30590 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 29 size 21
+--> node 5 at 30590 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 29 size 21
+--> node 6 at 30590 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 27 size 21
+--> node 8 at 30590 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 29 size 21
+--> node 9 at 30590 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 27 size 21
+--> node 9 at 30590 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 27 size 21
+--> node 1 at 30610 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 30 size 21
+--> node 2 at 30610 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 28 size 21
+--> node 2 at 30610 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 28 size 21
+--> node 3 at 30610 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 30 size 21
+--> node 4 at 30610 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 28 size 21
+--> node 5 at 30610 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 30 size 21
+--> node 5 at 30610 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 30 size 21
+--> node 6 at 30610 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 28 size 21
+--> node 8 at 30610 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 30 size 21
+--> node 9 at 30610 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 28 size 21
+--> node 9 at 30610 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 28 size 21
+--> node 1 at 30630 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 31 size 21
+--> node 2 at 30630 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 29 size 21
+--> node 2 at 30630 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 29 size 21
+--> node 3 at 30630 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 31 size 21
+--> node 4 at 30630 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 29 size 21
+--> node 5 at 30630 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 31 size 21
+--> node 5 at 30630 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 31 size 21
+--> node 6 at 30630 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 29 size 21
+--> node 8 at 30630 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 31 size 21
+--> node 9 at 30630 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 29 size 21
+--> node 9 at 30630 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 29 size 21
+Node status for node 6 (sender) time 39000 - sent 3 packet(s) / received 451 packet(s)
+Node status for node 7 (receiver) time 39000 - sent 31 packet(s) / received 31 packet(s)
+Node status for node 8 (sender) time 39000 - sent 3 packet(s) / received 393 packet(s)
+Node status for node 9 (receiver) time 39000 - sent 29 packet(s) / received 29 packet(s)
+Pkt stats for node 0 time 39000 -  s 1924 r 0 d 2 f 964
+  (node:0 ifc:0) r 469 s 495 <--> (node:1 ifc:0) r 495 s 469
+  (node:3 ifc:1) r 494 s 468 <--> (node:0 ifc:1) r 468 s 494
+  (node:5 ifc:1) r 935 s 29 <--> (node:0 ifc:2) r 29 s 935
+Pkt stats for node 1 time 39000 -  s 1864 r 0 d 34 f 932
+  (node:0 ifc:0) r 469 s 495 <--> (node:1 ifc:0) r 495 s 469
+  (node:1 ifc:1) r 468 s 466 <--> (node:2 ifc:0) r 466 s 468
+  (node:1 ifc:2) r 3 s 929 <--> (node:6 ifc:0) r 929 s 3
+Pkt stats for node 2 time 39000 -  s 1812 r 0 d 58 f 906
+  (node:1 ifc:1) r 468 s 466 <--> (node:2 ifc:0) r 466 s 468
+  (node:2 ifc:1) r 467 s 469 <--> (node:3 ifc:0) r 469 s 467
+  (node:2 ifc:2) r 31 s 875 <--> (node:7 ifc:0) r 875 s 31
+Pkt stats for node 3 time 39000 -  s 1868 r 0 d 30 f 936
+  (node:2 ifc:1) r 467 s 469 <--> (node:3 ifc:0) r 469 s 467
+  (node:3 ifc:1) r 494 s 468 <--> (node:0 ifc:1) r 468 s 494
+  (node:3 ifc:2) r 3 s 933 <--> (node:4 ifc:0) r 933 s 3
+Pkt stats for node 4 time 39000 -  s 904 r 0 d 32 f 904
+  (node:3 ifc:2) r 3 s 933 <--> (node:4 ifc:0) r 933 s 3
+  (node:4 ifc:1) r 0 s 0 <--> (node:5 ifc:0) r 0 s 0
+  (node:4 ifc:2) r 3 s 901 <--> (node:8 ifc:0) r 901 s 3
+Pkt stats for node 5 time 39000 -  s 902 r 0 d 62 f 902
+  (node:4 ifc:1) r 0 s 0 <--> (node:5 ifc:0) r 0 s 0
+  (node:5 ifc:1) r 935 s 29 <--> (node:0 ifc:2) r 29 s 935
+  (node:5 ifc:2) r 29 s 873 <--> (node:9 ifc:0) r 873 s 29
+Pkt stats for node 6 time 39000 -  s 3 r 451 d 478 f 453
+  (node:1 ifc:2) r 3 s 929 <--> (node:6 ifc:0) r 929 s 3
+Pkt stats for node 7 time 39000 -  s 31 r 31 d 844 f 873
+  (node:2 ifc:2) r 31 s 875 <--> (node:7 ifc:0) r 875 s 31
+Pkt stats for node 8 time 39000 -  s 3 r 393 d 508 f 477
+  (node:4 ifc:2) r 3 s 901 <--> (node:8 ifc:0) r 901 s 3
+Pkt stats for node 9 time 39000 -  s 29 r 29 d 844 f 815
+  (node:5 ifc:2) r 29 s 873 <--> (node:9 ifc:0) r 873 s 29
+
+warning - 2 events not run; stoped too early?
+
+simulation ended - last processing step with clock = 40000
+

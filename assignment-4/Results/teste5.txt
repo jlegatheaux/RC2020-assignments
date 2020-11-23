@@ -1,0 +1,37 @@
+# a mesmh network
+
+
+parameter stop 39000
+parameter filter
+parameter drop_duplicates
+
+node 0 3 Flood cnss.lib.EmptyApp
+node 1 3 Flood cnss.lib.EmptyApp
+node 2 3 Flood cnss.lib.EmptyApp
+node 3 3 Flood cnss.lib.EmptyApp
+node 4 3 Flood cnss.lib.EmptyApp
+node 5 3 Flood cnss.lib.EmptyApp
+
+node 6 1 cnss.lib.EndSystemControl Sender 7
+node 7 1 cnss.lib.EndSystemControl Receiver
+node 8 1 cnss.lib.EndSystemControl Sender 9
+node 9 1 cnss.lib.EndSystemControl Receiver
+
+Link 0.0 1.0 1000000 10 0.0 0.0
+Link 1.1 2.0 1000000 10 0.0 0.0
+Link 2.1 3.0 1000000 10 0.0 0.0
+Link 3.1 0.1 1000000 10 0.0 0.0
+Link 3.2 4.0 1000000 10 0.0 0.0
+Link 4.1 5.0 1000000 10 0.0 0.0
+Link 5.1 0.2 1000000 10 0.0 0.0
+
+Link 1.2 6.0 1000000 10 0.0 0.0
+Link 2.2 7.0 1000000 10 0.0 0.0
+Link 4.2 8.0 1000000 10 0.0 0.0
+Link 5.2 9.0 1000000 10 0.0 0.0
+
+
+dumpappstate 39000 all
+dumppacketstats 39000 all
+
+

@@ -1,0 +1,104 @@
+Loading configuration : results/teste4.txt
+Reading file
+Created Node 0: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 1: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 2: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 3: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 4: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 5: 3 interf.s, ctr code: Flood app code: cnss.lib.EmptyApp
+Created Node 6: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: Sender
+Created Node 7: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: Receiver
+Created Node 8: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: Sender
+Created Node 9: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: Receiver
+Added link to node 0 - Link (Node1:0 I1:0)<-->(Node2:1 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:0 I1:0)<-->(Node2:1 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:1 I1:1)<-->(Node2:2 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:1 I1:1)<-->(Node2:2 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:2 I1:1)<-->(Node2:3 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:2 I1:1)<-->(Node2:3 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:3 I1:1)<-->(Node2:0 I2:1) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 0 - Link (Node1:3 I1:1)<-->(Node2:0 I2:1) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:3 I1:2)<-->(Node2:4 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:3 I1:2)<-->(Node2:4 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:4 I1:1)<-->(Node2:5 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 5 - Link (Node1:4 I1:1)<-->(Node2:5 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 5 - Link (Node1:5 I1:1)<-->(Node2:0 I2:2) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 0 - Link (Node1:5 I1:1)<-->(Node2:0 I2:2) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:1 I1:2)<-->(Node2:6 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 6 - Link (Node1:1 I1:2)<-->(Node2:6 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:2 I1:2)<-->(Node2:7 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 7 - Link (Node1:2 I1:2)<-->(Node2:7 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:4 I1:2)<-->(Node2:8 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 8 - Link (Node1:4 I1:2)<-->(Node2:8 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 5 - Link (Node1:5 I1:2)<-->(Node2:9 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 9 - Link (Node1:5 I1:2)<-->(Node2:9 I2:0) bwd: 1000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+
+simulation starts - first processing step with clock = 0
+
+--> node 2 at 10320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 1 size 21
+--> node 2 at 10320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 1 size 21
+--> node 2 at 10320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 1 size 21
+--> node 2 at 10320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 1 size 21
+--> node 3 at 10350 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 1 size 21
+--> node 4 at 10350 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 1 size 21
+--> node 3 at 10370 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 2 size 21
+--> node 4 at 10370 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 2 size 21
+--> node 3 at 10390 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 3 size 21
+--> node 3 at 10390 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 4 size 21
+--> node 4 at 10390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 3 size 21
+--> node 4 at 10390 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 4 size 21
+--> node 4 at 10410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 5 size 21
+--> node 4 at 10410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 6 size 21
+--> node 4 at 10410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 7 size 21
+--> node 4 at 10410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 8 size 21
+--> node 4 at 10410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 9 size 21
+--> node 4 at 10410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 10 size 21
+--> node 4 at 10410 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 11 size 21
+--> node 1 at 10430 dropping expired packet src 7 dst 6 type DATA ttl 1 seq 5 size 21
+--> node 4 at 10430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 12 size 21
+--> node 4 at 10430 dropping expired packet src 9 dst 8 type DATA ttl 1 seq 13 size 21
+--> node 2 at 20320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 2 size 21
+--> node 3 at 20320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 2 size 21
+--> node 2 at 30320 dropping expired packet src 6 dst 7 type DATA ttl 1 seq 3 size 21
+--> node 3 at 30320 dropping expired packet src 8 dst 9 type DATA ttl 1 seq 3 size 21
+Node status for node 6 (sender) time 39000 - sent 3 packet(s) / received 0 packet(s)
+Node status for node 7 (receiver) time 39000 - sent 5 packet(s) / received 5 packet(s)
+Node status for node 8 (sender) time 39000 - sent 3 packet(s) / received 0 packet(s)
+Node status for node 9 (receiver) time 39000 - sent 13 packet(s) / received 13 packet(s)
+Pkt stats for node 0 time 39000 -  s 100 r 0 d 0 f 94
+  (node:0 ifc:0) r 42 s 46 <--> (node:1 ifc:0) r 46 s 42
+  (node:3 ifc:1) r 35 s 22 <--> (node:0 ifc:1) r 22 s 35
+  (node:5 ifc:1) r 19 s 30 <--> (node:0 ifc:2) r 30 s 19
+Pkt stats for node 1 time 39000 -  s 93 r 0 d 1 f 87
+  (node:0 ifc:0) r 42 s 46 <--> (node:1 ifc:0) r 46 s 42
+  (node:1 ifc:1) r 39 s 46 <--> (node:2 ifc:0) r 46 s 39
+  (node:1 ifc:2) r 3 s 5 <--> (node:6 ifc:0) r 5 s 3
+Pkt stats for node 2 time 39000 -  s 98 r 0 d 6 f 92
+  (node:1 ifc:1) r 39 s 46 <--> (node:2 ifc:0) r 46 s 39
+  (node:2 ifc:1) r 47 s 50 <--> (node:3 ifc:0) r 50 s 47
+  (node:2 ifc:2) r 5 s 9 <--> (node:7 ifc:0) r 9 s 5
+Pkt stats for node 3 time 39000 -  s 302 r 0 d 6 f 294
+  (node:2 ifc:1) r 47 s 50 <--> (node:3 ifc:0) r 50 s 47
+  (node:3 ifc:1) r 35 s 22 <--> (node:0 ifc:1) r 22 s 35
+  (node:3 ifc:2) r 215 s 233 <--> (node:4 ifc:0) r 233 s 215
+Pkt stats for node 4 time 39000 -  s 245 r 0 d 13 f 235
+  (node:3 ifc:2) r 215 s 233 <--> (node:4 ifc:0) r 233 s 215
+  (node:4 ifc:1) r 12 s 21 <--> (node:5 ifc:0) r 21 s 12
+  (node:4 ifc:2) r 3 s 9 <--> (node:8 ifc:0) r 9 s 3
+Pkt stats for node 5 time 39000 -  s 60 r 0 d 0 f 53
+  (node:4 ifc:1) r 12 s 21 <--> (node:5 ifc:0) r 21 s 12
+  (node:5 ifc:1) r 19 s 30 <--> (node:0 ifc:2) r 30 s 19
+  (node:5 ifc:2) r 13 s 18 <--> (node:9 ifc:0) r 18 s 13
+Pkt stats for node 6 time 39000 -  s 3 r 0 d 5 f 8
+  (node:1 ifc:2) r 3 s 5 <--> (node:6 ifc:0) r 5 s 3
+Pkt stats for node 7 time 39000 -  s 5 r 5 d 4 f 9
+  (node:2 ifc:2) r 5 s 9 <--> (node:7 ifc:0) r 9 s 5
+Pkt stats for node 8 time 39000 -  s 3 r 0 d 9 f 12
+  (node:4 ifc:2) r 3 s 9 <--> (node:8 ifc:0) r 9 s 3
+Pkt stats for node 9 time 39000 -  s 13 r 13 d 5 f 18
+  (node:5 ifc:2) r 13 s 18 <--> (node:9 ifc:0) r 18 s 13
+
+warning - 2 events not run; stoped too early?
+
+simulation ended - last processing step with clock = 40000
+
