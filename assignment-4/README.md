@@ -139,6 +139,10 @@ public void forward_packet(int now, Packet p, int iface) {
 		
 		if ( drop_duplicates ) {
 			// your code here
+			// if you conclude that the packet is a duplicate, then execute the 3 following lines
+			// trace(now, "dropped duplicate");
+			// nodeObj.send(p, UNKNOWN);
+			// return;
 		} 
 		
 		if ( p.getDestination() == nodeObj.getId()) {
