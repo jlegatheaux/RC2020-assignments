@@ -106,7 +106,7 @@ The tests `config5.1.txt` and `config5.2.txt` check the correctness of your base
 
 Leave these three features disabled in these tests’ configuration files! You will be marked based on your router’s behavior on these tests with these features disabled.
 
-![Legenda](Figures/assign5.123.png)
+![Legenda](Figures/config5.123.png)
 
 Both configurations test the ring network of the figure above. During the execution some links change state: go down and up. The second configuration shows how a count to infinity event may take place when we are only using the baseline DV. This happens when all links connecting node 1 to other nodes go down and the done becomes isolated.
 
@@ -134,7 +134,7 @@ Now you should run tests using `config5.3.txt` to realize that with triggered up
 
 Test `config5.4.txt` allows you to test a much more complex network with more links' up and down events, as well as using several traces to probe your nodes routing performance. The network in this test has 25 nodes and is a reprodution of the English universities network backbone (JANET) at the beginning of this century. That networl is depicted below.
 
-![JANET Backbone](Figures/assign5.4.png)
+![JANET Backbone](Figures/config5.4.png)
 
 ### Stage 3: Add Split Horizon with Poison-Reverse
 
@@ -145,9 +145,9 @@ Note that you will need to enable or disable split horizon with poison-reverse i
 We’ve given you two test cases, `config5.5.txt` and `config5.6.txt`, that have `triggered` and `preverse` flags set to on. That’s the configurations in which we will use these two tests when marking your submission. Both networks are shown in the figures below.
 
 
-![](Figures/assign5.5.png)
+![](Figures/config5.5.png)
 
-![The networks used in tests 5 and 6](Figures/assign5.6.png)
+![The networks used in tests 5 and 6](Figures/config5.6.png)
 
 
 However, the first part of this stage may be to explore how your baseline router, without triggered updates neither split horizon with poison-reverse, behaves on these topologies.
