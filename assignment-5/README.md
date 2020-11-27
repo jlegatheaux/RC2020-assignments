@@ -21,13 +21,13 @@ This assignment has been adapted from the coursework 2: "Implementing Distance-V
 
 All your versions of the protocol do not keep for future use the received distance vector announcements (some versions of the algorithm store them to select alternatives when the distance to a known destination becomes INFINITY). Therefore, your code will use one only data structure: a sligthly extended routing table or FIB (forwarding information base). For each destination, the routing table stores the interface to forward packets to reach that destination, a metric or cost of the path to get there, as well a time stamp denoting the last time this entry has been modified or confirmed. That timestamp will be useful for certain optional versions of your solution. File `RoutingTableEntry.java` contains a class that implements a routing table entry.
 
-A router will start with a routing table with one only entry, the one that points to itself, i.e. with its own identification, uses the LOCAL interface to forward packets, has metric 0 and a timestamp corresponding to the starting moment, i.e. 0 in CNSS. If `rt` denotes your routing table, that initialization could be
+A router will start with a routing table with one only entry, the one that points to itself, i.e. with its own identification, uses the LOCAL interface to forward packets, has metric 0, and a timestamp corresponding to the starting moment, i.e. 0 in CNSS. If `rt` denotes your routing table, that initialization could be
 
 ```java
 rt.put(nodeId, new DVRoutingTableEntry(nodeId, LOCAL, 0, now) );
 ```
 
-You should start by implementing the basic version of the algorithm, one that periodically sends distance vector announcements to neighbours reachable by all the nodes' interfaces that are operational (i.e. in the state `up`). Your nodes' interfaces are contained in CNSS in the array `Link[] links` and are numbered from 0 to `nInterfaces`. Both variables are set in the `initialise()` upcall using its parameters received from the CNSS node code.
+You should start by implementing the basic version of the algorithm, one that periodically sends distance vector announcements to neighbours reachable by all the nodes' interfaces that are operational (i.e. in the state `up`). Your nodes' interfaces are available,, in CNSS, in the array `Link[] links` and are numbered from 0 to `nInterfaces`. Both variables are initialised in the `initialise()` upcall using configuration parameters received from the CNSS node code.
 
 To send a control packet containning an announcement (stored in an object of the appropriate class pointed by `payload`) to the neighbour at the other side of an operational link, connected to the local interface `interface`, use the following code:
 
@@ -38,13 +38,13 @@ nodeObj.send( p, interface );
 
 `Packet.ONEHOP` is a special destination address that represents the node at the other side of a link.
 
-Class `DVControlPayload` (in file `DVControlPayload.java`) has all you need to build, send, receive and process distance vector announcments. You should study it carefully and learn how to use that class in your implementation.
+Class `DVControlPayload` (in file `DVControlPayload.java`) has all you need to build and process distance vector announcements. You should study it carefully and learn how to use that class in your implementation.
 
 You should then implement the basic version of the algorithm. Later, we will also ask you to implement three further enhancements or optimizations: triggered updates, split horizon with poison-reverse, and timeout-based expiration of routing table entries. 
 
-We provide you with a skeleton of the control algorithm for a distance-vector router running in CNSS, found in the file `DVControl.java`. You should implement your solution to the assignment by filling in the missing parts of this file as well as adding all other methods you need to complete them. Do not change any of the pre-defined parts in that file.
+We provide you with a skeleton of the control algorithm for a distance-vector router running in CNSS, found in the file `DVControl.java`. You should implement your solution to the assignment by filling in the missing parts of this file. Do not change any of the pre-defined parts in that file.
 
-In the beginning of the `initialisation()` method, you find the code needed to initialise the variables (flags) that represent the options that the algorithm must implement.
+In the beginning of the `initialisation()` method, you find the code needed to initialise the variables (flags) that represent the options that the algorithm must implement when they are true.
 
 ```java
 tracingOn = parameters.containsKey("trace");
@@ -58,12 +58,9 @@ Thus, if you implement some or all of these options, the code implementing them 
 if ( triggered ) send announcements;
 ```
 
-
 We also give you a function to compute the metric of a link as well as the two classes already referred above.
 
-Again, note that you should not modify any of the provided files apart from `DVControl.java`. All the methods in `DVControl.java`that file are extensivly documented. You should follow the directions in these comments.
-
-**REVER este parágrafo:** The Java code we’ve given you is fully documented in Javadoc; to prepare the documentation, just type make javadoc in the directory containing your coursework files, and you will find the documentation for the code we’ve given you in a newly created docs subdirectory. 
+Again, note that you should not modify any of the provided files apart from `DVControl.java`. All the methods in that file are extensivly documented. You should follow the directions in these comments.
 
 
 ## Configuration files provided
@@ -94,7 +91,7 @@ In annex you provide further directions on installing the required files to supp
 
 In this stage you must implement a baseline DV routing protocol that only sends periodic announcements, does not supports poison reverse and does not get stale entries out of the routing tables. No separate design document is required, but you must comment your code thoroughly, to fully explain how it works.
 
-When a clock tick event is triggered, your node calls the `on_clock_tick()` upcall that prepares an annoucement payload and sends it throughout each of the node's interfaces, for example using:
+When a clock tick event is triggered, your node calls the `on_clock_tick()` upcall in your code. It must prepare an annoucement payload and send it throughout each of the node's interfaces, for example using:
 
 ```java
 for ( int i = 0; i < nInterfaces; i++)
@@ -116,20 +113,20 @@ Both configuration files show how to send trace packets and the result of their 
 ```
 traceroute time origin destination
 ```
-It llows one to trace the path in the network of a packet sent from `origin`to `destination` at time stamp `time`. When there is a routing loop, it is also clearly. Routing loops only come to an end when the packets' RTT reaches 0.
+It llows one to trace the path in the network of a packet sent from `origin`to `destination` at time stamp `time`. When there is a routing loop, it is also clearly shown. Routing loops only come to an end when the packets' RTT reaches 0.
 
 
 ### Stage 2: Add Triggered Updates
 
 In this stage you must add triggered updates, that is, whenever something changes in your routing table, or some of the interfaces of the node change their state (upcalls `on_link_up()`or `on_link_down()`) you must send announcements by all nodes' operational interfaces. Remember that the full treatment of an `on_link_down()` also requires changing the state of the affected entries of the nodes' routing table. 
 
-Note that you will need to send or not triggered updates in your router in accordance with the setting of the `triggered` flag in the configuration file. The flag `triggered` setting in the config file will be available in the boolean variable `triggered`  in your code. Thus, using this variable, sending these announcements should begin with
+Note that you will need to send or not triggered updates in your router in accordance with the setting of the `triggered` flag in the configuration file. The flag `triggered` setting in the config file is available in the boolean variable `triggered`  in your code. Thus, using this variable, sending these announcements should begin with
 
 ```java
 if ( triggered ) send a triggered update
 ```
 
-Following the directives in the configuration file, CNSS automatically changes the state of a link. At that moment, the interfaces the link connects to also change state. All these changes take place before the node calls the corresponding upcalls in your `DVControl` class.
+Following the directives in the configuration file, CNSS changes the state of a link. At that moment, the interfaces the link connects to also change state. All these changes take place before the node calls the corresponding upcalls in your `DVControl` class.
 
 Now you should run tests using `config5.3.txt` to realize that with triggered updates the count to infinity anomaly will not happen this time. File `config5.3.txt` is equal to file `config5.2.txt` with the difference that triggered updates flag (`triggered`) is set.
 
@@ -147,8 +144,6 @@ We’ve given you two test cases, `config5.5.txt` and `config5.6.txt`, that have
 ![](Figures/assign5.5.png)
 
 ![The networks used in tests 5 and 6](Figures/assign5.6.png)
-
-
 
 
 However, the first part of this stage may be to explore how your baseline router, without triggered updates neither split horizon with poison-reverse, behaves on these topologies.
@@ -169,7 +164,7 @@ We require that you remove stale entries in accordance with the timeout policy s
 
 Note that part of the mechanism specified in the RFC handles the loss of routing update packets. The tests we provide, however, never drop routing update packets, so you do not need to incorporate mechanisms for dealing with such losses. Finally, note that expiration of entries for unreachable destinations helps reduce the size of the routing table and subsequent announcements, but doesn’t hasten convergence.
 
-`config5.7.txt` and `config5.8.txt` tests for the removal of stale routing table entries. Both work on the same network, the already mentioned JANET national backbone. In test  `config5.7.txt` several links go up and down, and during a certain period node 16 stays unconnected. In test `config5.8.txt` during the lifetime of the simulation several links go down and the network becomes partitioned.
+`config5.7.txt` and `config5.8.txt` configurations are used to test for the removal of stale routing table entries. Both work on the same network, the already mentioned JANET national backbone. In test  `config5.7.txt` several links go up and down, and during a certain period node 16 stays unreachable by all other nodes. In test `config5.8.txt`, during the lifetime of the simulation several links go down and the network becomes partitioned.
 
 These configuration files tests enable all flags: triggered updates, split horizon with poison-reverse and stale table entry expiration.
 
@@ -196,5 +191,8 @@ Code clarity and structure will also be accounted.
 
 
 ## Annex - Sugestions to set-up your work environment
+
+
+**REVER este parágrafo:** The Java code we’ve given you is fully documented in Javadoc; to prepare the documentation, just type make javadoc in the directory containing your coursework files, and you will find the documentation for the code we’ve given you in a newly created docs subdirectory. 
 
 
