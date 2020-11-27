@@ -104,11 +104,11 @@ The tests `config5.1.txt` and `config5.2.txt` check the correctness of your base
 
 Leave these three features disabled in these tests’ configuration files! You will be marked based on your router’s behavior on these tests with these features disabled.
 
-![The ring network used in tests 1, 2 and 3](Figures/assign5.123.png)
+![Legenda](Figures/assign5.123.png)
 
 <img src="Figures/assign5.123.png"
      alt="The ring network used in tests 1, 2 and 3"
-     style="float: center; margin-right: 10px;" />
+     style="float: center" />
 
 Both configurations test the ring network of the figure above. During the execution some links change state: go down and up. The second configuration shows how a count to infinity event may take place when we are only using the baseline DV. This happens when all links connecting node 1 to other nodes go down and the done becomes isolated.
 
