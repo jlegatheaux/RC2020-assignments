@@ -106,6 +106,10 @@ Leave these three features disabled in these tests’ configuration files! You w
 
 ![The ring network used in tests 1, 2 and 3](Figures/assign5.123.png)
 
+<img src="Figures/assign5.123.png"
+     alt="The ring network used in tests 1, 2 and 3"
+     style="float: center; margin-right: 10px;" />
+
 Both configurations test the ring network of the figure above. During the execution some links change state: go down and up. The second configuration shows how a count to infinity event may take place when we are only using the baseline DV. This happens when all links connecting node 1 to other nodes go down and the done becomes isolated.
 
 Both configuration files show how to send trace packets and the result of their execution. Trace packets are sent using the configuration file command 
@@ -150,7 +154,7 @@ However, the first part of this stage may be to explore how your baseline router
 
 When testing your split horizon with poison-reverse implementation, be sure the two flags are on! And similarly, if you want to run without them, after the implementation of this stage, be sure to turn these flags off.
 
-###Stage 4: Add Expiration of Stale Table Entries
+### Stage 4: Add Expiration of Stale Table Entries
 
 In this stage, you must enhance your DV implementation further to expire routing table entries as necessary. Note that the DV algorithm described in lectures allows routing table entries to persist indefinitely. 
 
