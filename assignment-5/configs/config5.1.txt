@@ -1,0 +1,62 @@
+
+# Small ring network with 5 nodes
+# This config allows the test of the setup of correct routing tables
+# as well routing reconfiguration when a link goes down and up
+
+# uncomment if you want to see control algorithms traces
+parameter trace
+
+
+node 0 2 DVControl cnss.lib.EmptyApp
+node 1 2 DVControl cnss.lib.EmptyApp
+node 2 2 DVControl cnss.lib.EmptyApp
+node 3 2 DVControl cnss.lib.EmptyApp
+node 4 2 DVControl cnss.lib.EmptyApp
+
+link 0.0 1.0 100000000 10 0.0 0.0
+link 1.1 2.0 100000000 10 0.0 0.0
+link 2.1 3.0 100000000 10 0.0 0.0
+link 3.1 4.1 100000000 10 0.0 0.0
+link 0.1 4.0 30000000 10 0.0 0.0
+
+
+dumpPacketStats 1 all
+dumproutes 1 all
+dumpPacketStats 500 all
+dumproutes 500 all
+dumpPacketStats 1500 all
+dumproutes 1500 all
+dumproutes 2500 all
+dumproutes 3500 all
+dumproutes 13500 all
+dumproutes 14500 all
+
+traceroute 14500 0 3
+
+downlink 14650 1.1 2.0
+
+traceroute 14800 0 3
+
+dumpPacketStats 15500 all
+dumproutes 15500 all
+
+traceroute 17800 0 3
+
+dumpPacketStats 20500 all
+dumproutes 20500 all
+dumproutes 24500 all
+
+uplink 24600 1.1 2.0
+
+dumpPacketStats 25500 all
+dumproutes 25500 all
+dumproutes 26500 all
+dumproutes 27500 all
+traceroute 30500 0 3
+
+dumproutes 39500 all
+
+parameter stop 40900
+
+
+

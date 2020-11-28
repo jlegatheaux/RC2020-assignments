@@ -1,0 +1,52 @@
+
+# uncomment if you want to see control algorithms traces
+parameter trace
+
+parameter triggered
+parameter preverse
+
+node 0 3 DVControl cnss.lib.EmptyApp
+node 1 2 DVControl cnss.lib.EmptyApp
+node 2 3 DVControl cnss.lib.EmptyApp
+node 3 4 DVControl cnss.lib.EmptyApp
+node 4 3 DVControl cnss.lib.EmptyApp
+node 5 3 DVControl cnss.lib.EmptyApp
+node 6 4 DVControl cnss.lib.EmptyApp
+node 7 2 DVControl cnss.lib.EmptyApp
+
+
+link 0.0 3.0 100000000 10 0.0 0.0
+link 0.1 2.0 100000000 10 0.0 0.0
+link 0.2 1.0 100000000 10 0.0 0.0
+link 1.1 2.1 100000000 10 0.0 0.0
+link 2.2 5.0 50000000 10 0.0 0.0
+link 3.1 4.0 100000000 10 0.0 0.0
+link 3.2 6.1 100000000 10 0.0 0.0
+link 3.3 5.1 100000000 10 0.0 0.0
+link 4.1 6.0 10000000 10 0.0 0.0
+link 5.2 6.2 100000000 10 0.0 0.0
+link 7.0 4.2 100000000 10 0.0 0.0
+link 7.1 6.3 100000000 10 0.0 0.0
+
+traceroute 10500 7 2
+
+downlink 15500 2.2 5.0
+
+traceroute 20500 7 2
+
+dumproutes 20500 all
+
+downlink 30500 0.0 3.0
+
+dumproutes 32500 all
+dumproutes 34500 all
+dumproutes 36500 all
+
+traceroute 40500 7 2
+
+dumproutes 40500 all
+
+dumproutes 99500 all
+dumpPacketStats 99500 all
+
+parameter stop 99900

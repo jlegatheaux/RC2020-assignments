@@ -1,0 +1,72 @@
+
+# Small ring network with 5 nodes
+# This config allows the test of a count to infinity situation
+# when there are no triggered updates or split h. w/ poison reverse
+
+# uncomment if you want to see control algorithms traces
+parameter trace
+
+node 0 2 DVControl cnss.lib.EmptyApp
+node 1 2 DVControl cnss.lib.EmptyApp
+node 2 2 DVControl cnss.lib.EmptyApp
+node 3 2 DVControl cnss.lib.EmptyApp
+node 4 2 DVControl cnss.lib.EmptyApp
+
+link 0.0 1.0 100000000 10 0.0 0.0
+link 1.1 2.0 100000000 10 0.0 0.0
+link 2.1 3.0 100000000 10 0.0 0.0
+link 3.1 4.1 100000000 10 0.0 0.0
+link 0.1 4.0 30000000 10 0.0 0.0
+
+
+dumpPacketStats 1 all
+dumproutes 1 all
+dumpPacketStats 500 all
+dumproutes 500 all
+dumpPacketStats 1500 all
+dumproutes 1500 all
+dumproutes 2500 all
+dumproutes 3500 all
+dumproutes 4500 all
+
+traceroute 4600 0 3
+traceroute 4600 4 1
+
+
+downlink 5600 0.0 1.0
+downlink 5600 1.1 2.0
+
+
+dumpPacketStats 6500 all
+dumproutes 6500 all
+dumproutes 7500 all
+
+traceroute 7600 4 1
+
+dumproutes 8500 all
+dumproutes 9500 all
+dumproutes 10500 all
+dumproutes 11500 all
+dumproutes 12500 all
+dumproutes 13500 all
+dumproutes 14500 all
+
+dumproutes 17500 all
+dumproutes 18500 all
+dumproutes 19500 all
+
+dumproutes 22500 all
+dumproutes 23500 all
+dumproutes 24500 all
+
+traceroute 29600 4 1
+
+dumproutes 30500 all
+
+
+dumproutes 60500 all
+
+parameter stop 60900
+
+
+
