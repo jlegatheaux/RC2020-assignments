@@ -144,7 +144,7 @@ Following the directives in the configuration file, CNSS changes the state of a 
 
 Now you should run tests using `config5.3.txt` to realize that with triggered updates the count to infinity anomaly will not happen this time. File `config5.3.txt` is equal to file `config5.2.txt` with the difference that triggered updates flag (`triggered`) is set.
 
-Test `config5.4.txt` allows you to test a much more complex network with more links' up and down events, as well as using several traces to probe your nodes routing performance. The network in this test has 25 nodes and is a reprodution of the English universities network backbone (JANET) at the beginning of this century. That networl is depicted below.
+Test `config5.4.txt` allows you to test a much more complex network with more links' up and down events, as well as using several traces to probe your nodes routing performance. The network in this test has 25 nodes and is a reprodution of the English universities network backbone (JANET) at the beginning of this century. That network is depicted below.
 
 ![JANET Backbone](Figures/config5.4.png)
 
