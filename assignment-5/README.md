@@ -51,8 +51,6 @@ You should then implement the basic version of the algorithm. Later, we will als
 
 ### Skeleton of your solution
 
-Preliminary important note: before compiling and testing your solution you must upgrade your CNSS version. See the annex to see one way, among several possible, of doing it.
-
 We provide you with a skeleton of the control algorithm for a distance-vector router running in CNSS, found in the file `DVControl.java`. You should implement your solution to the assignment by filling in the missing parts of this file. Do not change any of the pre-defined parts in that file.
 
 ### Options in the code
@@ -74,16 +72,18 @@ if ( triggered ) send announcements;
 
 We also give you a function to compute the metric of a link as well as the two classes already referred above.
 
-Again, note that you should not modify any of the provided files apart from `DVControl.java`. All the methods in that file are extensivly documented. You should follow the directions in these comments.
+Again, note that you should not modify any of the provided files apart from `DVControl.java`. All the methods in that file (initialise and upcalls) are extensivly documented. You should follow the directions in these comments.
 
 
 ## Configuration files provided and running tests
+
+**Preliminary important note:** before compiling and testing your solution, you must upgrade your CNSS version. See the annex to see one way, among several of the possible ones, of doing it.
 
 As you already know, each time you run CNSS it reads a configuration file that describes the particular network topology it should simulate, and any actions to take during that simulation (and when to take them), such as “take this link down after 15000 milliseconds,” “print out the routing table of this router after 32000 milliseconds,” etc.
 
 We have prepared 8 of these configuration files, each with the purpose of testing different stages of your development. These files are named `config5.1.txt`, `config5.2.txt`, ... `config5.8.txt`. The purpose of each one will be explained below when we will refer to each of the these stages.
 
-We also provide, for each configuration file, a file named `results5.1.txt`, `results5.2.txt` etc. These files contain the output of running a simulation using a `DVControl.java` class performing correctly the stage defined by the flags initialised in the corresponding configuration file.
+We also provide in directory `results`, for each configuration file, a file named `results5.1.txt`, `results5.2.txt` etc. These files contain the output of running a simulation using a `DVControl.java` class performing correctly the stage defined by the flags initialised in the corresponding configuration file.
 
 As you already know, to run a CNSS simulation in the command line, you may use the following command: 
 
@@ -92,13 +92,13 @@ pwd
 java -cp bin:../cnss/bin cnss.simulator.Simulator configs/config5.1.txt
 ```
 
-It assumes that you are developing your project in the current directory (it may be named `assignment5` for example and command `pwd`will print its name), with a sub directory containing your source files (directory `src` with files `DVControl.java`, `RoutingTableEntry.java` and `DVControlPayload.java`) a directory named ` bin`with the compiled version of your files and a directory named `configs` with the configuration files. 
+It assumes that you are developing your project in the current directory (it may be named `assignment5` for example, and command `pwd` will print its name if you are lost), with a sub directory containing your source files (directory `src` with files `DVControl.java`, `RoutingTableEntry.java` and `DVControlPayload.java`) a directory named ` bin` with the compiled version of your files and a directory named `configs` with the configuration files. 
 
-With the above command line, CNSS compiled code should be in the directory `../cnss/bin`. You can prepare it by creating the directory `../cnss`, geting the CNSS code from its GitHub repository and compiling it in that directory.
+With the above command line, CNSS compiled code should be in the directory `../cnss/bin`. You can prepare it by creating the directory `../cnss`, geting the CNSS code from its GitHub repository and compiling it in that directory. See the annex for a quick how to do it.
 
-It is also possible to developpe with any IDE (Interactive Developping Environment), as for example Eclipse, that will support a project CNNS in the `cnss` directory and compile it to some directory `cnss/bin`. Otherwise you should adapt the above command to the way your IDE organizes the `.class`files.
+It is also possible to developpe with any IDE (Interactive Developping Environment), as for example Eclipse, that will support a project CNSS in the `cnss` directory and compile it to some directory `cnss/bin`. Otherwise you should adapt the above command to the way your IDE organizes the `.class`files.
 
-In the annex you provide a crash course on one way of installing the required files to support your development.
+In the annex we provide a crash course on one of the ways of installing the required files to support your development.
 
 ## Developing your solution
 
@@ -131,7 +131,7 @@ traceroute time origin destination
 It allows one to trace the path in the network of a packet sent from `origin`to `destination` at time stamp `time`. When there is a routing loop, it is also clearly shown. Routing loops only come to an end when the packets' RTT reaches 0.
 
 
-### Stage 2: Add Triggered Updates
+### Stage 2: Add triggered updates
 
 In this stage you must add triggered updates, that is, whenever something changes in your routing table, or some of the interfaces of the node change their state (upcalls `on_link_up()`or `on_link_down()`) you must send announcements by all nodes' operational interfaces. Remember that the full treatment of an `on_link_down()` also requires changing the state of the affected entries of the nodes' routing table. 
 
@@ -149,7 +149,7 @@ Test `config5.4.txt` allows you to test a much more complex network with more li
 
 ![JANET Backbone](Figures/config5.4.png)
 
-### Stage 3: Add Split Horizon with Poison-Reverse
+### Stage 3: Add split horizon with poison-reverse
 
 In this stage, you must add split horizon with poison-reverse to improve the convergence behavior of your DV routing implementation. That improvement must be implmented by the method that sends announcements since it only concerns the way DV announcements are build.
 
@@ -167,7 +167,7 @@ However, the first part of this stage may be to explore how your baseline router
 
 When testing your split horizon with poison-reverse implementation, be sure the two flags are on! And similarly, if you want to run without them, after the implementation of this stage, be sure to turn these flags off.
 
-### Stage 4: Add Expiration of Stale Table Entries
+### Stage 4: Add expiration of stale table entries
 
 In this stage, you must enhance your DV implementation further to expire routing table entries as necessary. Note that the DV algorithm described in lectures allows routing table entries to persist indefinitely. 
 
@@ -195,15 +195,15 @@ As we have already referred above, for each test we also provide the output of a
 
 ## Marking (in 0-20 scale)
 
-We will get your `DVControl.java` file, compile it with CNSS and the files `DVControlPayload.java`and `DVRoutingTableEntry.java` run tests and will allocate marks as follows:
+We will get your `DVControl.java` file, compile it with CNSS and the files `DVControlPayload.java`and `DVRoutingTableEntry.java` and then run tests. We will allocate marks to your solution as follows:
 
 A solution with compile errors will be marked 0
 
 A solution not being able to correctly perform Stage 1 tests (`config5.1.txt` and `config5.2.txt`): will be marked at most 6
 
-A solution correctly performing Stage 1 tests (`config5.1.txt` and `config5.2.txt`): will be marked at most 12
+A solution correctly performing Stage 1 tests (`config5.1.txt` and `config5.2.txt`): will be marked at most 13
 
-A solution correctly performing Stage 1 & 2 tests (`config5.1.txt` up to `config5.4.txt`): will be marked at most 14
+A solution correctly performing Stage 1 & 2 tests (`config5.1.txt` up to `config5.4.txt`): will be marked at most 15
 
 A solution correctly performing Stages 1, 2 & 3 tests (`config5.1.txt` up to `config5.6.txt`): will be marked at most 17
 
@@ -214,9 +214,9 @@ Code clarity and structure will also be accounted.
 
 ## Annex - Sugestions to set-up your work environment
 
-This is just a quick crash course on how to instal CNSS, the assignment files, as well as to prepare your environment for developping in the command line. In the assignment 0 notebook, you also find instructions for howto use a development environment and use it. The directories organization will be very similar to the one presented below.
+This annex contains a quick crash course on how to instal CNSS, the assignment files, as well as to prepare your environment for developping in the command line. In the assignment 0 notebook, you also find instructions for how to use a development environment and use it. The directories organization will be very similar to the one presented below. Following the instructions in assignment 0, you can install CNSS by performing the following actions.
 
-Following the instructions in assignment 0, you can install CNSS by performing the following actions. Start by choosing a directory to work and perform the following actions:
+Start by choosing a directory (root directory of your work) to contain all the files you need to work in your assignment. Make that directory your curernt directory and perform the following actions:
 
 ```
 git clone https://github.com/jlegatheaux/cnss
@@ -226,7 +226,7 @@ javac -d bin src/*/*/*.java
 cd ..
 ```
 
-You can then install the assignments files and start your developemnt and tests. Download the file  `assignment5.zip` from this repository to your directory, that is, the one that contains cnss, and do the following:
+You can then install the assignments files and start your developemnt and tests. Download file  `assignment5.zip` from this repository to your working directory, that is, the one that contains the `cnss` directory created above, and type the following commands:
 ```
 unzip assignment5.zip
 cd assignment5
@@ -234,17 +234,21 @@ mkdir bin
 javac -d bin -cp ../cnss/src/ src/*.java
 ```
 
-Modify your src/DVControl.java file and compile it. To test it inside the assignment5 directory use,for example
+Now, you have two dirtectories: `cnss` and `assignement5`. You work in the last one. Modify your `src/DVControl.java` file and compile it. To test it inside the `assignment5` directory use, for example
 
 ```
 java -cp bin:../cnss/bin cnss.simulator.Simulator configs/config5.1.txt
 ```
-To test and compare with the expected results use
+To test and compare with the expected results type
 
 ```
 java -cp bin:../cnss/bin cnss.simulator.Simulator configs/config5.1.txt > result5.1.txt
 diff result5.1.txt results/result5.1.txt
 ```
+
+Naturally, as most of us, you prefer to edit and compile your source files with an IDE, like Eclipse for example. The main difference is that your root directory should be the working directory of your IDE, and you must create two projects, one for cnss and another for assignment5. Probably, you will end with exactly the same directories strucuture as the one suggested above.
+
+
 
 
 
