@@ -1,0 +1,583 @@
+Loading configuration : configs/config5.6.txt
+Reading file
+Created Node 0: 3 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 1: 2 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 2: 3 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 3: 4 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 4: 3 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 5: 3 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 6: 4 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 7: 2 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Added link to node 0 - Link (Node1:0 I1:0)<-->(Node2:3 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:0 I1:0)<-->(Node2:3 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 0 - Link (Node1:0 I1:1)<-->(Node2:2 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:0 I1:1)<-->(Node2:2 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 0 - Link (Node1:0 I1:2)<-->(Node2:1 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:0 I1:2)<-->(Node2:1 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:1 I1:1)<-->(Node2:2 I2:1) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:1 I1:1)<-->(Node2:2 I2:1) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:2 I1:2)<-->(Node2:5 I2:0) bwd: 50000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 5 - Link (Node1:2 I1:2)<-->(Node2:5 I2:0) bwd: 50000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:3 I1:1)<-->(Node2:4 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:3 I1:1)<-->(Node2:4 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:3 I1:2)<-->(Node2:6 I2:1) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 6 - Link (Node1:3 I1:2)<-->(Node2:6 I2:1) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:3 I1:3)<-->(Node2:5 I2:1) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 5 - Link (Node1:3 I1:3)<-->(Node2:5 I2:1) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:4 I1:1)<-->(Node2:6 I2:0) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 6 - Link (Node1:4 I1:1)<-->(Node2:6 I2:0) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 5 - Link (Node1:5 I1:2)<-->(Node2:6 I2:2) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 6 - Link (Node1:5 I1:2)<-->(Node2:6 I2:2) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 7 - Link (Node1:7 I1:0)<-->(Node2:4 I2:2) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:7 I1:0)<-->(Node2:4 I2:2) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 7 - Link (Node1:7 I1:1)<-->(Node2:6 I2:3) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 6 - Link (Node1:7 I1:1)<-->(Node2:6 I2:3) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+
+simulation starts - first processing step with clock = 0
+
+trace: dv control time 0 node 0 starting w/ period / trig. upds / shpr / expire: 1000,true,true,false
+trace: dv control time 0 node 1 starting w/ period / trig. upds / shpr / expire: 1000,true,true,false
+trace: dv control time 0 node 2 starting w/ period / trig. upds / shpr / expire: 1000,true,true,false
+trace: dv control time 0 node 3 starting w/ period / trig. upds / shpr / expire: 1000,true,true,false
+trace: dv control time 0 node 4 starting w/ period / trig. upds / shpr / expire: 1000,true,true,false
+trace: dv control time 0 node 5 starting w/ period / trig. upds / shpr / expire: 1000,true,true,false
+trace: dv control time 0 node 6 starting w/ period / trig. upds / shpr / expire: 1000,true,true,false
+trace: dv control time 0 node 7 starting w/ period / trig. upds / shpr / expire: 1000,true,true,false
+--> node 7 time 10500 traceroute to: 2
+--> node 2 time 10530 received traceroute:  7 -> 6 -> 5 -> 2
+--> node 2 at 15500 interface 2 going down
+trace: dv control time 15500 node 2 interface 2 link down
+--> node 5 at 15500 interface 0 going down
+trace: dv control time 15500 node 5 interface 0 link down
+
+Router 0 time 20500
+d 0 i -1 m 0 lu 0
+d 1 i 2 m 1 lu 20010
+d 2 i 1 m 1 lu 20010
+d 3 i 0 m 1 lu 20010
+d 4 i 0 m 2 lu 20010
+d 5 i 0 m 2 lu 20010
+d 6 i 0 m 2 lu 20010
+d 7 i 0 m 3 lu 20010
+
+Router 1 time 20500
+d 0 i 0 m 1 lu 20010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m 1 lu 20010
+d 3 i 0 m 2 lu 20010
+d 4 i 0 m 3 lu 20010
+d 5 i 0 m 3 lu 20010
+d 6 i 0 m 3 lu 20010
+d 7 i 0 m 4 lu 20010
+
+Router 2 time 20500
+d 0 i 0 m 1 lu 20010
+d 1 i 1 m 1 lu 20010
+d 2 i -1 m 0 lu 0
+d 3 i 0 m 2 lu 20010
+d 4 i 0 m 3 lu 20010
+d 5 i 0 m 3 lu 20010
+d 6 i 0 m 3 lu 20010
+d 7 i 0 m 4 lu 20010
+
+Router 3 time 20500
+d 0 i 0 m 1 lu 20010
+d 1 i 0 m 2 lu 20010
+d 2 i 0 m 2 lu 20010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 20010
+d 5 i 3 m 1 lu 20010
+d 6 i 2 m 1 lu 20010
+d 7 i 1 m 2 lu 20010
+
+Router 4 time 20500
+d 0 i 0 m 2 lu 20010
+d 1 i 0 m 3 lu 20010
+d 2 i 0 m 3 lu 20010
+d 3 i 0 m 1 lu 20010
+d 4 i -1 m 0 lu 0
+d 5 i 0 m 2 lu 20010
+d 6 i 0 m 2 lu 20010
+d 7 i 2 m 1 lu 20010
+
+Router 5 time 20500
+d 0 i 1 m 2 lu 20010
+d 1 i 1 m 3 lu 20010
+d 2 i 1 m 3 lu 20010
+d 3 i 1 m 1 lu 20010
+d 4 i 1 m 2 lu 20010
+d 5 i -1 m 0 lu 0
+d 6 i 2 m 1 lu 20010
+d 7 i 2 m 2 lu 20010
+
+Router 6 time 20500
+d 0 i 1 m 2 lu 20010
+d 1 i 1 m 3 lu 20010
+d 2 i 1 m 3 lu 20010
+d 3 i 1 m 1 lu 20010
+d 4 i 1 m 2 lu 20010
+d 5 i 2 m 1 lu 20010
+d 6 i -1 m 0 lu 0
+d 7 i 3 m 1 lu 20010
+
+Router 7 time 20500
+d 0 i 0 m 3 lu 20010
+d 1 i 0 m 4 lu 20010
+d 2 i 0 m 4 lu 20010
+d 3 i 0 m 2 lu 20010
+d 4 i 0 m 1 lu 20010
+d 5 i 1 m 2 lu 20010
+d 6 i 1 m 1 lu 20010
+d 7 i -1 m 0 lu 0
+--> node 7 time 20500 traceroute to: 2
+--> node 2 time 20540 received traceroute:  7 -> 4 -> 3 -> 0 -> 2
+--> node 0 at 30500 interface 0 going down
+trace: dv control time 30500 node 0 interface 0 link down
+--> node 3 at 30500 interface 0 going down
+trace: dv control time 30500 node 3 interface 0 link down
+
+Router 0 time 32500
+d 0 i -1 m 0 lu 0
+d 1 i 2 m 1 lu 32010
+d 2 i 1 m 1 lu 32010
+d 3 i 0 m INFINITY lu 30010
+d 4 i 0 m INFINITY lu 30010
+d 5 i 0 m INFINITY lu 30010
+d 6 i 0 m INFINITY lu 30010
+d 7 i 0 m INFINITY lu 30010
+
+Router 1 time 32500
+d 0 i 0 m 1 lu 32010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m 1 lu 32010
+d 3 i 0 m INFINITY lu 30510
+d 4 i 0 m INFINITY lu 30510
+d 5 i 0 m INFINITY lu 30510
+d 6 i 0 m INFINITY lu 30510
+d 7 i 0 m INFINITY lu 30510
+
+Router 2 time 32500
+d 0 i 0 m 1 lu 32010
+d 1 i 1 m 1 lu 32010
+d 2 i -1 m 0 lu 0
+d 3 i 0 m INFINITY lu 30510
+d 4 i 0 m INFINITY lu 30510
+d 5 i 0 m INFINITY lu 30510
+d 6 i 0 m INFINITY lu 30510
+d 7 i 0 m INFINITY lu 30510
+
+Router 3 time 32500
+d 0 i 0 m INFINITY lu 30010
+d 1 i 0 m INFINITY lu 30010
+d 2 i 0 m INFINITY lu 30010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 32010
+d 5 i 3 m 1 lu 32010
+d 6 i 2 m 1 lu 32010
+d 7 i 1 m 2 lu 32010
+
+Router 4 time 32500
+d 0 i 0 m INFINITY lu 30510
+d 1 i 0 m INFINITY lu 30510
+d 2 i 0 m INFINITY lu 30510
+d 3 i 0 m 1 lu 32010
+d 4 i -1 m 0 lu 0
+d 5 i 0 m 2 lu 32010
+d 6 i 0 m 2 lu 32010
+d 7 i 2 m 1 lu 32010
+
+Router 5 time 32500
+d 0 i 1 m INFINITY lu 30510
+d 1 i 1 m INFINITY lu 30510
+d 2 i 1 m INFINITY lu 30510
+d 3 i 1 m 1 lu 32010
+d 4 i 1 m 2 lu 32010
+d 5 i -1 m 0 lu 0
+d 6 i 2 m 1 lu 32010
+d 7 i 2 m 2 lu 32010
+
+Router 6 time 32500
+d 0 i 1 m INFINITY lu 30510
+d 1 i 1 m INFINITY lu 30510
+d 2 i 1 m INFINITY lu 30510
+d 3 i 1 m 1 lu 32010
+d 4 i 1 m 2 lu 32010
+d 5 i 2 m 1 lu 32010
+d 6 i -1 m 0 lu 0
+d 7 i 3 m 1 lu 32010
+
+Router 7 time 32500
+d 0 i 0 m INFINITY lu 30520
+d 1 i 0 m INFINITY lu 30520
+d 2 i 0 m INFINITY lu 30520
+d 3 i 0 m 2 lu 32010
+d 4 i 0 m 1 lu 32010
+d 5 i 1 m 2 lu 32010
+d 6 i 1 m 1 lu 32010
+d 7 i -1 m 0 lu 0
+
+Router 0 time 34500
+d 0 i -1 m 0 lu 0
+d 1 i 2 m 1 lu 34010
+d 2 i 1 m 1 lu 34010
+d 3 i 0 m INFINITY lu 30010
+d 4 i 0 m INFINITY lu 30010
+d 5 i 0 m INFINITY lu 30010
+d 6 i 0 m INFINITY lu 30010
+d 7 i 0 m INFINITY lu 30010
+
+Router 1 time 34500
+d 0 i 0 m 1 lu 34010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m 1 lu 34010
+d 3 i 0 m INFINITY lu 30510
+d 4 i 0 m INFINITY lu 30510
+d 5 i 0 m INFINITY lu 30510
+d 6 i 0 m INFINITY lu 30510
+d 7 i 0 m INFINITY lu 30510
+
+Router 2 time 34500
+d 0 i 0 m 1 lu 34010
+d 1 i 1 m 1 lu 34010
+d 2 i -1 m 0 lu 0
+d 3 i 0 m INFINITY lu 30510
+d 4 i 0 m INFINITY lu 30510
+d 5 i 0 m INFINITY lu 30510
+d 6 i 0 m INFINITY lu 30510
+d 7 i 0 m INFINITY lu 30510
+
+Router 3 time 34500
+d 0 i 0 m INFINITY lu 30010
+d 1 i 0 m INFINITY lu 30010
+d 2 i 0 m INFINITY lu 30010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 34010
+d 5 i 3 m 1 lu 34010
+d 6 i 2 m 1 lu 34010
+d 7 i 1 m 2 lu 34010
+
+Router 4 time 34500
+d 0 i 0 m INFINITY lu 30510
+d 1 i 0 m INFINITY lu 30510
+d 2 i 0 m INFINITY lu 30510
+d 3 i 0 m 1 lu 34010
+d 4 i -1 m 0 lu 0
+d 5 i 0 m 2 lu 34010
+d 6 i 0 m 2 lu 34010
+d 7 i 2 m 1 lu 34010
+
+Router 5 time 34500
+d 0 i 1 m INFINITY lu 30510
+d 1 i 1 m INFINITY lu 30510
+d 2 i 1 m INFINITY lu 30510
+d 3 i 1 m 1 lu 34010
+d 4 i 1 m 2 lu 34010
+d 5 i -1 m 0 lu 0
+d 6 i 2 m 1 lu 34010
+d 7 i 2 m 2 lu 34010
+
+Router 6 time 34500
+d 0 i 1 m INFINITY lu 30510
+d 1 i 1 m INFINITY lu 30510
+d 2 i 1 m INFINITY lu 30510
+d 3 i 1 m 1 lu 34010
+d 4 i 1 m 2 lu 34010
+d 5 i 2 m 1 lu 34010
+d 6 i -1 m 0 lu 0
+d 7 i 3 m 1 lu 34010
+
+Router 7 time 34500
+d 0 i 0 m INFINITY lu 30520
+d 1 i 0 m INFINITY lu 30520
+d 2 i 0 m INFINITY lu 30520
+d 3 i 0 m 2 lu 34010
+d 4 i 0 m 1 lu 34010
+d 5 i 1 m 2 lu 34010
+d 6 i 1 m 1 lu 34010
+d 7 i -1 m 0 lu 0
+
+Router 0 time 36500
+d 0 i -1 m 0 lu 0
+d 1 i 2 m 1 lu 36010
+d 2 i 1 m 1 lu 36010
+d 3 i 0 m INFINITY lu 30010
+d 4 i 0 m INFINITY lu 30010
+d 5 i 0 m INFINITY lu 30010
+d 6 i 0 m INFINITY lu 30010
+d 7 i 0 m INFINITY lu 30010
+
+Router 1 time 36500
+d 0 i 0 m 1 lu 36010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m 1 lu 36010
+d 3 i 0 m INFINITY lu 30510
+d 4 i 0 m INFINITY lu 30510
+d 5 i 0 m INFINITY lu 30510
+d 6 i 0 m INFINITY lu 30510
+d 7 i 0 m INFINITY lu 30510
+
+Router 2 time 36500
+d 0 i 0 m 1 lu 36010
+d 1 i 1 m 1 lu 36010
+d 2 i -1 m 0 lu 0
+d 3 i 0 m INFINITY lu 30510
+d 4 i 0 m INFINITY lu 30510
+d 5 i 0 m INFINITY lu 30510
+d 6 i 0 m INFINITY lu 30510
+d 7 i 0 m INFINITY lu 30510
+
+Router 3 time 36500
+d 0 i 0 m INFINITY lu 30010
+d 1 i 0 m INFINITY lu 30010
+d 2 i 0 m INFINITY lu 30010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 36010
+d 5 i 3 m 1 lu 36010
+d 6 i 2 m 1 lu 36010
+d 7 i 1 m 2 lu 36010
+
+Router 4 time 36500
+d 0 i 0 m INFINITY lu 30510
+d 1 i 0 m INFINITY lu 30510
+d 2 i 0 m INFINITY lu 30510
+d 3 i 0 m 1 lu 36010
+d 4 i -1 m 0 lu 0
+d 5 i 0 m 2 lu 36010
+d 6 i 0 m 2 lu 36010
+d 7 i 2 m 1 lu 36010
+
+Router 5 time 36500
+d 0 i 1 m INFINITY lu 30510
+d 1 i 1 m INFINITY lu 30510
+d 2 i 1 m INFINITY lu 30510
+d 3 i 1 m 1 lu 36010
+d 4 i 1 m 2 lu 36010
+d 5 i -1 m 0 lu 0
+d 6 i 2 m 1 lu 36010
+d 7 i 2 m 2 lu 36010
+
+Router 6 time 36500
+d 0 i 1 m INFINITY lu 30510
+d 1 i 1 m INFINITY lu 30510
+d 2 i 1 m INFINITY lu 30510
+d 3 i 1 m 1 lu 36010
+d 4 i 1 m 2 lu 36010
+d 5 i 2 m 1 lu 36010
+d 6 i -1 m 0 lu 0
+d 7 i 3 m 1 lu 36010
+
+Router 7 time 36500
+d 0 i 0 m INFINITY lu 30520
+d 1 i 0 m INFINITY lu 30520
+d 2 i 0 m INFINITY lu 30520
+d 3 i 0 m 2 lu 36010
+d 4 i 0 m 1 lu 36010
+d 5 i 1 m 2 lu 36010
+d 6 i 1 m 1 lu 36010
+d 7 i -1 m 0 lu 0
+
+Router 0 time 40500
+d 0 i -1 m 0 lu 0
+d 1 i 2 m 1 lu 40010
+d 2 i 1 m 1 lu 40010
+d 3 i 0 m INFINITY lu 30010
+d 4 i 0 m INFINITY lu 30010
+d 5 i 0 m INFINITY lu 30010
+d 6 i 0 m INFINITY lu 30010
+d 7 i 0 m INFINITY lu 30010
+
+Router 1 time 40500
+d 0 i 0 m 1 lu 40010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m 1 lu 40010
+d 3 i 0 m INFINITY lu 30510
+d 4 i 0 m INFINITY lu 30510
+d 5 i 0 m INFINITY lu 30510
+d 6 i 0 m INFINITY lu 30510
+d 7 i 0 m INFINITY lu 30510
+
+Router 2 time 40500
+d 0 i 0 m 1 lu 40010
+d 1 i 1 m 1 lu 40010
+d 2 i -1 m 0 lu 0
+d 3 i 0 m INFINITY lu 30510
+d 4 i 0 m INFINITY lu 30510
+d 5 i 0 m INFINITY lu 30510
+d 6 i 0 m INFINITY lu 30510
+d 7 i 0 m INFINITY lu 30510
+
+Router 3 time 40500
+d 0 i 0 m INFINITY lu 30010
+d 1 i 0 m INFINITY lu 30010
+d 2 i 0 m INFINITY lu 30010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 40010
+d 5 i 3 m 1 lu 40010
+d 6 i 2 m 1 lu 40010
+d 7 i 1 m 2 lu 40010
+
+Router 4 time 40500
+d 0 i 0 m INFINITY lu 30510
+d 1 i 0 m INFINITY lu 30510
+d 2 i 0 m INFINITY lu 30510
+d 3 i 0 m 1 lu 40010
+d 4 i -1 m 0 lu 0
+d 5 i 0 m 2 lu 40010
+d 6 i 0 m 2 lu 40010
+d 7 i 2 m 1 lu 40010
+
+Router 5 time 40500
+d 0 i 1 m INFINITY lu 30510
+d 1 i 1 m INFINITY lu 30510
+d 2 i 1 m INFINITY lu 30510
+d 3 i 1 m 1 lu 40010
+d 4 i 1 m 2 lu 40010
+d 5 i -1 m 0 lu 0
+d 6 i 2 m 1 lu 40010
+d 7 i 2 m 2 lu 40010
+
+Router 6 time 40500
+d 0 i 1 m INFINITY lu 30510
+d 1 i 1 m INFINITY lu 30510
+d 2 i 1 m INFINITY lu 30510
+d 3 i 1 m 1 lu 40010
+d 4 i 1 m 2 lu 40010
+d 5 i 2 m 1 lu 40010
+d 6 i -1 m 0 lu 0
+d 7 i 3 m 1 lu 40010
+
+Router 7 time 40500
+d 0 i 0 m INFINITY lu 30520
+d 1 i 0 m INFINITY lu 30520
+d 2 i 0 m INFINITY lu 30520
+d 3 i 0 m 2 lu 40010
+d 4 i 0 m 1 lu 40010
+d 5 i 1 m 2 lu 40010
+d 6 i 1 m 1 lu 40010
+d 7 i -1 m 0 lu 0
+--> node 7 time 40500 traceroute to: 2
+
+Router 0 time 99500
+d 0 i -1 m 0 lu 0
+d 1 i 2 m 1 lu 99010
+d 2 i 1 m 1 lu 99010
+d 3 i 0 m INFINITY lu 30010
+d 4 i 0 m INFINITY lu 30010
+d 5 i 0 m INFINITY lu 30010
+d 6 i 0 m INFINITY lu 30010
+d 7 i 0 m INFINITY lu 30010
+
+Router 1 time 99500
+d 0 i 0 m 1 lu 99010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m 1 lu 99010
+d 3 i 0 m INFINITY lu 30510
+d 4 i 0 m INFINITY lu 30510
+d 5 i 0 m INFINITY lu 30510
+d 6 i 0 m INFINITY lu 30510
+d 7 i 0 m INFINITY lu 30510
+
+Router 2 time 99500
+d 0 i 0 m 1 lu 99010
+d 1 i 1 m 1 lu 99010
+d 2 i -1 m 0 lu 0
+d 3 i 0 m INFINITY lu 30510
+d 4 i 0 m INFINITY lu 30510
+d 5 i 0 m INFINITY lu 30510
+d 6 i 0 m INFINITY lu 30510
+d 7 i 0 m INFINITY lu 30510
+
+Router 3 time 99500
+d 0 i 0 m INFINITY lu 30010
+d 1 i 0 m INFINITY lu 30010
+d 2 i 0 m INFINITY lu 30010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 99010
+d 5 i 3 m 1 lu 99010
+d 6 i 2 m 1 lu 99010
+d 7 i 1 m 2 lu 99010
+
+Router 4 time 99500
+d 0 i 0 m INFINITY lu 30510
+d 1 i 0 m INFINITY lu 30510
+d 2 i 0 m INFINITY lu 30510
+d 3 i 0 m 1 lu 99010
+d 4 i -1 m 0 lu 0
+d 5 i 0 m 2 lu 99010
+d 6 i 0 m 2 lu 99010
+d 7 i 2 m 1 lu 99010
+
+Router 5 time 99500
+d 0 i 1 m INFINITY lu 30510
+d 1 i 1 m INFINITY lu 30510
+d 2 i 1 m INFINITY lu 30510
+d 3 i 1 m 1 lu 99010
+d 4 i 1 m 2 lu 99010
+d 5 i -1 m 0 lu 0
+d 6 i 2 m 1 lu 99010
+d 7 i 2 m 2 lu 99010
+
+Router 6 time 99500
+d 0 i 1 m INFINITY lu 30510
+d 1 i 1 m INFINITY lu 30510
+d 2 i 1 m INFINITY lu 30510
+d 3 i 1 m 1 lu 99010
+d 4 i 1 m 2 lu 99010
+d 5 i 2 m 1 lu 99010
+d 6 i -1 m 0 lu 0
+d 7 i 3 m 1 lu 99010
+
+Router 7 time 99500
+d 0 i 0 m INFINITY lu 30520
+d 1 i 0 m INFINITY lu 30520
+d 2 i 0 m INFINITY lu 30520
+d 3 i 0 m 2 lu 99010
+d 4 i 0 m 1 lu 99010
+d 5 i 1 m 2 lu 99010
+d 6 i 1 m 1 lu 99010
+d 7 i -1 m 0 lu 0
+
+Pkt stats for node 0 time 99500 -  s 255 r 259 d 0 f 1
+ d (node:0 ifc:0) r 39 s 38 <--> (node:3 ifc:0) r 38 s 39
+ u (node:0 ifc:1) r 111 s 109 <--> (node:2 ifc:0) r 109 s 111
+ u (node:0 ifc:2) r 110 s 108 <--> (node:1 ifc:0) r 108 s 110
+
+Pkt stats for node 1 time 99500 -  s 220 r 219 d 0 f 0
+ u (node:0 ifc:2) r 110 s 108 <--> (node:1 ifc:0) r 108 s 110
+ u (node:1 ifc:1) r 111 s 110 <--> (node:2 ifc:1) r 110 s 111
+
+Pkt stats for node 2 time 99500 -  s 245 r 244 d 0 f 0
+ u (node:0 ifc:1) r 111 s 109 <--> (node:2 ifc:0) r 109 s 111
+ u (node:1 ifc:1) r 111 s 110 <--> (node:2 ifc:1) r 110 s 111
+ d (node:2 ifc:2) r 25 s 23 <--> (node:5 ifc:0) r 23 s 25
+
+Pkt stats for node 3 time 99500 -  s 363 r 370 d 0 f 1
+ d (node:0 ifc:0) r 39 s 38 <--> (node:3 ifc:0) r 38 s 39
+ u (node:3 ifc:1) r 110 s 108 <--> (node:4 ifc:0) r 108 s 110
+ u (node:3 ifc:2) r 111 s 108 <--> (node:6 ifc:1) r 108 s 111
+ u (node:3 ifc:3) r 112 s 108 <--> (node:5 ifc:1) r 108 s 112
+
+Pkt stats for node 4 time 99500 -  s 328 r 329 d 0 f 1
+ u (node:3 ifc:1) r 110 s 108 <--> (node:4 ifc:0) r 108 s 110
+ u (node:4 ifc:1) r 111 s 109 <--> (node:6 ifc:0) r 109 s 111
+ u (node:7 ifc:0) r 109 s 111 <--> (node:4 ifc:2) r 111 s 109
+
+Pkt stats for node 5 time 99500 -  s 249 r 242 d 0 f 1
+ d (node:2 ifc:2) r 25 s 23 <--> (node:5 ifc:0) r 23 s 25
+ u (node:3 ifc:3) r 112 s 108 <--> (node:5 ifc:1) r 108 s 112
+ u (node:5 ifc:2) r 112 s 112 <--> (node:6 ifc:2) r 112 s 112
+
+Pkt stats for node 6 time 99500 -  s 445 r 439 d 0 f 1
+ u (node:4 ifc:1) r 111 s 109 <--> (node:6 ifc:0) r 109 s 111
+ u (node:3 ifc:2) r 111 s 108 <--> (node:6 ifc:1) r 108 s 111
+ u (node:5 ifc:2) r 112 s 112 <--> (node:6 ifc:2) r 112 s 112
+ u (node:7 ifc:1) r 111 s 111 <--> (node:6 ifc:3) r 111 s 111
+
+Pkt stats for node 7 time 99500 -  s 225 r 220 d 1 f 3
+ u (node:7 ifc:0) r 109 s 111 <--> (node:4 ifc:2) r 111 s 109
+ u (node:7 ifc:1) r 111 s 111 <--> (node:6 ifc:3) r 111 s 111
+
+warning - 8 events not run; stoped too early?
+
+simulation ended - last processing step with clock = 100000
+

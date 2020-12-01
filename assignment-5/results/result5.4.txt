@@ -1,0 +1,1835 @@
+Loading configuration : configs/config5.4.txt
+Reading file
+Created Node 0: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 1: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 2: 3 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 3: 3 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 4: 5 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 5: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 6: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 7: 8 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 8: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 9: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 10: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 11: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 12: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 13: 3 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 14: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 15: 4 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 16: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 17: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 18: 4 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 19: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 20: 8 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 21: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 22: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 23: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 24: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 25: 1 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Added link to node 0 - Link (Node1:0 I1:0)<-->(Node2:2 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:0 I1:0)<-->(Node2:2 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:1 I1:0)<-->(Node2:3 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:1 I1:0)<-->(Node2:3 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:2 I1:1)<-->(Node2:3 I2:2) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 down
+Added link to node 3 - Link (Node1:2 I1:1)<-->(Node2:3 I2:2) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 down
+Added link to node 2 - Link (Node1:2 I1:2)<-->(Node2:20 I2:0) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 20 - Link (Node1:2 I1:2)<-->(Node2:20 I2:0) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:3 I1:1)<-->(Node2:4 I2:4) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:3 I1:1)<-->(Node2:4 I2:4) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:4 I1:0)<-->(Node2:5 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 5 - Link (Node1:4 I1:0)<-->(Node2:5 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:4 I1:1)<-->(Node2:6 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 6 - Link (Node1:4 I1:1)<-->(Node2:6 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:4 I1:2)<-->(Node2:7 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 7 - Link (Node1:4 I1:2)<-->(Node2:7 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:4 I1:3)<-->(Node2:20 I2:1) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 20 - Link (Node1:4 I1:3)<-->(Node2:20 I2:1) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 7 - Link (Node1:7 I1:1)<-->(Node2:8 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 8 - Link (Node1:7 I1:1)<-->(Node2:8 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 7 - Link (Node1:7 I1:2)<-->(Node2:9 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 9 - Link (Node1:7 I1:2)<-->(Node2:9 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 7 - Link (Node1:7 I1:3)<-->(Node2:10 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 10 - Link (Node1:7 I1:3)<-->(Node2:10 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 7 - Link (Node1:7 I1:4)<-->(Node2:11 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 11 - Link (Node1:7 I1:4)<-->(Node2:11 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 7 - Link (Node1:7 I1:5)<-->(Node2:12 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 12 - Link (Node1:7 I1:5)<-->(Node2:12 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 7 - Link (Node1:7 I1:6)<-->(Node2:13 I2:0) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 13 - Link (Node1:7 I1:6)<-->(Node2:13 I2:0) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 7 - Link (Node1:7 I1:7)<-->(Node2:18 I2:1) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 down
+Added link to node 18 - Link (Node1:7 I1:7)<-->(Node2:18 I2:1) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 down
+Added link to node 13 - Link (Node1:13 I1:1)<-->(Node2:14 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 14 - Link (Node1:13 I1:1)<-->(Node2:14 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 13 - Link (Node1:13 I1:2)<-->(Node2:15 I2:0) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 15 - Link (Node1:13 I1:2)<-->(Node2:15 I2:0) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 15 - Link (Node1:15 I1:1)<-->(Node2:16 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 16 - Link (Node1:15 I1:1)<-->(Node2:16 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 15 - Link (Node1:15 I1:2)<-->(Node2:17 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 17 - Link (Node1:15 I1:2)<-->(Node2:17 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 15 - Link (Node1:15 I1:3)<-->(Node2:18 I2:2) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 18 - Link (Node1:15 I1:3)<-->(Node2:18 I2:2) bwd: 10000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 18 - Link (Node1:18 I1:0)<-->(Node2:20 I2:2) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 20 - Link (Node1:18 I1:0)<-->(Node2:20 I2:2) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 18 - Link (Node1:18 I1:3)<-->(Node2:19 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 19 - Link (Node1:18 I1:3)<-->(Node2:19 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 20 - Link (Node1:20 I1:3)<-->(Node2:21 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 21 - Link (Node1:20 I1:3)<-->(Node2:21 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 20 - Link (Node1:20 I1:4)<-->(Node2:22 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 22 - Link (Node1:20 I1:4)<-->(Node2:22 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 20 - Link (Node1:20 I1:5)<-->(Node2:23 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 23 - Link (Node1:20 I1:5)<-->(Node2:23 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 20 - Link (Node1:20 I1:6)<-->(Node2:24 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 24 - Link (Node1:20 I1:6)<-->(Node2:24 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 20 - Link (Node1:20 I1:7)<-->(Node2:25 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 25 - Link (Node1:20 I1:7)<-->(Node2:25 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+
+simulation starts - first processing step with clock = 0
+
+trace: dv control time 0 node 0 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 1 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 2 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 3 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 4 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 5 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 6 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 7 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 8 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 9 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 10 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 11 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 12 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 13 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 14 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 15 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 16 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 17 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 18 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 19 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 20 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 21 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 22 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 23 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 24 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 25 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+--> node 0 time 1100 traceroute to: 11
+--> node 1 time 1100 traceroute to: 17
+--> node 4 time 1100 traceroute to: 20
+--> node 20 time 1110 received traceroute:  4 -> 20
+
+Router 0 time 9500
+d 0 i -1 m 0 lu 0
+d 1 i 0 m 23 lu 9010
+d 2 i 0 m 1 lu 9010
+d 3 i 0 m 22 lu 9010
+d 4 i 0 m 12 lu 9010
+d 5 i 0 m 13 lu 9010
+d 6 i 0 m 13 lu 9010
+d 7 i 0 m 13 lu 9010
+d 8 i 0 m 14 lu 9010
+d 9 i 0 m 14 lu 9010
+d 10 i 0 m 14 lu 9010
+d 11 i 0 m 14 lu 9010
+d 12 i 0 m 14 lu 9010
+d 13 i 0 m 23 lu 9010
+d 14 i 0 m 24 lu 9010
+d 15 i 0 m 22 lu 9010
+d 16 i 0 m 23 lu 9010
+d 17 i 0 m 23 lu 9010
+d 18 i 0 m 12 lu 9010
+d 19 i 0 m 13 lu 9010
+d 20 i 0 m 11 lu 9010
+d 21 i 0 m 12 lu 9010
+d 22 i 0 m 12 lu 9010
+d 23 i 0 m 12 lu 9010
+d 24 i 0 m 12 lu 9010
+d 25 i 0 m 12 lu 9010
+
+Router 1 time 9500
+d 0 i 0 m 23 lu 9010
+d 1 i -1 m 0 lu 0
+d 2 i 0 m 22 lu 9010
+d 3 i 0 m 1 lu 9010
+d 4 i 0 m 11 lu 9010
+d 5 i 0 m 12 lu 9010
+d 6 i 0 m 12 lu 9010
+d 7 i 0 m 12 lu 9010
+d 8 i 0 m 13 lu 9010
+d 9 i 0 m 13 lu 9010
+d 10 i 0 m 13 lu 9010
+d 11 i 0 m 13 lu 9010
+d 12 i 0 m 13 lu 9010
+d 13 i 0 m 22 lu 9010
+d 14 i 0 m 23 lu 9010
+d 15 i 0 m 23 lu 9010
+d 16 i 0 m 24 lu 9010
+d 17 i 0 m 24 lu 9010
+d 18 i 0 m 13 lu 9010
+d 19 i 0 m 14 lu 9010
+d 20 i 0 m 12 lu 9010
+d 21 i 0 m 13 lu 9010
+d 22 i 0 m 13 lu 9010
+d 23 i 0 m 13 lu 9010
+d 24 i 0 m 13 lu 9010
+d 25 i 0 m 13 lu 9010
+
+Router 2 time 9500
+d 0 i 0 m 1 lu 9010
+d 1 i 2 m 22 lu 9010
+d 2 i -1 m 0 lu 0
+d 3 i 2 m 21 lu 9010
+d 4 i 2 m 11 lu 9010
+d 5 i 2 m 12 lu 9010
+d 6 i 2 m 12 lu 9010
+d 7 i 2 m 12 lu 9010
+d 8 i 2 m 13 lu 9010
+d 9 i 2 m 13 lu 9010
+d 10 i 2 m 13 lu 9010
+d 11 i 2 m 13 lu 9010
+d 12 i 2 m 13 lu 9010
+d 13 i 2 m 22 lu 9010
+d 14 i 2 m 23 lu 9010
+d 15 i 2 m 21 lu 9010
+d 16 i 2 m 22 lu 9010
+d 17 i 2 m 22 lu 9010
+d 18 i 2 m 11 lu 9010
+d 19 i 2 m 12 lu 9010
+d 20 i 2 m 10 lu 9010
+d 21 i 2 m 11 lu 9010
+d 22 i 2 m 11 lu 9010
+d 23 i 2 m 11 lu 9010
+d 24 i 2 m 11 lu 9010
+d 25 i 2 m 11 lu 9010
+
+Router 3 time 9500
+d 0 i 1 m 22 lu 9010
+d 1 i 0 m 1 lu 9010
+d 2 i 1 m 21 lu 9010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 10 lu 9010
+d 5 i 1 m 11 lu 9010
+d 6 i 1 m 11 lu 9010
+d 7 i 1 m 11 lu 9010
+d 8 i 1 m 12 lu 9010
+d 9 i 1 m 12 lu 9010
+d 10 i 1 m 12 lu 9010
+d 11 i 1 m 12 lu 9010
+d 12 i 1 m 12 lu 9010
+d 13 i 1 m 21 lu 9010
+d 14 i 1 m 22 lu 9010
+d 15 i 1 m 22 lu 9010
+d 16 i 1 m 23 lu 9010
+d 17 i 1 m 23 lu 9010
+d 18 i 1 m 12 lu 9010
+d 19 i 1 m 13 lu 9010
+d 20 i 1 m 11 lu 9010
+d 21 i 1 m 12 lu 9010
+d 22 i 1 m 12 lu 9010
+d 23 i 1 m 12 lu 9010
+d 24 i 1 m 12 lu 9010
+d 25 i 1 m 12 lu 9010
+
+Router 4 time 9500
+d 0 i 3 m 12 lu 9010
+d 1 i 4 m 11 lu 9010
+d 2 i 3 m 11 lu 9010
+d 3 i 4 m 10 lu 9010
+d 4 i -1 m 0 lu 0
+d 5 i 0 m 1 lu 9010
+d 6 i 1 m 1 lu 9010
+d 7 i 2 m 1 lu 9010
+d 8 i 2 m 2 lu 9010
+d 9 i 2 m 2 lu 9010
+d 10 i 2 m 2 lu 9010
+d 11 i 2 m 2 lu 9010
+d 12 i 2 m 2 lu 9010
+d 13 i 2 m 11 lu 9010
+d 14 i 2 m 12 lu 9010
+d 15 i 3 m 12 lu 9010
+d 16 i 3 m 13 lu 9010
+d 17 i 3 m 13 lu 9010
+d 18 i 3 m 2 lu 9010
+d 19 i 3 m 3 lu 9010
+d 20 i 3 m 1 lu 9010
+d 21 i 3 m 2 lu 9010
+d 22 i 3 m 2 lu 9010
+d 23 i 3 m 2 lu 9010
+d 24 i 3 m 2 lu 9010
+d 25 i 3 m 2 lu 9010
+
+Router 5 time 9500
+d 0 i 0 m 13 lu 9010
+d 1 i 0 m 12 lu 9010
+d 2 i 0 m 12 lu 9010
+d 3 i 0 m 11 lu 9010
+d 4 i 0 m 1 lu 9010
+d 5 i -1 m 0 lu 0
+d 6 i 0 m 2 lu 9010
+d 7 i 0 m 2 lu 9010
+d 8 i 0 m 3 lu 9010
+d 9 i 0 m 3 lu 9010
+d 10 i 0 m 3 lu 9010
+d 11 i 0 m 3 lu 9010
+d 12 i 0 m 3 lu 9010
+d 13 i 0 m 12 lu 9010
+d 14 i 0 m 13 lu 9010
+d 15 i 0 m 13 lu 9010
+d 16 i 0 m 14 lu 9010
+d 17 i 0 m 14 lu 9010
+d 18 i 0 m 3 lu 9010
+d 19 i 0 m 4 lu 9010
+d 20 i 0 m 2 lu 9010
+d 21 i 0 m 3 lu 9010
+d 22 i 0 m 3 lu 9010
+d 23 i 0 m 3 lu 9010
+d 24 i 0 m 3 lu 9010
+d 25 i 0 m 3 lu 9010
+
+Router 6 time 9500
+d 0 i 0 m 13 lu 9010
+d 1 i 0 m 12 lu 9010
+d 2 i 0 m 12 lu 9010
+d 3 i 0 m 11 lu 9010
+d 4 i 0 m 1 lu 9010
+d 5 i 0 m 2 lu 9010
+d 6 i -1 m 0 lu 0
+d 7 i 0 m 2 lu 9010
+d 8 i 0 m 3 lu 9010
+d 9 i 0 m 3 lu 9010
+d 10 i 0 m 3 lu 9010
+d 11 i 0 m 3 lu 9010
+d 12 i 0 m 3 lu 9010
+d 13 i 0 m 12 lu 9010
+d 14 i 0 m 13 lu 9010
+d 15 i 0 m 13 lu 9010
+d 16 i 0 m 14 lu 9010
+d 17 i 0 m 14 lu 9010
+d 18 i 0 m 3 lu 9010
+d 19 i 0 m 4 lu 9010
+d 20 i 0 m 2 lu 9010
+d 21 i 0 m 3 lu 9010
+d 22 i 0 m 3 lu 9010
+d 23 i 0 m 3 lu 9010
+d 24 i 0 m 3 lu 9010
+d 25 i 0 m 3 lu 9010
+
+Router 7 time 9500
+d 0 i 0 m 13 lu 9010
+d 1 i 0 m 12 lu 9010
+d 2 i 0 m 12 lu 9010
+d 3 i 0 m 11 lu 9010
+d 4 i 0 m 1 lu 9010
+d 5 i 0 m 2 lu 9010
+d 6 i 0 m 2 lu 9010
+d 7 i -1 m 0 lu 0
+d 8 i 1 m 1 lu 9010
+d 9 i 2 m 1 lu 9010
+d 10 i 3 m 1 lu 9010
+d 11 i 4 m 1 lu 9010
+d 12 i 5 m 1 lu 9010
+d 13 i 6 m 10 lu 9010
+d 14 i 6 m 11 lu 9010
+d 15 i 0 m 13 lu 9010
+d 16 i 0 m 14 lu 9010
+d 17 i 0 m 14 lu 9010
+d 18 i 0 m 3 lu 9010
+d 19 i 0 m 4 lu 9010
+d 20 i 0 m 2 lu 9010
+d 21 i 0 m 3 lu 9010
+d 22 i 0 m 3 lu 9010
+d 23 i 0 m 3 lu 9010
+d 24 i 0 m 3 lu 9010
+d 25 i 0 m 3 lu 9010
+
+Router 8 time 9500
+d 0 i 0 m 14 lu 9010
+d 1 i 0 m 13 lu 9010
+d 2 i 0 m 13 lu 9010
+d 3 i 0 m 12 lu 9010
+d 4 i 0 m 2 lu 9010
+d 5 i 0 m 3 lu 9010
+d 6 i 0 m 3 lu 9010
+d 7 i 0 m 1 lu 9010
+d 8 i -1 m 0 lu 0
+d 9 i 0 m 2 lu 9010
+d 10 i 0 m 2 lu 9010
+d 11 i 0 m 2 lu 9010
+d 12 i 0 m 2 lu 9010
+d 13 i 0 m 11 lu 9010
+d 14 i 0 m 12 lu 9010
+d 15 i 0 m 14 lu 9010
+d 16 i 0 m 15 lu 9010
+d 17 i 0 m 15 lu 9010
+d 18 i 0 m 4 lu 9010
+d 19 i 0 m 5 lu 9010
+d 20 i 0 m 3 lu 9010
+d 21 i 0 m 4 lu 9010
+d 22 i 0 m 4 lu 9010
+d 23 i 0 m 4 lu 9010
+d 24 i 0 m 4 lu 9010
+d 25 i 0 m 4 lu 9010
+
+Router 9 time 9500
+d 0 i 0 m 14 lu 9010
+d 1 i 0 m 13 lu 9010
+d 2 i 0 m 13 lu 9010
+d 3 i 0 m 12 lu 9010
+d 4 i 0 m 2 lu 9010
+d 5 i 0 m 3 lu 9010
+d 6 i 0 m 3 lu 9010
+d 7 i 0 m 1 lu 9010
+d 8 i 0 m 2 lu 9010
+d 9 i -1 m 0 lu 0
+d 10 i 0 m 2 lu 9010
+d 11 i 0 m 2 lu 9010
+d 12 i 0 m 2 lu 9010
+d 13 i 0 m 11 lu 9010
+d 14 i 0 m 12 lu 9010
+d 15 i 0 m 14 lu 9010
+d 16 i 0 m 15 lu 9010
+d 17 i 0 m 15 lu 9010
+d 18 i 0 m 4 lu 9010
+d 19 i 0 m 5 lu 9010
+d 20 i 0 m 3 lu 9010
+d 21 i 0 m 4 lu 9010
+d 22 i 0 m 4 lu 9010
+d 23 i 0 m 4 lu 9010
+d 24 i 0 m 4 lu 9010
+d 25 i 0 m 4 lu 9010
+
+Router 10 time 9500
+d 0 i 0 m 14 lu 9010
+d 1 i 0 m 13 lu 9010
+d 2 i 0 m 13 lu 9010
+d 3 i 0 m 12 lu 9010
+d 4 i 0 m 2 lu 9010
+d 5 i 0 m 3 lu 9010
+d 6 i 0 m 3 lu 9010
+d 7 i 0 m 1 lu 9010
+d 8 i 0 m 2 lu 9010
+d 9 i 0 m 2 lu 9010
+d 10 i -1 m 0 lu 0
+d 11 i 0 m 2 lu 9010
+d 12 i 0 m 2 lu 9010
+d 13 i 0 m 11 lu 9010
+d 14 i 0 m 12 lu 9010
+d 15 i 0 m 14 lu 9010
+d 16 i 0 m 15 lu 9010
+d 17 i 0 m 15 lu 9010
+d 18 i 0 m 4 lu 9010
+d 19 i 0 m 5 lu 9010
+d 20 i 0 m 3 lu 9010
+d 21 i 0 m 4 lu 9010
+d 22 i 0 m 4 lu 9010
+d 23 i 0 m 4 lu 9010
+d 24 i 0 m 4 lu 9010
+d 25 i 0 m 4 lu 9010
+
+Router 11 time 9500
+d 0 i 0 m 14 lu 9010
+d 1 i 0 m 13 lu 9010
+d 2 i 0 m 13 lu 9010
+d 3 i 0 m 12 lu 9010
+d 4 i 0 m 2 lu 9010
+d 5 i 0 m 3 lu 9010
+d 6 i 0 m 3 lu 9010
+d 7 i 0 m 1 lu 9010
+d 8 i 0 m 2 lu 9010
+d 9 i 0 m 2 lu 9010
+d 10 i 0 m 2 lu 9010
+d 11 i -1 m 0 lu 0
+d 12 i 0 m 2 lu 9010
+d 13 i 0 m 11 lu 9010
+d 14 i 0 m 12 lu 9010
+d 15 i 0 m 14 lu 9010
+d 16 i 0 m 15 lu 9010
+d 17 i 0 m 15 lu 9010
+d 18 i 0 m 4 lu 9010
+d 19 i 0 m 5 lu 9010
+d 20 i 0 m 3 lu 9010
+d 21 i 0 m 4 lu 9010
+d 22 i 0 m 4 lu 9010
+d 23 i 0 m 4 lu 9010
+d 24 i 0 m 4 lu 9010
+d 25 i 0 m 4 lu 9010
+
+Router 12 time 9500
+d 0 i 0 m 14 lu 9010
+d 1 i 0 m 13 lu 9010
+d 2 i 0 m 13 lu 9010
+d 3 i 0 m 12 lu 9010
+d 4 i 0 m 2 lu 9010
+d 5 i 0 m 3 lu 9010
+d 6 i 0 m 3 lu 9010
+d 7 i 0 m 1 lu 9010
+d 8 i 0 m 2 lu 9010
+d 9 i 0 m 2 lu 9010
+d 10 i 0 m 2 lu 9010
+d 11 i 0 m 2 lu 9010
+d 12 i -1 m 0 lu 0
+d 13 i 0 m 11 lu 9010
+d 14 i 0 m 12 lu 9010
+d 15 i 0 m 14 lu 9010
+d 16 i 0 m 15 lu 9010
+d 17 i 0 m 15 lu 9010
+d 18 i 0 m 4 lu 9010
+d 19 i 0 m 5 lu 9010
+d 20 i 0 m 3 lu 9010
+d 21 i 0 m 4 lu 9010
+d 22 i 0 m 4 lu 9010
+d 23 i 0 m 4 lu 9010
+d 24 i 0 m 4 lu 9010
+d 25 i 0 m 4 lu 9010
+
+Router 13 time 9500
+d 0 i 0 m 23 lu 9010
+d 1 i 0 m 22 lu 9010
+d 2 i 0 m 22 lu 9010
+d 3 i 0 m 21 lu 9010
+d 4 i 0 m 11 lu 9010
+d 5 i 0 m 12 lu 9010
+d 6 i 0 m 12 lu 9010
+d 7 i 0 m 10 lu 9010
+d 8 i 0 m 11 lu 9010
+d 9 i 0 m 11 lu 9010
+d 10 i 0 m 11 lu 9010
+d 11 i 0 m 11 lu 9010
+d 12 i 0 m 11 lu 9010
+d 13 i -1 m 0 lu 0
+d 14 i 1 m 1 lu 9010
+d 15 i 2 m 10 lu 9010
+d 16 i 2 m 11 lu 9010
+d 17 i 2 m 11 lu 9010
+d 18 i 0 m 13 lu 9010
+d 19 i 0 m 14 lu 9010
+d 20 i 0 m 12 lu 9010
+d 21 i 0 m 13 lu 9010
+d 22 i 0 m 13 lu 9010
+d 23 i 0 m 13 lu 9010
+d 24 i 0 m 13 lu 9010
+d 25 i 0 m 13 lu 9010
+
+Router 14 time 9500
+d 0 i 0 m 24 lu 9010
+d 1 i 0 m 23 lu 9010
+d 2 i 0 m 23 lu 9010
+d 3 i 0 m 22 lu 9010
+d 4 i 0 m 12 lu 9010
+d 5 i 0 m 13 lu 9010
+d 6 i 0 m 13 lu 9010
+d 7 i 0 m 11 lu 9010
+d 8 i 0 m 12 lu 9010
+d 9 i 0 m 12 lu 9010
+d 10 i 0 m 12 lu 9010
+d 11 i 0 m 12 lu 9010
+d 12 i 0 m 12 lu 9010
+d 13 i 0 m 1 lu 9010
+d 14 i -1 m 0 lu 0
+d 15 i 0 m 11 lu 9010
+d 16 i 0 m 12 lu 9010
+d 17 i 0 m 12 lu 9010
+d 18 i 0 m 14 lu 9010
+d 19 i 0 m 15 lu 9010
+d 20 i 0 m 13 lu 9010
+d 21 i 0 m 14 lu 9010
+d 22 i 0 m 14 lu 9010
+d 23 i 0 m 14 lu 9010
+d 24 i 0 m 14 lu 9010
+d 25 i 0 m 14 lu 9010
+
+Router 15 time 9500
+d 0 i 3 m 22 lu 9010
+d 1 i 3 m 23 lu 9010
+d 2 i 3 m 21 lu 9010
+d 3 i 3 m 22 lu 9010
+d 4 i 3 m 12 lu 9010
+d 5 i 3 m 13 lu 9010
+d 6 i 3 m 13 lu 9010
+d 7 i 3 m 13 lu 9010
+d 8 i 3 m 14 lu 9010
+d 9 i 3 m 14 lu 9010
+d 10 i 3 m 14 lu 9010
+d 11 i 3 m 14 lu 9010
+d 12 i 3 m 14 lu 9010
+d 13 i 0 m 10 lu 9010
+d 14 i 0 m 11 lu 9010
+d 15 i -1 m 0 lu 0
+d 16 i 1 m 1 lu 9010
+d 17 i 2 m 1 lu 9010
+d 18 i 3 m 10 lu 9010
+d 19 i 3 m 11 lu 9010
+d 20 i 3 m 11 lu 9010
+d 21 i 3 m 12 lu 9010
+d 22 i 3 m 12 lu 9010
+d 23 i 3 m 12 lu 9010
+d 24 i 3 m 12 lu 9010
+d 25 i 3 m 12 lu 9010
+
+Router 16 time 9500
+d 0 i 0 m 23 lu 9010
+d 1 i 0 m 24 lu 9010
+d 2 i 0 m 22 lu 9010
+d 3 i 0 m 23 lu 9010
+d 4 i 0 m 13 lu 9010
+d 5 i 0 m 14 lu 9010
+d 6 i 0 m 14 lu 9010
+d 7 i 0 m 14 lu 9010
+d 8 i 0 m 15 lu 9010
+d 9 i 0 m 15 lu 9010
+d 10 i 0 m 15 lu 9010
+d 11 i 0 m 15 lu 9010
+d 12 i 0 m 15 lu 9010
+d 13 i 0 m 11 lu 9010
+d 14 i 0 m 12 lu 9010
+d 15 i 0 m 1 lu 9010
+d 16 i -1 m 0 lu 0
+d 17 i 0 m 2 lu 9010
+d 18 i 0 m 11 lu 9010
+d 19 i 0 m 12 lu 9010
+d 20 i 0 m 12 lu 9010
+d 21 i 0 m 13 lu 9010
+d 22 i 0 m 13 lu 9010
+d 23 i 0 m 13 lu 9010
+d 24 i 0 m 13 lu 9010
+d 25 i 0 m 13 lu 9010
+
+Router 17 time 9500
+d 0 i 0 m 23 lu 9010
+d 1 i 0 m 24 lu 9010
+d 2 i 0 m 22 lu 9010
+d 3 i 0 m 23 lu 9010
+d 4 i 0 m 13 lu 9010
+d 5 i 0 m 14 lu 9010
+d 6 i 0 m 14 lu 9010
+d 7 i 0 m 14 lu 9010
+d 8 i 0 m 15 lu 9010
+d 9 i 0 m 15 lu 9010
+d 10 i 0 m 15 lu 9010
+d 11 i 0 m 15 lu 9010
+d 12 i 0 m 15 lu 9010
+d 13 i 0 m 11 lu 9010
+d 14 i 0 m 12 lu 9010
+d 15 i 0 m 1 lu 9010
+d 16 i 0 m 2 lu 9010
+d 17 i -1 m 0 lu 0
+d 18 i 0 m 11 lu 9010
+d 19 i 0 m 12 lu 9010
+d 20 i 0 m 12 lu 9010
+d 21 i 0 m 13 lu 9010
+d 22 i 0 m 13 lu 9010
+d 23 i 0 m 13 lu 9010
+d 24 i 0 m 13 lu 9010
+d 25 i 0 m 13 lu 9010
+
+Router 18 time 9500
+d 0 i 0 m 12 lu 9010
+d 1 i 0 m 13 lu 9010
+d 2 i 0 m 11 lu 9010
+d 3 i 0 m 12 lu 9010
+d 4 i 0 m 2 lu 9010
+d 5 i 0 m 3 lu 9010
+d 6 i 0 m 3 lu 9010
+d 7 i 0 m 3 lu 9010
+d 8 i 0 m 4 lu 9010
+d 9 i 0 m 4 lu 9010
+d 10 i 0 m 4 lu 9010
+d 11 i 0 m 4 lu 9010
+d 12 i 0 m 4 lu 9010
+d 13 i 0 m 13 lu 9010
+d 14 i 0 m 14 lu 9010
+d 15 i 2 m 10 lu 9010
+d 16 i 2 m 11 lu 9010
+d 17 i 2 m 11 lu 9010
+d 18 i -1 m 0 lu 0
+d 19 i 3 m 1 lu 9010
+d 20 i 0 m 1 lu 9010
+d 21 i 0 m 2 lu 9010
+d 22 i 0 m 2 lu 9010
+d 23 i 0 m 2 lu 9010
+d 24 i 0 m 2 lu 9010
+d 25 i 0 m 2 lu 9010
+
+Router 19 time 9500
+d 0 i 0 m 13 lu 9010
+d 1 i 0 m 14 lu 9010
+d 2 i 0 m 12 lu 9010
+d 3 i 0 m 13 lu 9010
+d 4 i 0 m 3 lu 9010
+d 5 i 0 m 4 lu 9010
+d 6 i 0 m 4 lu 9010
+d 7 i 0 m 4 lu 9010
+d 8 i 0 m 5 lu 9010
+d 9 i 0 m 5 lu 9010
+d 10 i 0 m 5 lu 9010
+d 11 i 0 m 5 lu 9010
+d 12 i 0 m 5 lu 9010
+d 13 i 0 m 14 lu 9010
+d 14 i 0 m 15 lu 9010
+d 15 i 0 m 11 lu 9010
+d 16 i 0 m 12 lu 9010
+d 17 i 0 m 12 lu 9010
+d 18 i 0 m 1 lu 9010
+d 19 i -1 m 0 lu 0
+d 20 i 0 m 2 lu 9010
+d 21 i 0 m 3 lu 9010
+d 22 i 0 m 3 lu 9010
+d 23 i 0 m 3 lu 9010
+d 24 i 0 m 3 lu 9010
+d 25 i 0 m 3 lu 9010
+
+Router 20 time 9500
+d 0 i 0 m 11 lu 9010
+d 1 i 1 m 12 lu 9010
+d 2 i 0 m 10 lu 9010
+d 3 i 1 m 11 lu 9010
+d 4 i 1 m 1 lu 9010
+d 5 i 1 m 2 lu 9010
+d 6 i 1 m 2 lu 9010
+d 7 i 1 m 2 lu 9010
+d 8 i 1 m 3 lu 9010
+d 9 i 1 m 3 lu 9010
+d 10 i 1 m 3 lu 9010
+d 11 i 1 m 3 lu 9010
+d 12 i 1 m 3 lu 9010
+d 13 i 1 m 12 lu 9010
+d 14 i 1 m 13 lu 9010
+d 15 i 2 m 11 lu 9010
+d 16 i 2 m 12 lu 9010
+d 17 i 2 m 12 lu 9010
+d 18 i 2 m 1 lu 9010
+d 19 i 2 m 2 lu 9010
+d 20 i -1 m 0 lu 0
+d 21 i 3 m 1 lu 9010
+d 22 i 4 m 1 lu 9010
+d 23 i 5 m 1 lu 9010
+d 24 i 6 m 1 lu 9010
+d 25 i 7 m 1 lu 9010
+
+Router 21 time 9500
+d 0 i 0 m 12 lu 9010
+d 1 i 0 m 13 lu 9010
+d 2 i 0 m 11 lu 9010
+d 3 i 0 m 12 lu 9010
+d 4 i 0 m 2 lu 9010
+d 5 i 0 m 3 lu 9010
+d 6 i 0 m 3 lu 9010
+d 7 i 0 m 3 lu 9010
+d 8 i 0 m 4 lu 9010
+d 9 i 0 m 4 lu 9010
+d 10 i 0 m 4 lu 9010
+d 11 i 0 m 4 lu 9010
+d 12 i 0 m 4 lu 9010
+d 13 i 0 m 13 lu 9010
+d 14 i 0 m 14 lu 9010
+d 15 i 0 m 12 lu 9010
+d 16 i 0 m 13 lu 9010
+d 17 i 0 m 13 lu 9010
+d 18 i 0 m 2 lu 9010
+d 19 i 0 m 3 lu 9010
+d 20 i 0 m 1 lu 9010
+d 21 i -1 m 0 lu 0
+d 22 i 0 m 2 lu 9010
+d 23 i 0 m 2 lu 9010
+d 24 i 0 m 2 lu 9010
+d 25 i 0 m 2 lu 9010
+
+Router 22 time 9500
+d 0 i 0 m 12 lu 9010
+d 1 i 0 m 13 lu 9010
+d 2 i 0 m 11 lu 9010
+d 3 i 0 m 12 lu 9010
+d 4 i 0 m 2 lu 9010
+d 5 i 0 m 3 lu 9010
+d 6 i 0 m 3 lu 9010
+d 7 i 0 m 3 lu 9010
+d 8 i 0 m 4 lu 9010
+d 9 i 0 m 4 lu 9010
+d 10 i 0 m 4 lu 9010
+d 11 i 0 m 4 lu 9010
+d 12 i 0 m 4 lu 9010
+d 13 i 0 m 13 lu 9010
+d 14 i 0 m 14 lu 9010
+d 15 i 0 m 12 lu 9010
+d 16 i 0 m 13 lu 9010
+d 17 i 0 m 13 lu 9010
+d 18 i 0 m 2 lu 9010
+d 19 i 0 m 3 lu 9010
+d 20 i 0 m 1 lu 9010
+d 21 i 0 m 2 lu 9010
+d 22 i -1 m 0 lu 0
+d 23 i 0 m 2 lu 9010
+d 24 i 0 m 2 lu 9010
+d 25 i 0 m 2 lu 9010
+
+Router 23 time 9500
+d 0 i 0 m 12 lu 9010
+d 1 i 0 m 13 lu 9010
+d 2 i 0 m 11 lu 9010
+d 3 i 0 m 12 lu 9010
+d 4 i 0 m 2 lu 9010
+d 5 i 0 m 3 lu 9010
+d 6 i 0 m 3 lu 9010
+d 7 i 0 m 3 lu 9010
+d 8 i 0 m 4 lu 9010
+d 9 i 0 m 4 lu 9010
+d 10 i 0 m 4 lu 9010
+d 11 i 0 m 4 lu 9010
+d 12 i 0 m 4 lu 9010
+d 13 i 0 m 13 lu 9010
+d 14 i 0 m 14 lu 9010
+d 15 i 0 m 12 lu 9010
+d 16 i 0 m 13 lu 9010
+d 17 i 0 m 13 lu 9010
+d 18 i 0 m 2 lu 9010
+d 19 i 0 m 3 lu 9010
+d 20 i 0 m 1 lu 9010
+d 21 i 0 m 2 lu 9010
+d 22 i 0 m 2 lu 9010
+d 23 i -1 m 0 lu 0
+d 24 i 0 m 2 lu 9010
+d 25 i 0 m 2 lu 9010
+
+Router 24 time 9500
+d 0 i 0 m 12 lu 9010
+d 1 i 0 m 13 lu 9010
+d 2 i 0 m 11 lu 9010
+d 3 i 0 m 12 lu 9010
+d 4 i 0 m 2 lu 9010
+d 5 i 0 m 3 lu 9010
+d 6 i 0 m 3 lu 9010
+d 7 i 0 m 3 lu 9010
+d 8 i 0 m 4 lu 9010
+d 9 i 0 m 4 lu 9010
+d 10 i 0 m 4 lu 9010
+d 11 i 0 m 4 lu 9010
+d 12 i 0 m 4 lu 9010
+d 13 i 0 m 13 lu 9010
+d 14 i 0 m 14 lu 9010
+d 15 i 0 m 12 lu 9010
+d 16 i 0 m 13 lu 9010
+d 17 i 0 m 13 lu 9010
+d 18 i 0 m 2 lu 9010
+d 19 i 0 m 3 lu 9010
+d 20 i 0 m 1 lu 9010
+d 21 i 0 m 2 lu 9010
+d 22 i 0 m 2 lu 9010
+d 23 i 0 m 2 lu 9010
+d 24 i -1 m 0 lu 0
+d 25 i 0 m 2 lu 9010
+
+Router 25 time 9500
+d 0 i 0 m 12 lu 9010
+d 1 i 0 m 13 lu 9010
+d 2 i 0 m 11 lu 9010
+d 3 i 0 m 12 lu 9010
+d 4 i 0 m 2 lu 9010
+d 5 i 0 m 3 lu 9010
+d 6 i 0 m 3 lu 9010
+d 7 i 0 m 3 lu 9010
+d 8 i 0 m 4 lu 9010
+d 9 i 0 m 4 lu 9010
+d 10 i 0 m 4 lu 9010
+d 11 i 0 m 4 lu 9010
+d 12 i 0 m 4 lu 9010
+d 13 i 0 m 13 lu 9010
+d 14 i 0 m 14 lu 9010
+d 15 i 0 m 12 lu 9010
+d 16 i 0 m 13 lu 9010
+d 17 i 0 m 13 lu 9010
+d 18 i 0 m 2 lu 9010
+d 19 i 0 m 3 lu 9010
+d 20 i 0 m 1 lu 9010
+d 21 i 0 m 2 lu 9010
+d 22 i 0 m 2 lu 9010
+d 23 i 0 m 2 lu 9010
+d 24 i 0 m 2 lu 9010
+d 25 i -1 m 0 lu 0
+--> node 4 at 9600 interface 3 going down
+trace: dv control time 9600 node 4 interface 3 link down
+--> node 20 at 9600 interface 1 going down
+trace: dv control time 9600 node 20 interface 1 link down
+--> node 0 time 10500 traceroute to: 11
+--> node 1 time 10500 traceroute to: 17
+--> node 4 time 10500 traceroute to: 20
+
+Router 1 time 13800
+d 0 i 0 m 27 lu 13010
+d 1 i -1 m 0 lu 0
+d 2 i 0 m 26 lu 13010
+d 3 i 0 m 1 lu 13010
+d 4 i 0 m 11 lu 13010
+d 5 i 0 m 12 lu 13010
+d 6 i 0 m 12 lu 13010
+d 7 i 0 m 12 lu 13010
+d 8 i 0 m 13 lu 13010
+d 9 i 0 m 13 lu 13010
+d 10 i 0 m 13 lu 13010
+d 11 i 0 m 13 lu 13010
+d 12 i 0 m 13 lu 13010
+d 13 i 0 m 22 lu 13010
+d 14 i 0 m 23 lu 13010
+d 15 i 0 m 27 lu 13010
+d 16 i 0 m 28 lu 13010
+d 17 i 0 m 28 lu 13010
+d 18 i 0 m 17 lu 13010
+d 19 i 0 m 18 lu 13010
+d 20 i 0 m 16 lu 13010
+d 21 i 0 m 17 lu 13010
+d 22 i 0 m 17 lu 13010
+d 23 i 0 m 17 lu 13010
+d 24 i 0 m 17 lu 13010
+d 25 i 0 m 17 lu 13010
+
+Router 3 time 13800
+d 0 i 1 m 26 lu 13010
+d 1 i 0 m 1 lu 13010
+d 2 i 1 m 25 lu 13010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 10 lu 13010
+d 5 i 1 m 11 lu 13010
+d 6 i 1 m 11 lu 13010
+d 7 i 1 m 11 lu 13010
+d 8 i 1 m 12 lu 13010
+d 9 i 1 m 12 lu 13010
+d 10 i 1 m 12 lu 13010
+d 11 i 1 m 12 lu 13010
+d 12 i 1 m 12 lu 13010
+d 13 i 1 m 21 lu 13010
+d 14 i 1 m 22 lu 13010
+d 15 i 1 m 26 lu 13010
+d 16 i 1 m 27 lu 13010
+d 17 i 1 m 27 lu 13010
+d 18 i 1 m 16 lu 13010
+d 19 i 1 m 17 lu 13010
+d 20 i 1 m 15 lu 13010
+d 21 i 1 m 16 lu 13010
+d 22 i 1 m 16 lu 13010
+d 23 i 1 m 16 lu 13010
+d 24 i 1 m 16 lu 13010
+d 25 i 1 m 16 lu 13010
+
+Router 1 time 14800
+d 0 i 0 m 27 lu 14010
+d 1 i -1 m 0 lu 0
+d 2 i 0 m 26 lu 14010
+d 3 i 0 m 1 lu 14010
+d 4 i 0 m 11 lu 14010
+d 5 i 0 m 12 lu 14010
+d 6 i 0 m 12 lu 14010
+d 7 i 0 m 12 lu 14010
+d 8 i 0 m 13 lu 14010
+d 9 i 0 m 13 lu 14010
+d 10 i 0 m 13 lu 14010
+d 11 i 0 m 13 lu 14010
+d 12 i 0 m 13 lu 14010
+d 13 i 0 m 22 lu 14010
+d 14 i 0 m 23 lu 14010
+d 15 i 0 m 27 lu 14010
+d 16 i 0 m 28 lu 14010
+d 17 i 0 m 28 lu 14010
+d 18 i 0 m 17 lu 14010
+d 19 i 0 m 18 lu 14010
+d 20 i 0 m 16 lu 14010
+d 21 i 0 m 17 lu 14010
+d 22 i 0 m 17 lu 14010
+d 23 i 0 m 17 lu 14010
+d 24 i 0 m 17 lu 14010
+d 25 i 0 m 17 lu 14010
+
+Router 3 time 14800
+d 0 i 1 m 28 lu 14010
+d 1 i 0 m 1 lu 14010
+d 2 i 1 m 27 lu 14010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 10 lu 14010
+d 5 i 1 m 11 lu 14010
+d 6 i 1 m 11 lu 14010
+d 7 i 1 m 11 lu 14010
+d 8 i 1 m 12 lu 14010
+d 9 i 1 m 12 lu 14010
+d 10 i 1 m 12 lu 14010
+d 11 i 1 m 12 lu 14010
+d 12 i 1 m 12 lu 14010
+d 13 i 1 m 21 lu 14010
+d 14 i 1 m 22 lu 14010
+d 15 i 1 m 28 lu 14010
+d 16 i 1 m 29 lu 14010
+d 17 i 1 m 29 lu 14010
+d 18 i 1 m 18 lu 14010
+d 19 i 1 m 19 lu 14010
+d 20 i 1 m 17 lu 14010
+d 21 i 1 m 18 lu 14010
+d 22 i 1 m 18 lu 14010
+d 23 i 1 m 18 lu 14010
+d 24 i 1 m 18 lu 14010
+d 25 i 1 m 18 lu 14010
+--> node 2 at 20500 interface 1 going up
+trace: dv control time 20500 node 2 interface 1 link up
+--> node 3 at 20500 interface 2 going up
+trace: dv control time 20500 node 3 interface 2 link up
+--> node 0 time 30600 traceroute to: 11
+--> node 1 time 30600 traceroute to: 17
+--> node 11 time 30650 received traceroute:  0 -> 2 -> 3 -> 4 -> 7 -> 11
+--> node 17 time 30660 received traceroute:  1 -> 3 -> 4 -> 7 -> 13 -> 15 -> 17
+--> node 4 time 39600 traceroute to: 20
+--> node 20 time 39630 received traceroute:  4 -> 3 -> 2 -> 20
+--> node 7 at 40500 interface 7 going up
+trace: dv control time 40500 node 7 interface 7 link up
+--> node 18 at 40500 interface 1 going up
+trace: dv control time 40500 node 18 interface 1 link up
+--> node 0 time 50800 traceroute to: 11
+--> node 1 time 50800 traceroute to: 17
+--> node 4 time 50800 traceroute to: 20
+--> node 20 time 50830 received traceroute:  4 -> 7 -> 18 -> 20
+--> node 11 time 50850 received traceroute:  0 -> 2 -> 20 -> 18 -> 7 -> 11
+--> node 17 time 50860 received traceroute:  1 -> 3 -> 4 -> 7 -> 18 -> 15 -> 17
+--> node 4 at 60500 interface 3 going up
+trace: dv control time 60500 node 4 interface 3 link up
+--> node 20 at 60500 interface 1 going up
+trace: dv control time 60500 node 20 interface 1 link up
+--> node 0 time 70600 traceroute to: 11
+--> node 1 time 70600 traceroute to: 17
+--> node 4 time 70600 traceroute to: 20
+--> node 20 time 70610 received traceroute:  4 -> 20
+--> node 11 time 70650 received traceroute:  0 -> 2 -> 20 -> 18 -> 7 -> 11
+--> node 17 time 70660 received traceroute:  1 -> 3 -> 4 -> 7 -> 18 -> 15 -> 17
+
+Router 0 time 80600
+d 0 i -1 m 0 lu 0
+d 1 i 0 m 12 lu 80010
+d 2 i 0 m 1 lu 80010
+d 3 i 0 m 11 lu 80010
+d 4 i 0 m 12 lu 80010
+d 5 i 0 m 13 lu 80010
+d 6 i 0 m 13 lu 80010
+d 7 i 0 m 13 lu 80010
+d 8 i 0 m 14 lu 80010
+d 9 i 0 m 14 lu 80010
+d 10 i 0 m 14 lu 80010
+d 11 i 0 m 14 lu 80010
+d 12 i 0 m 14 lu 80010
+d 13 i 0 m 23 lu 80010
+d 14 i 0 m 24 lu 80010
+d 15 i 0 m 22 lu 80010
+d 16 i 0 m 23 lu 80010
+d 17 i 0 m 23 lu 80010
+d 18 i 0 m 12 lu 80010
+d 19 i 0 m 13 lu 80010
+d 20 i 0 m 11 lu 80010
+d 21 i 0 m 12 lu 80010
+d 22 i 0 m 12 lu 80010
+d 23 i 0 m 12 lu 80010
+d 24 i 0 m 12 lu 80010
+d 25 i 0 m 12 lu 80010
+
+Router 1 time 80600
+d 0 i 0 m 12 lu 80010
+d 1 i -1 m 0 lu 0
+d 2 i 0 m 11 lu 80010
+d 3 i 0 m 1 lu 80010
+d 4 i 0 m 11 lu 80010
+d 5 i 0 m 12 lu 80010
+d 6 i 0 m 12 lu 80010
+d 7 i 0 m 12 lu 80010
+d 8 i 0 m 13 lu 80010
+d 9 i 0 m 13 lu 80010
+d 10 i 0 m 13 lu 80010
+d 11 i 0 m 13 lu 80010
+d 12 i 0 m 13 lu 80010
+d 13 i 0 m 22 lu 80010
+d 14 i 0 m 23 lu 80010
+d 15 i 0 m 23 lu 80010
+d 16 i 0 m 24 lu 80010
+d 17 i 0 m 24 lu 80010
+d 18 i 0 m 13 lu 80010
+d 19 i 0 m 14 lu 80010
+d 20 i 0 m 12 lu 80010
+d 21 i 0 m 13 lu 80010
+d 22 i 0 m 13 lu 80010
+d 23 i 0 m 13 lu 80010
+d 24 i 0 m 13 lu 80010
+d 25 i 0 m 13 lu 80010
+
+Router 2 time 80600
+d 0 i 0 m 1 lu 80010
+d 1 i 1 m 11 lu 80010
+d 2 i -1 m 0 lu 0
+d 3 i 1 m 10 lu 80010
+d 4 i 2 m 11 lu 80010
+d 5 i 2 m 12 lu 80010
+d 6 i 2 m 12 lu 80010
+d 7 i 2 m 12 lu 80010
+d 8 i 2 m 13 lu 80010
+d 9 i 2 m 13 lu 80010
+d 10 i 2 m 13 lu 80010
+d 11 i 2 m 13 lu 80010
+d 12 i 2 m 13 lu 80010
+d 13 i 2 m 22 lu 80010
+d 14 i 2 m 23 lu 80010
+d 15 i 2 m 21 lu 80010
+d 16 i 2 m 22 lu 80010
+d 17 i 2 m 22 lu 80010
+d 18 i 2 m 11 lu 80010
+d 19 i 2 m 12 lu 80010
+d 20 i 2 m 10 lu 80010
+d 21 i 2 m 11 lu 80010
+d 22 i 2 m 11 lu 80010
+d 23 i 2 m 11 lu 80010
+d 24 i 2 m 11 lu 80010
+d 25 i 2 m 11 lu 80010
+
+Router 3 time 80600
+d 0 i 2 m 11 lu 80010
+d 1 i 0 m 1 lu 80010
+d 2 i 2 m 10 lu 80010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 10 lu 80010
+d 5 i 1 m 11 lu 80010
+d 6 i 1 m 11 lu 80010
+d 7 i 1 m 11 lu 80010
+d 8 i 1 m 12 lu 80010
+d 9 i 1 m 12 lu 80010
+d 10 i 1 m 12 lu 80010
+d 11 i 1 m 12 lu 80010
+d 12 i 1 m 12 lu 80010
+d 13 i 1 m 21 lu 80010
+d 14 i 1 m 22 lu 80010
+d 15 i 1 m 22 lu 80010
+d 16 i 1 m 23 lu 80010
+d 17 i 1 m 23 lu 80010
+d 18 i 1 m 12 lu 80010
+d 19 i 1 m 13 lu 80010
+d 20 i 1 m 11 lu 80010
+d 21 i 1 m 12 lu 80010
+d 22 i 1 m 12 lu 80010
+d 23 i 1 m 12 lu 80010
+d 24 i 1 m 12 lu 80010
+d 25 i 1 m 12 lu 80010
+
+Router 4 time 80600
+d 0 i 3 m 12 lu 80010
+d 1 i 4 m 11 lu 80010
+d 2 i 3 m 11 lu 80010
+d 3 i 4 m 10 lu 80010
+d 4 i -1 m 0 lu 0
+d 5 i 0 m 1 lu 80010
+d 6 i 1 m 1 lu 80010
+d 7 i 2 m 1 lu 80010
+d 8 i 2 m 2 lu 80010
+d 9 i 2 m 2 lu 80010
+d 10 i 2 m 2 lu 80010
+d 11 i 2 m 2 lu 80010
+d 12 i 2 m 2 lu 80010
+d 13 i 2 m 11 lu 80010
+d 14 i 2 m 12 lu 80010
+d 15 i 2 m 12 lu 80010
+d 16 i 2 m 13 lu 80010
+d 17 i 2 m 13 lu 80010
+d 18 i 2 m 2 lu 80010
+d 19 i 2 m 3 lu 80010
+d 20 i 3 m 1 lu 80010
+d 21 i 3 m 2 lu 80010
+d 22 i 3 m 2 lu 80010
+d 23 i 3 m 2 lu 80010
+d 24 i 3 m 2 lu 80010
+d 25 i 3 m 2 lu 80010
+
+Router 5 time 80600
+d 0 i 0 m 13 lu 80010
+d 1 i 0 m 12 lu 80010
+d 2 i 0 m 12 lu 80010
+d 3 i 0 m 11 lu 80010
+d 4 i 0 m 1 lu 80010
+d 5 i -1 m 0 lu 0
+d 6 i 0 m 2 lu 80010
+d 7 i 0 m 2 lu 80010
+d 8 i 0 m 3 lu 80010
+d 9 i 0 m 3 lu 80010
+d 10 i 0 m 3 lu 80010
+d 11 i 0 m 3 lu 80010
+d 12 i 0 m 3 lu 80010
+d 13 i 0 m 12 lu 80010
+d 14 i 0 m 13 lu 80010
+d 15 i 0 m 13 lu 80010
+d 16 i 0 m 14 lu 80010
+d 17 i 0 m 14 lu 80010
+d 18 i 0 m 3 lu 80010
+d 19 i 0 m 4 lu 80010
+d 20 i 0 m 2 lu 80010
+d 21 i 0 m 3 lu 80010
+d 22 i 0 m 3 lu 80010
+d 23 i 0 m 3 lu 80010
+d 24 i 0 m 3 lu 80010
+d 25 i 0 m 3 lu 80010
+
+Router 6 time 80600
+d 0 i 0 m 13 lu 80010
+d 1 i 0 m 12 lu 80010
+d 2 i 0 m 12 lu 80010
+d 3 i 0 m 11 lu 80010
+d 4 i 0 m 1 lu 80010
+d 5 i 0 m 2 lu 80010
+d 6 i -1 m 0 lu 0
+d 7 i 0 m 2 lu 80010
+d 8 i 0 m 3 lu 80010
+d 9 i 0 m 3 lu 80010
+d 10 i 0 m 3 lu 80010
+d 11 i 0 m 3 lu 80010
+d 12 i 0 m 3 lu 80010
+d 13 i 0 m 12 lu 80010
+d 14 i 0 m 13 lu 80010
+d 15 i 0 m 13 lu 80010
+d 16 i 0 m 14 lu 80010
+d 17 i 0 m 14 lu 80010
+d 18 i 0 m 3 lu 80010
+d 19 i 0 m 4 lu 80010
+d 20 i 0 m 2 lu 80010
+d 21 i 0 m 3 lu 80010
+d 22 i 0 m 3 lu 80010
+d 23 i 0 m 3 lu 80010
+d 24 i 0 m 3 lu 80010
+d 25 i 0 m 3 lu 80010
+
+Router 7 time 80600
+d 0 i 7 m 13 lu 80010
+d 1 i 0 m 12 lu 80010
+d 2 i 7 m 12 lu 80010
+d 3 i 0 m 11 lu 80010
+d 4 i 0 m 1 lu 80010
+d 5 i 0 m 2 lu 80010
+d 6 i 0 m 2 lu 80010
+d 7 i -1 m 0 lu 0
+d 8 i 1 m 1 lu 80010
+d 9 i 2 m 1 lu 80010
+d 10 i 3 m 1 lu 80010
+d 11 i 4 m 1 lu 80010
+d 12 i 5 m 1 lu 80010
+d 13 i 6 m 10 lu 80010
+d 14 i 6 m 11 lu 80010
+d 15 i 7 m 11 lu 80010
+d 16 i 7 m 12 lu 80010
+d 17 i 7 m 12 lu 80010
+d 18 i 7 m 1 lu 80010
+d 19 i 7 m 2 lu 80010
+d 20 i 7 m 2 lu 80010
+d 21 i 7 m 3 lu 80010
+d 22 i 7 m 3 lu 80010
+d 23 i 7 m 3 lu 80010
+d 24 i 7 m 3 lu 80010
+d 25 i 7 m 3 lu 80010
+
+Router 8 time 80600
+d 0 i 0 m 14 lu 80010
+d 1 i 0 m 13 lu 80010
+d 2 i 0 m 13 lu 80010
+d 3 i 0 m 12 lu 80010
+d 4 i 0 m 2 lu 80010
+d 5 i 0 m 3 lu 80010
+d 6 i 0 m 3 lu 80010
+d 7 i 0 m 1 lu 80010
+d 8 i -1 m 0 lu 0
+d 9 i 0 m 2 lu 80010
+d 10 i 0 m 2 lu 80010
+d 11 i 0 m 2 lu 80010
+d 12 i 0 m 2 lu 80010
+d 13 i 0 m 11 lu 80010
+d 14 i 0 m 12 lu 80010
+d 15 i 0 m 12 lu 80010
+d 16 i 0 m 13 lu 80010
+d 17 i 0 m 13 lu 80010
+d 18 i 0 m 2 lu 80010
+d 19 i 0 m 3 lu 80010
+d 20 i 0 m 3 lu 80010
+d 21 i 0 m 4 lu 80010
+d 22 i 0 m 4 lu 80010
+d 23 i 0 m 4 lu 80010
+d 24 i 0 m 4 lu 80010
+d 25 i 0 m 4 lu 80010
+
+Router 9 time 80600
+d 0 i 0 m 14 lu 80010
+d 1 i 0 m 13 lu 80010
+d 2 i 0 m 13 lu 80010
+d 3 i 0 m 12 lu 80010
+d 4 i 0 m 2 lu 80010
+d 5 i 0 m 3 lu 80010
+d 6 i 0 m 3 lu 80010
+d 7 i 0 m 1 lu 80010
+d 8 i 0 m 2 lu 80010
+d 9 i -1 m 0 lu 0
+d 10 i 0 m 2 lu 80010
+d 11 i 0 m 2 lu 80010
+d 12 i 0 m 2 lu 80010
+d 13 i 0 m 11 lu 80010
+d 14 i 0 m 12 lu 80010
+d 15 i 0 m 12 lu 80010
+d 16 i 0 m 13 lu 80010
+d 17 i 0 m 13 lu 80010
+d 18 i 0 m 2 lu 80010
+d 19 i 0 m 3 lu 80010
+d 20 i 0 m 3 lu 80010
+d 21 i 0 m 4 lu 80010
+d 22 i 0 m 4 lu 80010
+d 23 i 0 m 4 lu 80010
+d 24 i 0 m 4 lu 80010
+d 25 i 0 m 4 lu 80010
+
+Router 10 time 80600
+d 0 i 0 m 14 lu 80010
+d 1 i 0 m 13 lu 80010
+d 2 i 0 m 13 lu 80010
+d 3 i 0 m 12 lu 80010
+d 4 i 0 m 2 lu 80010
+d 5 i 0 m 3 lu 80010
+d 6 i 0 m 3 lu 80010
+d 7 i 0 m 1 lu 80010
+d 8 i 0 m 2 lu 80010
+d 9 i 0 m 2 lu 80010
+d 10 i -1 m 0 lu 0
+d 11 i 0 m 2 lu 80010
+d 12 i 0 m 2 lu 80010
+d 13 i 0 m 11 lu 80010
+d 14 i 0 m 12 lu 80010
+d 15 i 0 m 12 lu 80010
+d 16 i 0 m 13 lu 80010
+d 17 i 0 m 13 lu 80010
+d 18 i 0 m 2 lu 80010
+d 19 i 0 m 3 lu 80010
+d 20 i 0 m 3 lu 80010
+d 21 i 0 m 4 lu 80010
+d 22 i 0 m 4 lu 80010
+d 23 i 0 m 4 lu 80010
+d 24 i 0 m 4 lu 80010
+d 25 i 0 m 4 lu 80010
+
+Router 11 time 80600
+d 0 i 0 m 14 lu 80010
+d 1 i 0 m 13 lu 80010
+d 2 i 0 m 13 lu 80010
+d 3 i 0 m 12 lu 80010
+d 4 i 0 m 2 lu 80010
+d 5 i 0 m 3 lu 80010
+d 6 i 0 m 3 lu 80010
+d 7 i 0 m 1 lu 80010
+d 8 i 0 m 2 lu 80010
+d 9 i 0 m 2 lu 80010
+d 10 i 0 m 2 lu 80010
+d 11 i -1 m 0 lu 0
+d 12 i 0 m 2 lu 80010
+d 13 i 0 m 11 lu 80010
+d 14 i 0 m 12 lu 80010
+d 15 i 0 m 12 lu 80010
+d 16 i 0 m 13 lu 80010
+d 17 i 0 m 13 lu 80010
+d 18 i 0 m 2 lu 80010
+d 19 i 0 m 3 lu 80010
+d 20 i 0 m 3 lu 80010
+d 21 i 0 m 4 lu 80010
+d 22 i 0 m 4 lu 80010
+d 23 i 0 m 4 lu 80010
+d 24 i 0 m 4 lu 80010
+d 25 i 0 m 4 lu 80010
+
+Router 12 time 80600
+d 0 i 0 m 14 lu 80010
+d 1 i 0 m 13 lu 80010
+d 2 i 0 m 13 lu 80010
+d 3 i 0 m 12 lu 80010
+d 4 i 0 m 2 lu 80010
+d 5 i 0 m 3 lu 80010
+d 6 i 0 m 3 lu 80010
+d 7 i 0 m 1 lu 80010
+d 8 i 0 m 2 lu 80010
+d 9 i 0 m 2 lu 80010
+d 10 i 0 m 2 lu 80010
+d 11 i 0 m 2 lu 80010
+d 12 i -1 m 0 lu 0
+d 13 i 0 m 11 lu 80010
+d 14 i 0 m 12 lu 80010
+d 15 i 0 m 12 lu 80010
+d 16 i 0 m 13 lu 80010
+d 17 i 0 m 13 lu 80010
+d 18 i 0 m 2 lu 80010
+d 19 i 0 m 3 lu 80010
+d 20 i 0 m 3 lu 80010
+d 21 i 0 m 4 lu 80010
+d 22 i 0 m 4 lu 80010
+d 23 i 0 m 4 lu 80010
+d 24 i 0 m 4 lu 80010
+d 25 i 0 m 4 lu 80010
+
+Router 13 time 80600
+d 0 i 0 m 23 lu 80010
+d 1 i 0 m 22 lu 80010
+d 2 i 0 m 22 lu 80010
+d 3 i 0 m 21 lu 80010
+d 4 i 0 m 11 lu 80010
+d 5 i 0 m 12 lu 80010
+d 6 i 0 m 12 lu 80010
+d 7 i 0 m 10 lu 80010
+d 8 i 0 m 11 lu 80010
+d 9 i 0 m 11 lu 80010
+d 10 i 0 m 11 lu 80010
+d 11 i 0 m 11 lu 80010
+d 12 i 0 m 11 lu 80010
+d 13 i -1 m 0 lu 0
+d 14 i 1 m 1 lu 80010
+d 15 i 2 m 10 lu 80010
+d 16 i 2 m 11 lu 80010
+d 17 i 2 m 11 lu 80010
+d 18 i 0 m 11 lu 80010
+d 19 i 0 m 12 lu 80010
+d 20 i 0 m 12 lu 80010
+d 21 i 0 m 13 lu 80010
+d 22 i 0 m 13 lu 80010
+d 23 i 0 m 13 lu 80010
+d 24 i 0 m 13 lu 80010
+d 25 i 0 m 13 lu 80010
+
+Router 14 time 80600
+d 0 i 0 m 24 lu 80010
+d 1 i 0 m 23 lu 80010
+d 2 i 0 m 23 lu 80010
+d 3 i 0 m 22 lu 80010
+d 4 i 0 m 12 lu 80010
+d 5 i 0 m 13 lu 80010
+d 6 i 0 m 13 lu 80010
+d 7 i 0 m 11 lu 80010
+d 8 i 0 m 12 lu 80010
+d 9 i 0 m 12 lu 80010
+d 10 i 0 m 12 lu 80010
+d 11 i 0 m 12 lu 80010
+d 12 i 0 m 12 lu 80010
+d 13 i 0 m 1 lu 80010
+d 14 i -1 m 0 lu 0
+d 15 i 0 m 11 lu 80010
+d 16 i 0 m 12 lu 80010
+d 17 i 0 m 12 lu 80010
+d 18 i 0 m 12 lu 80010
+d 19 i 0 m 13 lu 80010
+d 20 i 0 m 13 lu 80010
+d 21 i 0 m 14 lu 80010
+d 22 i 0 m 14 lu 80010
+d 23 i 0 m 14 lu 80010
+d 24 i 0 m 14 lu 80010
+d 25 i 0 m 14 lu 80010
+
+Router 15 time 80600
+d 0 i 3 m 22 lu 80010
+d 1 i 3 m 23 lu 80010
+d 2 i 3 m 21 lu 80010
+d 3 i 3 m 22 lu 80010
+d 4 i 3 m 12 lu 80010
+d 5 i 3 m 13 lu 80010
+d 6 i 3 m 13 lu 80010
+d 7 i 3 m 11 lu 80010
+d 8 i 3 m 12 lu 80010
+d 9 i 3 m 12 lu 80010
+d 10 i 3 m 12 lu 80010
+d 11 i 3 m 12 lu 80010
+d 12 i 3 m 12 lu 80010
+d 13 i 0 m 10 lu 80010
+d 14 i 0 m 11 lu 80010
+d 15 i -1 m 0 lu 0
+d 16 i 1 m 1 lu 80010
+d 17 i 2 m 1 lu 80010
+d 18 i 3 m 10 lu 80010
+d 19 i 3 m 11 lu 80010
+d 20 i 3 m 11 lu 80010
+d 21 i 3 m 12 lu 80010
+d 22 i 3 m 12 lu 80010
+d 23 i 3 m 12 lu 80010
+d 24 i 3 m 12 lu 80010
+d 25 i 3 m 12 lu 80010
+
+Router 16 time 80600
+d 0 i 0 m 23 lu 80010
+d 1 i 0 m 24 lu 80010
+d 2 i 0 m 22 lu 80010
+d 3 i 0 m 23 lu 80010
+d 4 i 0 m 13 lu 80010
+d 5 i 0 m 14 lu 80010
+d 6 i 0 m 14 lu 80010
+d 7 i 0 m 12 lu 80010
+d 8 i 0 m 13 lu 80010
+d 9 i 0 m 13 lu 80010
+d 10 i 0 m 13 lu 80010
+d 11 i 0 m 13 lu 80010
+d 12 i 0 m 13 lu 80010
+d 13 i 0 m 11 lu 80010
+d 14 i 0 m 12 lu 80010
+d 15 i 0 m 1 lu 80010
+d 16 i -1 m 0 lu 0
+d 17 i 0 m 2 lu 80010
+d 18 i 0 m 11 lu 80010
+d 19 i 0 m 12 lu 80010
+d 20 i 0 m 12 lu 80010
+d 21 i 0 m 13 lu 80010
+d 22 i 0 m 13 lu 80010
+d 23 i 0 m 13 lu 80010
+d 24 i 0 m 13 lu 80010
+d 25 i 0 m 13 lu 80010
+
+Router 17 time 80600
+d 0 i 0 m 23 lu 80010
+d 1 i 0 m 24 lu 80010
+d 2 i 0 m 22 lu 80010
+d 3 i 0 m 23 lu 80010
+d 4 i 0 m 13 lu 80010
+d 5 i 0 m 14 lu 80010
+d 6 i 0 m 14 lu 80010
+d 7 i 0 m 12 lu 80010
+d 8 i 0 m 13 lu 80010
+d 9 i 0 m 13 lu 80010
+d 10 i 0 m 13 lu 80010
+d 11 i 0 m 13 lu 80010
+d 12 i 0 m 13 lu 80010
+d 13 i 0 m 11 lu 80010
+d 14 i 0 m 12 lu 80010
+d 15 i 0 m 1 lu 80010
+d 16 i 0 m 2 lu 80010
+d 17 i -1 m 0 lu 0
+d 18 i 0 m 11 lu 80010
+d 19 i 0 m 12 lu 80010
+d 20 i 0 m 12 lu 80010
+d 21 i 0 m 13 lu 80010
+d 22 i 0 m 13 lu 80010
+d 23 i 0 m 13 lu 80010
+d 24 i 0 m 13 lu 80010
+d 25 i 0 m 13 lu 80010
+
+Router 18 time 80600
+d 0 i 0 m 12 lu 80010
+d 1 i 1 m 13 lu 80010
+d 2 i 0 m 11 lu 80010
+d 3 i 1 m 12 lu 80010
+d 4 i 1 m 2 lu 80010
+d 5 i 1 m 3 lu 80010
+d 6 i 1 m 3 lu 80010
+d 7 i 1 m 1 lu 80010
+d 8 i 1 m 2 lu 80010
+d 9 i 1 m 2 lu 80010
+d 10 i 1 m 2 lu 80010
+d 11 i 1 m 2 lu 80010
+d 12 i 1 m 2 lu 80010
+d 13 i 1 m 11 lu 80010
+d 14 i 1 m 12 lu 80010
+d 15 i 2 m 10 lu 80010
+d 16 i 2 m 11 lu 80010
+d 17 i 2 m 11 lu 80010
+d 18 i -1 m 0 lu 0
+d 19 i 3 m 1 lu 80010
+d 20 i 0 m 1 lu 80010
+d 21 i 0 m 2 lu 80010
+d 22 i 0 m 2 lu 80010
+d 23 i 0 m 2 lu 80010
+d 24 i 0 m 2 lu 80010
+d 25 i 0 m 2 lu 80010
+
+Router 19 time 80600
+d 0 i 0 m 13 lu 80010
+d 1 i 0 m 14 lu 80010
+d 2 i 0 m 12 lu 80010
+d 3 i 0 m 13 lu 80010
+d 4 i 0 m 3 lu 80010
+d 5 i 0 m 4 lu 80010
+d 6 i 0 m 4 lu 80010
+d 7 i 0 m 2 lu 80010
+d 8 i 0 m 3 lu 80010
+d 9 i 0 m 3 lu 80010
+d 10 i 0 m 3 lu 80010
+d 11 i 0 m 3 lu 80010
+d 12 i 0 m 3 lu 80010
+d 13 i 0 m 12 lu 80010
+d 14 i 0 m 13 lu 80010
+d 15 i 0 m 11 lu 80010
+d 16 i 0 m 12 lu 80010
+d 17 i 0 m 12 lu 80010
+d 18 i 0 m 1 lu 80010
+d 19 i -1 m 0 lu 0
+d 20 i 0 m 2 lu 80010
+d 21 i 0 m 3 lu 80010
+d 22 i 0 m 3 lu 80010
+d 23 i 0 m 3 lu 80010
+d 24 i 0 m 3 lu 80010
+d 25 i 0 m 3 lu 80010
+
+Router 20 time 80600
+d 0 i 0 m 11 lu 80010
+d 1 i 1 m 12 lu 80010
+d 2 i 0 m 10 lu 80010
+d 3 i 1 m 11 lu 80010
+d 4 i 1 m 1 lu 80010
+d 5 i 1 m 2 lu 80010
+d 6 i 1 m 2 lu 80010
+d 7 i 2 m 2 lu 80010
+d 8 i 2 m 3 lu 80010
+d 9 i 2 m 3 lu 80010
+d 10 i 2 m 3 lu 80010
+d 11 i 2 m 3 lu 80010
+d 12 i 2 m 3 lu 80010
+d 13 i 2 m 12 lu 80010
+d 14 i 2 m 13 lu 80010
+d 15 i 2 m 11 lu 80010
+d 16 i 2 m 12 lu 80010
+d 17 i 2 m 12 lu 80010
+d 18 i 2 m 1 lu 80010
+d 19 i 2 m 2 lu 80010
+d 20 i -1 m 0 lu 0
+d 21 i 3 m 1 lu 80010
+d 22 i 4 m 1 lu 80010
+d 23 i 5 m 1 lu 80010
+d 24 i 6 m 1 lu 80010
+d 25 i 7 m 1 lu 80010
+
+Router 21 time 80600
+d 0 i 0 m 12 lu 80010
+d 1 i 0 m 13 lu 80010
+d 2 i 0 m 11 lu 80010
+d 3 i 0 m 12 lu 80010
+d 4 i 0 m 2 lu 80010
+d 5 i 0 m 3 lu 80010
+d 6 i 0 m 3 lu 80010
+d 7 i 0 m 3 lu 80010
+d 8 i 0 m 4 lu 80010
+d 9 i 0 m 4 lu 80010
+d 10 i 0 m 4 lu 80010
+d 11 i 0 m 4 lu 80010
+d 12 i 0 m 4 lu 80010
+d 13 i 0 m 13 lu 80010
+d 14 i 0 m 14 lu 80010
+d 15 i 0 m 12 lu 80010
+d 16 i 0 m 13 lu 80010
+d 17 i 0 m 13 lu 80010
+d 18 i 0 m 2 lu 80010
+d 19 i 0 m 3 lu 80010
+d 20 i 0 m 1 lu 80010
+d 21 i -1 m 0 lu 0
+d 22 i 0 m 2 lu 80010
+d 23 i 0 m 2 lu 80010
+d 24 i 0 m 2 lu 80010
+d 25 i 0 m 2 lu 80010
+
+Router 22 time 80600
+d 0 i 0 m 12 lu 80010
+d 1 i 0 m 13 lu 80010
+d 2 i 0 m 11 lu 80010
+d 3 i 0 m 12 lu 80010
+d 4 i 0 m 2 lu 80010
+d 5 i 0 m 3 lu 80010
+d 6 i 0 m 3 lu 80010
+d 7 i 0 m 3 lu 80010
+d 8 i 0 m 4 lu 80010
+d 9 i 0 m 4 lu 80010
+d 10 i 0 m 4 lu 80010
+d 11 i 0 m 4 lu 80010
+d 12 i 0 m 4 lu 80010
+d 13 i 0 m 13 lu 80010
+d 14 i 0 m 14 lu 80010
+d 15 i 0 m 12 lu 80010
+d 16 i 0 m 13 lu 80010
+d 17 i 0 m 13 lu 80010
+d 18 i 0 m 2 lu 80010
+d 19 i 0 m 3 lu 80010
+d 20 i 0 m 1 lu 80010
+d 21 i 0 m 2 lu 80010
+d 22 i -1 m 0 lu 0
+d 23 i 0 m 2 lu 80010
+d 24 i 0 m 2 lu 80010
+d 25 i 0 m 2 lu 80010
+
+Router 23 time 80600
+d 0 i 0 m 12 lu 80010
+d 1 i 0 m 13 lu 80010
+d 2 i 0 m 11 lu 80010
+d 3 i 0 m 12 lu 80010
+d 4 i 0 m 2 lu 80010
+d 5 i 0 m 3 lu 80010
+d 6 i 0 m 3 lu 80010
+d 7 i 0 m 3 lu 80010
+d 8 i 0 m 4 lu 80010
+d 9 i 0 m 4 lu 80010
+d 10 i 0 m 4 lu 80010
+d 11 i 0 m 4 lu 80010
+d 12 i 0 m 4 lu 80010
+d 13 i 0 m 13 lu 80010
+d 14 i 0 m 14 lu 80010
+d 15 i 0 m 12 lu 80010
+d 16 i 0 m 13 lu 80010
+d 17 i 0 m 13 lu 80010
+d 18 i 0 m 2 lu 80010
+d 19 i 0 m 3 lu 80010
+d 20 i 0 m 1 lu 80010
+d 21 i 0 m 2 lu 80010
+d 22 i 0 m 2 lu 80010
+d 23 i -1 m 0 lu 0
+d 24 i 0 m 2 lu 80010
+d 25 i 0 m 2 lu 80010
+
+Router 24 time 80600
+d 0 i 0 m 12 lu 80010
+d 1 i 0 m 13 lu 80010
+d 2 i 0 m 11 lu 80010
+d 3 i 0 m 12 lu 80010
+d 4 i 0 m 2 lu 80010
+d 5 i 0 m 3 lu 80010
+d 6 i 0 m 3 lu 80010
+d 7 i 0 m 3 lu 80010
+d 8 i 0 m 4 lu 80010
+d 9 i 0 m 4 lu 80010
+d 10 i 0 m 4 lu 80010
+d 11 i 0 m 4 lu 80010
+d 12 i 0 m 4 lu 80010
+d 13 i 0 m 13 lu 80010
+d 14 i 0 m 14 lu 80010
+d 15 i 0 m 12 lu 80010
+d 16 i 0 m 13 lu 80010
+d 17 i 0 m 13 lu 80010
+d 18 i 0 m 2 lu 80010
+d 19 i 0 m 3 lu 80010
+d 20 i 0 m 1 lu 80010
+d 21 i 0 m 2 lu 80010
+d 22 i 0 m 2 lu 80010
+d 23 i 0 m 2 lu 80010
+d 24 i -1 m 0 lu 0
+d 25 i 0 m 2 lu 80010
+
+Router 25 time 80600
+d 0 i 0 m 12 lu 80010
+d 1 i 0 m 13 lu 80010
+d 2 i 0 m 11 lu 80010
+d 3 i 0 m 12 lu 80010
+d 4 i 0 m 2 lu 80010
+d 5 i 0 m 3 lu 80010
+d 6 i 0 m 3 lu 80010
+d 7 i 0 m 3 lu 80010
+d 8 i 0 m 4 lu 80010
+d 9 i 0 m 4 lu 80010
+d 10 i 0 m 4 lu 80010
+d 11 i 0 m 4 lu 80010
+d 12 i 0 m 4 lu 80010
+d 13 i 0 m 13 lu 80010
+d 14 i 0 m 14 lu 80010
+d 15 i 0 m 12 lu 80010
+d 16 i 0 m 13 lu 80010
+d 17 i 0 m 13 lu 80010
+d 18 i 0 m 2 lu 80010
+d 19 i 0 m 3 lu 80010
+d 20 i 0 m 1 lu 80010
+d 21 i 0 m 2 lu 80010
+d 22 i 0 m 2 lu 80010
+d 23 i 0 m 2 lu 80010
+d 24 i 0 m 2 lu 80010
+d 25 i -1 m 0 lu 0
+
+Pkt stats for node 0 time 80600 -  s 89 r 80 d 1 f 5
+ u (node:0 ifc:0) r 80 s 84 <--> (node:2 ifc:0) r 84 s 80
+
+Pkt stats for node 1 time 80600 -  s 89 r 80 d 1 f 5
+ u (node:1 ifc:0) r 80 s 84 <--> (node:3 ifc:0) r 84 s 80
+
+Pkt stats for node 2 time 80600 -  s 224 r 220 d 1 f 5
+ u (node:0 ifc:0) r 80 s 84 <--> (node:2 ifc:0) r 84 s 80
+ u (node:2 ifc:1) r 61 s 61 <--> (node:3 ifc:2) r 61 s 61
+ u (node:2 ifc:2) r 80 s 83 <--> (node:20 ifc:0) r 83 s 80
+
+Pkt stats for node 3 time 80600 -  s 225 r 220 d 1 f 6
+ u (node:1 ifc:0) r 80 s 84 <--> (node:3 ifc:0) r 84 s 80
+ u (node:3 ifc:1) r 81 s 84 <--> (node:4 ifc:4) r 84 s 81
+ u (node:2 ifc:1) r 61 s 61 <--> (node:3 ifc:2) r 61 s 61
+
+Pkt stats for node 4 time 80600 -  s 363 r 349 d 0 f 9
+ u (node:4 ifc:0) r 80 s 81 <--> (node:5 ifc:0) r 81 s 80
+ u (node:4 ifc:1) r 80 s 80 <--> (node:6 ifc:0) r 80 s 80
+ u (node:4 ifc:2) r 80 s 85 <--> (node:7 ifc:0) r 85 s 80
+ u (node:4 ifc:3) r 29 s 31 <--> (node:20 ifc:1) r 31 s 29
+ u (node:3 ifc:1) r 81 s 84 <--> (node:4 ifc:4) r 84 s 81
+
+Pkt stats for node 5 time 80600 -  s 80 r 80 d 1 f 1
+ u (node:4 ifc:0) r 80 s 81 <--> (node:5 ifc:0) r 81 s 80
+
+Pkt stats for node 6 time 80600 -  s 80 r 80 d 0 f 0
+ u (node:4 ifc:1) r 80 s 80 <--> (node:6 ifc:0) r 80 s 80
+
+Pkt stats for node 7 time 80600 -  s 607 r 600 d 0 f 7
+ u (node:4 ifc:2) r 80 s 85 <--> (node:7 ifc:0) r 85 s 80
+ u (node:7 ifc:1) r 80 s 80 <--> (node:8 ifc:0) r 80 s 80
+ u (node:7 ifc:2) r 80 s 80 <--> (node:9 ifc:0) r 80 s 80
+ u (node:7 ifc:3) r 80 s 80 <--> (node:10 ifc:0) r 80 s 80
+ u (node:7 ifc:4) r 80 s 83 <--> (node:11 ifc:0) r 83 s 80
+ u (node:7 ifc:5) r 80 s 80 <--> (node:12 ifc:0) r 80 s 80
+ u (node:7 ifc:6) r 80 s 81 <--> (node:13 ifc:0) r 81 s 80
+ u (node:7 ifc:7) r 42 s 43 <--> (node:18 ifc:1) r 43 s 42
+
+Pkt stats for node 8 time 80600 -  s 80 r 80 d 0 f 0
+ u (node:7 ifc:1) r 80 s 80 <--> (node:8 ifc:0) r 80 s 80
+
+Pkt stats for node 9 time 80600 -  s 80 r 80 d 0 f 0
+ u (node:7 ifc:2) r 80 s 80 <--> (node:9 ifc:0) r 80 s 80
+
+Pkt stats for node 10 time 80600 -  s 80 r 80 d 0 f 0
+ u (node:7 ifc:3) r 80 s 80 <--> (node:10 ifc:0) r 80 s 80
+
+Pkt stats for node 11 time 80600 -  s 80 r 83 d 0 f 0
+ u (node:7 ifc:4) r 80 s 83 <--> (node:11 ifc:0) r 83 s 80
+
+Pkt stats for node 12 time 80600 -  s 80 r 80 d 0 f 0
+ u (node:7 ifc:5) r 80 s 80 <--> (node:12 ifc:0) r 80 s 80
+
+Pkt stats for node 13 time 80600 -  s 241 r 240 d 0 f 1
+ u (node:7 ifc:6) r 80 s 81 <--> (node:13 ifc:0) r 81 s 80
+ u (node:13 ifc:1) r 80 s 80 <--> (node:14 ifc:0) r 80 s 80
+ u (node:13 ifc:2) r 80 s 81 <--> (node:15 ifc:0) r 81 s 80
+
+Pkt stats for node 14 time 80600 -  s 80 r 80 d 0 f 0
+ u (node:13 ifc:1) r 80 s 80 <--> (node:14 ifc:0) r 80 s 80
+
+Pkt stats for node 15 time 80600 -  s 323 r 320 d 0 f 3
+ u (node:13 ifc:2) r 80 s 81 <--> (node:15 ifc:0) r 81 s 80
+ u (node:15 ifc:1) r 80 s 80 <--> (node:16 ifc:0) r 80 s 80
+ u (node:15 ifc:2) r 80 s 83 <--> (node:17 ifc:0) r 83 s 80
+ u (node:15 ifc:3) r 82 s 80 <--> (node:18 ifc:2) r 80 s 82
+
+Pkt stats for node 16 time 80600 -  s 80 r 80 d 0 f 0
+ u (node:15 ifc:1) r 80 s 80 <--> (node:16 ifc:0) r 80 s 80
+
+Pkt stats for node 17 time 80600 -  s 80 r 83 d 0 f 0
+ u (node:15 ifc:2) r 80 s 83 <--> (node:17 ifc:0) r 83 s 80
+
+Pkt stats for node 18 time 80600 -  s 285 r 280 d 0 f 5
+ u (node:18 ifc:0) r 82 s 81 <--> (node:20 ifc:2) r 81 s 82
+ u (node:7 ifc:7) r 42 s 43 <--> (node:18 ifc:1) r 43 s 42
+ u (node:15 ifc:3) r 82 s 80 <--> (node:18 ifc:2) r 80 s 82
+ u (node:18 ifc:3) r 80 s 80 <--> (node:19 ifc:0) r 80 s 80
+
+Pkt stats for node 19 time 80600 -  s 80 r 80 d 0 f 0
+ u (node:18 ifc:3) r 80 s 80 <--> (node:19 ifc:0) r 80 s 80
+
+Pkt stats for node 20 time 80600 -  s 591 r 593 d 0 f 2
+ u (node:2 ifc:2) r 80 s 83 <--> (node:20 ifc:0) r 83 s 80
+ u (node:4 ifc:3) r 29 s 31 <--> (node:20 ifc:1) r 31 s 29
+ u (node:18 ifc:0) r 82 s 81 <--> (node:20 ifc:2) r 81 s 82
+ u (node:20 ifc:3) r 80 s 80 <--> (node:21 ifc:0) r 80 s 80
+ u (node:20 ifc:4) r 80 s 80 <--> (node:22 ifc:0) r 80 s 80
+ u (node:20 ifc:5) r 80 s 80 <--> (node:23 ifc:0) r 80 s 80
+ u (node:20 ifc:6) r 80 s 80 <--> (node:24 ifc:0) r 80 s 80
+ u (node:20 ifc:7) r 80 s 80 <--> (node:25 ifc:0) r 80 s 80
+
+Pkt stats for node 21 time 80600 -  s 80 r 80 d 0 f 0
+ u (node:20 ifc:3) r 80 s 80 <--> (node:21 ifc:0) r 80 s 80
+
+Pkt stats for node 22 time 80600 -  s 80 r 80 d 0 f 0
+ u (node:20 ifc:4) r 80 s 80 <--> (node:22 ifc:0) r 80 s 80
+
+Pkt stats for node 23 time 80600 -  s 80 r 80 d 0 f 0
+ u (node:20 ifc:5) r 80 s 80 <--> (node:23 ifc:0) r 80 s 80
+
+Pkt stats for node 24 time 80600 -  s 80 r 80 d 0 f 0
+ u (node:20 ifc:6) r 80 s 80 <--> (node:24 ifc:0) r 80 s 80
+
+Pkt stats for node 25 time 80600 -  s 80 r 80 d 0 f 0
+ u (node:20 ifc:7) r 80 s 80 <--> (node:25 ifc:0) r 80 s 80
+
+warning - 26 events not run; stoped too early?
+
+simulation ended - last processing step with clock = 100000
+

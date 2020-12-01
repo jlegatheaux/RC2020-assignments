@@ -167,7 +167,10 @@ dumproutes 95500 18
 downlink 100500 4.2 7.0
 downlink 101500 18.0 20.2
 
-traceroute 115500 1 14
+traceroute 114500 1 14
+traceroute 114500 1 21
+traceroute 114500 12 17
+traceroute 114500 12 19
 
 dumproutes 115500 all
 dumpPacketStats 115500 all
