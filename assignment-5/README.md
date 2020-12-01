@@ -213,22 +213,40 @@ Code clarity and structure will also be accounted.
 
 ## Annex - Sugestions to set-up your work environment
 
-Following the instructions in assignment 0, you can install cnss by performing the following actions.
+This is just a quick crash course on how to instal CNSS, the assignment files, as well as to prepare your environment for developping in the command line. In the assignment 0 notebook, you also find instructions for howto use a development environment and use it. The directories organization will be very similar to the one presented below.
 
-Choose a directory to work. Download the file  `assignment5.zip` from this repository to that diectory and perform the following actions:
+Following the instructions in assignment 0, you can install CNSS by performing the following actions. Start by choosing a directory to work and perform the following actions:
 
 ```
 git clone https://github.com/jlegatheaux/cnss
 cd cnss
 mkdir bin
-javac -d bin cnss/src/*/*/*.java
+javac -d bin src/*/*/*.java
 cd ..
-mkdir assign5
-cp assignment5.zip assign5
-cd assign5
+```
+
+You can then install the assignments files and start your developemnt and tests. Download the file  `assignment5.zip` from this repository to your directory, that is, the one that contains cnss, and do the following:
+```
 unzip assignment5.zip
+cd assignment5
 mkdir bin
-javac -d bin src/*.java
+javac -d bin -cp ../cnss/src/ src/*.java
+```
+
+Modify your src/DVControl.java file and compile it. To test, use for example
+
+```
+java -cp bin:../cnss/bin cnss.simulator.Simulator configs/config5.1.txt
+```
+To test and compare with the expected results use
+
+```
+java -cp bin:../cnss/bin cnss.simulator.Simulator configs/config5.1.txt > result5.1.txt
+diff result5.1.txt results/result5.1.txt
+```
+
+
+
 
 
 
