@@ -4,7 +4,7 @@
 import cnss.simulator.*;
 import cnss.lib.*;
 
-public class PublicDVControl extends AbstractControlAlgorithm {
+public class DVControl extends AbstractControlAlgorithm {
 
 	// Do not modify
 	static int INFINITY = 1000000; 
@@ -34,7 +34,7 @@ public class PublicDVControl extends AbstractControlAlgorithm {
 
 
 
-	public PublicDVControl() {
+	public DVControl() {
 		super("dv control");
 	}
 
