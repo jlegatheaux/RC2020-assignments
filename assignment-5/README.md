@@ -213,6 +213,25 @@ Code clarity and structure will also be accounted.
 
 ## Annex - Sugestions to set-up your work environment
 
+Following the instructions in assignment 0, you can install cnss by performing the following actions.
+
+Choose a directory to work. Download the file  `assignment5.zip` from this repository to that diectory and perform the following actions:
+
+```
+git clone https://github.com/jlegatheaux/cnss
+cd cnss
+mkdir bin
+javac -d bin cnss/src/*/*/*.java
+cd ..
+mkdir assign5
+cp assignment5.zip assign5
+cd assign5
+unzip assignment5.zip
+mkdir bin
+javac -d bin src/*.java
+
+
+
 
 
 
