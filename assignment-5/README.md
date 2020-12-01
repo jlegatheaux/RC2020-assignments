@@ -180,7 +180,7 @@ We require that you remove stale entries in accordance with the timeout policy s
 
 Note that part of the mechanism specified in the RFC handles the loss of routing update packets. The tests we provide, however, never drop routing update packets, so you do not need to incorporate mechanisms for dealing with such losses. Finally, note that expiration of entries for unreachable destinations helps reduce the size of the routing table and subsequent announcements, but doesn’t hasten convergence.
 
-`config5.7.txt` and `config5.8.txt` configurations are used to test for the removal of stale routing table entries. Both work on the same network, the already mentioned JANET national backbone. In test  `config5.7.txt` several links go up and down, and during a certain period node 16 stays unreachable by all other nodes. In test `config5.8.txt`, during the lifetime of the simulation several links go down and the network becomes partitioned.
+`config5.7.txt` and `config5.8.txt` configurations are used to test for the removal of stale routing table entries. Both work on the same network, the already mentioned JANET national backbone. In test  `config5.7.txt` several links go up and down, and during a certain period node 16 stays unreachable. In test `config5.8.txt`, during the lifetime of the simulation several links go down and the network becomes partitioned.
 
 These configuration files tests enable all flags: triggered updates, split horizon with poison-reverse and stale table entry expiration.
 
@@ -193,7 +193,12 @@ As we have already referred above, for each test we also provide the output of a
 
 
 ## Marking (in 0-20 scale)
-We will allocate marks as follows:
+
+We will get your `DVControl.java` file, compile it with CNSS and the files `DVControlPayload.java`and `DVRoutingTableEntry.java` run tests and will allocate marks as follows:
+
+A solution with compile errors will be marked 0
+
+A solution not being able to correctly perform Stage 1 tests (`config5.1.txt` and `config5.2.txt`): will be marked at most 6
 
 A solution correctly performing Stage 1 tests (`config5.1.txt` and `config5.2.txt`): will be marked at most 12
 
@@ -209,6 +214,5 @@ Code clarity and structure will also be accounted.
 ## Annex - Sugestions to set-up your work environment
 
 
-**REVER este parágrafo:** The Java code we’ve given you is fully documented in Javadoc; to prepare the documentation, just type make javadoc in the directory containing your coursework files, and you will find the documentation for the code we’ve given you in a newly created docs subdirectory. 
 
 
