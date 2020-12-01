@@ -20,7 +20,7 @@ This assignment has been adapted from the coursework 2: "Implementing Distance-V
 
 ## Initial guidelines
 
-### The routing table of a bode
+### The routing table of a node
 
 All your versions of the protocol do not keep for future use the received distance vector announcements (some versions of the algorithm store them to select alternatives when the distance to a known destination becomes INFINITY). Therefore, your code will use one only data structure: a sligthly extended routing table or FIB (forwarding information base). For each destination, the routing table stores the interface to forward packets to reach that destination, a metric or cost of the path to get there, as well a time stamp denoting the last time this entry has been modified or confirmed. That timestamp will be useful for certain optional versions of your solution. File `RoutingTableEntry.java` contains a class that implements a routing table entry.
 
@@ -50,6 +50,8 @@ Class `DVControlPayload` (in file `DVControlPayload.java`) has all you need to b
 You should then implement the basic version of the algorithm. Later, we will also ask you to implement three further enhancements or optimizations: triggered updates, split horizon with poison-reverse, and timeout-based expiration of routing table entries. 
 
 ### Skeleton of your solution
+
+Preliminary important note: before compiling and testing your solution you must upgrade your CNSS version. See the annex to see one way, among several possible, of doing it.
 
 We provide you with a skeleton of the control algorithm for a distance-vector router running in CNSS, found in the file `DVControl.java`. You should implement your solution to the assignment by filling in the missing parts of this file. Do not change any of the pre-defined parts in that file.
 
@@ -96,7 +98,7 @@ With the above command line, CNSS compiled code should be in the directory `../c
 
 It is also possible to developpe with any IDE (Interactive Developping Environment), as for example Eclipse, that will support a project CNNS in the `cnss` directory and compile it to some directory `cnss/bin`. Otherwise you should adapt the above command to the way your IDE organizes the `.class`files.
 
-In the annex you provide further directions on installing the required files to support your development.
+In the annex you provide a crash course on one way of installing the required files to support your development.
 
 ## Developing your solution
 
