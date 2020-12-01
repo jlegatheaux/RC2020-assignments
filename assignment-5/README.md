@@ -1,4 +1,3 @@
-# PROVISIONAL VERSION - SUBJECT TO CHANGES
 
 # Implementing Distance-Vector Routing
 
@@ -233,7 +232,7 @@ mkdir bin
 javac -d bin -cp ../cnss/src/ src/*.java
 ```
 
-Modify your src/DVControl.java file and compile it. To test, use for example
+Modify your src/DVControl.java file and compile it. To test it inside the assignment5 directory use,for example
 
 ```
 java -cp bin:../cnss/bin cnss.simulator.Simulator configs/config5.1.txt
