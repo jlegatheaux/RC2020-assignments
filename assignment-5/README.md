@@ -93,7 +93,7 @@ java -cp bin:../cnss/bin cnss.simulator.Simulator configs/config5.1.txt
 
 It assumes that you are developing your project in the current directory (it may be named `assignment5` for example, and command `pwd` will print its name if you are lost), with a sub directory containing your source files (directory `src` with files `DVControl.java`, `RoutingTableEntry.java` and `DVControlPayload.java`) a directory named ` bin` with the compiled version of your files and a directory named `configs` with the configuration files. 
 
-With the above command line, CNSS compiled code should be in the directory `../cnss/bin`. You can prepare it by creating the directory `../cnss`, geting the CNSS code from its GitHub repository and compiling it in that directory. See the annex for a quick how to do it.
+With the above command line, CNSS compiled code should be in the directory `../cnss/bin`. You can prepare it by creating the directory `../cnss`, geting the CNSS code from its GitHub repository and compiling it in that directory. See the annex for a quick "how to" to do it.
 
 It is also possible to developpe with any IDE (Interactive Developping Environment), as for example Eclipse, that will support a project CNSS in the `cnss` directory and compile it to some directory `cnss/bin`. Otherwise you should adapt the above command to the way your IDE organizes the `.class`files.
 
