@@ -7,7 +7,7 @@ In this assignment you will write distance-vector (DV) routing code for a simple
  
 Note that we expect you to implement the algorithm and protocol as presented in the lecture notes, following the different steps suggested below and including setting of the appropriate routing table entries’ metrics to a reserved INFINITY value when a link goes down. That is, your protocol must be realistic enough to be used in a real network where links may go down or up.
 
-We provide you with a skeleton of the control algorithm for a distance-vector router running in CNSS, found in the file `DVControl.java`. You should implement your solution to the assignment by filling in the missing parts of this file. Do not change any of the constants that we’ve pre-defined in that file neither the flags setting code at the beginning of the `initialise()`upcall, which control the options your solution implements.
+We provide you with a skeleton of the control algorithm for a distance-vector router running in CNSS, found in file `DVControl.java`. You should implement your solution to the assignment by filling in the missing parts of this file. Do not change any of the constants that we’ve pre-defined in that file neither the flags setting code at the beginning of the `initialise()`upcall, which control the options your solution implements.
 
 We also give you a function to compute the metric of a link as well as two classes. The first one, implements a Routing Table Entry. The second one, implements the payload of CNSS control packets used to send and receive distance vector or reachability announcements.
 
