@@ -55,7 +55,7 @@ We provide you with a skeleton of the control algorithm for a distance-vector ro
 
 ### Options in the code
 
-In the beginning of the `initialisation()` method, you find the code needed to initialise the variables (flags) that represent the options that the algorithm must implement when they are true.
+In the beginning of the `initialisate()` method, you find the code needed to initialise the variables (flags) that represent the options that the algorithm must implement when they are true.
 
 ```java
 tracingOn = parameters.containsKey("trace");
