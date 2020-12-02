@@ -88,7 +88,6 @@ We also provide in directory `results`, for each configuration file, a file name
 As you already know, to run a CNSS simulation in the command line, you may use the following command: 
 
 ```
-pwd 
 java -cp bin:../cnss/bin cnss.simulator.Simulator configs/config5.1.txt
 ```
 
