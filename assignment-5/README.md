@@ -32,7 +32,7 @@ rt.put(nodeId, new DVRoutingTableEntry(nodeId, LOCAL, 0, now) );
 
 ### Sending periodic announcements
 
-You should start by implementing the basic version of the algorithm, one that periodically sends distance vector announcements to neighbours reachable by all the nodes' interfaces that are operational (i.e. in the state `up`). Your nodes' interfaces are available,, in CNSS, in the array `Link[] links` and are numbered from 0 to `nInterfaces`. Both variables are initialised in the `initialise()` upcall using configuration parameters received from the CNSS node code.
+You should start by implementing the basic version of the algorithm, one that periodically sends distance vector announcements to neighbours reachable by all the nodes' interfaces that are operational (i.e. in the state `up`). Your nodes' interfaces are available, in CNSS, in the array `Link[] links` and are numbered from 0 to `nInterfaces`. Both variables are initialised in the `initialise()` upcall using configuration parameters received from the CNSS node code.
 
 To send a control packet containning an announcement as payload (stored in an object of the appropriate class, see below, pointed by `payload`) to the neighbour at the other side of an operational link, connected to the local interface `interface`, use the following code:
 
