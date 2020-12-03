@@ -22,7 +22,7 @@ This assignment has been adapted from the coursework 2: "Implementing Distance-V
 
 ### The routing table of a node
 
-All your versions of the protocol do not keep for future use the received distance vector announcements (some versions of the algorithm store them to select alternatives when the distance to a known destination becomes INFINITY). Therefore, your code will use one only data structure: a sligthly extended routing table or FIB (forwarding information base). For each destination, the routing table stores the interface to forward packets to reach that destination, a metric or cost of the path to get there, as well a time stamp denoting the last time this entry has been modified or confirmed. That timestamp will be useful for certain optional versions of your solution. File `RoutingTableEntry.java` contains a class that implements a routing table entry.
+All your versions of the protocol do not keep for future use the received distance vector announcements (some versions of the algorithm store them to select alternatives when the distance to a known destination becomes INFINITY). Therefore, your code will use just one data structure: a sligthly extended routing table or FIB (forwarding information base). For each destination, the routing table stores the interface to forward packets to reach that destination, a metric or cost of the path to get there, as well a time stamp denoting the last time this entry has been modified or confirmed. That timestamp will be useful for certain optional versions of your solution. File `RoutingTableEntry.java` contains a class that implements a routing table entry.
 
 A router will start with a routing table with one only entry, the one that points to itself, i.e. with its own identification, uses the LOCAL interface to forward packets, has metric 0, and a timestamp corresponding to the starting moment, i.e. 0 in CNSS. If `rt` denotes your routing table, that initialization could be
 
@@ -32,7 +32,7 @@ rt.put(nodeId, new DVRoutingTableEntry(nodeId, LOCAL, 0, now) );
 
 ### Sending periodic announcements
 
-You should start by implementing the basic version of the algorithm, one that periodically sends distance vector announcements to neighbours reachable by all the nodes' interfaces that are operational (i.e. in the state `up`). Your nodes' interfaces are available, in CNSS, in the array `Link[] links` and are numbered from 0 to `nInterfaces`. Both variables are initialised in the `initialise()` upcall using configuration parameters received from the CNSS node code.
+You should start by implementing the basic version of the algorithm, one that periodically sends distance vector announcements to neighbours reachable by all the node's interfaces that are operational (i.e. in the state `up`). Your node's interfaces are available, in CNSS, in the array `Link[] links` and are numbered from 0 to `nInterfaces`. Both variables are initialised in the `initialise()` upcall using configuration parameters received from the CNSS node code.
 
 To send a control packet containning an announcement as payload (stored in an object of the appropriate class, see below, pointed by `payload`) to the neighbour at the other side of an operational link, connected to the local interface `interface`, use the following code:
 
@@ -55,7 +55,7 @@ We provide you with a skeleton of the control algorithm for a distance-vector ro
 
 ### Options in the code
 
-In the beginning of the `initialisate()` method, you find the code needed to initialise the variables (flags) that represent the options that the algorithm must implement when they are true.
+In the beginning of the `initialise()` method, you find the code needed to initialise the variables (flags) that represent the options that the algorithm must implement when they are true.
 
 ```java
 tracingOn = parameters.containsKey("trace");
@@ -112,7 +112,7 @@ for ( int i = 0; i < nInterfaces; i++)
 	if ( links[i].isUp() ) sendsDistanceVectorAnnouncement(...);
 ```
 
-You also need to fill in the code of the other upcalls (`on_link_up()`, `on_link_down()` and `on_receive()`) with the adequate actions. In the  `on_receive()` upcall you process a reachability announcement just received.
+You also need to fill in the code of the other upcalls (`on_link_up()`, `on_link_down()` and `on_receive()`) with the apropriate actions. In the  `on_receive()` upcall you process a reachability announcement just received.
 
 The tests `config5.1.txt` and `config5.2.txt` check the correctness of your baseline DV router implementation. Therefore, they do not set the triggered updates, split horizon with poison-reverse or timeout-based table entry expiration flags. 
 
@@ -150,7 +150,7 @@ Test `config5.4.txt` allows you to test a much more complex network with more li
 
 ### Stage 3: Add split horizon with poison-reverse
 
-In this stage, you must add split horizon with poison-reverse to improve the convergence behavior of your DV routing implementation. That improvement must be implmented by the method that sends announcements since it only concerns the way DV announcements are build.
+In this stage, you must add split horizon with poison-reverse to improve the convergence behavior of your DV routing implementation. That improvement must be implemented by the method that sends announcements since it only concerns the way DV announcements are build.
 
 Note that you will need to enable or disable split horizon with poison-reverse in your router in accordance with the setting of the `preverse` flag in the configuration file, which you can test using the boolean value of variable `preverse` in your code.
 
@@ -208,7 +208,7 @@ A solution correctly performing Stages 1, 2 & 3 tests (`config5.1.txt` up to `co
 
 Solutions that implement all stages and pass all tests (`config5.1.txt` up to `config5.8.txt`) have no a priori grading limitations.
 
-Code clarity and structure will also be accounted.
+Code clarity and structure will also be taken into account.
 
 
 ## Annex - Sugestions to set-up your work environment
