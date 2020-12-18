@@ -35,7 +35,7 @@ This repository is the reference repository of the course prgramming assignments
 ### Assignment 5: Shortest Path Routing Protocols (Distance Vector or Link-State)
   - Deadline: 17/Dec/20, 23h59
   - Delivery Form: https://forms.gle/9gJtN8tQ5XMdLtn16
-  - Individual Assessment Form: on 18/Dec/20, 14h30-14h45 (15 min)
+  - Individual Assessment Form: https://forms.gle/9jAKShcoEuc2jGjx7  on 18/Dec/20, 14h30-15h00 (20 min)
   - [Materials/Guidelines: ](assignment-5/README.md) 
  
 ### Assignment 6: Passive Network Traffic Analysis - Network Usage and Security Analysis with NetFlow Traffic Traces
