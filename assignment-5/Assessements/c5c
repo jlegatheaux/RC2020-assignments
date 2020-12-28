@@ -1,0 +1,52 @@
+
+
+parameter preverse
+
+node 0 2 DVControl cnss.lib.EmptyApp
+node 1 3 DVControl cnss.lib.EmptyApp
+node 2 3 DVControl cnss.lib.EmptyApp
+node 3 3 DVControl cnss.lib.EmptyApp
+node 4 1 DVControl cnss.lib.EmptyApp
+
+link 0.0 1.2 33000000 10 0.0 0.0
+link 0.1 2.1 50000000 10 0.0 0.0
+link 1.0 2.0 50000000 10 0.0 0.0
+link 1.1 3.1 10000000 10 0.0 0.0
+link 2.2 3.2 5000000 10 0.0 0.0
+link 3.0 4.0 20000000 10 0.0 0.0
+
+
+dumproutes 1050 3
+dumproutes 2050 3
+dumproutes 3050 3
+dumproutes 4050 3
+
+downlink 7500 3.0 4.0
+
+dumproutes 8050 3
+
+traceroute 8500 3 4
+
+dumproutes 9050 3
+dumproutes 10050 3
+dumproutes 11050 3
+dumproutes 12050 3
+dumproutes 13050 3
+dumproutes 14050 3
+dumproutes 15050 3
+dumproutes 16050 3
+dumproutes 17050 3
+dumproutes 18050 3
+dumproutes 19050 3
+dumproutes 20050 3
+dumproutes 30050 3
+dumproutes 40050 3
+dumproutes 50050 3
+
+traceroute 51500 3 100
+
+dumproutes 60050 3
+
+
+parameter stop 74900
+
