@@ -1,6 +1,7 @@
 # The SuperJANET4 backbone , March 2001
 # http://www.cybergeography.org/atlas/superjanet4_topology_large.gif
 
+parameter trace_forwarding
 parameter triggered
 parameter preverse
 parameter expire
@@ -103,45 +104,17 @@ dumproutes 25500 7
 dumproutes 25500 3
 dumproutes 25500 2
 
-dumproutes 26500 15
-dumproutes 26500 16
-dumproutes 26500 17
-dumproutes 26500 18
-dumproutes 26500 20
-dumproutes 26500 13
-dumproutes 26500 7
-dumproutes 26500 3
-dumproutes 26500 2
-
-dumproutes 28500 15
-dumproutes 28500 16
-dumproutes 28500 17
-dumproutes 28500 18
-dumproutes 28500 13
-dumproutes 28500 7
-dumproutes 28500 3
-dumproutes 28500 2
-
-dumproutes 30500 15
-dumproutes 30500 16
-dumproutes 30500 17
-dumproutes 30500 18
-dumproutes 30500 13
-dumproutes 30500 7
-dumproutes 30500 3
-dumproutes 30500 2
+dumproutes 30500 all
 
 dumproutes 35500 all
 
 dumproutes 65500 all
-dumproutes 66500 all
 
 uplink 67500 15.1 16.0
 
-dumproutes 75500 all
+dumproutes 67900 all
 
 traceroute 75500 1 16
-
 
 downlink 90500 7.7 18.1
 
@@ -161,7 +134,7 @@ dumproutes 95500 20
 dumproutes 95500 18
 
 downlink 100500 4.2 7.0
-downlink 101500 18.0 20.2
+downlink 100500 18.0 20.2
 
 traceroute 114500 1 14
 traceroute 114500 1 21

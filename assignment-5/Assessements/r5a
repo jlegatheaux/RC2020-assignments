@@ -152,6 +152,41 @@ d 4 i -1 m 0 lu 0
 --> node 1 at 5600 interface 1 going down
 --> node 2 at 5600 interface 0 going down
 
+Router 0 time 5700
+d 0 i -1 m 0 lu 0
+d 1 i 0 m INFINITY lu 5010
+d 2 i 0 m INFINITY lu 5010
+d 3 i 0 m INFINITY lu 5010
+d 4 i 1 m 3 lu 5010
+
+Router 1 time 5700
+d 0 i 0 m INFINITY lu 5010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m INFINITY lu 5010
+d 3 i 1 m INFINITY lu 5010
+d 4 i 1 m INFINITY lu 5010
+
+Router 2 time 5700
+d 0 i 0 m INFINITY lu 5010
+d 1 i 0 m INFINITY lu 5010
+d 2 i -1 m 0 lu 0
+d 3 i 1 m 1 lu 5010
+d 4 i 1 m 2 lu 5010
+
+Router 3 time 5700
+d 0 i 0 m 3 lu 5010
+d 1 i 0 m 2 lu 5010
+d 2 i 0 m 1 lu 5010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 5010
+
+Router 4 time 5700
+d 0 i 0 m 3 lu 5010
+d 1 i 1 m 3 lu 5010
+d 2 i 1 m 2 lu 5010
+d 3 i 1 m 1 lu 5010
+d 4 i -1 m 0 lu 0
+
 Router 0 time 6500
 d 0 i -1 m 0 lu 0
 d 1 i 1 m 6 lu 6010
@@ -404,6 +439,76 @@ d 4 i -1 m 0 lu 0
 --> node 1 at 15600 interface 0 going up
 --> node 1 at 15600 interface 1 going up
 --> node 2 at 15600 interface 0 going up
+
+Router 0 time 15700
+d 0 i -1 m 0 lu 0
+d 1 i 1 m 14 lu 15010
+d 2 i 1 m 5 lu 15010
+d 3 i 1 m 4 lu 15010
+d 4 i 1 m 3 lu 15010
+
+Router 1 time 15700
+d 0 i 0 m INFINITY lu 5010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m INFINITY lu 5010
+d 3 i 1 m INFINITY lu 5010
+d 4 i 1 m INFINITY lu 5010
+
+Router 2 time 15700
+d 0 i 1 m 5 lu 15010
+d 1 i 1 m 13 lu 15010
+d 2 i -1 m 0 lu 0
+d 3 i 1 m 1 lu 15010
+d 4 i 1 m 2 lu 15010
+
+Router 3 time 15700
+d 0 i 1 m 4 lu 15010
+d 1 i 1 m 12 lu 15010
+d 2 i 0 m 1 lu 15010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 15010
+
+Router 4 time 15700
+d 0 i 0 m 3 lu 15010
+d 1 i 1 m 13 lu 15010
+d 2 i 1 m 2 lu 15010
+d 3 i 1 m 1 lu 15010
+d 4 i -1 m 0 lu 0
+
+Router 0 time 16100
+d 0 i -1 m 0 lu 0
+d 1 i 0 m 1 lu 16010
+d 2 i 1 m 5 lu 16010
+d 3 i 1 m 4 lu 16010
+d 4 i 1 m 3 lu 16010
+
+Router 1 time 16100
+d 0 i 0 m 1 lu 16010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m 1 lu 16010
+d 3 i 1 m 2 lu 16010
+d 4 i 1 m 3 lu 16010
+
+Router 2 time 16100
+d 0 i 1 m 5 lu 16010
+d 1 i 0 m 1 lu 16010
+d 2 i -1 m 0 lu 0
+d 3 i 1 m 1 lu 16010
+d 4 i 1 m 2 lu 16010
+
+Router 3 time 16100
+d 0 i 1 m 4 lu 16010
+d 1 i 1 m 14 lu 16010
+d 2 i 0 m 1 lu 16010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 16010
+
+Router 4 time 16100
+d 0 i 0 m 3 lu 16010
+d 1 i 1 m 13 lu 16010
+d 2 i 1 m 2 lu 16010
+d 3 i 1 m 1 lu 16010
+d 4 i -1 m 0 lu 0
 --> node 0 time 16600 traceroute to: 3
 --> node 4 time 16600 traceroute to: 1
 --> node 3 time 16620 received traceroute:  0 -> 4 -> 3
@@ -444,41 +549,6 @@ d 2 i 1 m 2 lu 17010
 d 3 i 1 m 1 lu 17010
 d 4 i -1 m 0 lu 0
 
-Router 0 time 18500
-d 0 i -1 m 0 lu 0
-d 1 i 0 m 1 lu 18010
-d 2 i 0 m 2 lu 18010
-d 3 i 0 m 3 lu 18010
-d 4 i 1 m 3 lu 18010
-
-Router 1 time 18500
-d 0 i 0 m 1 lu 18010
-d 1 i -1 m 0 lu 0
-d 2 i 1 m 1 lu 18010
-d 3 i 1 m 2 lu 18010
-d 4 i 1 m 3 lu 18010
-
-Router 2 time 18500
-d 0 i 0 m 2 lu 18010
-d 1 i 0 m 1 lu 18010
-d 2 i -1 m 0 lu 0
-d 3 i 1 m 1 lu 18010
-d 4 i 1 m 2 lu 18010
-
-Router 3 time 18500
-d 0 i 0 m 3 lu 18010
-d 1 i 0 m 2 lu 18010
-d 2 i 0 m 1 lu 18010
-d 3 i -1 m 0 lu 0
-d 4 i 1 m 1 lu 18010
-
-Router 4 time 18500
-d 0 i 0 m 3 lu 18010
-d 1 i 1 m 3 lu 18010
-d 2 i 1 m 2 lu 18010
-d 3 i 1 m 1 lu 18010
-d 4 i -1 m 0 lu 0
-
 Router 0 time 19500
 d 0 i -1 m 0 lu 0
 d 1 i 0 m 1 lu 19010
@@ -512,76 +582,6 @@ d 0 i 0 m 3 lu 19010
 d 1 i 1 m 3 lu 19010
 d 2 i 1 m 2 lu 19010
 d 3 i 1 m 1 lu 19010
-d 4 i -1 m 0 lu 0
-
-Router 0 time 22500
-d 0 i -1 m 0 lu 0
-d 1 i 0 m 1 lu 22010
-d 2 i 0 m 2 lu 22010
-d 3 i 0 m 3 lu 22010
-d 4 i 1 m 3 lu 22010
-
-Router 1 time 22500
-d 0 i 0 m 1 lu 22010
-d 1 i -1 m 0 lu 0
-d 2 i 1 m 1 lu 22010
-d 3 i 1 m 2 lu 22010
-d 4 i 1 m 3 lu 22010
-
-Router 2 time 22500
-d 0 i 0 m 2 lu 22010
-d 1 i 0 m 1 lu 22010
-d 2 i -1 m 0 lu 0
-d 3 i 1 m 1 lu 22010
-d 4 i 1 m 2 lu 22010
-
-Router 3 time 22500
-d 0 i 0 m 3 lu 22010
-d 1 i 0 m 2 lu 22010
-d 2 i 0 m 1 lu 22010
-d 3 i -1 m 0 lu 0
-d 4 i 1 m 1 lu 22010
-
-Router 4 time 22500
-d 0 i 0 m 3 lu 22010
-d 1 i 1 m 3 lu 22010
-d 2 i 1 m 2 lu 22010
-d 3 i 1 m 1 lu 22010
-d 4 i -1 m 0 lu 0
-
-Router 0 time 23500
-d 0 i -1 m 0 lu 0
-d 1 i 0 m 1 lu 23010
-d 2 i 0 m 2 lu 23010
-d 3 i 0 m 3 lu 23010
-d 4 i 1 m 3 lu 23010
-
-Router 1 time 23500
-d 0 i 0 m 1 lu 23010
-d 1 i -1 m 0 lu 0
-d 2 i 1 m 1 lu 23010
-d 3 i 1 m 2 lu 23010
-d 4 i 1 m 3 lu 23010
-
-Router 2 time 23500
-d 0 i 0 m 2 lu 23010
-d 1 i 0 m 1 lu 23010
-d 2 i -1 m 0 lu 0
-d 3 i 1 m 1 lu 23010
-d 4 i 1 m 2 lu 23010
-
-Router 3 time 23500
-d 0 i 0 m 3 lu 23010
-d 1 i 0 m 2 lu 23010
-d 2 i 0 m 1 lu 23010
-d 3 i -1 m 0 lu 0
-d 4 i 1 m 1 lu 23010
-
-Router 4 time 23500
-d 0 i 0 m 3 lu 23010
-d 1 i 1 m 3 lu 23010
-d 2 i 1 m 2 lu 23010
-d 3 i 1 m 1 lu 23010
 d 4 i -1 m 0 lu 0
 
 Router 0 time 24500

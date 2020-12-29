@@ -28,6 +28,7 @@ traceroute 4600 4 1
 
 downlink 5600 0.0 1.0
 downlink 5600 1.1 2.0
+dumproutes 5700 all
 
 dumproutes 6500 all
 dumproutes 7500 all
@@ -45,15 +46,14 @@ dumproutes 12500 all
 uplink 15600 0.0 1.0
 uplink 15600 1.1 2.0
 
+dumproutes 15700 all
+dumproutes 16100 all
+
 traceroute 16600 0 3
 traceroute 16600 4 1
 
 dumproutes 17500 all
-dumproutes 18500 all
 dumproutes 19500 all
-
-dumproutes 22500 all
-dumproutes 23500 all
 dumproutes 24500 all
 
 traceroute 29600 0 3
