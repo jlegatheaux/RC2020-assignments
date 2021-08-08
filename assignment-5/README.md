@@ -30,6 +30,8 @@ A router will start with a routing table with one only entry, the one that point
 rt.put(nodeId, new DVRoutingTableEntry(nodeId, LOCAL, 0, now) );
 ```
 
+Therefore, the only way your router learns which are its neighbours is when it receives their announcements. Similary, its neighbours will learn this router existence when they receive his announcements. Like this, the only information a router needs to start its future routing life with this algorithm is its identification (nodeId).
+
 ### Sending periodic announcements
 
 You should start by implementing the basic version of the algorithm, one that periodically sends distance vector announcements to neighbours reachable by all the node's interfaces that are operational (i.e. in the state `up`). Your node's interfaces are available, in CNSS, in the array `Link[] links` and are numbered from 0 to `nInterfaces`. Both variables are initialised in the `initialise()` upcall using configuration parameters received from the CNSS node code.
