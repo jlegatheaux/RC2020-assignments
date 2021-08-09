@@ -72,7 +72,7 @@ private void flood_packet (int now, Packet p, int iface) {
 ```
 In the above method, parameter *iface* is the interface from which packet *p* has been received. The variable *links* of classes extending `ControlAlgorithm` is an array representing the interfaces (and the attached links) of the node. The control algorithm of sender and receiver nodes, as they only have one single interface, use a simpler `ControlAlgorithm` provided with the basic library of CNSS - any non locally directed packet is always sent using the only available interface. If such packet was received from the network arriving by the single node interface, the flood algorithm dictates that it should be dropped since there is no alternative link to send it.
 
-We will start by testing the basic flooding algorithm over the ring network, see figure [Figures/assign4.1.png], a network with cycles.
+We will start by testing the basic flooding algorithm over the ring network, see the figure below, a network with cycles.
 
 ![A ring network (a network with cycles](Figures/assign4.1.png)
 
