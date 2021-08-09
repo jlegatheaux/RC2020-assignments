@@ -174,11 +174,11 @@ In this stage, you must enhance your DV implementation further to expire routing
 
 But if a destination goes down and stays down, routers do not need to maintain routing table entries for that destination. Deleting such entries from routing tables will reduce their size as well as the size of subsequently exchanged routing messages. 
 
-In fact, in some cases, some DV announcements contain destinations at distance INFINITY. If that one was a previously reachable destination, this announcement is important since it triggers an update to the routing table. If such an announcement was already known to the router, the corresponding routing table is nlt modified.
+In fact, in some cases, some DV announcements contain destinations at distance INFINITY. If that one was a previously reachable destination, this announcement is important since it triggers an update to the routing table. If such an announcement was already known to the router, the corresponding routing table is not modified.
 
 You will need to enforce a deadline after which stale entries for unreachable destinations should be removed from the routing table. We require that you remove stale entries in accordance with the timeout policy suggested in RFC2453 (which you will find a very useful reference): an entry should be removed as a function of u, the update interval. For this work, remove entries after 3 update intervals as stale entries.
 
-Therefore, if a routing table entry has  ,constantly, cost INFINITY since more than 3 update intervals, that entry shoukfd be removed.
+Therefore, if a routing table entry has, constantly, cost INFINITY since more than 3 update intervals, that entry should be removed.
 
 Note that part of the mechanism specified in the RFC handles the loss of routing update packets. The tests we provide, however, never drop routing update packets, so you do not need to incorporate mechanisms for dealing with such losses. Finally, note that expiration of entries for unreachable destinations helps reduce the size of the routing table and subsequent announcements, but doesn’t hasten convergence.
 
