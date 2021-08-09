@@ -5,7 +5,7 @@ Each config4.X drives different simulations for the programming assignment 4.
 
 All simulations end after 39 seconds before calling ``dumpappstate()`` and ``dumppacketstats()``.
 
-All networks have two sender application nodes and two receiving nodes.
+All networks have two sender application nodes and two receiving application nodes.
 
 
 ## config 4.1
