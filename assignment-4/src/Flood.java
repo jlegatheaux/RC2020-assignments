@@ -1,4 +1,4 @@
-// Packet forwarding using a simple and dump flooding algorithm
+// Packet forwarding using a simple and dumb flooding algorithm
 // To be enhanced by students
 
 import java.util.*;
@@ -9,7 +9,7 @@ import cnss.simulator.Link;
 import cnss.simulator.Node;
 import cnss.simulator.Packet;
 
-public class FloodForStudents extends AbstractControlAlgorithm {
+public class Flood extends AbstractControlAlgorithm {
 
 	private Node nodeObj;
 	private Link[] links;
@@ -53,6 +53,10 @@ public class FloodForStudents extends AbstractControlAlgorithm {
 		
 		if ( drop_duplicates ) {
 			// your code here
+			// if you drop a duplicate packet, also do the following
+			// trace(now, "dropped duplicate");
+			// nodeObj.send(p, UNKNOWN);
+			//
 		} 
 		
 		if ( p.getDestination() == nodeObj.getId()) {
