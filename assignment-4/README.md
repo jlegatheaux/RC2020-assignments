@@ -13,7 +13,7 @@ However, if the network is not a tree, i.e. it has cycles, the algorithm introdu
 
 In this assignment we will use several variants of the same network, depicted in the figures below, to analyse the behaviour of the basic flooding algorithm and develop several enhancements. The first one is a tree network with no cycles.
 
-![A tree network with no cycles](Figures/assign4.2.png)
+![A tree network with no cycles](Figures/assign4.2.png)"A tree network with no cycles."
 
 The second one is a mesh network with many cycles.
 
