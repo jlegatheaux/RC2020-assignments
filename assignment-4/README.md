@@ -13,7 +13,7 @@ However, if the network is not a tree, i.e. it has cycles, the algorithm introdu
 
 In this assignment we will use several variants of the network depicted in the figure below to analyse the behaviour of the basic flooding algorithm and develop several enhancements. 
 
-![The network used for testing the different versions of the algorithm](Figures/assign4.4.png)
+![The network used for testing the different versions of the algorithm when all links are up](Figures/assign4.3.png)
 
 In this network some nodes act as Sender nodes and periodically send a *ping like packet* to the receiver node in a variable of their code named `dest`, as shown in their `on_clock_tick()` upcall available below. In the same code fragment are also shown `on_receive()` and `showState()` upcalls.
 
@@ -72,6 +72,10 @@ private void flood_packet (int now, Packet p, int iface) {
 ```
 In the above method, parameter *iface* is the interface from which packet *p* has been received. The variable *links* of classes extending `ControlAlgorithm` is an array representing the interfaces (and the attached links) of the node. The control algorithm of sender and receiver nodes, as they only have one single interface, use a simpler `ControlAlgorithm` provided with the basic library of CNSS - any non locally directed packet is always sent using the only available interface. If such packet was received from the network arriving by the single node interface, the flood algorithm dictates that it should be dropped since there is no alternative link to send it.
 
+We will start by testing the basic flooding algorithm over the ring network, see figure [Figures/assign4.1.png], a network with cycles.
+
+![A ring network (a network with cycles](Figures/assign4.1.png)
+
 Configuration file [configs/config4.1](configs/config4.1) allows you to make a first simulation test of the basic naive flooding algorithm, provided in class [src/Flood.java](src/Flood.java), by issuing the following command (or an equivalent action compatible with your development environment):
 
 ```
@@ -86,9 +90,11 @@ It is possible to analyse statistics on how the flood routing process is execute
 
 If you want to have a detailed look on how the [configs/config4.1](configs/config4.1) simulation progresses, you can uncomment the line `parameter trace` what will trigger the printing of tracing messages by the different control algorithms. That allows one to a have a much clear idea on how the routing of packets is progressing.
 
-After that you can proceed to simulations with different network configurations, namely, one that at time stamp 18000 puts the link from node 0 to node 3 **up**, see file [configs/config4.2](configs/config4.2), as shown in the figure below.
+Periodically, i.e. every 10 seconds, sender nodes send a packet to a receiveing node. The receiving nodes echoe back a packet to the sender. If the routing was correctly performed, all nodes would send and receive 3 packets. However, as this network has cycles, there is a significant number of duplicates that nodes send and receive. Also, as CNSS implements packets TTLs, many of these duplicates are finally dropped when their TTL reach 0. This confirms that the basic flooding algorithm introduces duplicates in a network cycles.
 
-![The network used for test configuration config4.2](Figures/assign4.2.png)
+After that you can proceed to simulations with different network configurations, namely, one that at time stamp 18000 puts the link from node 0 to node 3 **up**, see file [configs/config4.3](configs/config4.3), as shown in the figure below.
+
+![The network used for test configuration config4.3](Figures/assign4.3.png)
 
 From that moment on, the network has cycles and becomes similar to a ring network (with some "legs"). You can test it by running the next simulation:
 
