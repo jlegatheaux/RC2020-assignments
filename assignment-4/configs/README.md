@@ -46,4 +46,3 @@ A MESH network interconnecting senders and receivers
 
 With filtering by the reverse path activated and detection and dropping of duplicates
 
-Senders send 3 packets and receive 3 packets
