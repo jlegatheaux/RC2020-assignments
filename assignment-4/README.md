@@ -3,7 +3,7 @@
 
 In this Assignment we will use CNSS to discuss routing based on the Flooding Algorithm. Students must enhance a provided naive flooding solution by introducing filtering and detection of packet duplicates in the forwarding process implemented by *switching nodes*.
 
-A deeper discussion of the subject is available in **chapter 15** of the course support book.
+A deeper discussion of the subject is available at **chapter 15** of the course support book.
 
 The basic flooding algorithm is very simple. It requires switching nodes to maintain **no state** besides the set of their active interfaces. In short, whenever there is a packet to forward, not addressed to the receiving node, the algorithm simply sends a copy of that packet to all the node's interfaces, except the one from which the packet arrived.
 
