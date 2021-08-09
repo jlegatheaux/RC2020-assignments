@@ -5,17 +5,21 @@ In this Assignment we will use CNSS to discuss routing based on the Flooding Alg
 
 A deeper discussion of the subject is available at **chapter 15** of the course support book.
 
-The basic flooding algorithm is very simple. It requires switching nodes to maintain **no state** besides the set of their active interfaces. In short, whenever there is a packet to forward, the algorithm simply sends a copy of that packet to all the node's interfaces, except the one from which the packet arrived. If the packet is directed (unicasted) to the receiving node, this will not flood it. If the packet is directed to all nodes of the network (broadcasted), the receiving node delivers a copy locally and also floods it.
+The basic flooding algorithm is very simple. It requires switching nodes to maintain **no state** besides the set of their active interfaces. In short, whenever there is a packet to forward, the algorithm simply sends a copy of that packet to all the node's interfaces, except the one from which the packet arrived. If the packet is directed (unicasted) to the receiving node, the node will not flood it since the packet reached its destination. If the packet is directed to all nodes of the network (broadcasted), the receiving node delivers a copy locally and also floods it.
 
-If the network is a **tree, i.e., it has no cycles**, the packet will reach the destination, provided there is a path from the origin node to the destination one. The only drawback of flooding to route unicast packets in a tree network is that several useless copies of the same packet will get to all nodes of the network, but the sender. Because of this, flooding also has the advantage of being, in tree networks, an optimal way of implementing broadcasting.
+If the network is a **tree, i.e., it has no cycles**, the packet will reach the destination, provided there is a path from the origin node to the destination one. The only drawback of using flooding to route unicast packets in a tree network is that several useless copies of the same packet will get to all nodes of the network, but the sender. Note that because of this, flooding also has the advantage of being, in tree networks, an optimal way to implement broadcasting.
 
-However, if the network is not a tree, i.e. it has cycles, the algorithm introduces packet duplicates and, in some situations, the number of these packets duplicates may endlessly grow and make the network collapse, in what is called a "broadcast storm". Broadcast storms may be limited when packets are discarded when their TTLs reach 0. However, if there are no TTLs, or if the network has many alternative paths, they take place. 
+However, if the network is not a tree, i.e. it has cycles, the algorithm introduces packet duplicates and, in some situations, the number of these duplicates may endlessly grow and make the network collapse, in what is called a "broadcast storm". Broadcast storms may be limited when packets are discarded when their TTLs reach 0. However, if there are no packet TTLs, or if the network has many alternative paths, they always take place. 
 
-In this assignment we will use several variants of the network depicted in the figure below to analyse the behaviour of the basic flooding algorithm and develop several enhancements. 
+In this assignment we will use several variants of the same network, depicted in the figures below, to analyse the behaviour of the basic flooding algorithm and develop several enhancements. 
 
-![The network used for testing the different versions of the algorithm when all links are up](Figures/assign4.3.png)
+![A tree network with no cycles](Figures/assign4.2.png)
 
-In this network some nodes act as Sender nodes and periodically send a *ping like packet* to the receiver node in a variable of their code named `dest`, as shown in their `on_clock_tick()` upcall available below. In the same code fragment are also shown `on_receive()` and `showState()` upcalls.
+![A mesh network with many cycles](Figures/assign4.2.png)
+
+![A ring network with several cycles](Figures/assign4.2.png)
+
+In all these networks some nodes act as Sender nodes and periodically send a *ping like packet* to the receiver node contained in a variable of their code named `dest`, as shown in their `on_clock_tick()` upcall available below. The same code fragment also show `on_receive()` and `showState()` upcalls.
 
 ```java
 public void on_clock_tick(int now) {
@@ -51,7 +55,7 @@ public void showState(int now) {
 	System.out.println(" sent "+countSent+" packet(s)"+" / received "+countReceived+" packet(s)");
 }
 ```
-The code below shows the method `flood_packet()` which is used by the ´ControlAlgorithm´ of all switching nodes to forward packets not directly addressed to them.
+The code below shows the method `flood_packet()` which is used by the ´ControlAlgorithm´ of all switching nodes of the previous assignements to forward packets not directly addressed to them.
 
 ```java
 private void flood_packet (int now, Packet p, int iface) {
@@ -72,9 +76,7 @@ private void flood_packet (int now, Packet p, int iface) {
 ```
 In the above method, parameter *iface* is the interface from which packet *p* has been received. The variable *links* of classes extending `ControlAlgorithm` is an array representing the interfaces (and the attached links) of the node. The control algorithm of sender and receiver nodes, as they only have one single interface, use a simpler `ControlAlgorithm` provided with the basic library of CNSS - any non locally directed packet is always sent using the only available interface. If such packet was received from the network arriving by the single node interface, the flood algorithm dictates that it should be dropped since there is no alternative link to send it.
 
-We will start by testing the basic flooding algorithm over the ring network, see the figure below, a network with cycles.
-
-![A ring network (a network with cycles](Figures/assign4.1.png)
+We will start by testing the basic flooding algorithm over the ring network, see figure (Figures/assign4.1.png) above.
 
 Configuration file [configs/config4.1](configs/config4.1) allows you to make a first simulation test of the basic naive flooding algorithm, provided in class [src/Flood.java](src/Flood.java), by issuing the following command (or an equivalent action compatible with your development environment):
 
