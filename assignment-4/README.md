@@ -5,17 +5,17 @@ In this Assignment we will use CNSS to discuss routing based on the Flooding Alg
 
 A deeper discussion of the subject is available at **chapter 15** of the course support book.
 
-The basic flooding algorithm is very simple. It requires switching nodes to maintain **no state** besides the set of their active interfaces. In short, whenever there is a packet to forward, not addressed to the receiving node, the algorithm simply sends a copy of that packet to all the node's interfaces, except the one from which the packet arrived.
+The basic flooding algorithm is very simple. It requires switching nodes to maintain **no state** besides the set of their active interfaces. In short, whenever there is a packet to forward, the algorithm simply sends a copy of that packet to all the node's interfaces, except the one from which the packet arrived. If the packet is directed (unicasted) to the receiving node, this will not flood it. If the packet is directed to all nodes of the network (broadcasted), the receiving node delivers a copy locally and also floods it.
 
-If the network is a **tree, i.e., it has no cycles**, the packet will reach the destination provided there is a path from the origin node to the destination one. The only drawback of flooding to route unicast packets in a tree network is that several useless copies of the same packet will get to all nodes of the network, but the sender. These useless copies will ultimately be discarded by all non destination nodes, i.e., nodes whose adddress is different from the destination address of the packet. Flooding also has the advantage of being, in tree networks, an optimal way of implementing broadcasting, i.e. the routing of a packet destinated to all the nodes of the network.
+If the network is a **tree, i.e., it has no cycles**, the packet will reach the destination, provided there is a path from the origin node to the destination one. The only drawback of flooding to route unicast packets in a tree network is that several useless copies of the same packet will get to all nodes of the network, but the sender. Because of this, flooding also has the advantage of being, in tree networks, an optimal way of implementing broadcasting.
 
-However, if the network is not a tree, i.e. it has cycles, the algorithm introduces packet duplicates and, in some situations, the number of these packets duplicates may always grow and will make the network collapse, in what is then called a "broadcast storm". Broadcast storms may be limited when packets are discarded when their TTLs reach 0. However, if there are no TTL, or if the network has many alternative paths, they always arise. 
+However, if the network is not a tree, i.e. it has cycles, the algorithm introduces packet duplicates and, in some situations, the number of these packets duplicates may endlessly grow and make the network collapse, in what is called a "broadcast storm". Broadcast storms may be limited when packets are discarded when their TTLs reach 0. However, if there are no TTLs, or if the network has many alternative paths, they take place. 
 
-In this assignment we will use the network depicted in the figure below to analyse the behaviour of the basic flooding algorithm and develop several enhancements. 
+In this assignment we will use several variants of the network depicted in the figure below to analyse the behaviour of the basic flooding algorithm and develop several enhancements. 
 
-![The network used for testing the different versions of the algorithm](Figures/assign4.1.png)
+![The network used for testing the different versions of the algorithm](Figures/assign4.4.png)
 
-In this network some nodes act as Sender nodes and periodically send a *ping like packet* to the receiver node in a variable of their code named `dest`, as shown in their `on_clock_tick()` upcall available below. In the same code fragment are also shown upcalls `on_receive()` and `showState()`.
+In this network some nodes act as Sender nodes and periodically send a *ping like packet* to the receiver node in a variable of their code named `dest`, as shown in their `on_clock_tick()` upcall available below. In the same code fragment are also shown `on_receive()` and `showState()` upcalls.
 
 ```java
 public void on_clock_tick(int now) {
@@ -70,7 +70,7 @@ private void flood_packet (int now, Packet p, int iface) {
 	trace(now, "forwarded " + copiesSent + " packet copy(ies)");
 }
 ```
-In the above method, parameter *iface* is the interface from which packet *p* has been received. The variable *links* of classes extending `ControlAlgorithm` is an array representing the interfaces (and the attached links) of the node. The control algorithm of sender and receiver nodes, as they only have one single interface, use a simpler `ControlAlgorithm` provided with the basic library of CNSS - any non locally directed packet is always sent using the only available interface. If such packet was received from the network arriving by the single node interface, the flood algorithm dictates that it should be dropped.
+In the above method, parameter *iface* is the interface from which packet *p* has been received. The variable *links* of classes extending `ControlAlgorithm` is an array representing the interfaces (and the attached links) of the node. The control algorithm of sender and receiver nodes, as they only have one single interface, use a simpler `ControlAlgorithm` provided with the basic library of CNSS - any non locally directed packet is always sent using the only available interface. If such packet was received from the network arriving by the single node interface, the flood algorithm dictates that it should be dropped since there is no alternative link to send it.
 
 Configuration file [configs/config4.1](configs/config4.1) allows you to make a first simulation test of the basic naive flooding algorithm, provided in class [src/Flood.java](src/Flood.java), by issuing the following command (or an equivalent action compatible with your development environment):
 
