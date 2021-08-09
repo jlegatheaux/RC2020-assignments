@@ -3,11 +3,11 @@
 
 ## Introduction
 
-In this assignment you will write distance-vector (DV) routing code for a simple switching node or router. Look at the lecture notes and slides of the course, namely chapter 16 of the book supporting this course. Although we do not require or expect you to implement that standardized version, you will also find it useful to refer to RFC2453 (RIP Version 2), which describes the Routing Information Protocol (RIP), a very long-standing distance-vector routing protocol.
+In this assignment you will write distance-vector (DV) routing protocol for a simple switching router. First. look at the lecture notes and slides of the course, namely chapter 16 of the book supporting this course. Although we do not require or expect you to implement the standardized version, you will also find it useful to refer to RFC2453 (RIP Version 2), which describes the Routing Information Protocol (RIP), a very long-standing distance-vector routing protocol.
  
 Note that we expect you to implement the algorithm and protocol as presented in the lecture notes, following the different steps suggested below and including setting of the appropriate routing table entries’ metrics to a reserved INFINITY value when a link goes down. That is, your protocol must be realistic enough to be used in a real network where links may go down or up.
 
-We provide you with a skeleton of the control algorithm for a distance-vector router running in CNSS, found in file `DVControl.java`. You should implement your solution to the assignment by filling in the missing parts of this file. Do not change any of the constants that we’ve pre-defined in that file neither the flags setting code at the beginning of the `initialise()`upcall, which control the options your solution implements.
+We provide you with a skeleton of the control algorithm for a distance-vector router running in CNSS, found in file `DVControl.java`. You should implement your solution to the assignment by filling in the missing parts of this file. Do not change any of the constants that we’ve pre-defined in that file, neither the flags setting code at the beginning of the `initialise()` upcall, which control the options your solution implements.
 
 We also give you a function to compute the metric of a link as well as two classes. The first one, implements a Routing Table Entry. The second one, implements the payload of CNSS control packets used to send and receive distance vector or reachability announcements.
 
@@ -30,7 +30,7 @@ A router will start with a routing table with one only entry, the one that point
 rt.put(nodeId, new DVRoutingTableEntry(nodeId, LOCAL, 0, now) );
 ```
 
-Therefore, the only way your router learns which are its neighbours is when it receives their announcements. Similary, its neighbours will learn this router existence when they receive his announcements. Like this, the only information a router needs to start its future routing life with this algorithm is its identification (nodeId).
+Therefore, the only way your router learns which are its neighbours is when it receives their announcements. Similary, its neighbours will learn this router existence when they receive his announcements. Like this, the only information a router needs to start its future routing life with this algorithm is its identification (nodeId) and the standard table of his interfaces.
 
 ### Sending periodic announcements
 
@@ -172,13 +172,13 @@ When testing your split horizon with poison-reverse implementation, be sure the 
 
 In this stage, you must enhance your DV implementation further to expire routing table entries as necessary. Note that the DV algorithm described in lectures allows routing table entries to persist indefinitely. 
 
-But if a destination goes down and stays down, routers do not need to maintain routing table entries for that destination. In fact, deleting such entries from routing tables will reduce the size of subsequently exchanged routing messages. 
+But if a destination goes down and stays down, routers do not need to maintain routing table entries for that destination. Deleting such entries from routing tables will reduce their size as well as the size of subsequently exchanged routing messages. 
 
-In fact, in some cases, some DV announcements contain destinations at distance INFINITY. If that one was a previously reachable destination, this announcement requires an update to the routing table. If such an announcement was already known to the router, the corresponding routing table should not be refreshed.
+In fact, in some cases, some DV announcements contain destinations at distance INFINITY. If that one was a previously reachable destination, this announcement is important since it triggers an update to the routing table. If such an announcement was already known to the router, the corresponding routing table is nlt modified.
 
-You will need to enforce a deadline after which stale entries for unreachable destinations should be removed from the routing table.
+You will need to enforce a deadline after which stale entries for unreachable destinations should be removed from the routing table. We require that you remove stale entries in accordance with the timeout policy suggested in RFC2453 (which you will find a very useful reference): an entry should be removed as a function of u, the update interval. For this work, remove entries after 3 update intervals as stale entries.
 
-We require that you remove stale entries in accordance with the timeout policy suggested in RFC2453 (which you will find a very useful reference): an entry should be removed as a function of u, the update interval. For this work, remove entries after  3 update intervals as stale entries.
+Therefore, if a routing table entry has  ,constantly, cost INFINITY since more than 3 update intervals, that entry shoukfd be removed.
 
 Note that part of the mechanism specified in the RFC handles the loss of routing update packets. The tests we provide, however, never drop routing update packets, so you do not need to incorporate mechanisms for dealing with such losses. Finally, note that expiration of entries for unreachable destinations helps reduce the size of the routing table and subsequent announcements, but doesn’t hasten convergence.
 
