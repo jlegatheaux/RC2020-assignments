@@ -1,6 +1,6 @@
 # Explanations
 
-Each "outputX.txt" file is the result of the execution of simulation
+Each "resultX.txt" file is the result of the execution of simulation
 "Config4.X" by a correct solution of the programming assignment 4
 
 # Config 4.1
