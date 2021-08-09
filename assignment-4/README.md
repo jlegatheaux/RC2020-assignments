@@ -13,7 +13,7 @@ However, if the network is not a tree, i.e. it has cycles, the algorithm introdu
 
 In this assignment we will use several variants of the same network, depicted in the figures below, to analyse the behaviour of the basic flooding algorithm and develop several enhancements. The first one is a tree network with no cycles.
 
-![A tree network with no cycles](Figures/assign4.2.png)"A tree network with no cycles."
+![A tree network with no cycles](Figures/assign4.2.png)
 
 The second one is a mesh network with many cycles.
 
@@ -96,51 +96,38 @@ It is possible to analyse statistics on how the flood routing process is execute
 
 If you want to have a detailed look on how the [configs/config4.1](configs/config4.1) simulation progresses, you can uncomment the line `parameter trace` what will trigger the printing of tracing messages by the different control algorithms. That allows one to a have a much clear idea on how the routing of packets is progressing.
 
-Periodically, i.e. every 10 seconds, sender nodes send a packet to a receiveing node. The receiving nodes echoe back a packet to the sender. If the routing was correctly performed, all nodes would send and receive 3 packets. However, as this network has cycles, there is a significant number of duplicates that nodes send and receive. Also, as CNSS implements packets TTLs, many of these duplicates are finally dropped when their TTL reach 0. This confirms that the basic flooding algorithm introduces duplicates in a network cycles.
+Periodically, i.e. every 10 seconds, sender nodes send a packet to a receiveing node. The receiving nodes echoe back a packet to the sender. If the routing was correctly performed, all nodes would send and receive 3 packets. However, as this network has cycles, there is a significant number of duplicates that nodes send and receive. Also, as CNSS implements packets TTLs, many of these duplicates are finally dropped when their TTLs reach 0. This confirms that the basic flooding algorithm introduces duplicates in a network cycles.
 
-After that you can proceed to simulations with different network configurations, namely, one that at time stamp 18000 puts the link from node 0 to node 3 **up**, see file [configs/config4.3](configs/config4.3), as shown in the figure below.
+After that you can proceed to a simulation with a network configurations with many cycles, namely, the mesh network of the following configuration file: [configs/config4.2](configs/config4.2). That network is shown below.
 
-![The network used for test configuration config4.3](Figures/assign4.3.png)
+![The network used for test configuration config4.2](Figures/assign4.3.png)
 
-From that moment on, the network has cycles and becomes similar to a ring network (with some "legs"). You can test it by running the next simulation:
-
-```
-java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.2
-```
-As you can see, things now perform very differently. Not only because nodes receive many duplicate packets, but also because the only way a flood stops is because something special arises to the forwarded packets. Guess what and explain why it happens. If you want to have a more detailed look at the deluge of events you must run the simulation with tracing on. 
-
-Another interesting observation is to compare the time a flood takes to end when the network has no cycles (afer the first packet is sent at time = 10000), to the time it takes when the network is not acyclic. You can look at it by using command `less` to stop the progress of the printing of the simulation results (continuation requires you to touch the "space" key).
+That network has many cycles. You can test it by running the next simulation by using the following command:
 
 ```
 java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.2 | less
 ```
-You can abort the simulation as soon as you got the comparison done. You can try to justify the values by looking at the initial value of the TTL parameter of packets and the paths they use in the network. This value is set at Packet creation time by the constructor of class `cnss.simulator.Packet`. You can also try to devise a simple method to make the flood stop earlier. Can your methdod be generalised to any network?
+since, as you can see, things now perform very differently and the simulation never ends. You must stop it by issuing an interruption (by pressing simulatneously keys "control" and "C", or pressing a "^C" key). In this case, the network collapses as result of several "**network storms**".
+
+Finally, you can test how the flood algorithm performs in a network without cycles, namely the one of the following configuration file: [configs/config4.3](configs/config4.3). That network is shown below.
+
+![The network used for test configuration config4.2](Figures/assign4.2.png)
+
+That network has no cycles. You can test it by running the next simulation by using the following command:
+
+```
+java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.2 | less
+```
+
+Now, as you can see, now packets are correctly routed and each node sends and receives exactly 3 packets each.
+
+
 
 # Your First Delivery (that can be marked at most 14 marks)
 
 The goal of your first delivery is to enhance the provided [src/FloodForStudents](src/FloodForStudents) class to also implement a flooding optimisation, known as **learning by the reverse path**, which leverages the fact that in an acyclic network, if a node `N` receives by interface `I` a packet originally sent by source `S`, then `I` is the beginning of a (unique and therefore shortest) path from `N` to `S`. After implementing it, to switch this optimization on, the only required action should be to uncomment the line  `parameter filter` in the configuration file.
 
-By using file [configs/config4.1](configs/config4.1), with filtering on and off, it is easy to see that the number of duplicate packets drops with filtering on. This is easier to realize with tracing on if you introduce a tracing action in your enhanced implementation that traces when a packet was forwarded to one only interface, instead of being flooded. This optimisation seems to have a radical implication since when performing simulation [configs/config4.2](configs/config4.2), with filtering on and off, it seems that  **learning by the reverse path** is capable of avoiding all duplicates per se. 
-
-Performing the same simulations with file [configs/config4.3](configs/config4.3), which uses the network shown below, with all links up after time = 18000 and therefore more cycles than the previous one, it can be observed that with filtering off, floods seem never end, while doing the same simulation with filtering on, the number of duplicates drops radically and, once again, floods stop quite soon.
-
-![The network used for test configuration config4.3](Figures/assign4.3.png)
-
-However, is it possible to prove that this kind of filtering is capable of avoiding most floods and the reception of all duplicate packets? It is not possible to prove it because it is a false assertion. To prove that it is not true, it is enough to find a counterexample. For this, you can try the same simulations with a new version of sender nodes. One where each sender also sends a packet to a switch node using, for example, the upcall `on_clock_tick` below
-
-```java
-public void on_clock_tick(int now) {
-	countSent++;
-	byte[] pl = Integer.toString(countSent).getBytes();
-	DataPacket p = self.createDataPacket(dest,pl);
-	self.send(p);
-	countSent++;
-	p = self.createDataPacket(5,pl);
-	self.send(p);
-	log(now, " sent "+p+" payload "+countSent);
-}
-```
-by wich sender nodes also send a packet to the switching node number 5 at each clock tick. Running again the same simulation, even with filtering on, one realises that node 5 instead of receiving 6 packets from other nodes, receives 114 packets, while all other nodes received 0. Switching nodes use an empty `ApplicationAlgorithm` class and therefore ignore the received application packets.
+By using file [configs/config4.4](configs/config4.4), with filtering on and off, it is easy to see that the number of duplicate packets drops with filtering on. This is easier to realize with tracing on if you introduce a tracing action in your enhanced implementation that traces when a packet was forwarded to one only interface, instead of being flooded. This optimisation seems to have a radical implication since when performing simulation [configs/config4.4](configs/config4.4), with filtering on and off, it shows that  **learning by the reverse path** is capable of avoiding all duplicates per se after the first round of exchanged packets.
 
 # Optional Assignment Delivery (that can be marked at most more 6 marks)
 
@@ -180,15 +167,15 @@ public void forward_packet(int now, Packet p, int iface) {
 		flood_packet (now, p, iface);
 	}
 ```
-To achieve this goal, you have to devise a technique to detect duplicates by making nodes to record the least possible internal identifying state on the packets previously forwarded. Your solution must forward the least possible number of packets using configuration [configs/config4.4](configs/config4.4), a network with all links up from the beginning, as shown in the figure below.
+To achieve this goal, you have to devise a technique to detect duplicates by making nodes to record the least possible internal identifying state on the packets previously forwarded. Your solution must forward the least possible number of packets using configuration [configs/config4.5](configs/config4.5), a network with all links up from the beginning, as shown in the figure below.
 
-![The network used for test configuration config4.4](Figures/assign4.4.png)
+![The network used for test configuration config4.3](Figures/assign4.3.png)
 
 To devise a way of detecting if a packet is a duplicate, you need to compute some sort of key that can be used to discriminate or identify a packet, something with the properties of a packet unique identifier. For a start, it seems that two packets with exactly the same header and the same payload could be considered as being the same packet. Therefore, the key could be computed using some hash function having them as input.
 
 In reality, things are more complicated. In fact, in a certain network, nothing prevents a node of sending two different packets, packets P1 and P2, to the same destination, and with the same payload. Therefore, both will have the same payload and only the headers may be used to decide if P1 and P2 are the same packet or different packets. In fact, they are different packets, sent at different moments, and only the network header may tell that since the payload is useless for that purpose.
 
-One can then look at the headers used in a specific network protocol to see if it contains information that can be used to decide if P1 and P2 are different or the same packet. In CNSS (as well as IPv4 as we will see later) there is a field in the header that changes from P1 to P2. In CNSS that field is called **sequence number** and can be accessed using method `getSequenceNumber()`, like in `p1.getSequenceNumber()`, which returns an `int`.  Therefore, looking at the full list of packets header fields (look at CNSS documentation or at the source code of class `Packet` to see what is a CNSS packet) one can devise a method to compute a *workable* version of that key. Lets use that one, but you can look at the end of this subject to have a deeper look on secured ways of identifying packets.
+One can then look at the headers used in a specific network protocol to see if it contains information that can be used to decide if P1 and P2 are different or the same packet. In CNSS (as well as IPv4) there is a field in the header that changes from P1 to P2. In CNSS that field is called **sequence number** and can be accessed using method `getSequenceNumber()`, like in `p1.getSequenceNumber()`, which returns an `int`.  Therefore, looking at the full list of packets header fields (look at CNSS documentation or at the source code of class `Packet` to see what is a CNSS packet) one can devise a method to compute a *workable* version of that key. Lets use that one, but you can look at the end of this subject to have a deeper look on secured ways of identifying packets.
 
 After executing that simulation with your last enhancement, all application nodes (sender and receiver nodes) only send 3 packets and receive 3. They also drop exactly one packet received by their only link. Can you explain both facts? 
 
@@ -237,11 +224,11 @@ Your solution may be confronted with other CNSS network configurations.
 
 # A final note on devising packets secure unique identifiers
 
-Devising a method to assign unique identifiers to objects without relying on counters fully realiable and with boundless resolution is quite complex. In fact, real nodes can crash and their packets sequence numbers counters may be reused. Also, if a node sends packets at reasonable high speed, it can easily exahaust the available sequence numbers range and start reusing them by going from 0 up to MAXINT, then to = 0, then from 1 up to MAXINT again, and so on.
+Devising a method to assign unique identifiers to objects without relying on counters fully realiable and with boundless resolution is quite complex. In fact, real nodes can crash and their packets sequence numbers counters may be reused. Also, if a node sends packets at reasonable high speed, it can easily exahaust the available sequence numbers range and start reusing them by going from 0 up to MAXINT, then from 0 up to MAXINT again, and so on.
 
 In IPv4 the header field that plays a similar role to a sequence number is called the packet `identifier` and is represented in 16 bits. Thus, its value is reused after sending around 65000 packets. In IPv6 there is no such header field, and two different packets sent at different times by the same node, to the same destination node, and with the same payload, would be considered indistinguishable packets by the network. In CNSS the sequence number is an `int`, thus, it is only reused after sending more than 4 million packets.
 
-Thus, in CNSS and IPv4, without solving these two problems, there is no simple way to build unique identifiers for packets at network level that resist node crashes and integers range exhaustion. The better you can expect is that sucessive node crashes moments, or packets emission with the same sequence numbers moments, differ time enough to make the crashes and the sequence numbers reuse harmless. For example, by guaranteeing that all old copies of the same packet have already desapeared from the network and cannot make harm or introduce confusion. With this approach, your solution could use a timmer to periodically clean all traces of old packets keys, and the initial value of the sequence number counter should be set randomly. The same problem has already been tackled a propos of TCP connections initial sequence numbers. This discussion is complex and requires that a **Packet Max Life Time** parameter for the Internet must be adopted with the sole purpose of making correctness proofs.
+Thus, in CNSS and IPv4, without solving the above two problems, there is no simple way to build unique identifiers for packets at network level that resist node crashes and integers range exhaustion. The better you can expect is that sucessive node crashes moments, or packets emission with the same sequence numbers moments, differ time enough to make the crashes and the sequence numbers reuse harmless. For example, by guaranteeing that all old copies of the same packet have already desapeared from the network and cannot make harm or introduce confusion. With this approach, your solution could use a timmer to periodically clean all traces of old packets keys, and the initial value of the sequence number counter should be set randomly. The same problem has already been tackled a propos of TCP connections initial sequence numbers. This discussion is complex and requires that a **Packet Max Life Time** parameter for the Internet must be adopted with the sole purpose of making correctness proofs.
 
 By using criptographically secured methods to guarantee that no two different packets can be considered the same is a problem solved using identifiers with a greater number of bits (256 or more) as well as some form of randomness that solves the problem introduced by the crash and reinitialization of counters.
 
