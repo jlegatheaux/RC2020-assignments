@@ -1,7 +1,7 @@
 
 # Routing Protocols Using The Flooding Algorithm
 
-In this Assignment we will use CNSS to discuss routing protocols based on the Flooding Algorithm. Students must enhance a provided naive flooding solution by introducing filtering and detection of packet duplicates in the forwarding process implemented by *switching nodes*.
+In this Assignment we will use CNSS to discuss routing based on the Flooding Algorithm. Students must enhance a provided naive flooding solution by introducing filtering and detection of packet duplicates in the forwarding process implemented by *switching nodes*.
 
 A deeper discussion of the subject is available in **chapter 15** of the course support book.
 
