@@ -1,7 +1,7 @@
 # Explanations
 
-Each "resultX.txt" file is the result of the execution of simulation
-"Config4.X" by a correct solution of the programming assignment 4
+Each "resultX" file is the result of the execution of simulation
+"configs/config4.X" by a correct solution of the programming assignment 4
 
 # Config 4.1
 
