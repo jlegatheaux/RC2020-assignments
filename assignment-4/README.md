@@ -1,15 +1,17 @@
 
 # Routing Protocols Using The Flooding Algorithm
 
-In this Assignment we will use CNSS to develop a routing protocol based on the Flooding Algorithm. Students must enhance a provided naive flooding solution, and introduce filtering and optimization capabilities in the forwarding process implemented by *switching nodes*.
+In this Assignment we will use CNSS to discuss routing protocols based on the Flooding Algorithm. Students must enhance a provided naive flooding solution by introducing filtering and detection of packet duplicates in the forwarding process implemented by *switching nodes*.
 
 A deeper discussion of the subject is available in **chapter 15** of the course support book.
 
 The basic flooding algorithm is very simple. It requires switching nodes to maintain **no state** besides the set of their active interfaces. In short, whenever there is a packet to forward, not addressed to the receiving node, the algorithm simply sends a copy of that packet to all the node's interfaces, except the one from which the packet arrived.
 
-If the network is a **tree, i.e., it has no cycles**, the packet will reach the destination, provided there is a path from the origin node to the destination one. The only drawback is that several useless copies of the same packet will get to other nodes of the network but the original sender. These useless copies are discarded by all non destination nodes, i.e., nodes whose adddress is different from the destination address of the packet.
+If the network is a **tree, i.e., it has no cycles**, the packet will reach the destination provided there is a path from the origin node to the destination one. The only drawback of flooding to route unicast packets in a tree network is that several useless copies of the same packet will get to all nodes of the network, but the sender. These useless copies will ultimately be discarded by all non destination nodes, i.e., nodes whose adddress is different from the destination address of the packet. Flooding also has the advantage of being, in tree networks, an optimal way of implementing broadcasting, i.e. the routing of a packet destinated to all the nodes of the network.
 
-In this assignment we will use the network depicted in the figure below to test and develop the different versions of the algorithm. Initially, we will consider a state of that network where the link connecting nodes 4 and 5, as well as the link connectiong nodes 3 and 0, are both shutdow. As such, the network will have no cycles.
+However, if the network is not a tree, i.e. it has cycles, the algorithm introduces packet duplicates and, in some situations, the number of these packets duplicates may always grow and will make the network collapse, in what is then called a "broadcast storm". Broadcast storms may be limited when packets are discarded when their TTLs reach 0. However, if there are no TTL, or if the network has many alternative paths, they always arise. 
+
+In this assignment we will use the network depicted in the figure below to analyse the behaviour of the basic flooding algorithm and develop several enhancements. 
 
 ![The network used for testing the different versions of the algorithm](Figures/assign4.1.png)
 
