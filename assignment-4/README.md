@@ -15,9 +15,9 @@ In this assignment we will use several variants of the same network, depicted in
 
 ![A tree network with no cycles](Figures/assign4.2.png)
 
-![A mesh network with many cycles](Figures/assign4.2.png)
+![A mesh network with many cycles](Figures/assign4.3.png)
 
-![A ring network with several cycles](Figures/assign4.2.png)
+![A ring network with several cycles](Figures/assign4.1.png)
 
 In all these networks some nodes act as Sender nodes and periodically send a *ping like packet* to the receiver node contained in a variable of their code named `dest`, as shown in their `on_clock_tick()` upcall available below. The same code fragment also show `on_receive()` and `showState()` upcalls.
 
