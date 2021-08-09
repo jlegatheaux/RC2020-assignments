@@ -15,7 +15,7 @@ Senders send 3 packets and receive many duplicates
 
 MANY duplicates in the network
 
-MANY packets dropped when their TTL reaches 1
+MANY packets dropped when their TTL would reach 0
 
 # Config 4.2
 
@@ -44,7 +44,7 @@ that only have one interface and are not the destination node.
 As there are no loops, no duplicates are introduced,
 only useless packets
 
-NO packets dropped when their TTL reaches 1
+NO packets dropped when their TTL would reach 0
 
 # Config 4.4
 
@@ -60,7 +60,7 @@ After the first round of send / received packets the number of
 useless packets drops to 0 since packets are sent using the
 best path towards their destination.
 
-NO packets dropped when their TTL reaches 1
+NO packets dropped when their TTL would reach 0
 
 # Config 4.5
 
@@ -76,7 +76,7 @@ in the mesh network as in the tree network since all duplicates
 are immediately dropped.
 
 
-MANY packets dropped when their TTL reaches 1
+NO packets dropped when their TTL would reach 0.
 
 
 
