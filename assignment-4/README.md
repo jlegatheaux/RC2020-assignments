@@ -114,13 +114,13 @@ Finally, you can test how the flood algorithm performs in a network without cycl
 
 ![The network used for test configuration config4.3](Figures/assign4.2.png)
 
-You can test it by running the next simulation by using the following command:
+You can test it by running the next simulation with the following command:
 
 ```
 java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.3
 ```
 
-Now, as you can see, now packets are correctly routed and each node sends and receives exactly 3 packets each.
+Now, as you can see, there are no duplicated packets, only some useless ones, packets are correctly routed and each node sends and receives exactly 3 packets each.
 
 
 
