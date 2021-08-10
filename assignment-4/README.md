@@ -126,7 +126,29 @@ Now, as you can see, there are no duplicated packets, only some useless ones, pa
 
 # Your First Delivery (that can be marked at most 14 marks)
 
-The goal of your first delivery is to enhance the provided [src/FloodForStudents](src/FloodForStudents) class to also implement a flooding optimisation, known as **learning by the reverse path**, which leverages the fact that in an acyclic network, if a node `N` receives by interface `I` a packet originally sent by source `S`, then `I` is the beginning of a (unique and therefore shortest) path from `N` to `S`. After implementing it, to switch this optimization on, the only required action should be to uncomment the line  `parameter filter` in the configuration file.
+The goal of your first delivery is to enhance the method `forward_packet()` of the provided [src/Flood](src/Flood) class to also implement a flooding optimisation, known as **learning by the reverse path**. Note that you should only modify the method in the corresponding code part, i.e. in the `if ( filter ) {}` statement:
+
+```java
+public void forward_packet(int now, Packet p, int iface) {
+		
+		if ( drop_duplicates ) {
+			// put your code here
+			// if you conclude that the packet is a duplicate, then execute the 3 following lines
+			// trace(now, "dropped duplicate");
+			// nodeObj.send(p, UNKNOWN);
+			// return;
+		} 
+		
+		// some code suppressed 
+		
+		if ( filter ) {
+			// put your code here
+		}
+		
+		flood_packet (now, p, iface);
+	}
+
+This optimisation leverages the fact that in an acyclic network, if a node `N` receives by interface `I` a packet originally sent by source `S`, then `I` is the beginning of a (unique and therefore shortest) path from `N` to `S`. After implementing it, to switch this optimization on, the only required action should be to uncomment the line  `parameter filter` in the configuration file.
 
 By using file [configs/config4.4](configs/config4.4), with filtering on and off, it is easy to see that the number of duplicate packets drops with filtering on. This is easier to realize with tracing on if you introduce a tracing action in your enhanced implementation that traces when a packet was forwarded to one only interface, instead of being flooded. This optimisation seems to have a radical implication since when performing simulation [configs/config4.4](configs/config4.4), with filtering on and off, it shows that  **learning by the reverse path** is capable of avoiding all duplicates per se after the first round of exchanged packets.
 
@@ -134,13 +156,13 @@ By using file [configs/config4.4](configs/config4.4), with filtering on and off,
 
 The method capable of avoiding all duplicate packets during floods requires switching nodes to detect and drop them. Implementing it is your next job challenge.
 
-The provided class `Flood`, when the parameter `drop_duplicates` is set, should execute all the required actions to implement duplicate packets dropping.
+The provided `forward_packet()` method, when the parameter `drop_duplicates` is set, should execute all the required actions to implement duplicate packets dropping.
 
 ```java
 public void forward_packet(int now, Packet p, int iface) {
 		
 		if ( drop_duplicates ) {
-			// your code here
+			// put your code here
 			// if you conclude that the packet is a duplicate, then execute the 3 following lines
 			// trace(now, "dropped duplicate");
 			// nodeObj.send(p, UNKNOWN);
@@ -162,7 +184,7 @@ public void forward_packet(int now, Packet p, int iface) {
 		}
 		
 		if ( filter ) {
-			// your code here
+			// put your code here
 		}
 		
 		flood_packet (now, p, iface);
