@@ -107,16 +107,17 @@ That network has many cycles. You can test it by running the next simulation wit
 ```
 java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.2 | less
 ```
-since, as you can see, things now perform very differently and the simulation never ends. You must stop it by issuing an interruption (by pressing simulatneously keys "control" and "C", or pressing a "^C" key). In this case, the network collapses as result of several "**network storms**".
+
+Now the simulation never ends and performs very differently since the network collapses as result of several "**network storms**". You must stop it by issuing an interruption (by pressing simultaneously keys "control" and "C", the "^C" key). 
 
 Finally, you can test how the flood algorithm performs in a network without cycles, namely the one of the following configuration file: [configs/config4.3](configs/config4.3). That network is shown below.
 
-![The network used for test configuration config4.2](Figures/assign4.2.png)
+![The network used for test configuration config4.3](Figures/assign4.2.png)
 
-That network has no cycles. You can test it by running the next simulation by using the following command:
+You can test it by running the next simulation by using the following command:
 
 ```
-java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.2 | less
+java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.3
 ```
 
 Now, as you can see, now packets are correctly routed and each node sends and receives exactly 3 packets each.
