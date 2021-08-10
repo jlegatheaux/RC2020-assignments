@@ -102,7 +102,7 @@ After that you can proceed to a simulation with a network configurations with ma
 
 ![The network used for test configuration config4.2](Figures/assign4.3.png)
 
-That network has many cycles. You can test it by running the next simulation by using the following command:
+That network has many cycles. You can test it by running the next simulation with the following command:
 
 ```
 java -cp bin:cnss/bin cnss.simulator.Simulator configs/config4.2 | less
