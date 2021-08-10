@@ -11,17 +11,17 @@ If the network is a **tree, i.e., it has no cycles**, the packet will reach the 
 
 However, if the network is not a tree, i.e. it has cycles, the algorithm introduces packet duplicates and, in some situations, the number of these duplicates may endlessly grow and make the network collapse, in what is called a "broadcast storm". Broadcast storms may be limited when packets are discarded when their TTLs reach 0. However, if there are no packet TTLs, or if the network has many alternative paths, they always take place. 
 
-In this assignment we will use several variants of the same network, depicted in the figures below, to analyse the behaviour of the basic flooding algorithm and develop several enhancements. The first one is a tree network with no cycles.
+In this assignment we will use several variants of the same network, depicted in the figures below, to analyse the behaviour of the basic flooding algorithm and develop several enhancements. The first one is a ring network with some cycles:
 
-![A tree network with no cycles](Figures/assign4.2.png)
+![A ring network with several cycles](Figures/assign4.1.png)
 
 The second one is a mesh network with many cycles.
 
 ![A mesh network with many cycles](Figures/assign4.3.png)
 
-Finally, the last one is a ring network with some cycles.
+Finally, the last one is a tree network with no cycles.
 
-![A ring network with several cycles](Figures/assign4.1.png)
+![A tree network with no cycles](Figures/assign4.2.png)
 
 In all these networks some nodes act as Sender nodes and periodically send a *ping like packet* to the receiver node contained in a variable of their code named `dest`, as shown in their `on_clock_tick()` upcall available below. The same code fragment also show `on_receive()` and `showState()` upcalls.
 
