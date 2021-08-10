@@ -59,7 +59,7 @@ public void showState(int now) {
 	System.out.println(" sent "+countSent+" packet(s)"+" / received "+countReceived+" packet(s)");
 }
 ```
-The code below shows the method `flood_packet()` which is used by the ´ControlAlgorithm´ of all switching nodes of the previous assignements to forward packets not directly addressed to them.
+The code below shows the method `flood_packet()` which is used by the ´ControlAlgorithm´ of switching nodes that perform floodings. In fact, in the previous assignments switching nodes only used this method to forward non locally adresseded packets, since all the networks used in the examples were all trees.
 
 ```java
 private void flood_packet (int now, Packet p, int iface) {
@@ -78,7 +78,7 @@ private void flood_packet (int now, Packet p, int iface) {
 	trace(now, "forwarded " + copiesSent + " packet copy(ies)");
 }
 ```
-In the above method, parameter *iface* is the interface from which packet *p* has been received. The variable *links* of classes extending `ControlAlgorithm` is an array representing the interfaces (and the attached links) of the node. The control algorithm of sender and receiver nodes, as they only have one single interface, use a simpler `ControlAlgorithm` provided with the basic library of CNSS - any non locally directed packet is always sent using the only available interface. If such packet was received from the network arriving by the single node interface, the flood algorithm dictates that it should be dropped since there is no alternative link to send it.
+In the above method, parameter *iface* is the interface from which packet *p* has been received. The variable *links* of classes extending `ControlAlgorithm` is an array representing the interfaces (and the attached links) of the node. The control algorithm of sender and receiver nodes, as they only have one single interface, use a simpler `ControlAlgorithm` provided with the basic library of CNSS - any non locally directed packet is always sent using the only available interface. If such packet was received from the network arriving by the single node interface, the flood algorithm dictates that it should be dropped since there is no alternative link by which it can be sent. 
 
 We will start by testing the basic flooding algorithm over the ring network, see figure (Figures/assign4.1.png) above.
 
