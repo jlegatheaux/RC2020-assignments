@@ -124,7 +124,7 @@ Now, as you can see, there are no duplicated packets, only some useless ones, pa
 
 
 
-# Your First Delivery (that can be marked at most 14 marks)
+# Your First Delivery (can be marked at most 14 marks)
 
 The goal of your first delivery is to enhance the method `forward_packet()` of the provided [src/Flood](src/Flood) class to also implement a flooding optimisation, known as **learning by the reverse path**. Note that you should only modify the method in the corresponding code part, i.e. in the `if ( filter ) {}` statement:
 
@@ -153,11 +153,9 @@ This optimisation leverages the fact that in an acyclic network, if a node `N` r
 
 By using file [configs/config4.4](configs/config4.4), with filtering on and off, it is easy to see that the number of duplicate packets drops with filtering on. This is easier to realize with tracing on if you introduce a tracing action in your enhanced implementation that traces when a packet was forwarded to one only interface, instead of being flooded. This optimisation seems to have a radical implication since when performing simulation [configs/config4.4](configs/config4.4), with filtering on and off, it shows that  **learning by the reverse path** is capable of avoiding all duplicates per se after the first round of exchanged packets.
 
-# Optional Assignment Delivery (that can be marked at most 6 more marks)
+# Optional Assignment Delivery (can be marked at most 6 marks)
 
-The method capable of avoiding all duplicate packets during floods requires switching nodes to detect and drop them. Implementing it is your next job challenge.
-
-The provided `forward_packet()` method, when the parameter `drop_duplicates` is set, should execute all the required actions to implement duplicate packets dropping.
+The method capable of avoiding all duplicate packets during floods requires switching nodes to detect and drop them. Implementing this functionality is your next job challenge. The provided `forward_packet()` method, when the parameter `drop_duplicates` is set, should execute all the required actions to implement duplicate packets dropping.
 
 ```java
 public void forward_packet(int now, Packet p, int iface) {
@@ -170,19 +168,7 @@ public void forward_packet(int now, Packet p, int iface) {
 			// return;
 		} 
 		
-		if ( p.getDestination() == nodeObj.getId()) {
-			Packet localPacket = p.getCopy();
-			nodeObj.send(localPacket, LOCAL);
-			trace(now, "forwarded a packet locally sent to this node");
-			return; // all done
-		}
-
-		if ( p.getDestination() == Packet.BROADCAST ) {
-			Packet localPacket = p.getCopy();
-			localPacket.setDestination(nodeObj.getId());
-			nodeObj.send(localPacket, LOCAL);
-			trace(now, "forwarded a copy of a broadcasted packet to this node");
-		}
+		// some code deleted
 		
 		if ( filter ) {
 			// put your code here
@@ -191,19 +177,19 @@ public void forward_packet(int now, Packet p, int iface) {
 		flood_packet (now, p, iface);
 	}
 ```
-To achieve this goal, you have to devise a technique to detect duplicates by making nodes to record the least possible internal identifying state on the packets previously forwarded. Your solution must forward the least possible number of packets using configuration [configs/config4.5](configs/config4.5), a network with all links up from the beginning, as shown in the figure below.
+To achieve this goal you have to devise a technique to detect duplicates by making switching nodes to record the least possible internal identifying state on the packets previously forwarded. Your solution must forward the least possible number of packets using configuration [configs/config4.5](configs/config4.5), a network with all links up from the beginning, as shown in the figure below.
 
 ![The network used for test configuration config4.3](Figures/assign4.3.png)
 
-To devise a way of detecting if a packet is a duplicate, you need to compute some sort of key that can be used to discriminate or identify a packet, something with the properties of a packet unique identifier. For a start, it seems that two packets with exactly the same header and the same payload could be considered as being the same packet. Therefore, the key could be computed using some hash function having them as input.
+To devise a way of detecting if a packet is a duplicate, you need to compute a key that can be used to discriminate or identify a packet, something with the properties of a packet's unique identifier. For a start, it seems that two packets with exactly the same header and the same payload could be considered as being the same packet. Therefore, the key could be computed using some hash function having them as input.
 
 In reality, things are more complicated. In fact, in a certain network, nothing prevents a node of sending two different packets, packets P1 and P2, to the same destination, and with the same payload. Therefore, both will have the same payload and only the headers may be used to decide if P1 and P2 are the same packet or different packets. In fact, they are different packets, sent at different moments, and only the network header may tell that since the payload is useless for that purpose.
 
-One can then look at the headers used in a specific network protocol to see if it contains information that can be used to decide if P1 and P2 are different or the same packet. In CNSS (as well as IPv4) there is a field in the header that changes from P1 to P2. In CNSS that field is called **sequence number** and can be accessed using method `getSequenceNumber()`, like in `p1.getSequenceNumber()`, which returns an `int`.  Therefore, looking at the full list of packets header fields (look at CNSS documentation or at the source code of class `Packet` to see what is a CNSS packet) one can devise a method to compute a *workable* version of that key. Lets use that one, but you can look at the end of this subject to have a deeper look on secured ways of identifying packets.
+One can then look at the headers used in a specific network protocol to see if it contains information that can be used to decide if P1 and P2 are different or the same packet. In CNSS (as well as IPv4) there is a field in the header that changes from P1 to P2. In CNSS that field is called **sequence number** and can be accessed using method `getSequenceNumber()`, like in `p1.getSequenceNumber()`, which returns an `int`.  Therefore, looking at the full list of packets header fields (look at CNSS documentation or at the source code of class `Packet` to see what is a CNSS packet) one can devise a method to compute a *workable* version of that key. Lets use that one, but you can look at the end of this subject to get a deeper look on secured ways of identifying packets.
 
 After executing that simulation with your last enhancement, all application nodes (sender and receiver nodes) only send 3 packets and receive 3. They also drop exactly one packet received by their only link. Can you explain both facts? 
 
-Now switching nodes seem to forward the minimal number of packets while using flooding, and drop the received duplicate packets. Recall that switching nodes 3 and 5 only receive the first useless floods and then, as the network learned where destination nodes are, do not receive any more useless packets. Switching nodes 1, 2, 4 and 5 receive and forward the packets sent and received from the attached application nodes (6 packets), as well as some extra packets also flooded in the first round.
+Now switching nodes seem to forward the minimal number of packets while using flooding, and drop the received duplicate packets. Recall that switching nodes 3 and 5 only receive the first useless floods and then, as the network lears where destination nodes are, do not receive any more useless packets. Switching nodes 1, 2, 4 and 5 receive and forward the packets sent and received from the attached application nodes (6 packets), as well as some extra packets, also flooded in the first round.
 
 ```
 Node status for node 6 (sender) time 39000 - sent 3 packet(s) / received 3 packet(s)
@@ -248,14 +234,14 @@ Your solution may be confronted with other CNSS network configurations.
 
 # A final note on devising packets secure unique identifiers
 
-Devising a method to assign unique identifiers to objects without relying on counters fully realiable and with boundless resolution is quite complex. In fact, real nodes can crash and their packets sequence numbers counters may be reused. Also, if a node sends packets at reasonable high speed, it can easily exahaust the available sequence numbers range and start reusing them by going from 0 up to MAXINT, then from 0 up to MAXINT again, and so on.
+Devising a method to assign unique identifiers to objects without relying on counters, fully realiably, and with boundless resolution, is quite complex. In fact, real nodes can crash and their packets sequence numbers counters may be reused. Also, if a node sends packets at reasonable high speed, it can easily exahaust the available sequence numbers range and start reusing them by going from 0 up to MAXINT, then from 0 up to MAXINT again, and so on.
 
-In IPv4 the header field that plays a similar role to a sequence number is called the packet `identifier` and is represented in 16 bits. Thus, its value is reused after sending around 65000 packets. In IPv6 there is no such header field, and two different packets sent at different times by the same node, to the same destination node, and with the same payload, would be considered indistinguishable packets by the network. In CNSS the sequence number is an `int`, thus, it is only reused after sending more than 4 million packets.
+In IPv4 the header field that plays a similar role to the CNSS sequence number is called the packet `identifier` and is represented in 16 bits. Thus, its value is reused after sending around 65000 packets. In IPv6 there is no such header field, and two different packets sent at different times by the same node, to the same destination node, and with the same payload, would be considered indistinguishable packets by the network. In CNSS the sequence number is an `int`, thus, it is only reused after sending more than 4 million packets.
 
-Thus, in CNSS and IPv4, without solving the above two problems, there is no simple way to build unique identifiers for packets at network level that resist node crashes and integers range exhaustion. The better you can expect is that sucessive node crashes moments, or packets emission with the same sequence numbers moments, differ time enough to make the crashes and the sequence numbers reuse harmless. For example, by guaranteeing that all old copies of the same packet have already desapeared from the network and cannot make harm or introduce confusion. With this approach, your solution could use a timmer to periodically clean all traces of old packets keys, and the initial value of the sequence number counter should be set randomly. The same problem has already been tackled a propos of TCP connections initial sequence numbers. This discussion is complex and requires that a **Packet Max Life Time** parameter for the Internet must be adopted with the sole purpose of making correctness proofs.
+Thus, in CNSS and IPv4, without solving the above two problems, there is no simple way to build unique identifiers for packets, at network level, that resists node crashes and integers range exhaustion. The better you can expect is that sucessive node crashes moments, or packets emission with the same sequence numbers moments, differ time enough to make the crashes and the sequence numbers reuse harmless. For example, by guaranteeing that all old copies of the same packet have already desapeared from the network and cannot make harm or introduce confusion. With this approach, your solution could use a timmer to periodically clean all traces of old packets keys, and the initial value of the sequence number counter should be set randomly. The same problem has already been tackled a propos of TCP connections initial sequence numbers. This discussion is complex and requires that a **Packet Max Life Time** parameter for the Internet must be adopted with the sole purpose of making correctness proofs.
 
 By using criptographically secured methods to guarantee that no two different packets can be considered the same is a problem solved using identifiers with a greater number of bits (256 or more) as well as some form of randomness that solves the problem introduced by the crash and reinitialization of counters.
 
-Once again, you should note that networks are engineering artifacts that use methods whose cost is adjusted to the risks involved. Modern TCP/IP networks do not guarantee that all sent packets get to destination in time, or if they do, it is also not guaranteed that receiving nodes will not receive dulicates. It is the business of higher layers to solve these problems using budgets adequate to the task at end.
+Once again, you should note that networks are engineering artifacts that use methods whose cost is adjusted to the risks involved. Modern TCP/IP networks do not guarantee that all sent packets get to destination in time, or if they do, it is also not guaranteed that receiving nodes will not receive dulicates. It is the business of higher layers to solve these problems using budgets adequate to the risks associated with the task at end.
 
 
