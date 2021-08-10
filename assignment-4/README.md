@@ -153,7 +153,7 @@ This optimisation leverages the fact that in an acyclic network, if a node `N` r
 
 By using file [configs/config4.4](configs/config4.4), with filtering on and off, it is easy to see that the number of duplicate packets drops with filtering on. This is easier to realize with tracing on if you introduce a tracing action in your enhanced implementation that traces when a packet was forwarded to one only interface, instead of being flooded. This optimisation seems to have a radical implication since when performing simulation [configs/config4.4](configs/config4.4), with filtering on and off, it shows that  **learning by the reverse path** is capable of avoiding all duplicates per se after the first round of exchanged packets.
 
-# Optional Assignment Delivery (that can be marked at most more 6 marks)
+# Optional Assignment Delivery (that can be marked at most 6 more marks)
 
 The method capable of avoiding all duplicate packets during floods requires switching nodes to detect and drop them. Implementing it is your next job challenge.
 
