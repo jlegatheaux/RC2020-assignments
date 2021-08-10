@@ -147,6 +147,7 @@ public void forward_packet(int now, Packet p, int iface) {
 		
 		flood_packet (now, p, iface);
 	}
+```
 
 This optimisation leverages the fact that in an acyclic network, if a node `N` receives by interface `I` a packet originally sent by source `S`, then `I` is the beginning of a (unique and therefore shortest) path from `N` to `S`. After implementing it, to switch this optimization on, the only required action should be to uncomment the line  `parameter filter` in the configuration file.
 
